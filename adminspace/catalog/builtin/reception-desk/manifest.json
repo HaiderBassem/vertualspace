@@ -1,0 +1,103 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "reception-desk",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Reception desk",
+  "description": "A three-tile counter with a raised ledge, for the entrance of your office.",
+  "translations": {
+    "fr-FR": {
+      "name": "Banque d’accueil",
+      "description": "Un comptoir de trois cases avec tablette surélevée, pour l’entrée de vos bureaux."
+    },
+    "de-DE": {
+      "name": "Empfangstheke",
+      "description": "Eine drei Felder breite Theke mit erhöhter Ablage für den Eingang Ihres Büros."
+    },
+    "es-ES": {
+      "name": "Mostrador de recepción",
+      "description": "Un mostrador de tres casillas con repisa elevada, para la entrada de tu oficina."
+    },
+    "ar-SA": {
+      "name": "مكتب استقبال",
+      "description": "منضدة بعرض ثلاث خانات مع رف مرتفع لمدخل مكتبك."
+    }
+  },
+  "category": "reception",
+  "tags": [
+    "reception",
+    "counter",
+    "welcome"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

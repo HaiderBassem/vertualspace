@@ -1,0 +1,21 @@
+Pack: [LPC] Food
+Source page: https://opengameart.org/content/lpc-food
+Submitted by: bluecarrot16 (Saturday, January 16, 2021 - 19:00)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"[LPC] Foods" by bluecarrot16, Daniel Eddeland (daneeklu), Joshua Taylor, Richard Kettering (Jetrel), thekingphoenix, RedVoxel, and Molly "Cougarmint" Willits. See CREDITS-food.txt. Please include a link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+So many foods... This started as just fruits and vegetables, and rapidly got out of control. Includes fruits, vegetables, cheeses, eggs, nuts, bread/baked goods, seafood, and meat/poultry. The fourth version of each item is designed to fit inside several different containers, such as crates, boxes, baskets, or barrels.
+
+
+See CREDITS-food.txt for a full list of everything included. Note also that additional licenses are available for many of the tiles---in particular, many tiles are licensed CC0.
+
+
+There are crops with growing animations for many of the vegetables and fruits! See [LPC] Crops and [LPC] Fruit Trees. Want to commission more items for this set (or another project)? Send me a private message!
+
+
+Update 2021-01-16 (Version 2): Added ~150 new items, mostly produce---namely grains/cereals, beans, herbs, and many fruits and vegetables. Several items also updated to better match the fruit trees and crops. Re-arranged significantly. Old version preserved as lpc-food-v1.zip.

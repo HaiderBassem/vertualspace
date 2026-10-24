@@ -1,0 +1,61 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "signpost",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Direction signpost",
+  "description": "A two-panel signpost. Give it a name in the editor so people can find it in the map search.",
+  "translations": {
+    "fr-FR": {
+      "name": "Panneau directionnel",
+      "description": "Un panneau à deux flèches. Nommez-le dans l’éditeur pour qu’on le retrouve dans la recherche."
+    },
+    "de-DE": {
+      "name": "Wegweiser",
+      "description": "Ein Wegweiser mit zwei Schildern. Im Editor benennen, damit er in der Suche gefunden wird."
+    },
+    "es-ES": {
+      "name": "Poste indicador",
+      "description": "Un poste con dos placas. Ponle nombre en el editor para encontrarlo en la búsqueda."
+    },
+    "ar-SA": {
+      "name": "لافتة إرشادية",
+      "description": "لافتة بلوحتين. سمّها في المحرر ليعثر عليها الناس في البحث."
+    }
+  },
+  "category": "wayfinding",
+  "tags": [
+    "sign",
+    "directions",
+    "wayfinding"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#2b47c2",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

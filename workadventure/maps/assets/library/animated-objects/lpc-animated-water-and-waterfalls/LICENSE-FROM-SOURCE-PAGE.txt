@@ -1,0 +1,19 @@
+Pack: LPC Animated Water and waterfalls
+Source page: https://opengameart.org/content/lpc-animated-water-and-waterfalls
+Submitted by: ZaPaper (Wednesday, June 11, 2014 - 19:49)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+Use the original LPC license and attribution.  Would be nice to also link to my RPG Game Maker.
+
+Description from the page (excerpt):
+I made animated water tiles and waterfall tiles using LPC set for my RPG Game Maker (http://peterlzy.wix.com/rpgaction)
+
+The water tiles are meant to be translucent over LPC rock or LPC sand tiles.  I have merged the layers to optimize performance on the ipad/iphone.
+
+The water tiles also have 3 different glistening effects to create variety.
+
+You can watch the video here:
+
+http://www.youtube.com/watch?v=77IaKKn6-nk

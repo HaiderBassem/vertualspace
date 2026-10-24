@@ -1,0 +1,18 @@
+Pack: [LPC] Misc animations and items
+Source page: https://opengameart.org/content/lpc-misc-animations-and-items
+Submitted by: ak-blanc (Tuesday, August 25, 2015 - 15:29)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+I don't need any attribution but credit Sharm if you're using the animations and Stephen Challener and Thane Brimhall if you're using the top-hat character.
+
+Description from the page (excerpt):
+I modified Sharm's chests to animate them opening.
+
+The weird gate thing is derived from Sharm's work as well and is animated too.
+
+I made a top-hat on an recolored character made with the Universal LPC Sprite Sheet Character Generator, using Stephen Challener and Thane Brimhall's art.
+
+I designed the keys and little glowing ball myself.

@@ -1,0 +1,26 @@
+Pack: Christmas Village Asset Pack
+Source page: https://opengameart.org/content/christmas-village-asset-pack
+Submitted by: HaywardMorihara (Tuesday, December 14, 2021 - 05:45)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+Pixel art by https://murphysdad.itch.io/
+
+Description from the page (excerpt):
+Pixel art that I originally made for Christmas Village Creator -- a game for the Game Dev Field Guide's Nov/Dec Monthly Game Jam.
+
+Assets include:
+
+
+Character (4-direction movement animation)
+Snow & pathway tilesets
+Trees
+Outdoor paraphernalia (fence, lamppost, street sign, signpost, snowman)
+Houses, including interior tileset & animated fireplace
+Furniture (table, chair, bench, couch, rug)
+Decorations (lights, stocking, hot chocolate, wrapped presents, wreath)
+
+Font used in the cover image is NOT part of the asset pack -- credit goes to Jack Oatley.
+
+Palette used: Old Christmas Palette by Blobo

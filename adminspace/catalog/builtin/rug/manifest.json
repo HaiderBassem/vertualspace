@@ -1,0 +1,74 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "rug",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Area rug",
+  "description": "A bordered rug that stays under people's feet, to mark a lounge or meeting area.",
+  "translations": {
+    "fr-FR": {
+      "name": "Tapis",
+      "description": "Un tapis bordé qui reste sous les pieds, pour délimiter un salon ou un espace de réunion."
+    },
+    "de-DE": {
+      "name": "Teppich",
+      "description": "Ein umrandeter Teppich unter den Füßen, um eine Lounge oder einen Besprechungsbereich zu markieren."
+    },
+    "es-ES": {
+      "name": "Alfombra",
+      "description": "Una alfombra con borde que queda bajo los pies, para marcar una zona de descanso o reunión."
+    },
+    "ar-SA": {
+      "name": "سجادة",
+      "description": "سجادة بإطار تبقى تحت الأقدام لتحديد منطقة استراحة أو اجتماع."
+    }
+  },
+  "category": "decoration",
+  "tags": [
+    "rug",
+    "carpet",
+    "floor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "indigo",
+        "color": "#4458a8",
+        "direction": "Down",
+        "image": "indigo.png",
+        "depthOffset": -64
+      },
+      {
+        "key": "sand",
+        "color": "#c9a878",
+        "direction": "Down",
+        "image": "sand.png",
+        "depthOffset": -64
+      },
+      {
+        "key": "sage",
+        "color": "#7f9f86",
+        "direction": "Down",
+        "image": "sage.png",
+        "depthOffset": -64
+      },
+      {
+        "key": "clay",
+        "color": "#b9694a",
+        "direction": "Down",
+        "image": "clay.png",
+        "depthOffset": -64
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

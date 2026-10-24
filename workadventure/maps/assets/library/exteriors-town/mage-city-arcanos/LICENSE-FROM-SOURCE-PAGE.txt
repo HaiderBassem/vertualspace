@@ -1,0 +1,15 @@
+Pack: Mage City Arcanos
+Source page: https://opengameart.org/content/mage-city-arcanos
+Submitted by: Hyptosis (Friday, July 6, 2012 - 00:39)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+This was a total conversion on an rpgmakerxp tileset I THINK, it was a long time ago that I did it.
+
+There is a lot of other work at http://www.lorestrome.com/pixel_archive/main.htm that could be mixed with these. Good luck making your games!
+
+((I know the website has different licensing rules, but don't worry about that with this tileset. The website is really old and I haven't updated it. These are public domain, you don't have to give me credit if you don't want to. but I would appreciate it of course! ^_^))

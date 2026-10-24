@@ -1,0 +1,22 @@
+Pack: [LPC Revised] Christmas Pack!
+Source page: https://opengameart.org/content/lpc-revised-christmas-pack
+Submitted by: Death's Darling (Friday, December 10, 2021 - 12:53)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+Eliza Wyatt and Lanea Zimmerman (Sharm), DRM-waived. See Credits.txt for individual credits; fireplace & accessories from here: https://opengameart.org/content/lpc-fireplace
+
+Description from the page (excerpt):
+A Christmas pack, just in time for Christmas!
+
+Contents:
+
+
+Decorated Christmas tree with animated lights
+Wreath with animated lights
+Decorated, tiling boughs with animated lights
+Twelve wrapped presents
+Sharm's brick fireplace, animated fire, and accessories in Liberated Palette
+
+All up to date assets for the LPC Revised project can be found on my Github page here: https://github.com/ElizaWy/LPC

@@ -1,0 +1,101 @@
+import type { DeepPartial } from "../DeepPartial";
+import type { Translation } from "../i18n-types";
+
+const area: DeepPartial<Translation["area"]> = {
+    noAccess: "Entschuldigung, Sie haben keinen Zugang zu diesem Bereich.",
+    blocked: {
+        locked: "Dieser Bereich ist gesperrt. Sie können nicht eintreten.",
+        maxUsers: "Dieser Bereich ist voll. Sie können nicht eintreten.",
+        noAccess: "Entschuldigung, Sie haben keinen Zugang zu diesem Bereich.",
+        unlockWithTrigger: "{trigger} um diesen Bereich zu entsperren.",
+    },
+    personalArea: {
+        claimDescription: "Dies ist ein persönlicher Bereich. Möchten Sie ihn übernehmen?",
+        buttons: {
+            yes: "Ja",
+            no: "Nein",
+            confirm: "Bestätigen",
+        },
+        errors: {
+            taken: "Jemand anderes hat diesen Schreibtisch gerade beansprucht.",
+            notClaimable: "Dieser Schreibtisch wird von einem Administrator vergeben. Frag ihn, wenn du ihn brauchst.",
+            disabled: "Dieser Schreibtisch ist gerade nicht verfügbar.",
+            notEligible: "Dieser Schreibtisch ist für ein anderes Team reserviert.",
+            alreadyOwned: "Du hast bereits einen Schreibtisch. Gib ihn zuerst frei, um einen anderen zu wählen.",
+            notBookable: "Nur Flex-Schreibtische können gebucht werden.",
+            bookingInvalid: "Diese Buchung ist nicht möglich.",
+            bookingConflict: "Jemand hat diesen Schreibtisch bereits für einen Teil dieser Zeit gebucht.",
+            bookingDouble: "Du hast bereits einen anderen Schreibtisch für einen Teil dieser Zeit gebucht.",
+            bookingLimit: "Du hast bereits die maximale Anzahl an Buchungen. Storniere zuerst eine.",
+        },
+        card: {
+            yours: "Dein Schreibtisch",
+            ownedBy: "Schreibtisch von {name}",
+            free: "Freier Schreibtisch",
+            assigned: "Diesen Schreibtisch vergibt ein Administrator.",
+            outOfService: "Dieser Schreibtisch ist außer Betrieb.",
+            notForYou: "Dieser Schreibtisch ist für ein anderes Team.",
+            alreadyHaveDesk: "Du hast bereits einen Schreibtisch.",
+            atDesk: "Gerade am Schreibtisch",
+            inOffice: "Im Büro, aber nicht am Schreibtisch",
+            away: "Gerade nicht im Büro",
+            youAreHere: "Du bist an deinem Schreibtisch",
+            sit: "An meinen Schreibtisch setzen",
+            claim: "Diesen Schreibtisch nehmen",
+            close: "Schließen",
+            hot: "Flex-Schreibtisch: Hier kann sich jeder hinsetzen",
+            reservedFor: "Für {name} reserviert bis {until}",
+            reservedForYou: "Für dich reserviert bis {until}",
+            occupiedBy: "{name} sitzt hier",
+            sitHere: "Hier hinsetzen",
+            standUp: "Aufstehen",
+            book: "Diesen Schreibtisch buchen",
+            bookNextHours: "Die nächsten 2 Stunden",
+            bookRestOfDay: "Heute bis {until}",
+            bookTomorrow: "Morgen {from}–{until}",
+            yourBookings: "Deine Buchungen",
+            booking: "{from} – {until}",
+            cancelBooking: "Stornieren",
+        },
+        nameplate: {
+            free: "Freier Schreibtisch",
+            hot: "Flex-Schreibtisch",
+            keptFor: "Für {name} reserviert",
+            outOfService: "Außer Betrieb",
+            taken: "Belegt",
+        },
+        welcome: {
+            title: "Du hast noch keinen Schreibtisch",
+            description:
+                "Such dir einen freien Schreibtisch aus und mach ihn zu deinem. Du kannst ihn mit deinen eigenen Sachen dekorieren.",
+            findDesk: "Schreibtisch finden",
+            later: "Jetzt nicht",
+        },
+        claimed: {
+            title: "Dein Schreibtisch ist bereit",
+            description: "Er gehört jetzt dir. Ziehe Objekte darauf, damit er sich wie zu Hause anfühlt.",
+        },
+        personalSpaceWithNames: "Persönlicher Bereich von {name}",
+        alreadyHavePersonalArea:
+            "Sie haben bereits einen persönlichen Bereich. Er wird gelöscht, wenn Sie diesen übernehmen.",
+    },
+    seat: {
+        sit: "[LEERTASTE] um Platz zu nehmen 🪑",
+        sitTouch: "👆 um Platz zu nehmen 🪑",
+        stand: "[LEERTASTE] um aufzustehen",
+        standTouch: "👆 um aufzustehen",
+        refused: {
+            notFound: "Diesen Platz gibt es nicht mehr.",
+            taken: "Dort sitzt schon jemand.",
+            tooFar: "Du kannst diesen Platz von hier aus nicht erreichen.",
+            deskTaken: "Dieser Platz gehört zum Schreibtisch einer anderen Person.",
+            deskOf: "Das ist der Schreibtisch von {name}.",
+            reserved: "Dieser Schreibtisch ist gerade für jemand anderen reserviert.",
+            disabled: "Dieser Schreibtisch ist außer Betrieb.",
+            notEligible: "Dieser Schreibtisch ist für ein anderes Team.",
+            error: "Du konntest dich nicht hinsetzen. Bitte versuche es erneut.",
+        },
+    },
+};
+
+export default area;

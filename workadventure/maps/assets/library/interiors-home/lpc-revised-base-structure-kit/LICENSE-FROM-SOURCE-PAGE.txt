@@ -1,0 +1,15 @@
+Pack: [LPC Revised] Base Structure Kit!
+Source page: https://opengameart.org/content/lpc-revised-base-structure-kit
+Submitted by: Death's Darling (Sunday, December 5, 2021 - 12:33)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+DRM-waived. Lanea Zimmerman (Sharm) and Eliza Wyatt. Each sheet has original source links in the Credits.txt files.
+
+Description from the page (excerpt):
+A collection of about 100 LPC structural elements files, each item colored to fit the Liberated Palette.
+
+Many elements are pre-existing base LPC, revisited, expanded, and given extra color options. New items include a plain fence, new floor and wall options, an expanded roof, a stovetop element for the cast icon stove, and animated arched castle doors.
+
+All up to date assets for the LPC Revised project can be found on my Github page here: https://github.com/ElizaWy/LPC

@@ -1,0 +1,23 @@
+Pack: [LPC] City inside
+Source page: https://opengameart.org/content/lpc-city-inside
+Submitted by: Reemax (Friday, March 6, 2015 - 00:15)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+see credits.txt
+
+Description from the page (excerpt):
+City interior tileset. Contains carpets, tables, cupboard, brazier, throne, doors, stable door and animated horse head.
+
+Preview images contain tiles from following tileset:
+
+http://opengameart.org/content/lpc-cavern-and-ruin-tiles
+
+http://opengameart.org/content/lpc-city-outside
+
+http://opengameart.org/content/lpc-house-interior-and-decorations
+
+Stable floor is from LPC base tiles dirt.png by Sharm.

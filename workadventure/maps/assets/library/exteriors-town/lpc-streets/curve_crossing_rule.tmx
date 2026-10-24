@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="11" height="5" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="road_markings_white.tsx"/>
+ <tileset firstgid="226" source="street_dark.tsx"/>
+ <tileset firstgid="250" source="src/dirt2.tsx"/>
+ <layer name="output_road_markings" width="11" height="5">
+  <data encoding="csv">
+0,212,0,213,0,0,0,0,0,30,0,
+30,67,0,68,30,0,0,213,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+45,82,0,83,45,0,212,0,0,0,0,
+0,212,0,213,0,0,0,0,0,45,0
+</data>
+ </layer>
+ <layer name="input_road_markings" width="11" height="5">
+  <properties>
+   <property name="StrictEmpty" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,212,0,213,0,0,0,0,0,0,0,
+30,0,0,0,30,0,67,0,0,83,0,
+0,0,0,0,0,0,0,0,0,0,0,
+45,0,0,0,45,0,0,68,0,68,0,
+0,212,0,213,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="input_road_markings" width="11" height="5">
+  <properties>
+   <property name="StrictEmpty" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,212,0,213,0,0,0,0,0,0,0,
+30,212,0,213,30,0,82,0,0,82,0,
+0,0,0,0,0,0,0,0,0,0,0,
+45,212,0,213,45,0,0,83,0,67,0,
+0,212,0,213,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="input_road_markings" width="11" height="5">
+  <properties>
+   <property name="StrictEmpty" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,212,0,213,0,0,0,0,0,0,0,
+30,30,0,30,30,0,67,0,0,83,0,
+0,0,0,0,0,0,0,0,0,0,0,
+45,45,0,45,45,0,0,83,0,67,0,
+0,212,0,213,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="regions_output" width="11" height="5" opacity="0.3">
+  <data encoding="csv">
+0,145,0,145,0,0,0,0,0,145,0,
+145,145,0,145,145,0,0,145,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+145,145,0,145,145,0,145,0,0,0,0,
+0,145,0,145,0,0,0,0,0,145,0
+</data>
+ </layer>
+ <layer name="regions_input" width="11" height="5" opacity="0.3">
+  <data encoding="csv">
+0,145,0,145,0,0,0,0,0,145,0,
+145,145,0,145,145,0,145,145,0,145,0,
+0,0,0,0,0,0,0,0,0,0,0,
+145,145,0,145,145,0,145,145,0,145,0,
+0,145,0,145,0,0,0,0,0,145,0
+</data>
+ </layer>
+</map>

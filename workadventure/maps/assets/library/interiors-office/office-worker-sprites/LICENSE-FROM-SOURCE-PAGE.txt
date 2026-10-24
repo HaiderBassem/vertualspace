@@ -1,0 +1,12 @@
+Pack: Office worker sprites
+Source page: https://opengameart.org/content/office-worker-sprites
+Submitted by: Solar Granulation (Wednesday, October 13, 2021 - 12:16)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+A set of spritesheets for four office workers walking, typing, printing and drinking water. Sprites for computers and water coolers are also included. Each frame is 16x16px and they were designed to emulate the NES PAL pallette.

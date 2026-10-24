@@ -1,0 +1,103 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "meeting-table",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Meeting table",
+  "description": "A six-seat conference table with a cable tray. Surround it with office chairs.",
+  "translations": {
+    "fr-FR": {
+      "name": "Table de réunion",
+      "description": "Une table de conférence six places avec passe-câbles. À entourer de chaises de bureau."
+    },
+    "de-DE": {
+      "name": "Besprechungstisch",
+      "description": "Ein Konferenztisch für sechs Personen mit Kabelkanal. Mit Bürostühlen umgeben."
+    },
+    "es-ES": {
+      "name": "Mesa de reuniones",
+      "description": "Una mesa de conferencias para seis con pasacables. Rodéala de sillas de oficina."
+    },
+    "ar-SA": {
+      "name": "طاولة اجتماعات",
+      "description": "طاولة اجتماعات لستة أشخاص مع مجرى للكابلات. ضع حولها كراسي المكتب."
+    }
+  },
+  "category": "meeting",
+  "tags": [
+    "table",
+    "meeting",
+    "conference"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

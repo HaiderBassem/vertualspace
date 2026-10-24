@@ -1,0 +1,13 @@
+Pack: Tuxemon tileset
+Source page: https://opengameart.org/content/tuxemon-tileset
+Submitted by: Buch (Friday, September 26, 2014 - 00:58)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+Credit me as Buch and link back either to my OGA profile page or to http://blog-buch.rhcloud.com
+
+Description from the page (excerpt):
+A 16x16 tileset commissioned by luke83 for the Tuxemon project
+
+Enjoy!

@@ -1,0 +1,19 @@
+Pack: Whispers of Avalon: Grassland Tileset
+Source page: https://opengameart.org/content/whispers-of-avalon-grassland-tileset
+Submitted by: Leonard Pabin (Saturday, January 2, 2010 - 00:54)
+License(s) listed on the source page: CC-BY 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+A tileset developed for Whispers of Avalon
+
+32 x 32 pixel tiles
+
+Please note some tiles work as units, forming 64x64 tiles rather than 32x32 (I'll try and find a way to mark them)
+
+The barrel is a derivative work, the orginal creater is Crush

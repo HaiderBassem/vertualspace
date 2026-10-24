@@ -1,0 +1,18 @@
+Pack: [LPC] Wooden Furniture
+Source page: https://opengameart.org/content/lpc-wooden-furniture
+Submitted by: bluecarrot16 (Monday, February 25, 2019 - 22:22)
+License(s) listed on the source page: CC-BY-SA 4.0 / CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"LPC Wooden Furniture" by bluecarrot16, Baŝto, Lanea Zimmerman (Sharm), William Thompson, Tuomo Untinen (Reemax), Janna/Lilius/Jannax. Please link back to https://opengameart.org/content/lpc-wooden-furniture . 
+see CREDITS-*.txt. All information in this file must be included.
+
+Description from the page (excerpt):
+Lots of wooden furniture in the LPC style. Work in progress; still plan to add more in the future; open to ideas! Intentionally left many surfaces bare with the hope of creating a separate "clutter" set with objects to add on top. Other recolors possible (e.g. intermediate brown, like the dungeon set, etc.).
+
+Combine with upholstery set for best results.
+
+Update (2021-01-09, Version 1.1): Broke different materials out into separate layers (Baŝto) to facilitate recolors; added preview image (Baŝto); fixed shadows and several other errors; added several cupboard and glass door tiles (bluecarrot16). Added two more recolors (bluecarrot16)

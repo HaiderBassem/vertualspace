@@ -1,0 +1,111 @@
+import type { PluralMessage } from "../../index";
+import type { Messages } from "../en";
+
+const p = (forms: PluralMessage): PluralMessage => forms;
+
+/** عمليات الحظر وبلاغات المستخدمين. */
+export const moderation: Messages["moderation"] = {
+    title: "الإشراف",
+    tabs: {
+        bans: "الحظر",
+        reports: "البلاغات",
+    },
+    bans: {
+        description:
+            "لا يستطيع المحظورون دخول أي غرفة في هذا العالم. يصدر الحظر عن المسؤولين داخل WorkAdventure (حاملي الوسم admin) أو من لوحة الإدارة هذه.",
+        filterActive: "النشطة",
+        filterAll: "الكل، بما في ذلك المرفوعة والمنتهية",
+        empty: "لا توجد عمليات حظر.",
+        columns: {
+            person: "الشخص",
+            ipAddress: "عنوان IP",
+            reason: "السبب",
+            by: "حُظر بواسطة",
+            since: "منذ",
+            until: "حتى",
+            status: "الحالة",
+        },
+        bannedByLine: "حُظر بواسطة: {name}",
+        status: {
+            active: "نشط",
+            revoked: "مرفوع",
+            expired: "منتهٍ",
+        },
+        permanent: "دائم",
+        fromBackOffice: "لوحة الإدارة",
+        create: "حظر شخص",
+        target: "الشخص",
+        targetHelp: "معرّف WorkAdventure للشخص أو عنوان بريده الإلكتروني.",
+        ipAddress: "عنوان IP",
+        ipAddressHelp: "اختياري. يحظر هذا العنوان أيضًا (IPv4 أو IPv6)، حتى لا يمكن استخدام هوية أخرى.",
+        invalidIp: "أدخل عنوان IPv4 أو IPv6 صالحًا.",
+        targetRequired: "أدخل معرّفًا أو عنوان IP.",
+        reason: "السبب",
+        reasonHelp: "يُعرض للشخص المحظور.",
+        duration: "المدة",
+        durations: {
+            permanent: "دائم",
+            hour: "ساعة واحدة",
+            day: "24 ساعة",
+            week: "7 أيام",
+            month: "30 يومًا",
+        },
+        created: "تم تسجيل الحظر.",
+        createdAndKicked: "تم تسجيل الحظر وقطع اتصال الشخص بـ WorkAdventure.",
+        revoke: "رفع الحظر",
+        revokeTitle: "رفع هذا الحظر؟",
+        revokeDescription: "سيتمكّن الشخص من دخول العالم مجددًا.",
+        revoked: "تم رفع الحظر.",
+    },
+    reports: {
+        description:
+            "بلاغات أرسلها أشخاص من داخل WorkAdventure (عبر «الإبلاغ عن هذا المستخدم»). راجعها ثم عالجها أو ارفضها.",
+        empty: "لا توجد بلاغات.",
+        filters: {
+            open: "المفتوحة",
+            resolved: "المعالَجة",
+            dismissed: "المرفوضة",
+            all: "الكل",
+        },
+        status: {
+            open: "مفتوح",
+            resolved: "معالَج",
+            dismissed: "مرفوض",
+        },
+        count: p({
+            zero: "لا توجد بلاغات",
+            one: "بلاغ واحد",
+            two: "بلاغان",
+            few: "{count} بلاغات",
+            many: "{count} بلاغًا",
+            other: "{count} بلاغ",
+        }),
+        reported: "الشخص المُبلَّغ عنه",
+        reporter: "أبلغ عنه",
+        room: "الغرفة",
+        comment: "التعليق",
+        note: "ملاحظة المعالجة",
+        noteHelp: "اختيارية، ولا يراها سوى مسؤولي العالم.",
+        noteLabel: "ملاحظة المعالجة:",
+        resolve: "معالجة",
+        dismiss: "رفض",
+        reopen: "إعادة فتح",
+        handledBy: "عولج {date}",
+        updated: "تم تحديث البلاغ.",
+        banReported: "حظر الشخص المُبلَّغ عنه",
+        banReportedTitle: "حظر الشخص المُبلَّغ عنه؟",
+        banReportedDescription: "لن يتمكّن من دخول هذا العالم بعد الآن، وسيُعتبر البلاغ معالَجًا.",
+        banReason: "أبلغ عنه شخص آخر: {comment}",
+    },
+    liveDisconnect: {
+        banSaved: "حُفظ الحظر. قطع الاتصال الفوري: {outcome}",
+        banSavedOnly: "حُفظ الحظر.",
+        outcomes: {
+            sent: "طُلب من WorkAdventure.",
+            notConfigured: "غير متاح لأن الاتصال المباشر مع WorkAdventure غير مُعدّ. سيُرفض الشخص عند اتصاله التالي.",
+            unreachable: "فشل لأنه تعذّر الوصول إلى WorkAdventure. سيُرفض الشخص عند اتصاله التالي.",
+            rejected: "رفضه WorkAdventure (تحقّق من ADMIN_SOCKETS_TOKEN). سيُرفض الشخص عند اتصاله التالي.",
+            notApplicable: "غير ممكن لحظر يقتصر على عنوان IP. سيُرفض العنوان عند اتصاله التالي.",
+        },
+    },
+};

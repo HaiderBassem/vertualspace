@@ -1,0 +1,63 @@
+/** Application shell: navigation, organization switcher, account menu, support access banner. */
+export const app = {
+    sections: {
+        organization: "Organization",
+        administration: "Administration",
+        platform: "Platform",
+    },
+    nav: {
+        overview: "Overview",
+        home: "Home",
+        workspaces: "Workspaces",
+        people: "People",
+        directory: "Directory",
+        components: "Components",
+        apiKeys: "Room API keys",
+        domains: "Domains",
+        audit: "Audit log",
+        settings: "Settings",
+    },
+    platformNav: {
+        overview: "Control center",
+        organizations: "Organizations",
+        accounts: "Accounts",
+        components: "Component catalog",
+        avatars: "Avatar catalog",
+        jobs: "Background jobs",
+        email: "Email delivery",
+        settings: "Instance settings",
+        audit: "Audit log",
+    },
+    switcher: {
+        label: "Switch organization",
+        yourOrganizations: "Your organizations",
+        support: "Support access",
+        create: "Create an organization",
+        none: "You do not belong to any organization yet.",
+        choose: "Choose an organization",
+        suspended: "Suspended",
+    },
+    account: {
+        menu: "Account menu",
+        settings: "Account settings",
+        signOut: "Log out",
+    },
+    support: {
+        banner: "Support access to {organization} until {time}. Reason: {reason}",
+        end: "End support access",
+    },
+    errorPage: {
+        notFoundTitle: "Page not found",
+        forbiddenTitle: "Access denied",
+        suspendedTitle: "Organization suspended",
+        suspended:
+            "This organization has been suspended by the platform administrators. Its worlds are closed until it is reactivated.",
+        rateLimitedTitle: "Too many requests",
+        errorTitle: "Something went wrong",
+        requestId: "Reference: {id}",
+        home: "Go to the home page",
+    },
+    breadcrumbs: "Breadcrumb",
+    openMenu: "Open navigation",
+    closeMenu: "Close navigation",
+};

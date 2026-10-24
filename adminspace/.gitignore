@@ -1,0 +1,21 @@
+node_modules/
+build/
+.svelte-kit/
+.env
+.env.*
+!.env.example
+!deploy/.env.prod.example
+coverage/
+*.log
+.DS_Store
+
+# Live integration test artifacts (integration/live-test): secrets, copies, screenshots, results
+integration/live-test/admin-password
+integration/live-test/wa-catalog/
+integration/live-test/shots/
+integration/live-test/scenario-results.json
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/

@@ -1,0 +1,15 @@
+Pack: Home Objects
+Source page: https://opengameart.org/content/home-objects
+Submitted by: Jannax (Sunday, December 29, 2013 - 19:55)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+These are objects from a game I was working on long ago, however it has since been abandoned and I would hate to see these go to waste. They are already set up in 32x32 spaces with a transparent background.
+
+ 
+
+I've gone ahead and uploaded an alternate set that I did a few months ago that includes more detail, new objects, and a revised palette. I'll leave both versions up, so that you may choose which ever you'd prefer.

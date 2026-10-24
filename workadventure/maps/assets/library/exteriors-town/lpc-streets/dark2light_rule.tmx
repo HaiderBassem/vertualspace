@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="street_dark.tsx"/>
+ <tileset firstgid="25" source="street_light.tsx"/>
+ <layer name="output_street" width="1" height="1">
+  <data encoding="csv">
+47
+</data>
+ </layer>
+ <layer name="input_street" width="1" height="1">
+  <data encoding="csv">
+23
+</data>
+ </layer>
+ <layer name="regions" width="1" height="1" opacity="0.3">
+  <data encoding="csv">
+46
+</data>
+ </layer>
+</map>

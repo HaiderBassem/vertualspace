@@ -1,0 +1,52 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "laptop",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Laptop",
+  "description": "An open laptop for desks and meeting tables.",
+  "translations": {
+    "fr-FR": {
+      "name": "Ordinateur portable",
+      "description": "Un ordinateur portable ouvert pour bureaux et tables de réunion."
+    },
+    "de-DE": {
+      "name": "Laptop",
+      "description": "Ein aufgeklappter Laptop für Schreib- und Besprechungstische."
+    },
+    "es-ES": {
+      "name": "Portátil",
+      "description": "Un portátil abierto para escritorios y mesas de reuniones."
+    },
+    "ar-SA": {
+      "name": "حاسوب محمول",
+      "description": "حاسوب محمول مفتوح للمكاتب وطاولات الاجتماعات."
+    }
+  },
+  "category": "computers",
+  "tags": [
+    "laptop",
+    "computer",
+    "desk"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#b9c0ca",
+        "direction": "Down",
+        "image": "standard.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

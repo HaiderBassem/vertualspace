@@ -1,0 +1,285 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "open-office",
+  "version": "1.0.0",
+  "kind": "room_template",
+  "name": "Open office",
+  "description": "Eight workstations in two rows, a meeting corner with a whiteboard, and a coffee point. Wood floor, windows on the north wall.",
+  "translations": {
+    "fr-FR": {
+      "name": "Plateau de bureaux",
+      "description": "Huit postes de travail sur deux rangées, un coin réunion avec tableau blanc et un point café. Parquet, fenêtres au nord."
+    },
+    "de-DE": {
+      "name": "Großraumbüro",
+      "description": "Acht Arbeitsplätze in zwei Reihen, eine Besprechungsecke mit Whiteboard und eine Kaffeeecke. Holzboden, Fenster im Norden."
+    },
+    "es-ES": {
+      "name": "Oficina abierta",
+      "description": "Ocho puestos en dos filas, un rincón de reuniones con pizarra y un punto de café. Suelo de madera, ventanas al norte."
+    },
+    "ar-SA": {
+      "name": "مكتب مفتوح",
+      "description": "ثماني محطات عمل في صفين، وركن اجتماعات مع سبورة، وركن للقهوة. أرضية خشبية ونوافذ في الجدار الشمالي."
+    }
+  },
+  "category": "templates",
+  "tags": [
+    "office",
+    "desks",
+    "team"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "template": {
+    "map": "map.tmj",
+    "files": [
+      "office-tiles.png"
+    ],
+    "width": 22,
+    "height": 14,
+    "requires": [
+      "coffee-machine",
+      "desk-classic",
+      "dual-monitor",
+      "meeting-table",
+      "office-chair",
+      "plant-large",
+      "plant-small",
+      "water-cooler",
+      "whiteboard"
+    ],
+    "entities": [
+      {
+        "component": "desk-classic",
+        "variant": "oak",
+        "x": 64,
+        "y": 96
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 64,
+        "y": 100
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 80,
+        "y": 140
+      },
+      {
+        "component": "desk-classic",
+        "variant": "oak",
+        "x": 128,
+        "y": 96
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 128,
+        "y": 100
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 144,
+        "y": 140
+      },
+      {
+        "component": "desk-classic",
+        "variant": "oak",
+        "x": 192,
+        "y": 96
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 192,
+        "y": 100
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 208,
+        "y": 140
+      },
+      {
+        "component": "desk-classic",
+        "variant": "oak",
+        "x": 256,
+        "y": 96
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 256,
+        "y": 100
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 272,
+        "y": 140
+      },
+      {
+        "component": "desk-classic",
+        "variant": "white",
+        "x": 64,
+        "y": 224
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 64,
+        "y": 228
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 80,
+        "y": 268
+      },
+      {
+        "component": "desk-classic",
+        "variant": "white",
+        "x": 128,
+        "y": 224
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 128,
+        "y": 228
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 144,
+        "y": 268
+      },
+      {
+        "component": "desk-classic",
+        "variant": "white",
+        "x": 192,
+        "y": 224
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 192,
+        "y": 228
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 208,
+        "y": 268
+      },
+      {
+        "component": "desk-classic",
+        "variant": "white",
+        "x": 256,
+        "y": 224
+      },
+      {
+        "component": "dual-monitor",
+        "variant": "standard",
+        "x": 256,
+        "y": 228
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 272,
+        "y": 268
+      },
+      {
+        "component": "meeting-table",
+        "variant": "walnut",
+        "x": 416,
+        "y": 128
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-down",
+        "x": 432,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-down",
+        "x": 464,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-down",
+        "x": 496,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-up",
+        "x": 432,
+        "y": 204
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-up",
+        "x": 464,
+        "y": 204
+      },
+      {
+        "component": "office-chair",
+        "variant": "blue-up",
+        "x": 496,
+        "y": 204
+      },
+      {
+        "component": "whiteboard",
+        "variant": "standard",
+        "x": 576,
+        "y": 64
+      },
+      {
+        "component": "coffee-machine",
+        "variant": "standard",
+        "x": 608,
+        "y": 288
+      },
+      {
+        "component": "water-cooler",
+        "variant": "standard",
+        "x": 640,
+        "y": 288
+      },
+      {
+        "component": "plant-large",
+        "variant": "terracotta",
+        "x": 32,
+        "y": 320
+      },
+      {
+        "component": "plant-large",
+        "variant": "white",
+        "x": 640,
+        "y": 64
+      },
+      {
+        "component": "plant-small",
+        "variant": "white",
+        "x": 384,
+        "y": 64
+      }
+    ]
+  },
+  "compatibility": {
+    "wam": "2.1.0"
+  }
+}

@@ -1,0 +1,13 @@
+Pack: [LPC] Flowers / Plants / Fungi / Wood
+Source page: https://opengameart.org/content/lpc-flowers-plants-fungi-wood
+Submitted by: bluecarrot16 (Wednesday, December 27, 2017 - 20:54)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+See CREDITS-plants.txt. You MUST credit all contributors with the information in the credits file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+The first in my series of compilations of outdoor assets in the Liberated Pixel Cup style; this set includes flowers, bushes, small trees, mushrooms/fungi, leaves, stumps, and logs. Basically everything except trees and rocks. I have taken a wide range of 32x32 (and 16x16) assets in various styles and recolored/restyled them into the LPC palette. I have done my best to round out the contrast and in some cases the perspective, add shadows, etc. Not all of these assets will look great right next to one another (there are like 9 styles of stump!), but they should be somewhat cohesive. 
+
+I have done my best to attribute all authors appropriately, but I'm sure I've missed someone, and if so, please let me know. CC-BY-SA 3.0 was the only license in common; I'll see if I can secure others.

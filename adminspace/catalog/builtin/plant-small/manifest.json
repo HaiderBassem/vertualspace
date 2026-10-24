@@ -1,0 +1,64 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "plant-small",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Small plant",
+  "description": "A compact plant for shelves, desks and window sills.",
+  "translations": {
+    "fr-FR": {
+      "name": "Petite plante",
+      "description": "Une plante compacte pour étagères, bureaux et rebords de fenêtre."
+    },
+    "de-DE": {
+      "name": "Kleine Pflanze",
+      "description": "Eine kompakte Pflanze für Regale, Schreibtische und Fensterbänke."
+    },
+    "es-ES": {
+      "name": "Planta pequeña",
+      "description": "Una planta compacta para estantes, escritorios y alféizares."
+    },
+    "ar-SA": {
+      "name": "نبتة صغيرة",
+      "description": "نبتة صغيرة للرفوف والمكاتب وحواف النوافذ."
+    }
+  },
+  "category": "plants",
+  "tags": [
+    "plant",
+    "desk",
+    "decoration"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "terracotta",
+        "color": "#c46b41",
+        "direction": "Down",
+        "image": "terracotta.png"
+      },
+      {
+        "key": "white",
+        "color": "#e9ebee",
+        "direction": "Down",
+        "image": "white.png"
+      },
+      {
+        "key": "charcoal",
+        "color": "#40444c",
+        "direction": "Down",
+        "image": "charcoal.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

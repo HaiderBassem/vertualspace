@@ -1,0 +1,13 @@
+Pack: [LPC] Animated water and fire
+Source page: https://opengameart.org/content/lpc-animated-water-and-fire
+Submitted by: Curt (Monday, August 26, 2013 - 01:34)
+License(s) listed on the source page: CC-BY 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Sharm did all the art... I just made them move....
+
+(the torch is from Crawl-CC0).

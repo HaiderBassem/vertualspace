@@ -1,0 +1,162 @@
+import type { Messages } from "../en";
+import type { PluralMessage } from "../../index";
+
+const p = (forms: PluralMessage): PluralMessage => forms;
+
+/** Navegación, roles, autenticación y ajustes de la cuenta personal. */
+export const shell: Messages["shell"] = {
+    nav: {
+        main: "Navegación principal",
+        myWorlds: "Mis mundos",
+        organizations: "Organizaciones",
+        platform: "Plataforma",
+        account: "Mi cuenta",
+        world: {
+            overview: "Resumen",
+            live: "En directo",
+            rooms: "Salas",
+            members: "Miembros",
+            tags: "Etiquetas",
+            moderation: "Moderación",
+            settings: "Ajustes",
+            activity: "Actividad",
+        },
+        organization: {
+            worlds: "Mundos",
+            team: "Equipo",
+            apiKeys: "Claves de la Room API",
+            domains: "Dominios",
+            audit: "Registro de auditoría",
+            settings: "Ajustes",
+        },
+        platformItems: {
+            overview: "Estado del sistema",
+            organizations: "Todas las organizaciones",
+            accounts: "Cuentas",
+            catalog: "Catálogo de avatares",
+            settings: "Ajustes de la instancia",
+            audit: "Registro de auditoría",
+        },
+    },
+    roles: {
+        superadmin: "Superadministrador",
+        owner: "Propietario",
+        admin: "Administrador",
+        moderator: "Moderador",
+        viewer: "Observador",
+        employee: "Empleado",
+        support: "Soporte de la plataforma",
+        descriptions: {
+            owner: "Control total, incluido el equipo y la eliminación de la organización.",
+            admin: "Gestiona espacios de trabajo, mundos, salas, ajustes, componentes e integraciones, y a las personas por debajo del rol de administrador.",
+            moderator: "Gestiona miembros y etiquetas, bloqueos y reportes, y envía mensajes en directo.",
+            viewer: "Acceso de solo lectura.",
+            employee:
+                "Usa las oficinas de sus espacios de trabajo y ve a sus compañeros y los componentes. Sin administración.",
+        },
+    },
+    workspaceRoles: {
+        manager: "Responsable del espacio",
+        member: "Miembro del espacio",
+        descriptions: {
+            manager: "Administra los mundos de este espacio de trabajo: salas, miembros, moderación, componentes.",
+            member: "Puede entrar en los mundos de este espacio de trabajo en WorkAdventure.",
+        },
+    },
+    auth: {
+        loginTitle: "Iniciar sesión",
+        loginIntro: "Inicie sesión para administrar sus mundos de WorkAdventure.",
+        password: "Contraseña",
+        submit: "Iniciar sesión",
+        invalidCredentials:
+            "Correo electrónico o contraseña incorrectos. Tras varios intentos fallidos, el acceso a la cuenta se suspende durante 15 minutos.",
+        locked: "Demasiados intentos fallidos. Vuelva a intentarlo dentro de 15 minutos.",
+        disabled: "Esta cuenta está desactivada.",
+        mfaTitle: "Autenticación en dos pasos",
+        mfaIntro:
+            "Introduzca el código de 6 cifras de su aplicación de autenticación o uno de sus códigos de recuperación.",
+        mfaCode: "Código de autenticación o de recuperación",
+        mfaInvalid: "Este código no es válido. Compruebe la hora de su dispositivo e inténtelo de nuevo.",
+        mfaRequired: "Su organización exige la autenticación en dos pasos. Configúrela para continuar.",
+        setupTitle: "Bienvenido a Adminspace",
+        setupIntro: "Cree la primera cuenta de superadministrador. Podrá gestionar toda la plataforma.",
+        setupDone: "La plataforma está configurada. Ya puede iniciar sesión.",
+        passwordTooShort: "Utilice al menos {min} caracteres.",
+        passwordTooLong: "Utilice como máximo {max} caracteres.",
+        passwordConfirm: "Confirmar la contraseña",
+        passwordMismatch: "Las contraseñas no coinciden.",
+        loggedOut: "Ha cerrado la sesión.",
+        rateLimited: "Demasiados intentos. Espere unos minutos y vuelva a intentarlo.",
+        mfaCodeHint: "Un código de recuperación tiene este aspecto: abcde-12345. Cada uno solo sirve una vez.",
+        mfaLocked:
+            "Demasiados códigos no válidos: la autenticación en dos pasos está bloqueada durante 15 minutos. Vuelva a iniciar sesión más tarde.",
+        mustChangePassword: "Está usando una contraseña temporal. Elija una nueva contraseña para continuar.",
+        setupToken: "Token de instalación",
+        setupTokenHelp: "El valor de la variable de entorno SETUP_TOKEN de este servidor.",
+        setupTokenInvalid: "Este token de instalación no es válido.",
+        setupDisabled:
+            "La instalación por web está desactivada en este servidor de producción. Cree el primer superadministrador desde la línea de comandos del servidor:",
+    },
+    account: {
+        title: "Mi cuenta",
+        profile: "Perfil",
+        preferences: "Preferencias",
+        localeHelp: "Idioma del panel de administración. Las fechas y los números siguen sus convenciones.",
+        timeZoneHelp: "Las fechas y horas se muestran en esta zona horaria (base de datos de zonas horarias IANA).",
+        automatic: "Automático (navegador)",
+        security: "Seguridad",
+        changePassword: "Cambiar la contraseña",
+        currentPassword: "Contraseña actual",
+        newPassword: "Nueva contraseña",
+        passwordChanged: "Contraseña cambiada. Sus otras sesiones se han cerrado.",
+        wrongPassword: "La contraseña actual es incorrecta.",
+        mfa: "Autenticación en dos pasos",
+        mfaEnabled: "La autenticación en dos pasos está activada.",
+        mfaDisabled: "La autenticación en dos pasos no está activada.",
+        mfaSetupIntro:
+            "Escanee esta clave con una aplicación de autenticación (TOTP, RFC 6238) e introduzca el código que muestre.",
+        mfaSecret: "Clave de configuración",
+        mfaEnable: "Activar la autenticación en dos pasos",
+        mfaDisable: "Desactivar la autenticación en dos pasos",
+        sessions: "Sesiones activas",
+        currentSession: "Esta sesión",
+        endOtherSessions: "Cerrar las demás sesiones",
+        sessionsEnded: "Las demás sesiones se han cerrado.",
+        ipAddress: "Dirección IP",
+        device: "Dispositivo",
+        emailTaken: "Otra cuenta ya utiliza este correo electrónico.",
+        mfaStart: "Configurar la autenticación en dos pasos",
+        mfaUri: "Enlace de configuración (URI otpauth)",
+        mfaConfirmIntro: "Introduzca el código que muestra su aplicación para terminar.",
+        mfaEnabledNow: "La autenticación en dos pasos ya está activada.",
+        mfaDisabledNow: "La autenticación en dos pasos ya está desactivada.",
+        mfaMandatory: "La autenticación en dos pasos es obligatoria en esta plataforma: no se puede desactivar.",
+        mfaDisableIntro:
+            "Introduzca su contraseña y un código de autenticación o de recuperación actual para desactivar la autenticación en dos pasos.",
+        noOtherSessions: "No hay ninguna otra sesión activa.",
+        emailChangePassword: "Solo es necesaria para cambiar la dirección de correo electrónico.",
+        mfaStartIntro: "Confirme su contraseña para configurar la autenticación en dos pasos.",
+        mfaReplace: "Sustituir la aplicación de autenticación",
+        mfaReplaceIntro:
+            "Introduzca su contraseña y un código actual para registrar una nueva aplicación de autenticación. La anterior dejará de funcionar.",
+        mfaCurrentCode: "Código de autenticación o de recuperación actual",
+        mfaEnrolmentExpired: "Esta configuración ha caducado. Vuelva a empezar.",
+        recoveryCodes: "Códigos de recuperación",
+        recoveryCodesIntro:
+            "Cada código puede usarse una sola vez en lugar de un código de autenticación, por ejemplo si pierde su teléfono. Guárdelos en un lugar seguro: solo se muestran ahora.",
+        recoveryCodesRegenerate: "Generar nuevos códigos de recuperación",
+        recoveryCodesRegenerateIntro:
+            "Introduzca su contraseña. Los códigos de recuperación anteriores dejarán de funcionar.",
+        recoveryCodesRemaining: p({
+            zero: "No queda ningún código de recuperación.",
+            one: "Queda {count} código de recuperación.",
+            other: "Quedan {count} códigos de recuperación.",
+        }),
+    },
+    accountAdmin: {
+        temporaryPassword: "Contraseña temporal",
+        resetMfa: "Restablecer la autenticación en dos pasos",
+        resetMfaDescription:
+            "Elimina la aplicación de autenticación y los códigos de recuperación de esta cuenta y cierra sus sesiones. La persona volverá a configurar la autenticación en dos pasos en su próximo inicio de sesión.",
+    },
+};

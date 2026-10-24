@@ -1,0 +1,58 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "exit-sign",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Exit sign",
+  "description": "A green exit sign with a running figure and an arrow.",
+  "translations": {
+    "fr-FR": {
+      "name": "Panneau de sortie",
+      "description": "Un panneau de sortie vert avec silhouette et flèche."
+    },
+    "de-DE": {
+      "name": "Notausgangsschild",
+      "description": "Ein grünes Ausgangsschild mit laufender Figur und Pfeil."
+    },
+    "es-ES": {
+      "name": "Señal de salida",
+      "description": "Una señal de salida verde con figura y flecha."
+    },
+    "ar-SA": {
+      "name": "لافتة خروج",
+      "description": "لافتة خروج خضراء مع شخص يركض وسهم."
+    }
+  },
+  "category": "navigation",
+  "tags": [
+    "exit",
+    "sign",
+    "safety"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "right",
+        "color": "#1f9d55",
+        "direction": "Right",
+        "image": "right.png"
+      },
+      {
+        "key": "left",
+        "color": "#1f9d55",
+        "direction": "Left",
+        "image": "left.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -1,0 +1,222 @@
+# Production deployment of Adminspace: Caddy (TLS, public) -> Adminspace -> PostgreSQL (private).
+# Full guide: docs/DEPLOYMENT.md. Operations, backups and incidents: docs/OPERATIONS.md.
+#
+#   cp deploy/.env.prod.example deploy/.env.prod && chmod 600 deploy/.env.prod   # then fill it in
+#   docker network create --internal workadventure-admin                           # once, shared with WorkAdventure
+#   docker compose -f deploy/docker-compose.prod.yaml --env-file deploy/.env.prod up -d --build
+#
+# Networks:
+#   edge                 proxy <-> adminspace. Only the proxy publishes ports (80, 443).
+#   internal             adminspace <-> postgres. internal: true, no route to the outside, no published port.
+#   workadventure-admin  adminspace <-> WorkAdventure's play and back (external, created once by hand).
+#                        WorkAdventure calls the Admin API at http://adminspace:3000 over this network: the
+#                        public proxy answers 404 for /api/*, /oauth/* and /white-label/*.
+#
+# Every value comes from the --env-file given to docker compose (deploy/.env.prod). Required values use
+# ${VAR:?message}: compose refuses to start without them. Optional values are passed only when they are
+# set (a commented-out line means "not set"; an empty value would be refused by the app).
+
+name: adminspace
+
+x-logging: &logging
+    driver: json-file
+    options:
+        max-size: "10m"
+        max-file: "5"
+
+services:
+    proxy:
+        image: caddy:2.10.2-alpine
+        restart: unless-stopped
+        ports:
+            - "${HTTP_PORT:-80}:80"
+            - "${HTTPS_PORT:-443}:443"
+            - "${HTTPS_PORT:-443}:443/udp" # HTTP/3
+        environment:
+            ADMINSPACE_DOMAIN: "${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required (e.g. admin.example.com)}"
+            ACME_EMAIL: "${ACME_EMAIL:?ACME_EMAIL is required (Let's Encrypt account e-mail)}"
+            # acme: public certificate (Let's Encrypt / ZeroSSL). internal: Caddy's own CA (tests, private networks).
+            TLS_MODE: "${TLS_MODE:-acme}"
+        volumes:
+            - ./Caddyfile:/etc/caddy/Caddyfile:ro
+            - caddy-data:/data # certificates and ACME account: keep it, or Let's Encrypt rate limits apply
+            - caddy-config:/config
+        networks:
+            - edge
+        depends_on:
+            adminspace:
+                condition: service_healthy
+        read_only: true
+        tmpfs:
+            - /tmp:size=16m,mode=1777
+        cap_drop: [ALL]
+        cap_add: [NET_BIND_SERVICE]
+        security_opt:
+            - no-new-privileges:true
+        healthcheck:
+            # Caddy's admin endpoint listens on 127.0.0.1:2019 inside the container only.
+            test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:2019/config/"]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+        stop_grace_period: 15s
+        deploy:
+            resources:
+                limits:
+                    memory: "${PROXY_MEMORY_LIMIT:-256M}"
+        logging: *logging
+
+    adminspace:
+        build:
+            context: ..
+            dockerfile: Dockerfile
+        image: "${ADMINSPACE_IMAGE:-adminspace:latest}"
+        restart: unless-stopped
+        environment:
+            NODE_ENV: production
+            DATABASE_URL: "postgres://${POSTGRES_USER:-adminspace}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-adminspace}"
+            ORIGIN: "https://${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required}${ORIGIN_PORT_SUFFIX:-}"
+            # 20M for component packages (16 MB); Caddy limits every other route to 2 MB.
+            BODY_SIZE_LIMIT: "${BODY_SIZE_LIMIT:-20M}"
+            # Durable background jobs (map-storage changes). Several instances share the queue safely.
+            JOB_WORKER: "${JOB_WORKER:-true}"
+            # Caddy replaces any client-supplied X-Forwarded-For with the client address: trust one hop.
+            # Calls from WorkAdventure over the private network carry no such header (their IP is not recorded).
+            ADDRESS_HEADER: X-Forwarded-For
+            XFF_DEPTH: "1"
+            # adapter-node waits this long for in-flight requests on SIGTERM (stop_grace_period is longer).
+            SHUTDOWN_TIMEOUT: "${SHUTDOWN_TIMEOUT:-20}"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN:?ADMIN_API_TOKEN is required (same value as WorkAdventure)}"
+            APP_SECRET: "${APP_SECRET:?APP_SECRET is required (32+ random characters)}"
+            DEFAULT_LOCALE: "${DEFAULT_LOCALE:-en-US}"
+            SESSION_TTL_HOURS: "${SESSION_TTL_HOURS:-12}"
+            SESSION_ABSOLUTE_HOURS: "${SESSION_ABSOLUTE_HOURS:-168}"
+            SESSION_MAX_PER_ACCOUNT: "${SESSION_MAX_PER_ACCOUNT:-20}"
+            REQUIRE_MFA: "${REQUIRE_MFA:-true}"
+            LOG_REQUESTS: "${LOG_REQUESTS:-true}"
+            RATE_LIMIT_ADMIN_API_PER_MINUTE: "${RATE_LIMIT_ADMIN_API_PER_MINUTE:-600}"
+            RATE_LIMIT_LOGIN_PER_IP: "${RATE_LIMIT_LOGIN_PER_IP:-30}"
+            RATE_LIMIT_LOGIN_PER_ACCOUNT: "${RATE_LIMIT_LOGIN_PER_ACCOUNT:-10}"
+            RATE_LIMIT_MFA_PER_IP: "${RATE_LIMIT_MFA_PER_IP:-30}"
+            RATE_LIMIT_SETUP_PER_IP: "${RATE_LIMIT_SETUP_PER_IP:-10}"
+            RATE_LIMIT_SENSITIVE_PER_ACCOUNT: "${RATE_LIMIT_SENSITIVE_PER_ACCOUNT:-20}"
+            SKIP_MIGRATIONS: "${SKIP_MIGRATIONS:-false}"
+            # Optional: passed only when set in the env file.
+            ADMIN_SOCKETS_TOKEN:
+            SETUP_TOKEN:
+            WORKADVENTURE_PLAY_URL:
+            WORKADVENTURE_PUSHER_INTERNAL_URL:
+            WORKADVENTURE_MAP_STORAGE_PUBLIC_URL:
+            WORKADVENTURE_MAP_STORAGE_INTERNAL_URL:
+            WORKADVENTURE_MAP_STORAGE_API_TOKEN:
+            WORKADVENTURE_MAP_STORAGE_WEBHOOK_TOKEN:
+            WORKADVENTURE_START_ROOM_URL:
+            # Email (invitations, registration, password reset). Without SMTP_URL nothing is sent and
+            # the pages say so: invitation links are shown to the inviter instead.
+            SMTP_URL:
+            MAIL_FROM:
+            INVITATION_TTL_HOURS:
+            RATE_LIMIT_REGISTRATION_PER_IP:
+            RATE_LIMIT_PASSWORD_RESET_PER_IP:
+            RATE_LIMIT_INVITATIONS_PER_ORGANIZATION:
+            RATE_LIMIT_COMPONENT_CHANGES_PER_ORGANIZATION:
+            COMPONENT_STORAGE_PER_ORGANIZATION_MB:
+            # Integration Center providers (docs/INTEGRATIONS.md): each provider appears once its variables are set.
+            GOOGLE_OAUTH_CLIENT_ID:
+            GOOGLE_OAUTH_CLIENT_SECRET:
+            MICROSOFT_OAUTH_CLIENT_ID:
+            MICROSOFT_OAUTH_CLIENT_SECRET:
+            MICROSOFT_OAUTH_TENANT:
+            SLACK_CLIENT_ID:
+            SLACK_CLIENT_SECRET:
+            SLACK_SIGNING_SECRET:
+            GITHUB_OAUTH_CLIENT_ID:
+            GITHUB_OAUTH_CLIENT_SECRET:
+            GITLAB_BASE_URL:
+            GITLAB_CLIENT_ID:
+            GITLAB_CLIENT_SECRET:
+            NOTION_CLIENT_ID:
+            NOTION_CLIENT_SECRET:
+            TRELLO_API_KEY:
+            MIRO_CLIENT_ID:
+            MIRO_CLIENT_SECRET:
+            SPOTIFY_CLIENT_ID:
+            SPOTIFY_CLIENT_SECRET:
+            INTEGRATION_ALLOWED_PRIVATE_HOSTS:
+            RATE_LIMIT_AUTOMATION_PER_TOKEN:
+            NODE_OPTIONS:
+        networks:
+            edge: {}
+            internal: {}
+            workadventure-admin:
+                aliases:
+                    - adminspace
+        depends_on:
+            postgres:
+                condition: service_healthy
+        # The server writes nothing to disk: read-only root, scratch space in memory.
+        read_only: true
+        tmpfs:
+            - /tmp:size=64m,mode=1777
+        cap_drop: [ALL]
+        security_opt:
+            - no-new-privileges:true
+        healthcheck:
+            # Liveness. /readyz (database) is for monitoring: an unhealthy database must not restart the app.
+            test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/healthz >/dev/null || exit 1"]
+            interval: 30s
+            timeout: 5s
+            # Migrations run before the server listens.
+            start_period: 60s
+            start_interval: 2s
+            retries: 3
+        stop_grace_period: 30s
+        deploy:
+            resources:
+                limits:
+                    memory: "${ADMINSPACE_MEMORY_LIMIT:-512M}"
+                    pids: 256
+        logging: *logging
+
+    postgres:
+        image: postgres:17-alpine
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: "${POSTGRES_USER:-adminspace}"
+            POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}"
+            POSTGRES_DB: "${POSTGRES_DB:-adminspace}"
+            # Store and exchange every timestamp in UTC.
+            TZ: UTC
+            PGTZ: UTC
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        networks:
+            - internal
+        healthcheck:
+            test: ["CMD-SHELL", 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+            interval: 10s
+            timeout: 5s
+            start_period: 30s
+            start_interval: 2s
+            retries: 5
+        # The image stops with SIGINT (fast shutdown): give it time to write a checkpoint.
+        stop_grace_period: 60s
+        shm_size: 256m
+        deploy:
+            resources:
+                limits:
+                    memory: "${POSTGRES_MEMORY_LIMIT:-1G}"
+        logging: *logging
+
+networks:
+    edge: {}
+    internal:
+        internal: true
+    workadventure-admin:
+        external: true
+        name: "${WORKADVENTURE_ADMIN_NETWORK:-workadventure-admin}"
+
+volumes:
+    postgres-data:
+    caddy-data:
+    caddy-config:

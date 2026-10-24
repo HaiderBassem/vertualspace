@@ -1,0 +1,24 @@
+Pack: [LPC] Medieval fantasy character sprites
+Source page: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+Submitted by: wulax (Tuesday, July 3, 2012 - 11:51)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / OGA-BY 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+I waive the DRM-limitation clause in the Creative Commons license for this art collection, allowing their free use on platforms like iOS or Steam provided you give credit as specified.
+
+Description from the page (excerpt):
+My entry for the Liberated Pixel cup. See the README for more information and animated gif examples.
+
+Contains various sprites listed in the tags, most of it modular and interchangable.
+
+The archive expansion_pack contains some more sprites made after the contest was over.
+
+Version 0.04 of the expansion pack contains:
+- Shield, longsword and rapier for slash animation.
+- Longer spear for thrust.
+- Bow animations for skeleton.
+- Missing quiver png for bow animation.
+- Combat dummy death.

@@ -1,0 +1,114 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "desk-classic",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Classic desk",
+  "description": "A two-person-wide desk with a drawer pedestal. Pairs with the office chair and the dual monitor.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bureau classique",
+      "description": "Un bureau large avec caisson à tiroirs. S’associe à la chaise de bureau et au double écran."
+    },
+    "de-DE": {
+      "name": "Klassischer Schreibtisch",
+      "description": "Ein breiter Schreibtisch mit Schubladenelement. Passt zum Bürostuhl und zum Doppelmonitor."
+    },
+    "es-ES": {
+      "name": "Escritorio clásico",
+      "description": "Un escritorio amplio con cajonera. Combina con la silla de oficina y la doble pantalla."
+    },
+    "ar-SA": {
+      "name": "مكتب كلاسيكي",
+      "description": "مكتب عريض مع خزانة أدراج. يتناسق مع كرسي المكتب والشاشة المزدوجة."
+    }
+  },
+  "category": "desks",
+  "tags": [
+    "desk",
+    "workstation",
+    "wood"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "graphite",
+        "color": "#555b66",
+        "direction": "Down",
+        "image": "graphite.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

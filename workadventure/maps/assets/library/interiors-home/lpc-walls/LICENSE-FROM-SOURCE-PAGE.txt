@@ -1,0 +1,17 @@
+Pack: [LPC] Walls
+Source page: https://opengameart.org/content/lpc-walls
+Submitted by: bluecarrot16 (Monday, May 31, 2021 - 09:32)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+"[LPC] Walls" by bluecarrot16, Lanea Zimmerman (Sharm), Daniel Armstrong (HughSpectrum), William Thompson (William.Thompsonj), Hyptosis, Zabin, Daniel Cook, Guido Bos, SpiderDave, Cougarmint, Stephen Challener (Redshrike), Matthew Nash, Wolthera van Hövell tot Westerflier (TheraHedwig), Reemax, bleutailfly, NaRNeRZz, Sir Spummington, Casper Nilsson, KnoblePersona. CC-BY-SA 3.0. See CREDITS-walls.txt
+
+Description from the page (excerpt):
+300+ walls and 32 ceiling trims, in the style of the Liberated Pixel Cup. 
+
+Terrain tiles (aka Wang Tiles) are included for both the ceiling trims and the walls (Tiled version 1.5.0+ required). See the animated preview images for how easy it is to make rooms with these tilesets. Many of the walls can be mixed-and-matched for different effects---see the second preview image for examples. 
+
+The second preview image is an example scene. A Tiled map file is included in lpc-interior-preview.zip . Please note the example scene also contains art from [LPC] Floors and [LPC] Windows & Doors. See CREDITS-*.txt in the zip folder. 
+
+See other interior tiles and objects in [LPC] Interiors collection.

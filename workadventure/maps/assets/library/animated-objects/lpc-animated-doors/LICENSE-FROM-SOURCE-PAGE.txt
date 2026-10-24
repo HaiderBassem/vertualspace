@@ -1,0 +1,17 @@
+Pack: LPC Animated Doors
+Source page: https://opengameart.org/content/lpc-animated-doors
+Submitted by: Xenodora (Friday, July 12, 2013 - 16:42)
+License(s) listed on the source page: CC-BY 3.0 / CC-BY-SA 3.0 / GPL 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Animations for some of the LPC doors. The doors move in 30 degree steps and open both inward and outward.
+
+ 
+
+The castle doors that were a part of this set were move to here http://opengameart.org/content/lpc-animated-castle-doors to allow the addition of CC-BY-3.0 to the license on this set.

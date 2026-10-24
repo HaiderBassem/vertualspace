@@ -1,0 +1,16 @@
+Pack: [LPC] Roofs
+Source page: https://opengameart.org/content/lpc-roofs
+Submitted by: bluecarrot16 (Monday, August 10, 2020 - 20:55)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"[LPC] Roofs" by bluecarrot16, Lanea Zimmerman (Sharm), Michele Bucelli (Buch), Casper Nilsson, Xenodora, keith karnage, NaRNeRZz, and Talon (Talosaurus). CC-BY-SA 3.0/GPL v3+. See CREDITS-roofs.txt
+
+Description from the page (excerpt):
+A wide variety of roofing materials and shapes, in the style of the Liberated Pixel Cup. See preview image for a sampling of the possibilities, although many more exist. The preview image was made using 4 layers (two for walls, two for roofs), although most roofs can be made with only one layer. See preview/roofs-preview.tmx to see how all the roofs in the preview were constructed. Partial list of the types of roofs you can make with this: - Hipped - Half-hipped - Gabled - Cross-gabled - Gambrel - Rounded hipped - Saltbox Mansard roofs are technically possible, but I've found flat-topped roofs look better and are simpler. Roofs for 1:1 and 1:2 diagonal walls are possible, although they are a pain and possibilities are somewhat limited. For a more general solution, see TheraHedwig's submission here https://opengameart.org/content/lpc-compatible-ancient-roman-architecture . Partial list of materials: - Wood shingles - Slate - Ceramic tiles - Wood planks - Cement Many recolors are available; see second preview. Happy to answer questions about how to use, and open to suggestions for how to improve. Do not tell me the perspective is wrong; this entry is full of lies and tricks and nothing about the geometry of these roofs makes sense if you think too hard.
+
+Update 2021-01-01 (version 2): added several recolors, variant tiles (including some "damaged" roof tiles), and extended the ceramic tile roofs to support 1:2 diagonal walls, for use with the Victorian buildings.
+
+Update 2021-04-24 (version 2.1): fixed small attribution issue

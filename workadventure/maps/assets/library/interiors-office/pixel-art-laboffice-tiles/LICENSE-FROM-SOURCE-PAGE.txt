@@ -1,0 +1,11 @@
+Pack: Pixel Art Lab/Office Tiles
+Source page: https://opengameart.org/content/pixel-art-laboffice-tiles
+Submitted by: The Leafy Lemur (Tuesday, December 13, 2022 - 18:09)
+License(s) listed on the source page: CC-BY 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Some background tiles I'd made for a game that I'm not really working on anymore. Seemed like a waste to just leave them unused for the rest of eternity. Tiles should be able to work for a top-down style game and are drawn at 32x32 pixels. Feel free to use for your own projects - personal or commercial - but please remember to credit me if you do! (Also, feel free to let me know if you do! I'd love to see them out in the wild)

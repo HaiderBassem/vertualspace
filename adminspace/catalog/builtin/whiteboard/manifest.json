@@ -1,0 +1,63 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "whiteboard",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Whiteboard",
+  "description": "A mobile whiteboard. In the editor, give it an “Open website” property to link your online whiteboard.",
+  "translations": {
+    "fr-FR": {
+      "name": "Tableau blanc",
+      "description": "Un tableau blanc mobile. Dans l’éditeur, ajoutez-lui une propriété « Ouvrir un site » vers votre tableau en ligne."
+    },
+    "de-DE": {
+      "name": "Whiteboard",
+      "description": "Ein mobiles Whiteboard. Im Editor mit der Eigenschaft „Website öffnen“ mit Ihrem Online-Whiteboard verknüpfen."
+    },
+    "es-ES": {
+      "name": "Pizarra blanca",
+      "description": "Una pizarra móvil. En el editor, añádele la propiedad «Abrir sitio web» hacia tu pizarra en línea."
+    },
+    "ar-SA": {
+      "name": "سبورة بيضاء",
+      "description": "سبورة متنقلة. في المحرر، أضف لها خاصية «فتح موقع» لربطها بسبورتك على الإنترنت."
+    }
+  },
+  "category": "presentation",
+  "tags": [
+    "whiteboard",
+    "brainstorm",
+    "meeting"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#fbfcfd",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

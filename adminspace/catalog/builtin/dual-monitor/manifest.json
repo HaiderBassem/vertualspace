@@ -1,0 +1,52 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "dual-monitor",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Dual monitor",
+  "description": "Two monitors to set on a desk.",
+  "translations": {
+    "fr-FR": {
+      "name": "Double écran",
+      "description": "Deux écrans à poser sur un bureau."
+    },
+    "de-DE": {
+      "name": "Doppelmonitor",
+      "description": "Zwei Monitore für den Schreibtisch."
+    },
+    "es-ES": {
+      "name": "Doble monitor",
+      "description": "Dos monitores para colocar sobre un escritorio."
+    },
+    "ar-SA": {
+      "name": "شاشتان",
+      "description": "شاشتان توضعان على المكتب."
+    }
+  },
+  "category": "computers",
+  "tags": [
+    "monitor",
+    "screen",
+    "desk"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#3d5fc4",
+        "direction": "Down",
+        "image": "standard.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

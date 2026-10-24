@@ -1,0 +1,20 @@
+Pack: LPC style farm animals
+Source page: https://opengameart.org/content/lpc-style-farm-animals
+Submitted by: daneeklu (Monday, August 6, 2012 - 12:20)
+License(s) listed on the source page: CC-BY 3.0 / GPL 2.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Some farm animals, as commissioned by tebruno99: http://opengameart.org/forumtopic/filledlpc-style-farm-animals-needed
+
+All animals include walking and eating animations. For every animal but the chicken, play the animation forward to start eating, then backwards to stop. Frames 3-4 can be repeated to have the llama/cow/pig/sheep eating for a while.
+
+Shadow images are included for the cow, llama and chicken. For the pig and sheep, the llama shadow can more or less be used, or modified a bit.
+
+ 
+
+Update: added cow, and fixed some errors in llama files. Also added some shadow image files, which can be placed behind the animals (one frame fits all). Also changed licenses to more lenient. (GPL2+ / CC-BY, instead of GPL3+ / CC-BY-SA). Also added pig and sheep.

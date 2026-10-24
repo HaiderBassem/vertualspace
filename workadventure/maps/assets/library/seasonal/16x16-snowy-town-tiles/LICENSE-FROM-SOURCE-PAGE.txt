@@ -1,0 +1,16 @@
+Pack: 16x16 Snowy Town Tiles
+Source page: https://opengameart.org/content/16x16-snowy-town-tiles
+Submitted by: Sharm (Tuesday, January 3, 2012 - 15:37)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0 / CC-BY-SA 4.0 / CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+An edit of surt's Town Tiles to be snowy.  Made for the Eternal Ice Art Challenge.

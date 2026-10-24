@@ -1,0 +1,14 @@
+Pack: [LPC] Windows & Doors
+Source page: https://opengameart.org/content/lpc-windows-doors
+Submitted by: bluecarrot16 (Saturday, April 25, 2015 - 11:18)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"LPC Windows & Doors" by bluecarrot16, Lanea Zimmerman (Sharm) and Daniel Armstrong (HughSpectrum), Casper Nilsson, Anamaris, Krusmira, Keith Karnage, Guido Bos, and Talosaurus. License: CC-BY-SA 3.0 / GPL 3.0+ Please link back to this page on OpenGameArt: https://opengameart.org/content/lpc-windows-doors  . See CREDITS-windows-doors.txt. You MUST include all information in this file when distributing these images!
+
+Description from the page (excerpt):
+Collection of various windows & doors from the LPC, plus some recolors
+
+Update 2021-01-01 (version 2): major revision, added many new windows and doors, removed a few trivial recolors, and combined into single spritesheet. Importantly, changed alignment of many of the windows to allow more possible combinations; see [LPC] Victorian Town Decorations for some examples. Many more windows can be found at [LPC] Victorian Buildings as well. This revision is not backwards-compatible with the previous version, so I am leaving those assets in place.

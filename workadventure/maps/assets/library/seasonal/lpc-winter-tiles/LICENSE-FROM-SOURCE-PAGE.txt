@@ -1,0 +1,26 @@
+Pack: LPC Winter Tiles
+Source page: https://opengameart.org/content/lpc-winter-tiles
+Submitted by: Demetrius (Sunday, February 9, 2020 - 12:32)
+License(s) listed on the source page: CC-BY 3.0 / OGA-BY 3.0 / GPL 3.0 / CC-BY-SA 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+LPC Winter Tiles by Demetrius (https://opengameart.org/content/lpc-winter-tiles). Based on LPC: Modified Base tiles by Lanea Zimmerman, special thanks to William Thompson (https://opengameart.org/content/lpc-modified-base-tiles).
+
+Description from the page (excerpt):
+This pack contains winter-themed tiles in the Liberated Pixel Cup style. This pack is my entry to the 'Ice is nice' challenge.
+
+They are based on the LPC: Modified base tiles pack and intended to complement it.
+
+They are formatted for use with RPG Maker VX or VX Ace. (When using in VX Ace, choose a VX-compatible tileset style. Otherwise, A2 tiles might not work as expected) The graphics are not a complete tiles, but parts to be combined with the 'LPC: Modified base tiles' pack.
+
+If you want to use them in another editor (e.g. Tiled map editor), you might want to switch to 16*16 tiles, or re-format the tiles. If you need some specific format, please add a comment, I will try to provide it.
+
+ 
+
+I've included 2 sets of pine trees: original big trees and my smaller edited trees. I prefer smaller ones because they work better in RPG Maker VX (Ace). If you want green version of my small tress, you can find them in the comments to the original tiles.
+
+P.S. If you speak Ukrainian, please check out RPG.ukr, website about RPG Maker and similar editors

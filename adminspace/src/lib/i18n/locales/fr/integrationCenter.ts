@@ -1,0 +1,561 @@
+import type { PluralMessage } from "../../index";
+import type { Messages } from "../en";
+
+const p = (forms: PluralMessage): PluralMessage => forms;
+
+/** Centre d’intégrations (organisation), Mes intégrations (personnel) et messages envoyés par les intégrations. */
+export const integrationCenter: Messages["integrationCenter"] = {
+    nav: "Intégrations",
+    navPersonal: "Mes intégrations",
+    title: "Centre d’intégrations",
+    intro: "Reliez au bureau virtuel les outils que votre équipe utilise déjà : agendas, messagerie, outils de développement, tableaux et automatisations. Les identifiants restent scellés sur ce serveur, et rien n’apparaît comme connecté avant que le fournisseur ait répondu.",
+    tabs: {
+        label: "Sections du centre d’intégrations",
+        catalog: "Catalogue",
+        notifications: "Notifications",
+        deliveries: "Journal des envois",
+        automation: "API d’automatisation",
+    },
+    categories: {
+        calendars: { name: "Agendas", description: "Les réunions et les créneaux occupés, visibles dans le bureau." },
+        chat: {
+            name: "Messagerie et notifications",
+            description: "Les événements du bureau publiés dans les canaux de votre équipe.",
+        },
+        developer: {
+            name: "Outils de développement",
+            description: "Qui code sur quoi, pour les personnes qui choisissent de le partager.",
+        },
+        productivity: { name: "Productivité", description: "Des tableaux et des pages à placer dans les salles." },
+        music: { name: "Musique", description: "Ce que chacun écoute, quand il choisit de le partager." },
+        automation: {
+            name: "Automatisation",
+            description: "Des événements envoyés à vos flux, et des actions qu’ils peuvent mener.",
+        },
+    },
+    scope: {
+        organization: "Organisation",
+        personal: "Personnel",
+        both: "Organisation et personnel",
+    },
+    status: {
+        notConfigured: "Non configuré",
+        available: "Disponible",
+        pending: "En attente du premier appel",
+        connected: "Connecté",
+        error: "Erreur",
+        revoked: "Révoqué",
+        expired: "Expiré",
+    },
+    open: "Ouvrir",
+    providers: {
+        google: {
+            name: "Google Agenda",
+            description: "Chaque personne connecte son propre agenda Google.",
+            usedFor:
+                "Affiche les réunions ou les créneaux occupés des personnes dans WorkAdventure, et peut mettre à jour leur statut Slack pendant les réunions.",
+            permissions:
+                "Les créneaux occupés et, si la personne le choisit, les titres, lieux et liens de réunion de son agenda principal. Lecture seule : AdminSpace ne modifie jamais un agenda.",
+        },
+        microsoft: {
+            name: "Agenda Microsoft 365",
+            description: "Chaque personne connecte son propre agenda Outlook (compte professionnel ou scolaire).",
+            usedFor:
+                "Affiche les réunions ou les créneaux occupés des personnes dans WorkAdventure, et peut mettre à jour leur statut Slack pendant les réunions.",
+            permissions:
+                "Les informations de base de l’agenda (Calendars.ReadBasic : ni corps de message ni participants) et le profil nécessaire à la connexion. Lecture seule.",
+        },
+        slack: {
+            name: "Slack",
+            description:
+                "Installez l’application AdminSpace dans votre espace Slack ; chacun peut aussi connecter son propre compte Slack.",
+            usedFor:
+                "Publie les événements du bureau (invitations, premières visites, bureaux, annonces) dans un canal. Chacun peut lui permettre d’afficher le statut « En réunion » pendant ses réunions.",
+            permissions:
+                "Espace de travail : publier des messages (chat:write, chat:write.public) et le webhook du canal choisi à l’installation (incoming-webhook). Personnel : modifier votre statut (users.profile:write).",
+        },
+        discord: {
+            name: "Discord",
+            description: "Un webhook d’un canal Discord, collé par un administrateur.",
+            usedFor:
+                "Publie les événements du bureau dans un canal Discord. Discord n’a pas d’API pour changer le statut d’une personne : rien d’autre n’est possible.",
+            permissions: "Aucune permission OAuth : l’URL du webhook est le seul identifiant, conservé scellé.",
+        },
+        teams: {
+            name: "Microsoft Teams",
+            description: "Un webhook Workflows (« Envoyer des alertes de webhook à un canal ») d’un canal Teams.",
+            usedFor: "Publie les événements du bureau dans un canal Teams sous forme d’Adaptive Cards.",
+            permissions: "Aucune permission OAuth : l’URL du webhook est le seul identifiant, conservé scellé.",
+        },
+        github: {
+            name: "GitHub",
+            description:
+                "Chacun connecte son propre compte GitHub ; les administrateurs peuvent ajouter un webhook pour les dépôts de l’organisation.",
+            usedFor:
+                "Pour les personnes qui choisissent de le partager : ce sur quoi elles codent (dépôt et heure de leur dernier push ou de leur dernière pull request) dans le bureau.",
+            permissions:
+                "Personnel : lire votre profil et votre activité publics (read:user). Webhook de l’organisation : les envois de GitHub, signés avec un secret.",
+        },
+        gitlab: {
+            name: "GitLab",
+            description:
+                "Chacun connecte son propre compte GitLab ; les administrateurs peuvent ajouter un webhook pour les projets de l’organisation.",
+            usedFor:
+                "Pour les personnes qui choisissent de le partager : leur dernier push ou leur dernière merge request, et dans quel projet (avec le webhook).",
+            permissions:
+                "Personnel : lire votre profil et vos événements (read_user). Webhook de l’organisation : les envois de GitLab, avec un jeton secret.",
+        },
+        notion: {
+            name: "Notion",
+            description: "Connectez l’espace Notion de l’organisation (seulement les pages partagées avec AdminSpace).",
+            usedFor:
+                "Liste ces pages pour que vous puissiez les placer dans des salles (un objet WorkAdventure « ouvrir un site web »).",
+            permissions: "Lire les pages choisies lors de la connexion. Notion demande quelles pages partager.",
+        },
+        trello: {
+            name: "Trello",
+            description: "Connectez le compte Trello de l’organisation (lecture seule, 30 jours, puis reconnexion).",
+            usedFor: "Liste les tableaux ouverts pour que vous puissiez les placer dans des salles.",
+            permissions: "Lire vos tableaux (portée read). Le jeton expire après 30 jours.",
+        },
+        miro: {
+            name: "Miro",
+            description: "Connectez l’équipe Miro de l’organisation.",
+            usedFor:
+                "Liste les tableaux avec leur lien d’intégration en direct, pour placer un tableau dans une salle.",
+            permissions: "Lire les tableaux (boards:read).",
+        },
+        spotify: {
+            name: "Spotify",
+            description: "Chaque personne connecte son propre compte Spotify, si elle le souhaite.",
+            usedFor: "Affiche dans le bureau ce que quelqu’un écoute, seulement tant qu’il active le partage.",
+            permissions: "Lire ce qui est en cours de lecture (user-read-currently-playing). Rien d’autre.",
+        },
+        zapier: {
+            name: "Zapier",
+            description:
+                "Un « catch hook » Webhooks by Zapier, et des jetons d’automatisation pour les Zaps qui agissent sur le bureau.",
+            usedFor:
+                "Déclenche des Zaps sur les événements du bureau ; les Zaps peuvent inviter des personnes et envoyer des annonces avec l’API d’automatisation.",
+            permissions:
+                "Aucune permission OAuth : l’URL du hook est scellée, les requêtes sont signées et les jetons limités à leurs portées.",
+        },
+        n8n: {
+            name: "n8n",
+            description:
+                "Un nœud Webhook n8n, et des jetons d’automatisation pour les flux qui agissent sur le bureau.",
+            usedFor:
+                "Déclenche des flux sur les événements du bureau ; les flux peuvent inviter des personnes et envoyer des annonces avec l’API d’automatisation.",
+            permissions:
+                "Aucune permission OAuth : l’URL du webhook est scellée, les requêtes sont signées et les jetons limités à leurs portées.",
+        },
+        webhook: {
+            name: "Webhooks",
+            description: "Tout point d’accès HTTPS qui accepte les requêtes Standard Webhooks.",
+            usedFor: "Envoie les événements du bureau, signés (webhook-signature), à vos propres systèmes.",
+            permissions: "Aucune permission OAuth : les requêtes sont signées avec un secret affiché une seule fois.",
+        },
+    },
+    notes: {
+        google: "Les personnes doivent pouvoir utiliser un compte Google avec Google Agenda. Une application en mode test n’accepte que ses utilisateurs de test, et ses jetons de rafraîchissement expirent au bout de 7 jours.",
+        microsoft:
+            "Votre locataire Microsoft Entra peut exiger qu’un administrateur approuve l’application avant que les employés puissent se connecter.",
+        slack: "La rotation des jetons est prise en charge si vous l’activez dans l’application Slack. Les requêtes de l’Events API sont vérifiées avec SLACK_SIGNING_SECRET.",
+        discord:
+            "Discord bannit les adresses qui envoient beaucoup de requêtes invalides : une destination dont le webhook échoue sans cesse est mise en pause automatiquement.",
+        teams: "Les connecteurs Office 365 (webhooks entrants) sont retirés : créez plutôt un webhook Workflows dans Teams.",
+        github: "Avec read:user, l’interrogation ne voit que l’activité publique ; le webhook de l’organisation couvre aussi les dépôts privés.",
+        gitlab: "Les jetons d’accès durent deux heures et sont renouvelés automatiquement.",
+        notion: "Notion n’a pas d’API pour révoquer une connexion : après la déconnexion, retirez AdminSpace dans Notion (Paramètres, Connexions).",
+        trello: "Trello renvoie son jeton dans l’adresse de la page : AdminSpace le lit une fois, l’envoie à ce serveur et le retire de la barre d’adresse.",
+        miro: "Miro ne propose plus de webhooks : les tableaux sont lus à l’ouverture de cette page.",
+        spotify:
+            "En mode développement, une application Spotify sert au plus 5 personnes, qui doivent être ajoutées à sa liste d’autorisation, et son propriétaire doit avoir Spotify Premium. Les URI de redirection doivent utiliser HTTPS (ou http://127.0.0.1).",
+        zapier: "Aucune application Zapier n’est nécessaire : utilisez « Webhooks by Zapier ».",
+        n8n: "Un n8n auto-hébergé sur votre réseau interne doit être autorisé avec INTEGRATION_ALLOWED_PRIVATE_HOSTS.",
+        webhook: "Vérifiez l’en-tête webhook-signature et refusez les requêtes de plus de cinq minutes.",
+    },
+    setup: {
+        title: "Configurer sur ce serveur",
+        notConfigured:
+            "Ce serveur n’est pas encore configuré pour {provider}. Une personne qui exploite le serveur doit :",
+        createApp: "Créer une application dans la console développeur du fournisseur (voir le guide).",
+        redirect: "Enregistrer cette URI de redirection :",
+        env: "Définir ces variables d’environnement, puis redémarrer AdminSpace :",
+        origin: "ORIGIN doit être l’adresse publique de ce serveur.",
+        guide: "Guide du fournisseur",
+        docs: "Toutes les étapes sont décrites dans docs/INTEGRATIONS.md.",
+        noSetup: "Rien à installer sur le serveur : collez l’URL de chaque destination.",
+    },
+    provider: {
+        back: "Toutes les intégrations",
+        whatItDoes: "Ce qu’elle apporte au bureau",
+        permissions: "Autorisations",
+        notes: "Bon à savoir",
+        connection: "Connexion",
+        account: "Compte",
+        lastTested: "Dernière vérification",
+        lastSync: "Dernière synchronisation",
+        lastError: "Dernière erreur",
+        expires: "L’accès expire",
+        never: "Jamais",
+        notConnected: "Non connecté.",
+        connect: "Connecter",
+        reconnect: "Reconnecter",
+        test: "Tester la connexion",
+        disconnect: "Déconnecter",
+        disconnectTitle: "Déconnecter {provider} ?",
+        disconnectDescription:
+            "AdminSpace demande à {provider} de révoquer son accès, puis supprime les identifiants enregistrés.",
+        disconnected: "{provider} est déconnecté et son accès a été révoqué.",
+        disconnectedManual:
+            "{provider} est déconnecté ici. {provider} n’a pas d’API pour révoquer un accès : retirez aussi AdminSpace de votre compte {provider}.",
+        revokeFailed:
+            "Déconnecté ici, mais {provider} n’a pas pu être joint pour révoquer l’accès : retirez AdminSpace de votre compte {provider}.",
+        manageAccess: "Gérer les accès chez {provider}",
+        connected: "{provider} est connecté.",
+        testOk: "La connexion fonctionne ({account}).",
+        testFailed: "La vérification a échoué. {problem}",
+        personalOnly: "Chaque personne connecte son propre compte depuis Mes intégrations.",
+        personalCount: p({
+            one: "{count} personne l’a connecté.",
+            other: "{count} personnes l’ont connecté.",
+        }),
+        openMine: "Ouvrir Mes intégrations",
+        destinations: "Destinations",
+        destinationsIntro:
+            "Chaque destination reçoit les événements que vous choisissez. Ajoutez-les ou modifiez-les sur la page Notifications.",
+        destinationsCount: p({
+            one: "{count} destination de ce type.",
+            other: "{count} destinations de ce type.",
+        }),
+        manageDestinations: "Gérer les destinations",
+        slackDestinations:
+            "Le canal choisi lors de l’installation devient une destination. Vous pouvez ajouter d’autres canaux sur la page Notifications.",
+    },
+    resources: {
+        title: "Tableaux et pages",
+        intro: "Placez-en un dans une salle avec un objet WorkAdventure « ouvrir un site web » : copiez son lien (ou son lien d’intégration) dans l’URL de l’objet.",
+        empty: "Rien à afficher. Partagez des pages ou des tableaux avec AdminSpace chez le fournisseur.",
+        failed: "La liste n’a pas pu être lue. {problem}",
+        untitled: "Sans titre",
+        copyLink: "Copier le lien",
+        copyEmbed: "Copier le lien d’intégration",
+        copied: "Copié",
+        open: "Ouvrir",
+        updated: "Mis à jour",
+    },
+    receiver: {
+        title: "Webhook de l’organisation",
+        intro: "Ajoutez un webhook à vos dépôts ou à votre organisation pour que les push et les pull/merge requests apparaissent, pour les personnes qui ont connecté leur propre compte et partagent leur activité.",
+        setUp: "Créer le récepteur de webhook",
+        rotate: "Nouveau secret",
+        rotateTitle: "Remplacer le secret du webhook ?",
+        rotateDescription:
+            "Les envois signés avec le secret actuel sont désormais refusés : collez le nouveau dans les paramètres du webhook chez le fournisseur.",
+        url: "URL de destination (payload URL)",
+        secret: "Secret",
+        secretOnce: "Copiez le secret maintenant : il ne sera plus affiché.",
+        contentType: "Type de contenu : application/json.",
+        githubEvents: "Événements : « Just the push event », ou push et pull requests.",
+        gitlabEvents: "Déclencheurs : événements push et merge request. Le secret se met dans « Secret token ».",
+        waiting:
+            "En attente du premier envoi vérifié. GitHub envoie un « ping » dès l’enregistrement du webhook ; dans GitLab, utilisez « Test ».",
+        working: "Les envois arrivent et sont vérifiés.",
+        remove: "Supprimer le récepteur",
+        removeTitle: "Supprimer le récepteur de webhook ?",
+        removeDescription: "Les envois sont désormais refusés. Supprimez aussi le webhook chez le fournisseur.",
+        removed: "Récepteur de webhook supprimé.",
+    },
+    problems: {
+        notConfigured: "Ce serveur n’est pas configuré pour cette intégration.",
+        notAllowed: "Vous ne pouvez pas connecter cette intégration.",
+        unsupported: "Cette intégration ne se connecte pas de cette façon.",
+        calendarTaken:
+            "Vous partagez déjà un autre agenda. Déconnectez-le d’abord : WorkAdventure affiche un seul agenda par personne.",
+        invalidState: "Cette tentative de connexion a expiré ou a déjà été utilisée. Recommencez.",
+        denied: "La connexion a été refusée chez le fournisseur.",
+        scopeMissing:
+            "Une autorisation nécessaire n’a pas été accordée. Connectez-vous de nouveau et acceptez toutes les autorisations.",
+        rejected:
+            "Le fournisseur a refusé la connexion. Vérifiez les paramètres de l’application (identifiant client, secret et URI de redirection).",
+        unavailable: "Le fournisseur est injoignable. Réessayez dans un instant.",
+        unauthorized: "Le fournisseur a refusé les identifiants enregistrés. Reconnectez-vous.",
+        invalidGrant: "L’accès a expiré ou a été révoqué. Reconnectez-vous.",
+        expired: "L’accès a expiré. Reconnectez-vous.",
+        forbidden: "Le fournisseur a refusé : une autorisation ou l’accord d’un administrateur manque peut-être.",
+        notFound: "Le fournisseur n’a pas trouvé ce qui était demandé.",
+        rateLimited: "Le fournisseur demande de ralentir. Réessayez plus tard.",
+        timeout: "Le fournisseur n’a pas répondu à temps.",
+        invalidResponse: "Le fournisseur a donné une réponse inattendue.",
+        membershipEnded: "La personne a quitté l’organisation.",
+        revokedAtProvider: "L’accès a été révoqué chez le fournisseur.",
+        unreadable: "Les identifiants enregistrés sont illisibles (APP_SECRET a-t-il changé ?). Reconnectez-vous.",
+        unexpected: "Un problème inattendu est survenu. Réessayez.",
+        code: "Code d’erreur : {code}",
+    },
+    targetProblems: {
+        invalidUrl: "Saisissez une URL valide.",
+        insecureScheme: "Utilisez une URL https://.",
+        credentialsInUrl: "L’URL ne doit contenir ni nom d’utilisateur ni mot de passe.",
+        privateAddress:
+            "Cette adresse est sur un réseau privé et elle est refusée. L’exploitant peut autoriser son hôte avec INTEGRATION_ALLOWED_PRIVATE_HOSTS.",
+        unresolvable: "Ce nom d’hôte ne se résout pas.",
+        retiredConnector: "Les connecteurs Office 365 sont retirés. Créez plutôt un webhook Workflows dans Teams.",
+        notTeamsUrl: "Ce n’est pas une URL de webhook Workflows de Teams.",
+        notDiscordUrl: "Ce n’est pas une URL de webhook Discord (https://discord.com/api/webhooks/…).",
+        notSlackUrl: "Ce n’est pas une URL de webhook entrant Slack (https://hooks.slack.com/…).",
+        notZapierUrl: "Ce n’est pas une URL de catch hook Zapier (https://hooks.zapier.com/hooks/catch/…).",
+        urlRequired: "Saisissez l’URL du webhook.",
+        invalidChannel: "Saisissez un canal comme #general, ou un identifiant de canal.",
+        slackNotConnected: "Connectez d’abord l’espace Slack, ou collez une URL de webhook entrant.",
+    },
+    notifications: {
+        title: "Notifications",
+        intro: "Envoyez les événements du bureau dans des canaux de messagerie et des flux. Chaque destination reçoit les événements que vous choisissez.",
+        add: "Ajouter une destination",
+        kind: "Type de destination",
+        kinds: {
+            slack: "Slack",
+            discord: "Discord",
+            teams: "Microsoft Teams",
+            webhook: "Webhook",
+            zapier: "Zapier",
+            n8n: "n8n",
+        },
+        name: "Nom",
+        nameHelp: "Pour la reconnaître dans les listes, par exemple « #bureau sur Slack ».",
+        url: "URL du webhook",
+        urlHelp: {
+            slack: "Une URL de webhook entrant (https://hooks.slack.com/…), ou laissez-la vide et indiquez un canal de l’espace connecté.",
+            discord: "Paramètres du salon › Intégrations › Webhooks › Copier l’URL du webhook.",
+            teams: "Dans Teams : Workflows › « Envoyer des alertes de webhook à un canal », puis copiez l’URL du flux.",
+            webhook: "Votre point d’accès HTTPS. Les requêtes sont signées selon Standard Webhooks.",
+            zapier: "L’URL d’un déclencheur Catch Hook de « Webhooks by Zapier ».",
+            n8n: "L’URL de production d’un nœud Webhook (POST).",
+        },
+        channel: "Canal Slack",
+        channelHelp: "Avec l’espace Slack connecté : #canal ou un identifiant de canal (laissez alors l’URL vide).",
+        events: "Événements",
+        eventsHelp: "La destination ne reçoit que ces événements.",
+        create: "Ajouter la destination",
+        created: "Destination ajoutée.",
+        secretTitle: "Secret de signature",
+        secretOnce:
+            "Copiez ce secret maintenant : il ne sera plus affiché. Les destinataires vérifient l’en-tête webhook-signature avec lui (Standard Webhooks).",
+        empty: "Aucune destination pour l’instant.",
+        emptyHelp: "Ajoutez un canal Slack, un webhook Discord ou Teams, ou un flux Zapier ou n8n.",
+        list: "Destinations",
+        active: "Active",
+        paused: "En pause",
+        disabledReasons: {
+            gone: "En pause : le destinataire a répondu 410 Gone.",
+            unauthorized: "En pause : le webhook a été supprimé ou ses identifiants sont refusés.",
+            failing: "En pause après 10 envois échoués d’affilée.",
+            blocked: "En pause : l’URL pointe désormais vers une adresse privée.",
+            manual: "Mise en pause par un administrateur.",
+        },
+        signed: "Signée (Standard Webhooks)",
+        lastSuccess: "Dernier envoi",
+        lastFailure: "Dernier échec",
+        failures: p({
+            one: "{count} échec d’affilée",
+            other: "{count} échecs d’affilée",
+        }),
+        edit: "Nom et événements",
+        save: "Enregistrer",
+        saved: "Destination mise à jour.",
+        test: "Envoyer un événement de test",
+        testSent: "L’événement de test a été remis (HTTP {status}).",
+        testFailed: "L’événement de test n’a pas été remis. {problem}",
+        testMessage: "Ceci est un message de test d’AdminSpace.",
+        pause: "Mettre en pause",
+        resume: "Reprendre",
+        pausedDone: "Destination mise en pause.",
+        resumed: "Destination reprise.",
+        rotate: "Nouveau secret de signature",
+        rotateTitle: "Remplacer le secret de signature ?",
+        rotateDescription: "Le secret actuel cesse aussitôt de fonctionner : donnez le nouveau à votre destinataire.",
+        remove: "Supprimer",
+        removeTitle: "Supprimer cette destination ?",
+        removeDescription: "Elle ne reçoit plus d’événements, et son journal d’envois est supprimé.",
+        removed: "Destination supprimée.",
+        eventLabels: {
+            member_invited: "Une invitation est envoyée",
+            member_joined: "Quelqu’un entre dans le bureau pour la première fois",
+            member_suspended: "Un membre est suspendu",
+            member_removed: "Un membre est retiré ou part",
+            desk_assigned: "Un bureau est attribué",
+            desk_released: "Un bureau est libéré",
+            office_announcement: "Une annonce est faite dans le bureau",
+            integration_test: "Événement de test",
+        },
+        noEvent: "Choisissez au moins un événement.",
+    },
+    deliveries: {
+        title: "Journal des envois",
+        intro: "Chaque événement envoyé à une destination, ses tentatives et la réponse reçue. Conservé 30 jours.",
+        filters: "Filtres",
+        status: "État",
+        endpoint: "Destination",
+        event: "Événement",
+        all: "Tous",
+        apply: "Filtrer",
+        statuses: { pending: "En attente", succeeded: "Remis", failed: "Échoué" },
+        columns: {
+            time: "Créé",
+            event: "Événement",
+            endpoint: "Destination",
+            status: "État",
+            attempts: "Tentatives",
+            answer: "Réponse",
+            error: "Erreur",
+        },
+        httpStatus: "HTTP {status}",
+        noAnswer: "Pas de réponse",
+        retry: "Réessayer",
+        retried: "L’envoi sera tenté de nouveau.",
+        retryProblems: {
+            notFound: "Cet envoi n’existe pas.",
+            notFailed: "Seuls les envois échoués peuvent être réessayés.",
+            endpointDisabled: "Reprenez d’abord la destination.",
+        },
+        empty: "Aucun envoi pour l’instant.",
+        emptyFiltered: "Aucun envoi ne correspond à ces filtres.",
+    },
+    automation: {
+        title: "API d’automatisation",
+        intro: "Laissez Zapier, n8n ou vos propres scripts agir sur l’organisation : inviter des personnes et envoyer des annonces. Un jeton agit avec les droits actuels de la personne qui l’a créé, limités à ses portées.",
+        newToken: "Nouveau jeton",
+        name: "Nom",
+        nameHelp: "Ce qui l’utilise, par exemple « Zap d’accueil Zapier ».",
+        scopes: "Portées",
+        scopeLabels: {
+            invitations: "Inviter des personnes (invitations:write)",
+            announcements: "Envoyer des annonces dans les mondes (announcements:write)",
+        },
+        noScope: "Choisissez au moins une portée.",
+        expires: "Date d’expiration",
+        expiresHelp: "Laissez vide pour un jeton qui n’expire pas. Il cesse de fonctionner à la fin de ce jour (UTC).",
+        create: "Créer le jeton",
+        created: "Copiez ce jeton maintenant : il ne sera plus jamais affiché.",
+        tokens: "Jetons",
+        empty: "Aucun jeton pour l’instant.",
+        columns: {
+            name: "Nom",
+            token: "Jeton",
+            scopes: "Portées",
+            createdBy: "Créé par",
+            status: "État",
+            lastUsed: "Dernière utilisation",
+            expires: "Expire",
+        },
+        statuses: { active: "Actif", revoked: "Révoqué", expired: "Expiré" },
+        revokeTitle: "Révoquer ce jeton ?",
+        revokeDescription: "Les logiciels qui l’utilisent perdent aussitôt l’accès.",
+        revoked: "Jeton révoqué.",
+        reference: {
+            title: "Référence",
+            base: "URL de base",
+            auth: "Envoyez le jeton dans l’en-tête Authorization : Bearer, une espace, puis le jeton. Les corps sont en JSON.",
+            ping: "Vérifie le jeton et indique à quelle organisation il appartient.",
+            invitations:
+                "Invite une personne par e-mail (rôle employé par défaut ; identifiant d’espace de travail facultatif). AdminSpace envoie l’e-mail d’invitation ; sans envoi d’e-mails, la réponse contient le lien d’invitation.",
+            announcements:
+                "Affiche un message à tout le monde dans un monde (ou une salle) et le publie dans les destinations abonnées aux annonces.",
+            limits: "{count} appels par minute et par jeton. Les erreurs sont des documents de problème (RFC 9457) avec un champ code.",
+            originMissing: "ORIGIN n’est pas configuré : l’URL de base ci-dessous est un exemple.",
+            zapierTitle: "Avec Zapier",
+            zapierSteps:
+                "Déclencheur : « Webhooks by Zapier » › Catch Hook, et ajoutez son URL comme destination Zapier. Action : « Webhooks by Zapier » › POST vers un point d’accès ci-dessous, type de données JSON, en-tête Authorization.",
+            n8nTitle: "Avec n8n",
+            n8nSteps:
+                "Déclencheur : un nœud Webhook dont l’URL de production est une destination n8n. Action : un nœud HTTP Request, identifiant générique « Bearer Auth » avec le jeton.",
+        },
+    },
+    personal: {
+        title: "Mes intégrations",
+        intro: "Connectez vos propres comptes pour apporter votre agenda, votre activité et votre musique dans le bureau. Vous choisissez ce qui est partagé et vous pouvez vous déconnecter à tout moment.",
+        privacy:
+            "Vos identifiants sont chiffrés sur ce serveur et ne sont jamais montrés à personne, administrateurs compris. Les administrateurs voient seulement combien de personnes ont connecté chaque service.",
+        notAvailable: "Indisponible sur ce serveur",
+        notAvailableHelp: "Un administrateur de ce serveur doit d’abord le configurer.",
+        connectedAs: "Connecté en tant que {account}",
+        consentTitle: "Ce qui se passe quand vous vous connectez",
+        consent: {
+            google: "AdminSpace lit votre agenda Google principal pour montrer vos réunions dans le bureau : seulement les créneaux occupés, sauf si vous choisissez de partager titres, lieux et liens de réunion. Rien n’est jamais écrit dans votre agenda.",
+            microsoft:
+                "AdminSpace lit votre agenda Outlook pour montrer vos réunions dans le bureau : seulement les créneaux occupés, sauf si vous choisissez de partager titres, lieux et liens de réunion. Rien n’est jamais écrit dans votre agenda.",
+            github: "AdminSpace lit votre profil et votre activité GitHub publics. Rien n’apparaît dans le bureau tant que vous n’activez pas le partage ci-dessous.",
+            gitlab: "AdminSpace lit votre profil et vos événements GitLab. Rien n’apparaît dans le bureau tant que vous n’activez pas le partage ci-dessous.",
+            spotify:
+                "AdminSpace lit ce que vous écoutez en ce moment. Rien n’apparaît dans le bureau tant que vous n’activez pas le partage ci-dessous.",
+            slack: "AdminSpace peut seulement modifier votre statut Slack, et seulement si vous l’activez ci-dessous, pendant les réunions de votre agenda.",
+        },
+        settingsTitle: "Ce que vous partagez",
+        calendarSharing: {
+            label: "Votre agenda dans le bureau",
+            busy: "Créneaux occupés seulement",
+            busyHelp: "Le bureau voit quand vous êtes occupé, jamais le titre, le lieu ni le lien d’une réunion.",
+            details: "Titres, lieux et liens de réunion",
+            detailsHelp: "Les personnes du bureau voient vos réunions et peuvent rejoindre celles en ligne.",
+        },
+        shareActivity:
+            "Montrer mon activité de développement dans le bureau (dépôt et heure de mon dernier push ou de ma dernière pull request)",
+        shareMusic: "Montrer ce que j’écoute dans le bureau",
+        statusSync: "Afficher le statut Slack « En réunion » pendant les réunions occupées de mon agenda",
+        statusSyncNeedsCalendar: "Il faut aussi un agenda connecté.",
+        saveSettings: "Enregistrer mes choix",
+        settingsSaved: "Vos choix sont enregistrés.",
+        disconnectDescription:
+            "Vos identifiants enregistrés sont supprimés et AdminSpace demande à {provider} de révoquer son accès.",
+    },
+    callback: {
+        title: "Connexion",
+        working: "Finalisation de la connexion avec {provider}…",
+        noScript: "JavaScript est nécessaire pour finaliser la connexion de {provider}.",
+        missingToken: "{provider} n’a pas renvoyé d’accès. Recommencez.",
+        back: "Retour aux intégrations",
+    },
+    statusText: "En réunion",
+    notify: {
+        someone: "Quelqu’un",
+        context: "{organization} · {time} (UTC)",
+        facts: {
+            email: "E-mail",
+            role: "Rôle",
+            expires: "L’invitation expire",
+            world: "Bureau",
+            link: "Lien",
+            room: "Salle",
+            person: "Personne",
+            by: "Par",
+        },
+        events: {
+            member_invited: {
+                title: "{email} a été invité",
+                text: "{inviter} a invité {email} à rejoindre {organization} comme {role}.",
+            },
+            member_joined: {
+                title: "{name} est entré dans le bureau",
+                text: "{name} est entré dans {world} pour la première fois.",
+            },
+            member_suspended: {
+                title: "{name} a été suspendu",
+                text: "{by} a suspendu l’accès de {name} à {organization}.",
+            },
+            member_removed: {
+                title: "{name} a quitté {organization}",
+                text: "{by} a retiré {name} de {organization}.",
+                textLeft: "{name} a quitté {organization}.",
+            },
+            desk_assigned: { title: "{desk} attribué à {name}", text: "{by} a attribué {desk} dans {room} à {name}." },
+            desk_released: { title: "{desk} est libre", text: "{desk} dans {room} n’est plus attribué à {name}." },
+            office_announcement: { title: "Annonce dans {world}", text: "{message}" },
+            integration_test: {
+                title: "Test d’AdminSpace",
+                text: "Ce test confirme que {organization} peut publier dans cette destination.",
+            },
+        },
+    },
+};

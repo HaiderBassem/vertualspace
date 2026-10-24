@@ -1,0 +1,18 @@
+Pack: Exterior 32x32 Town tileset
+Source page: https://opengameart.org/content/exterior-32x32-town-tileset
+Submitted by: n2liquid (Wednesday, January 17, 2018 - 20:11)
+License(s) listed on the source page: CC-BY-SA 4.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+
+Copyright/attribution notice from the page:
+Exterior 32x32 Town tileset by Arthur Carvalho, CC-BY-SA 4.0. https://fb.com/sonettocommons.
+Copyright 2017, 2018 Guilherme Vieira
+
+Description from the page (excerpt):
+Work-in-progress, part of the Sonetto Commons project:
+
+
+https://www.facebook.com/sonettocommons
+https://www.patreon.com/sonettocommons
+
+These tiles are inspired by the RPG Maker XP Runtime Package, but are otherwise original and have been made entirely from scratch. One of the goals of our project is to create a completely free (i.e. libre, CC BY-SA) replacement for the RPG Maker XP RTP.

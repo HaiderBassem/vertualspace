@@ -1,0 +1,19 @@
+Pack: [LPC] Trees
+Source page: https://opengameart.org/content/lpc-trees
+Submitted by: bluecarrot16 (Wednesday, December 27, 2017 - 21:12)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+See CREDITS-trees.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+A collection of deciduous trees, edited to fit the LPC style and palette. Part of my series of outdoor asset collections. Again I have scoured a bunch of submissions to collect most of the trees on OpenGameArt that I could cajole into roughly the correct palette, perspective, and scale. I didn't bother with stuff that was a 3D render, had too high a color count, or was just too stylistically different. I'm sure I've missed some though—let me know!
+
+Not all the styles look great right next to one another, but they're roughly cohesive enough to be used in in the same game (perhaps for different environments). I've deliberately juxtaposed things in the preview to show the scope of the pack.
+
+All trees have been recolored to a bright green, pale green, orange (fall) and brown variety. I made "dead" leaf-less versions for most too, but Zabin went and released his awesome tree pack right as I was finishing this one, so I was kind of burnt out by then and didn't make dead versions of all those. The idea was that you could cycle through the seasons by just swapping out different tilesets, as each recolor has the same layout.
+
+I did not make snow-covered versions of any of these trees, and all conifer trees will be in a separate pack. Very small trees are in the plants pack (previews also include items from that submission). 
+
+Finally, as with the plants pack, I may have failed to attribute one or more authors correctly; if this is the case, please let me know and I will rectify it.

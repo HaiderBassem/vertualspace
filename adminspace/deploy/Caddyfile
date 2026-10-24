@@ -1,0 +1,57 @@
+# Public reverse proxy of Adminspace (deploy/docker-compose.prod.yaml). Values come from the proxy
+# service's environment: ADMINSPACE_DOMAIN, ACME_EMAIL, TLS_MODE (acme | internal).
+{
+	email {$ACME_EMAIL}
+	# TLS_MODE=internal uses Caddy's own CA: do not try to install its root in the container's trust store.
+	skip_install_trust
+	# No trusted_proxies: Caddy discards any X-Forwarded-For sent by clients and sets the real client
+	# address, which Adminspace reads with ADDRESS_HEADER=X-Forwarded-For and XFF_DEPTH=1. If a CDN or
+	# load balancer sits in front of Caddy, declare it here (servers { trusted_proxies static <ranges> })
+	# and raise XFF_DEPTH accordingly.
+}
+
+# Automatic HTTPS: Caddy obtains and renews the certificate itself. Ports 80 and 443 must be reachable
+# from the Internet and the DNS name must point to this host.
+(tls_acme) {
+}
+
+# Certificate from Caddy's internal CA (local tests: curl -k; or a private network with your own trust).
+(tls_internal) {
+	tls internal
+}
+
+{$ADMINSPACE_DOMAIN} {
+	import tls_{$TLS_MODE:acme}
+
+	# The WorkAdventure Admin API and the map-storage webhook (/hooks/map-storage) are server-to-server:
+	# WorkAdventure reaches them over the private Docker network (http://adminspace:3000). They are never
+	# served on the public side. Caddy matches paths case-insensitively, after decoding and cleaning them,
+	# so /API/x, //api/x or /%61pi/x are refused too.
+	@adminApi path /api /api/* /oauth /oauth/* /white-label /white-label/* /hooks /hooks/*
+	respond @adminApi 404
+
+	# Component packages (ZIP, validated by the app up to 16 MB) are uploaded to one route; every other
+	# request stays under 2 MB (the CSV member import accepts up to 1 MB). The app limit,
+	# BODY_SIZE_LIMIT, is 20M for that route: this proxy keeps it out of reach everywhere else.
+	@componentUpload path_regexp componentUpload ^/o/[^/]+/components/upload$
+	@notComponentUpload not path_regexp ^/o/[^/]+/components/upload$
+	request_body @componentUpload {
+		max_size 20MB
+	}
+	request_body @notComponentUpload {
+		max_size 2MB
+	}
+
+	encode zstd gzip
+
+	header -Server
+
+	reverse_proxy adminspace:3000 {
+		# One id per request, logged by Adminspace and echoed in its X-Request-Id response header.
+		# A client-supplied X-Request-Id is replaced.
+		header_up X-Request-Id {http.request.uuid}
+	}
+
+	# No access log here on purpose: Caddy logs full URIs, query strings included, and some back-office
+	# URLs carry tokens. Adminspace logs one JSON line per request without query strings.
+}

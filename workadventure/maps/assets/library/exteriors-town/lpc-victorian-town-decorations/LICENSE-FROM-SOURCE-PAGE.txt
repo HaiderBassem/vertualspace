@@ -1,0 +1,17 @@
+Pack: [LPC] Victorian Town Decorations
+Source page: https://opengameart.org/content/lpc-victorian-town-decorations
+Submitted by: bluecarrot16 (Thursday, December 31, 2020 - 20:10)
+License(s) listed on the source page: CC-BY-SA 4.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+
+Copyright/attribution notice from the page:
+[LPC] Victorian Town Decorations by bluecarrot16, Casper Nilsson, Lanea Zimmerman (Sharm), William Thompson, mold, AntumDeluge, Curt, Daniel Eddeland (daneeklu), caeles, George Bailey, Jetrel, Yar, Guido Bos, Ivan Voirol (Silver IV), Stephen Challener (Redshrike), the Open Surge team, Arthur Carvalho, Guilherme Vieira (n2liquid), NaRNeRZz, Diarandor, Armando Montero (ArMM1998), Tuomo Untinen (Reemax), Buch. See CREDITS-decorations-victorian.txt. You MUST include all information in this file when attributing the art, including a link back to https://opengameart.org/content/lpc-victorian-town-decorations .
+
+Description from the page (excerpt):
+Decorations for an early industrialized town/city, in the style of the Liberated Pixel Cup.
+
+See preview images. This is an extremely large set, with >3,000 tiles. This set also builds on lots of other artwork. As such, there is also a good chance I have missed or failed to attribute someone---please let me know if this is the case. See the companion set of buildings. 
+
+Also attached is a Tiled .tmx file for the full city shown in the preview images. IMPORTANT: (lpc-victorian-preview-SEE-README.zip) HAS MANY MORE AUTHORS THAN ARE LISTED HERE; IF YOU USE FILES FROM lpc-victorian-preview, YOU MUST CREDIT ALL AUTHORS AND PROVIDE LINKS TO ALL ARTWORK USED. This is because the preview image and lpc-victorian-preview.zip contains artwork from several other submissions. Information on the authors of each file can be found in CREDITS.txt files within lpc-victorian-preview. Please let me know if this is not clear or if you have questions.
+
+Many images are animated, including the street lights and the fountains. See the Tiled preview for examples. Note also that the preview was constructed with the latest snapshot (2020.12.18) build of Tiled and may not work using earlier versions.

@@ -1,0 +1,118 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+
+permissions:
+    contents: read
+
+env:
+    DATABASE_URL: postgres://adminspace:adminspace@localhost:5432/adminspace
+    ADMIN_API_TOKEN: ci-admin-api-token
+    ADMIN_SOCKETS_TOKEN: ci-admin-sockets-token
+    APP_SECRET: ci-app-secret-0123456789abcdef0123456789abcdef
+    WORKADVENTURE_REPO: ${{ github.workspace }}/../workadventure
+    # Branch or tag of WorkAdventure whose Admin API contract this admin must match.
+    WORKADVENTURE_REF: master
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        services:
+            postgres:
+                image: postgres:17-alpine
+                env:
+                    POSTGRES_USER: adminspace
+                    POSTGRES_PASSWORD: adminspace
+                    POSTGRES_DB: adminspace
+                ports:
+                    - 5432:5432
+                options: >-
+                    --health-cmd "pg_isready -U adminspace"
+                    --health-interval 5s
+                    --health-timeout 3s
+                    --health-retries 10
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
+
+            - name: Check out WorkAdventure (contract and avatar catalog)
+              run: git clone --depth 1 --branch "$WORKADVENTURE_REF" https://github.com/thecodingmachine/workadventure.git "$WORKADVENTURE_REPO"
+
+            - run: npm ci
+
+            - name: Audit production dependencies
+              run: npm audit --omit=dev --audit-level=high
+
+            - name: Contract in sync with WorkAdventure
+              run: npm run contract:check
+
+            - run: npm run lint
+            - run: npm run typecheck
+            - run: npm run svelte-check
+            - run: npm run pretty-check
+            - run: npm run i18n:check
+
+            - name: Database
+              run: |
+                  npm run db:migrate
+                  npm run db:seed
+
+            # scripts/backup.sh and scripts/restore.sh need client tools of the server's major version (17);
+            # the runner image ships an older one.
+            - name: PostgreSQL 17 client tools
+              run: |
+                  sudo apt-get update -qq
+                  sudo apt-get install -y -qq postgresql-common
+                  sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+                  sudo apt-get install -y -qq postgresql-client-17
+                  echo /usr/lib/postgresql/17/bin >> "$GITHUB_PATH"
+
+            # Migration lifecycle, backup/restore round trip, /readyz on database loss. They create and drop
+            # their own temporary databases on the postgres service, and fail (instead of skipping) when
+            # the server or the client tools are missing.
+            - name: Database lifecycle tests
+              run: npx vitest run tests/db
+              env:
+                  REQUIRE_DB_LIFECYCLE_TESTS: "true"
+
+            - name: Tests
+              run: npx vitest run
+
+            - name: Build
+              run: npm run build
+
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Check out WorkAdventure (base of the integration override)
+              run: git clone --depth 1 --branch "$WORKADVENTURE_REF" https://github.com/thecodingmachine/workadventure.git "$WORKADVENTURE_REPO"
+
+            - name: Compose files are valid
+              run: |
+                  docker compose -f deploy/docker-compose.prod.yaml --env-file deploy/.env.prod.example config -q
+                  docker compose -f docker-compose.yaml config -q
+                  # integration/ is an override of WorkAdventure's development compose file.
+                  cd "$WORKADVENTURE_REPO"
+                  docker compose -f docker-compose.yaml -f "$GITHUB_WORKSPACE/integration/docker-compose.workadventure.yaml" \
+                      --env-file .env.template config -q
+                  # deploy/workadventure.override.yaml is an override of WorkAdventure's production compose file.
+                  cd "$WORKADVENTURE_REPO/contrib/docker"
+                  ADMIN_API_TOKEN=ci-placeholder ADMINSPACE_DOMAIN=admin.example.com \
+                      docker compose -f docker-compose.prod.yaml -f "$GITHUB_WORKSPACE/deploy/workadventure.override.yaml" \
+                      --env-file .env.prod.template config -q
+
+            - name: Build the image
+              run: docker build -t adminspace:ci .
+
+            - name: Image runs as a non-root user
+              run: test "$(docker run --rm --entrypoint id adminspace:ci -u)" = "1000"

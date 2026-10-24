@@ -1,0 +1,2507 @@
+[
+ {
+  "slug": "lpc-animated-torch",
+  "category": "animated-objects",
+  "name": "[LPC] Animated Torch",
+  "author": "William.Thompsonj",
+  "sourceUrl": "https://opengameart.org/content/lpc-animated-torch",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "GPL 3.0",
+   "GPL 2.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 6150,
+  "images": 2,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-animated-torch/",
+  "preview": "animated-objects/lpc-animated-torch/animated_torch.png",
+  "previewSize": [
+   288,
+   64
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated wall torch.",
+  "attribution": "\"[LPC] Animated Torch\" by William.Thompsonj, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-animated-torch"
+ },
+ {
+  "slug": "lpc-animated-water-and-fire",
+  "category": "animated-objects",
+  "name": "[LPC] Animated water and fire",
+  "author": "Curt",
+  "sourceUrl": "https://opengameart.org/content/lpc-animated-water-and-fire",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 16176,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-animated-water-and-fire/",
+  "preview": "animated-objects/lpc-animated-water-and-fire/WaterAndFire.png",
+  "previewSize": [
+   192,
+   256
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated water and fire tiles.",
+  "attribution": "\"[LPC] Animated water and fire\" by Curt, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-animated-water-and-fire"
+ },
+ {
+  "slug": "lpc-clock-animation",
+  "category": "animated-objects",
+  "name": "[LPC] Clock Animation",
+  "author": "William.Thompsonj",
+  "sourceUrl": "https://opengameart.org/content/lpc-clock-animation",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 2702,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-clock-animation/",
+  "preview": "animated-objects/lpc-clock-animation/animated_clock.png",
+  "previewSize": [
+   96,
+   96
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated wall clock.",
+  "attribution": "\"[LPC] Clock Animation\" by William.Thompsonj, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-clock-animation"
+ },
+ {
+  "slug": "lpc-misc-animations-and-items",
+  "category": "animated-objects",
+  "name": "[LPC] Misc animations and items",
+  "author": "ak-blanc",
+  "sourceUrl": "https://opengameart.org/content/lpc-misc-animations-and-items",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 12,
+  "bytes": 21525,
+  "images": 10,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-misc-animations-and-items/",
+  "preview": "animated-objects/lpc-misc-animations-and-items/gate.png",
+  "previewSize": [
+   192,
+   128
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated chests, gate and keys.",
+  "attribution": "\"[LPC] Misc animations and items\" by ak-blanc, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-misc-animations-and-items (author notice: I don't need any attribution but credit Sharm if you're using the animations and Stephen Challener and Thane Brimhall if you're using the top-hat character.)"
+ },
+ {
+  "slug": "camp-fire-animation",
+  "category": "animated-objects",
+  "name": "Camp Fire Animation for RPGs (finished)",
+  "author": "Zabin",
+  "sourceUrl": "https://opengameart.org/content/camp-fire-animation-for-rpgs-finished",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 41705,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/camp-fire-animation/",
+  "preview": "animated-objects/camp-fire-animation/CampFire.png",
+  "previewSize": [
+   320,
+   64
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated camp fire.",
+  "attribution": "\"Camp Fire Animation for RPGs (finished)\" by Zabin, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/camp-fire-animation-for-rpgs-finished"
+ },
+ {
+  "slug": "lpc-animated-doors",
+  "category": "animated-objects",
+  "name": "LPC Animated Doors",
+  "author": "Xenodora",
+  "sourceUrl": "https://opengameart.org/content/lpc-animated-doors",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 12548,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-animated-doors/",
+  "preview": "animated-objects/lpc-animated-doors/lpc-doors-animated-1.png",
+  "previewSize": [
+   384,
+   544
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated opening doors.",
+  "attribution": "\"LPC Animated Doors\" by Xenodora, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-animated-doors"
+ },
+ {
+  "slug": "lpc-animated-water-and-waterfalls",
+  "category": "animated-objects",
+  "name": "LPC Animated Water and waterfalls",
+  "author": "ZaPaper",
+  "sourceUrl": "https://opengameart.org/content/lpc-animated-water-and-waterfalls",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 47611,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-animated-water-and-waterfalls/",
+  "preview": "animated-objects/lpc-animated-water-and-waterfalls/wateranimate2.png",
+  "previewSize": [
+   576,
+   386
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated water and waterfalls.",
+  "attribution": "\"LPC Animated Water and waterfalls\" by ZaPaper, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-animated-water-and-waterfalls (author notice: Use the original LPC license and attribution. Would be nice to also link to my RPG Game Maker.)"
+ },
+ {
+  "slug": "lpc-fireplace",
+  "category": "animated-objects",
+  "name": "LPC Fireplace",
+  "author": "Sharm",
+  "sourceUrl": "https://opengameart.org/content/lpc-fireplace",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 5266,
+  "images": 2,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "animated-objects/lpc-fireplace/",
+  "preview": "animated-objects/lpc-fireplace/fireplace.png",
+  "previewSize": [
+   128,
+   128
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated fireplace.",
+  "attribution": "\"LPC Fireplace\" by Sharm, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-fireplace"
+ },
+ {
+  "slug": "30-cc0-sfx-loops",
+  "category": "audio",
+  "name": "30 CC0 SFX loops",
+  "author": "rubberduck",
+  "sourceUrl": "https://opengameart.org/content/30-cc0-sfx-loops",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "n/a (audio)",
+  "files": 32,
+  "bytes": 3731202,
+  "images": 0,
+  "tiledFiles": 0,
+  "audioFiles": 30,
+  "path": "audio/30-cc0-sfx-loops/",
+  "preview": null,
+  "previewSize": [
+   0,
+   0
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "30 loops: ambience, machines, water, alarms.",
+  "attribution": "\"30 CC0 SFX loops\" by rubberduck, licensed under CC0. Source: https://opengameart.org/content/30-cc0-sfx-loops"
+ },
+ {
+  "slug": "jc-nature-ambient-vol1",
+  "category": "audio",
+  "name": "JC Sounds - Nature Ambient Pack Vol 1",
+  "author": "JC Sounds",
+  "sourceUrl": "https://opengameart.org/content/jc-sounds-nature-ambient-pack-vol-1",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0"
+  ],
+  "tileSize": "n/a (audio)",
+  "files": 10,
+  "bytes": 24940367,
+  "images": 0,
+  "tiledFiles": 0,
+  "audioFiles": 8,
+  "path": "audio/jc-nature-ambient-vol1/",
+  "preview": null,
+  "previewSize": [
+   0,
+   0
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Nature ambient loops, about 1 minute each (subset of 8 of the 26 loops: stream, ocean, waterfall, campfire, forest day/night, light rain, summer evening).",
+  "attribution": "\"JC Sounds - Nature Ambient Pack Vol 1\" by JC Sounds, licensed under CC-BY 4.0. Source: https://opengameart.org/content/jc-sounds-nature-ambient-pack-vol-1 (author notice: CC BY 4.0 - Credit: JC Sounds)"
+ },
+ {
+  "slug": "rain-loopable",
+  "category": "audio",
+  "name": "Rain (loopable)",
+  "author": "Ylmir",
+  "sourceUrl": "https://opengameart.org/content/rain-loopable",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "n/a (audio)",
+  "files": 6,
+  "bytes": 2757745,
+  "images": 0,
+  "tiledFiles": 0,
+  "audioFiles": 4,
+  "path": "audio/rain-loopable/",
+  "preview": null,
+  "previewSize": [
+   0,
+   0
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Four loopable rain recordings (OGG).",
+  "attribution": "\"Rain (loopable)\" by Ylmir, licensed under CC0. Source: https://opengameart.org/content/rain-loopable"
+ },
+ {
+  "slug": "rain-on-window-loop",
+  "category": "audio",
+  "name": "Rain on Window Loop",
+  "author": "alxl",
+  "sourceUrl": "https://opengameart.org/content/rain-on-window-loop",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "OGA-BY 3.0",
+   "CC0"
+  ],
+  "tileSize": "n/a (audio)",
+  "files": 3,
+  "bytes": 1918477,
+  "images": 0,
+  "tiledFiles": 0,
+  "audioFiles": 1,
+  "path": "audio/rain-on-window-loop/",
+  "preview": null,
+  "previewSize": [
+   0,
+   0
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Rain against a window, seamless loop.",
+  "attribution": "\"Rain on Window Loop\" by alxl, licensed under CC0. Source: https://opengameart.org/content/rain-on-window-loop (author notice: Available under CC0; attribution is appreciated but not necessary.)"
+ },
+ {
+  "slug": "24x32-characters-big-pack",
+  "category": "characters",
+  "name": "24x32 characters with faces (big pack)",
+  "author": "Cabbit",
+  "sourceUrl": "https://opengameart.org/content/24x32-characters-with-faces-big-pack",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "24x32",
+  "files": 54,
+  "bytes": 226191,
+  "images": 52,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/24x32-characters-big-pack/",
+  "preview": "characters/24x32-characters-big-pack/Heroes/Fighter-M-01.png",
+  "previewSize": [
+   153,
+   128
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Many RPG Maker style 24x32 walking characters with faces (3x4 frames, close to the Woka format).",
+  "attribution": "\"24x32 characters with faces (big pack)\" by Cabbit, licensed under CC-BY 3.0. Source: https://opengameart.org/content/24x32-characters-with-faces-big-pack (author notice: Attribution requirement: credit me as Svetlana Kushnariova and give my email address, lana-chan@yandex.ru)"
+ },
+ {
+  "slug": "lpc-birds",
+  "category": "characters",
+  "name": "[LPC] Birds",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-birds",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 17,
+  "bytes": 46358,
+  "images": 15,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/lpc-birds/",
+  "preview": "characters/lpc-birds/bird_1_bluejay.png",
+  "previewSize": [
+   96,
+   256
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated birds in many colours.",
+  "attribution": "\"[LPC] Birds\" by bluecarrot16, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-birds (author notice: \"[LPC] Birds\" by bluecarrot16, commissioned by castelonia. Please include a link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-medieval-fantasy-characters",
+  "category": "characters",
+  "name": "[LPC] Medieval fantasy character sprites",
+  "author": "wulax",
+  "sourceUrl": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+  "license": "OGA-BY 3.0",
+  "licenseUrl": "https://opengameart.org/content/oga-by-30-faq",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "64x64 (LPC character frames)",
+  "files": 198,
+  "bytes": 3723255,
+  "images": 194,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/lpc-medieval-fantasy-characters/",
+  "preview": "characters/lpc-medieval-fantasy-characters/expansion_pack-0.04/examples/slash_longsword.gif",
+  "previewSize": [
+   192,
+   192
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "LPC base characters with walk, slash, spellcast animations.",
+  "attribution": "\"[LPC] Medieval fantasy character sprites\" by wulax, licensed under OGA-BY 3.0. Source: https://opengameart.org/content/lpc-medieval-fantasy-character-sprites (author notice: I waive the DRM-limitation clause in the Creative Commons license for this art collection, allowing their free use on platforms like iOS or Steam provided you give credit as specified.)"
+ },
+ {
+  "slug": "lpc-style-farm-animals",
+  "category": "characters",
+  "name": "LPC style farm animals",
+  "author": "daneeklu",
+  "sourceUrl": "https://opengameart.org/content/lpc-style-farm-animals",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32 to 128x128",
+  "files": 15,
+  "bytes": 85297,
+  "images": 13,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/lpc-style-farm-animals/",
+  "preview": "characters/lpc-style-farm-animals/cow_eat.png",
+  "previewSize": [
+   512,
+   512
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Chickens, cows, llamas, pigs, sheep (walk and eat).",
+  "attribution": "\"LPC style farm animals\" by daneeklu, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-style-farm-animals"
+ },
+ {
+  "slug": "kenney-roguelike-characters",
+  "category": "characters",
+  "name": "Roguelike Characters",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/roguelike-characters",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 6,
+  "bytes": 64197,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/kenney-roguelike-characters/",
+  "preview": "characters/kenney-roguelike-characters/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Modular 16x16 characters, clothes and accessories.",
+  "attribution": "\"Roguelike Characters\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/roguelike-characters (credit not required)"
+ },
+ {
+  "slug": "twelve-16x18-rpg-sprites",
+  "category": "characters",
+  "name": "Twelve 16x18 RPG sprites, plus base",
+  "author": "CharlesGabriel",
+  "sourceUrl": "https://opengameart.org/content/twelve-16x18-rpg-sprites-plus-base",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "16x18",
+  "files": 3,
+  "bytes": 15711,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "characters/twelve-16x18-rpg-sprites/",
+  "preview": "characters/twelve-16x18-rpg-sprites/charsets_12_m-f_complete_by_antifarea.png",
+  "previewSize": [
+   330,
+   400
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Twelve classic 16x18 RPG walking sprites.",
+  "attribution": "\"Twelve 16x18 RPG sprites, plus base\" by CharlesGabriel, licensed under CC-BY 3.0. Source: https://opengameart.org/content/twelve-16x18-rpg-sprites-plus-base (author notice: Art by Charles Gabriel. Commissioned by OpenGameArt.org (http://opengameart.org))"
+ },
+ {
+  "slug": "0x72-dungeontileset-ii",
+  "category": "dungeon-fantasy",
+  "name": "16x16 DungeonTileset II",
+  "author": "0x72 (Robert)",
+  "sourceUrl": "https://0x72.itch.io/dungeontileset-ii",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 377,
+  "bytes": 167838,
+  "images": 374,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "dungeon-fantasy/0x72-dungeontileset-ii/",
+  "preview": "dungeon-fantasy/0x72-dungeontileset-ii/0x72_DungeonTilesetII_v1.7.png",
+  "previewSize": [
+   512,
+   512
+  ],
+  "site": "itch.io",
+  "notes": "Popular animated 16x16 dungeon tileset with heroes and monsters.",
+  "attribution": "\"16x16 DungeonTileset II\" by 0x72 (Robert), CC0 1.0. Source: https://0x72.itch.io/dungeontileset-ii (credit not required)"
+ },
+ {
+  "slug": "lpc-cavern-and-ruin-tiles",
+  "category": "dungeon-fantasy",
+  "name": "[LPC] Cavern and ruin tiles",
+  "author": "Reemax",
+  "sourceUrl": "https://opengameart.org/content/lpc-cavern-and-ruin-tiles",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 7,
+  "bytes": 408255,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "dungeon-fantasy/lpc-cavern-and-ruin-tiles/",
+  "preview": "dungeon-fantasy/lpc-cavern-and-ruin-tiles/preview2.png",
+  "previewSize": [
+   1392,
+   1032
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Cavern and ruin tiles.",
+  "attribution": "\"[LPC] Cavern and ruin tiles\" by Reemax, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-cavern-and-ruin-tiles (author notice: see credits.txt)"
+ },
+ {
+  "slug": "lpc-dungeon-elements",
+  "category": "dungeon-fantasy",
+  "name": "[LPC] Dungeon Elements",
+  "author": "William.Thompsonj",
+  "sourceUrl": "https://opengameart.org/content/lpc-dungeon-elements",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "GPL 3.0",
+   "GPL 2.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 9,
+  "bytes": 44098,
+  "images": 6,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "dungeon-fantasy/lpc-dungeon-elements/",
+  "preview": "dungeon-fantasy/lpc-dungeon-elements/dungeon10.png",
+  "previewSize": [
+   512,
+   384
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Dungeon props: chains, bones, cages, tables.",
+  "attribution": "\"[LPC] Dungeon Elements\" by William.Thompsonj, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-dungeon-elements"
+ },
+ {
+  "slug": "dungeon-crawl-32x32-tiles",
+  "category": "dungeon-fantasy",
+  "name": "Dungeon Crawl 32x32 tiles",
+  "author": "MedicineStorm",
+  "sourceUrl": "https://opengameart.org/content/dungeon-crawl-32x32-tiles",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 6034,
+  "bytes": 8672363,
+  "images": 6030,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "dungeon-fantasy/dungeon-crawl-32x32-tiles/",
+  "preview": "dungeon-fantasy/dungeon-crawl-32x32-tiles/ProjectUtumno_full.png",
+  "previewSize": [
+   2048,
+   3040
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Dungeon Crawl Stone Soup tiles: floors, walls, monsters, items (thousands of 32x32 PNGs).",
+  "attribution": "\"Dungeon Crawl 32x32 tiles\" by MedicineStorm, licensed under CC0. Source: https://opengameart.org/content/dungeon-crawl-32x32-tiles (author notice: You can use these tilesets in your program freely. No attribution is required. As a courtesy, include a link to the OGA page: http://opengameart.org/content/dungeon-crawl-32x32-tiles, the crawl-tiles page: http://code.google.com/p/crawl-tiles/ or see the License Notice instructions on http://rltiles.sourceforge.net/)"
+ },
+ {
+  "slug": "kenney-tiny-dungeon",
+  "category": "dungeon-fantasy",
+  "name": "Tiny Dungeon",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/tiny-dungeon",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 140,
+  "bytes": 85146,
+  "images": 136,
+  "tiledFiles": 2,
+  "audioFiles": 0,
+  "path": "dungeon-fantasy/kenney-tiny-dungeon/",
+  "preview": "dungeon-fantasy/kenney-tiny-dungeon/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Dungeon tiles, heroes and monsters.",
+  "attribution": "\"Tiny Dungeon\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/tiny-dungeon (credit not required)"
+ },
+ {
+  "slug": "lpc-city-outside",
+  "category": "exteriors-town",
+  "name": "[LPC] City outside",
+  "author": "Reemax",
+  "sourceUrl": "https://opengameart.org/content/lpc-city-outside",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 7,
+  "bytes": 685119,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-city-outside/",
+  "preview": "exteriors-town/lpc-city-outside/preview1.png",
+  "previewSize": [
+   867,
+   1039
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "City exteriors: building facades, streets, cars, props.",
+  "attribution": "\"[LPC] City outside\" by Reemax, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-city-outside (author notice: see credits.txt)"
+ },
+ {
+  "slug": "lpc-medieval-village-decorations",
+  "category": "exteriors-town",
+  "name": "[LPC] Medieval Village Decorations",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-medieval-village-decorations",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 217428,
+  "images": 2,
+  "tiledFiles": 3,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-medieval-village-decorations/",
+  "preview": "exteriors-town/lpc-medieval-village-decorations/decorations-medieval.png",
+  "previewSize": [
+   512,
+   2048
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Village props: carts, barrels, signs, market stalls.",
+  "attribution": "\"[LPC] Medieval Village Decorations\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-medieval-village-decorations (author notice: \"[LPC] Medieval Village Decorations\" by bluecarrot16, Lanea Zimmerman (Sharm), Reemax (Tuomo Untinen), Xenodora, Johann C, Johannes Sjölund, Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), Clint Bellanger, Jetrel, Nemisys, Guido Bos, Curt, Bertram, and Daniel Eddeland (daneeklu). License: CC-BY-SA 3.0+. See CREDITS-decorations-medieval.txt. All information in this file must be included.)"
+ },
+ {
+  "slug": "lpc-roofs",
+  "category": "exteriors-town",
+  "name": "[LPC] Roofs",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-roofs",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 11,
+  "bytes": 936216,
+  "images": 4,
+  "tiledFiles": 3,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-roofs/",
+  "preview": "exteriors-town/lpc-roofs/preview/roofs-preview-recolors.png",
+  "previewSize": [
+   1536,
+   1536
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Roof tiles in many styles.",
+  "attribution": "\"[LPC] Roofs\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-roofs (author notice: \"[LPC] Roofs\" by bluecarrot16, Lanea Zimmerman (Sharm), Michele Bucelli (Buch), Casper Nilsson, Xenodora, keith karnage, NaRNeRZz, and Talon (Talosaurus). CC-BY-SA 3.0/GPL v3+. See CREDITS-roofs.txt)"
+ },
+ {
+  "slug": "lpc-streets",
+  "category": "exteriors-town",
+  "name": "[LPC] Streets",
+  "author": "Baŝto",
+  "sourceUrl": "https://opengameart.org/content/lpc-streets",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 16,
+  "bytes": 29795,
+  "images": 7,
+  "tiledFiles": 7,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-streets/",
+  "preview": "exteriors-town/lpc-streets/road_markings_orange.png",
+  "previewSize": [
+   480,
+   480
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Asphalt streets, road markings and signs (Tiled files).",
+  "attribution": "\"[LPC] Streets\" by Baŝto, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-streets (author notice: Based on “[LPC] Skorpio's SciFi Sprite Pack” by Skorpio, which is dual licensed as CC-BY-SA 3.0 and GPL 3.0)"
+ },
+ {
+  "slug": "lpc-victorian-buildings",
+  "category": "exteriors-town",
+  "name": "[LPC] Victorian Buildings",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-victorian-buildings",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 7,
+  "bytes": 954402,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-victorian-buildings/",
+  "preview": "exteriors-town/lpc-victorian-buildings/victorian-windows-doors.png",
+  "previewSize": [
+   1024,
+   5120
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Victorian building facades.",
+  "attribution": "\"[LPC] Victorian Buildings\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-victorian-buildings (author notice: \"LPC Victorian Buildings,\" by bluecarrot16, Lanea Zimmerman (Sharm), Casper Nilsson, Lyndsay Takacs (cyanowl), and Redshrike. See CREDITS-victorian.txt for details.)"
+ },
+ {
+  "slug": "lpc-victorian-town-decorations",
+  "category": "exteriors-town",
+  "name": "[LPC] Victorian Town Decorations",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-victorian-town-decorations",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 402041,
+  "images": 3,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/lpc-victorian-town-decorations/",
+  "preview": "exteriors-town/lpc-victorian-town-decorations/victorian-streets.png",
+  "previewSize": [
+   512,
+   3072
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Victorian street furniture and decorations.",
+  "attribution": "\"[LPC] Victorian Town Decorations\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-victorian-town-decorations (author notice: [LPC] Victorian Town Decorations by bluecarrot16, Casper Nilsson, Lanea Zimmerman (Sharm), William Thompson, mold, AntumDeluge, Curt, Daniel Eddeland (daneeklu), caeles, George Bailey, Jetrel, Yar, Guido Bos, Ivan Voirol (Silver IV), Stephen Challener (Redshrike), the Open Surge team, Arthur Carvalho, Guilherme Vieira (n2liquid), NaRNeRZz, Diarandor, Armando Montero (ArMM1998), Tuomo Untinen (Reemax), Buch. See CREDITS-decorations-victorian.txt. You MUST include all information in this file when attributing the art, including a link back to https://opengameart.org/content/lpc-victorian-town-de)"
+ },
+ {
+  "slug": "exterior-32x32-town-tileset",
+  "category": "exteriors-town",
+  "name": "Exterior 32x32 Town tileset",
+  "author": "n2liquid",
+  "sourceUrl": "https://opengameart.org/content/exterior-32x32-town-tileset",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 72399,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/exterior-32x32-town-tileset/",
+  "preview": "exteriors-town/exterior-32x32-town-tileset/tileset_town_multi_v002.png",
+  "previewSize": [
+   256,
+   2240
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "RPG Maker XP style town exterior tiles.",
+  "attribution": "\"Exterior 32x32 Town tileset\" by n2liquid, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/exterior-32x32-town-tileset (author notice: Exterior 32x32 Town tileset by Arthur Carvalho, CC-BY-SA 4.0. https://fb.com/sonettocommons. Copyright 2017, 2018 Guilherme Vieira)"
+ },
+ {
+  "slug": "mage-city-arcanos",
+  "category": "exteriors-town",
+  "name": "Mage City Arcanos",
+  "author": "Hyptosis",
+  "sourceUrl": "https://opengameart.org/content/mage-city-arcanos",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 168527,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/mage-city-arcanos/",
+  "preview": "exteriors-town/mage-city-arcanos/magecity.png",
+  "previewSize": [
+   256,
+   1450
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Fantasy city tileset (single sheet).",
+  "attribution": "\"Mage City Arcanos\" by Hyptosis, licensed under CC0. Source: https://opengameart.org/content/mage-city-arcanos"
+ },
+ {
+  "slug": "modern-city-extension",
+  "category": "exteriors-town",
+  "name": "modern city extension",
+  "author": "rubberduck",
+  "sourceUrl": "https://opengameart.org/content/modern-city-extension",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 3,
+  "bytes": 87879,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/modern-city-extension/",
+  "preview": "exteriors-town/modern-city-extension/city_extension.png",
+  "previewSize": [
+   896,
+   736
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Extension for Kenney Roguelike Modern City: industrial buildings.",
+  "attribution": "\"modern city extension\" by rubberduck, licensed under CC0. Source: https://opengameart.org/content/modern-city-extension"
+ },
+ {
+  "slug": "kenney-roguelike-modern-city",
+  "category": "exteriors-town",
+  "name": "Roguelike Modern City",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/roguelike-modern-city",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 1042,
+  "bytes": 371539,
+  "images": 1040,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/kenney-roguelike-modern-city/",
+  "preview": "exteriors-town/kenney-roguelike-modern-city/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Modern city exteriors and interiors.",
+  "attribution": "\"Roguelike Modern City\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/roguelike-modern-city (credit not required)"
+ },
+ {
+  "slug": "kenney-rpg-urban-pack",
+  "category": "exteriors-town",
+  "name": "RPG Urban Pack",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/rpg-urban-pack",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 492,
+  "bytes": 237137,
+  "images": 490,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/kenney-rpg-urban-pack/",
+  "preview": "exteriors-town/kenney-rpg-urban-pack/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Modern city: buildings, roads, cars, people.",
+  "attribution": "\"RPG Urban Pack\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/rpg-urban-pack (credit not required)"
+ },
+ {
+  "slug": "serene-village-revamped",
+  "category": "exteriors-town",
+  "name": "Serene Village - revamped",
+  "author": "LimeZu",
+  "sourceUrl": "https://limezu.itch.io/serenevillagerevamped",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0"
+  ],
+  "tileSize": "16x16 (also 32x32 and 48x48)",
+  "files": 33,
+  "bytes": 681948,
+  "images": 31,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/serene-village-revamped/",
+  "preview": "exteriors-town/serene-village-revamped/Serene_Village_48x48.png",
+  "previewSize": [
+   912,
+   2160
+  ],
+  "site": "itch.io",
+  "notes": "Cozy village: terrains, 24 houses, trees, rocks, animated campfire/door/water. Includes 16, 32 and 48 px versions. Matches LimeZu's Modern Interiors style.",
+  "attribution": "\"Serene Village - revamped\" by LimeZu, licensed under CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Source: https://limezu.itch.io/serenevillagerevamped"
+ },
+ {
+  "slug": "statues-fountains-collection",
+  "category": "exteriors-town",
+  "name": "Statues & Fountains Collection",
+  "author": "AntumDeluge",
+  "sourceUrl": "https://opengameart.org/content/statues-fountains-collection",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 43,
+  "bytes": 382964,
+  "images": 35,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/statues-fountains-collection/",
+  "preview": "exteriors-town/statues-fountains-collection/preview.png",
+  "previewSize": [
+   96,
+   96
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Statues and animated fountains for plazas.",
+  "attribution": "\"Statues & Fountains Collection\" by AntumDeluge, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/statues-fountains-collection (author notice: Created by Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), & Clint Bellanger)"
+ },
+ {
+  "slug": "kenney-tiny-town",
+  "category": "exteriors-town",
+  "name": "Tiny Town",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/tiny-town",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 138,
+  "bytes": 163624,
+  "images": 136,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/kenney-tiny-town/",
+  "preview": "exteriors-town/kenney-tiny-town/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Town, houses, trees, fences, roads.",
+  "attribution": "\"Tiny Town\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/tiny-town (credit not required)"
+ },
+ {
+  "slug": "tuxemon-tileset",
+  "category": "exteriors-town",
+  "name": "Tuxemon tileset",
+  "author": "Buch",
+  "sourceUrl": "https://opengameart.org/content/tuxemon-tileset",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "16x16",
+  "files": 3,
+  "bytes": 12750,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "exteriors-town/tuxemon-tileset/",
+  "preview": "exteriors-town/tuxemon-tileset/sheet.png",
+  "previewSize": [
+   128,
+   208
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Modern 16x16 town tileset (Tuxemon).",
+  "attribution": "\"Tuxemon tileset\" by Buch, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/tuxemon-tileset (author notice: Credit me as Buch and link back either to my OGA profile page or to http://blog-buch.rhcloud.com)"
+ },
+ {
+  "slug": "lpc-revised-base-object-kit",
+  "category": "interiors-home",
+  "name": "[LPC Revised] Base Object Kit!",
+  "author": "Death's Darling",
+  "sourceUrl": "https://opengameart.org/content/lpc-revised-base-object-kit",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 46,
+  "bytes": 607947,
+  "images": 38,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-revised-base-object-kit/",
+  "preview": "interiors-home/lpc-revised-base-object-kit/Objects/Furniture/Beds, Double.png",
+  "previewSize": [
+   896,
+   512
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "LPC Revised furniture and object kit.",
+  "attribution": "\"[LPC Revised] Base Object Kit!\" by Death's Darling, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-revised-base-object-kit (author notice: DRM-waived. Artists used in this pack: Eliza Wyatt, Lanea Zimmerman (Sharm), BlueCarrot16, Hyptosis. More detailed credits are listed in each subfolder!)"
+ },
+ {
+  "slug": "lpc-revised-base-structure-kit",
+  "category": "interiors-home",
+  "name": "[LPC Revised] Base Structure Kit!",
+  "author": "Death's Darling",
+  "sourceUrl": "https://opengameart.org/content/lpc-revised-base-structure-kit",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 123,
+  "bytes": 1400867,
+  "images": 105,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-revised-base-structure-kit/",
+  "preview": "interiors-home/lpc-revised-base-structure-kit/Structure/Walls/Painted Walls.png",
+  "previewSize": [
+   1536,
+   512
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "LPC Revised walls, floors, stairs and structure kit.",
+  "attribution": "\"[LPC Revised] Base Structure Kit!\" by Death's Darling, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-revised-base-structure-kit (author notice: DRM-waived. Lanea Zimmerman (Sharm) and Eliza Wyatt. Each sheet has original source links in the Credits.txt files.)"
+ },
+ {
+  "slug": "lpc-city-inside",
+  "category": "interiors-home",
+  "name": "[LPC] City inside",
+  "author": "Reemax",
+  "sourceUrl": "https://opengameart.org/content/lpc-city-inside",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 399445,
+  "images": 5,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-city-inside/",
+  "preview": "interiors-home/lpc-city-inside/preview1.png",
+  "previewSize": [
+   739,
+   1084
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "City building interiors: shops, offices, furniture.",
+  "attribution": "\"[LPC] City inside\" by Reemax, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-city-inside (author notice: see credits.txt)"
+ },
+ {
+  "slug": "lpc-floors",
+  "category": "interiors-home",
+  "name": "[LPC] Floors",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-floors",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0"
+  ],
+  "tileSize": "32x32",
+  "files": 5,
+  "bytes": 323218,
+  "images": 1,
+  "tiledFiles": 1,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-floors/",
+  "preview": "interiors-home/lpc-floors/floors.png",
+  "previewSize": [
+   1024,
+   2048
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Large set of floor tiles.",
+  "attribution": "\"[LPC] Floors\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-floors (author notice: \"[LPC] Floors\" by bluecarrot16, Lanea Zimmerman (Sharm), William Thompson (William.Thompsonj), Hyptosis, SpiderDave, Cougarmint, Stephen Challener (Redshrike), Bonsaiheldin, Tyler Olsen (Roots), Jetrel, jestan, The Open Surge team (http://opensnc.sourceforge.net), Gaurav Munjal, Reemax, Silveira Neto, bleutailfly, Casper Nilsson, NaRNeRZz, Buch, keith karnage, Arthur Carvalho, Guilherme Vieira (n2liquid), Chris Hamons (maintainer). CC-BY-SA 4.0. See CREDITS-floors.txt)"
+ },
+ {
+  "slug": "lpc-food",
+  "category": "interiors-home",
+  "name": "[LPC] Food",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-food",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 429345,
+  "images": 3,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-food/",
+  "preview": "interiors-home/lpc-food/fruits-veggies.png",
+  "previewSize": [
+   1024,
+   1536
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Food and kitchen items for cafeterias and kitchens.",
+  "attribution": "\"[LPC] Food\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-food (author notice: \"[LPC] Foods\" by bluecarrot16, Daniel Eddeland (daneeklu), Joshua Taylor, Richard Kettering (Jetrel), thekingphoenix, RedVoxel, and Molly \"Cougarmint\" Willits. See CREDITS-food.txt. Please include a link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-house-interior-and-decorations",
+  "category": "interiors-home",
+  "name": "[LPC] House interior and decorations",
+  "author": "Reemax",
+  "sourceUrl": "https://opengameart.org/content/lpc-house-interior-and-decorations",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 5,
+  "bytes": 150985,
+  "images": 2,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-house-interior-and-decorations/",
+  "preview": "interiors-home/lpc-house-interior-and-decorations/preview.png",
+  "previewSize": [
+   1040,
+   704
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "House interior walls, floors, kitchen, bathroom, decorations.",
+  "attribution": "\"[LPC] House interior and decorations\" by Reemax, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-house-interior-and-decorations (author notice: See credits.txt)"
+ },
+ {
+  "slug": "lpc-simple-modern-furniture",
+  "category": "interiors-home",
+  "name": "[LPC] Simple Modern Furniture",
+  "author": "o10001771",
+  "sourceUrl": "https://opengameart.org/content/lpc-simple-modern-furniture",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 32680,
+  "images": 6,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-simple-modern-furniture/",
+  "preview": "interiors-home/lpc-simple-modern-furniture/bedBig.png",
+  "previewSize": [
+   74,
+   81
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Fridge, bath, toilet, beds.",
+  "attribution": "\"[LPC] Simple Modern Furniture\" by o10001771, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-simple-modern-furniture (author notice: Use freely, please credit Sharm aka Lanea Zimmerman.)"
+ },
+ {
+  "slug": "lpc-tavern",
+  "category": "interiors-home",
+  "name": "[LPC] Tavern",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-tavern",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 27,
+  "bytes": 2588147,
+  "images": 17,
+  "tiledFiles": 3,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-tavern/",
+  "preview": "interiors-home/lpc-tavern/preview/preview-1.gif",
+  "previewSize": [
+   884,
+   978
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Tavern / cafe interior: bar counters, tables, kegs, food.",
+  "attribution": "\"[LPC] Tavern\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-tavern (author notice: \"[LPC] Tavern\" by bluecarrot16, Lanea Zimmerman (Sharm), William.Thompsonj, Jetrel, DCSS Contributors, Reemax, Hyptosis, Daniel Eddeland (Daneeklu), BenCreating, Evert, tapatilorenzo. License: CC-BY-SA 3.0. <https://opengameart.org/content/lpc-tavern>. See CREDITS-tavern.txt for details.)"
+ },
+ {
+  "slug": "lpc-upholstery",
+  "category": "interiors-home",
+  "name": "[LPC] Upholstery",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-upholstery",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 36034,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-upholstery/",
+  "preview": "interiors-home/lpc-upholstery/upholstery.png",
+  "previewSize": [
+   512,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Sofas, armchairs and cushions in many colours.",
+  "attribution": "\"[LPC] Upholstery\" by bluecarrot16, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-upholstery (author notice: \"[LPC] Upholstery\" by bluecarrot16, Lanea Zimmerman (Sharm). Please link back to https://opengameart.org/content/lpc-upholstery and https://opengameart.org/content/lpc-interior-castle-tiles .)"
+ },
+ {
+  "slug": "lpc-walls",
+  "category": "interiors-home",
+  "name": "[LPC] Walls",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-walls",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 5,
+  "bytes": 759894,
+  "images": 1,
+  "tiledFiles": 1,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-walls/",
+  "preview": "interiors-home/lpc-walls/walls.png",
+  "previewSize": [
+   2048,
+   3072
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Large set of interior and exterior wall tiles.",
+  "attribution": "\"[LPC] Walls\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-walls (author notice: \"[LPC] Walls\" by bluecarrot16, Lanea Zimmerman (Sharm), Daniel Armstrong (HughSpectrum), William Thompson (William.Thompsonj), Hyptosis, Zabin, Daniel Cook, Guido Bos, SpiderDave, Cougarmint, Stephen Challener (Redshrike), Matthew Nash, Wolthera van Hövell tot Westerflier (TheraHedwig), Reemax, bleutailfly, NaRNeRZz, Sir Spummington, Casper Nilsson, KnoblePersona. CC-BY-SA 3.0. See CREDITS-walls.txt)"
+ },
+ {
+  "slug": "lpc-windows-doors",
+  "category": "interiors-home",
+  "name": "[LPC] Windows & Doors",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-windows-doors",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 127544,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-windows-doors/",
+  "preview": "interiors-home/lpc-windows-doors/windows-doors.png",
+  "previewSize": [
+   1024,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Windows and doors.",
+  "attribution": "\"[LPC] Windows & Doors\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-windows-doors (author notice: \"LPC Windows & Doors\" by bluecarrot16, Lanea Zimmerman (Sharm) and Daniel Armstrong (HughSpectrum), Casper Nilsson, Anamaris, Krusmira, Keith Karnage, Guido Bos, and Talosaurus. License: CC-BY-SA 3.0 / GPL 3.0+ Please link back to this page on OpenGameArt: https://opengameart.org/content/lpc-windows-doors . See CREDITS-windows-doors.txt. You MUST include all information in this file when distributing these images!)"
+ },
+ {
+  "slug": "lpc-wooden-furniture",
+  "category": "interiors-home",
+  "name": "[LPC] Wooden Furniture",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-wooden-furniture",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 19,
+  "bytes": 414328,
+  "images": 16,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/lpc-wooden-furniture/",
+  "preview": "interiors-home/lpc-wooden-furniture/blonde-wood.png",
+  "previewSize": [
+   512,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Tables, chairs, beds, shelves in four wood colours.",
+  "attribution": "\"[LPC] Wooden Furniture\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-wooden-furniture (author notice: \"LPC Wooden Furniture\" by bluecarrot16, Baŝto, Lanea Zimmerman (Sharm), William Thompson, Tuomo Untinen (Reemax), Janna/Lilius/Jannax. Please link back to https://opengameart.org/content/lpc-wooden-furniture . see CREDITS-*.txt. All information in this file must be included.)"
+ },
+ {
+  "slug": "home-objects",
+  "category": "interiors-home",
+  "name": "Home Objects",
+  "author": "Jannax",
+  "sourceUrl": "https://opengameart.org/content/home-objects",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 10432,
+  "images": 2,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/home-objects/",
+  "preview": "interiors-home/home-objects/House Objects 1 Revised.png",
+  "previewSize": [
+   192,
+   192
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Household objects in 32x32 cells.",
+  "attribution": "\"Home Objects\" by Jannax, licensed under CC0. Source: https://opengameart.org/content/home-objects"
+ },
+ {
+  "slug": "kenney-roguelike-indoors",
+  "category": "interiors-home",
+  "name": "Roguelike Indoors",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/roguelike-indoors",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 6,
+  "bytes": 116130,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/kenney-roguelike-indoors/",
+  "preview": "interiors-home/kenney-roguelike-indoors/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Indoor furniture: beds, tables, kitchens, offices, shops.",
+  "attribution": "\"Roguelike Indoors\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/roguelike-indoors (credit not required)"
+ },
+ {
+  "slug": "btl-modern-interior-walls-floors",
+  "category": "interiors-home",
+  "name": "TopDown Interior Home Tileset",
+  "author": "BTL Games",
+  "sourceUrl": "https://btl-games.itch.io/topdown",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 39610,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-home/btl-modern-interior-walls-floors/",
+  "preview": "interiors-home/btl-modern-interior-walls-floors/housetileset.png",
+  "previewSize": [
+   256,
+   448
+  ],
+  "site": "itch.io",
+  "notes": "Modern walls with baseboards and matching floors for about 9 room styles (wallpaper, brick, tile, wood).",
+  "attribution": "\"TopDown Interior Home Tileset\" by BTL Games, CC0 1.0. Source: https://btl-games.itch.io/topdown (credit not required)"
+ },
+ {
+  "slug": "laboratory-tileset-16px",
+  "category": "interiors-lab-scifi",
+  "name": "Laboratory tileset PixelArt 16px",
+  "author": "marceles",
+  "sourceUrl": "https://opengameart.org/content/laboratory-tileset-pixelart-16px",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0"
+  ],
+  "tileSize": "16x16",
+  "files": 39,
+  "bytes": 1176739,
+  "images": 35,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-lab-scifi/laboratory-tileset-16px/",
+  "preview": "interiors-lab-scifi/laboratory-tileset-16px/tiles_laboratory_LandOfPixels/examples/400Aanimated.gif",
+  "previewSize": [
+   800,
+   800
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Modern laboratory: floors, walls, equipment, animated tubes.",
+  "attribution": "\"Laboratory tileset PixelArt 16px\" by marceles, licensed under CC-BY 4.0. Source: https://opengameart.org/content/laboratory-tileset-pixelart-16px"
+ },
+ {
+  "slug": "lpc-sci-fi-megapack",
+  "category": "interiors-lab-scifi",
+  "name": "LPC Sci Fi Megapack",
+  "author": "Blue Moon Bear",
+  "sourceUrl": "https://opengameart.org/content/lpc-sci-fi-megapack",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0"
+  ],
+  "tileSize": "32x32",
+  "files": 27,
+  "bytes": 402518,
+  "images": 24,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-lab-scifi/lpc-sci-fi-megapack/",
+  "preview": "interiors-lab-scifi/lpc-sci-fi-megapack/INTERIOR-SciFi.png",
+  "previewSize": [
+   1024,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "LPC sci-fi megapack: station walls, floors, consoles, props.",
+  "attribution": "\"LPC Sci Fi Megapack\" by Blue Moon Bear, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-sci-fi-megapack (author notice: I can be credited as \"Blue Moon Bear\" == Sci-Fi Console / Screen - oparaskos - https://opengameart.org/content/sci-fi-console-screen == Sci-Fi Object Set - Jannax - https://opengameart.org/content/sci-fi-object-set == [LPC] FraMa sci-fi extensions - Baŝto - https://opengameart.org/content/lpc-frama-sci-fi-extensions == LPC goes to space - Baŝto - https://opengameart.org/content/lpc-goes-to-space == [LPC] Skorpio's SciFi Sprite Pack - Skorpio - https://opengameart.org/content/lpc-skorpios-scifi-sprite-pack == [LPC Revised] Base Object Kit! - Lanea Zimmerman and BlueCarrot16. Adjustments and rec)"
+ },
+ {
+  "slug": "warped-top-down-tech-lab-2",
+  "category": "interiors-lab-scifi",
+  "name": "Warped Top-Down Tech Lab 2",
+  "author": "ansimuz",
+  "sourceUrl": "https://opengameart.org/content/warped-top-down-tech-lab-2",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 40371,
+  "images": 3,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-lab-scifi/warped-top-down-tech-lab-2/",
+  "preview": "interiors-lab-scifi/warped-top-down-tech-lab-2/previews/preview-exporx3t.png",
+  "previewSize": [
+   1152,
+   960
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Top-down sci-fi lab tileset (Phantasy Star style).",
+  "attribution": "\"Warped Top-Down Tech Lab 2\" by ansimuz, licensed under CC0. Source: https://opengameart.org/content/warped-top-down-tech-lab-2 (author notice: by Ansimuz (optional))"
+ },
+ {
+  "slug": "lpc-revised-the-office",
+  "category": "interiors-office",
+  "name": "[LPC Revised] The Office",
+  "author": "Death's Darling",
+  "sourceUrl": "https://opengameart.org/content/lpc-revised-the-office",
+  "license": "OGA-BY 3.0",
+  "licenseUrl": "https://opengameart.org/content/oga-by-30-faq",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 19,
+  "bytes": 42911,
+  "images": 16,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/lpc-revised-the-office/",
+  "preview": "interiors-office/lpc-revised-the-office/TV, Widescreen.png",
+  "previewSize": [
+   288,
+   128
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Modern office props: copier, laptops, TV, mailboxes, desks, phones.",
+  "attribution": "\"[LPC Revised] The Office\" by Death's Darling, licensed under OGA-BY 3.0. Source: https://opengameart.org/content/lpc-revised-the-office (author notice: By Eliza Wyatt. Elements of the Ornate Desk and the Office Portraits use assets by Lanea Zimmerman (Sharm).)"
+ },
+ {
+  "slug": "cool-school-tileset",
+  "category": "interiors-office",
+  "name": "Cool School tileset",
+  "author": "NettySvit",
+  "sourceUrl": "https://opengameart.org/content/cool-school-tileset",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "48x48",
+  "files": 10,
+  "bytes": 223159,
+  "images": 7,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/cool-school-tileset/",
+  "preview": "interiors-office/cool-school-tileset/CoolSchool_tileset_48px/CoolSchool_for_MV_MZ/coolschool_B.png",
+  "previewSize": [
+   768,
+   768
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "School / classroom tileset (RPG Maker MV 48px).",
+  "attribution": "\"Cool School tileset\" by NettySvit, licensed under CC0. Source: https://opengameart.org/content/cool-school-tileset"
+ },
+ {
+  "slug": "indoor-office-appliances",
+  "category": "interiors-office",
+  "name": "indoor office appliances",
+  "author": "semtex99",
+  "sourceUrl": "https://opengameart.org/content/indoor-office-appliances",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 104498,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/indoor-office-appliances/",
+  "preview": "interiors-office/indoor-office-appliances/office-tilemap.png",
+  "previewSize": [
+   160,
+   160
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Indoor office and factory decorations.",
+  "attribution": "\"indoor office appliances\" by semtex99, licensed under CC0. Source: https://opengameart.org/content/indoor-office-appliances"
+ },
+ {
+  "slug": "office-stuff",
+  "category": "interiors-office",
+  "name": "Office Stuff",
+  "author": "MSavioti",
+  "sourceUrl": "https://opengameart.org/content/office-stuff",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 8,
+  "bytes": 4877,
+  "images": 6,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/office-stuff/",
+  "preview": "interiors-office/office-stuff/arch_chart.png",
+  "previewSize": [
+   64,
+   48
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Small office wall charts and meeting icons.",
+  "attribution": "\"Office Stuff\" by MSavioti, licensed under CC0. Source: https://opengameart.org/content/office-stuff (author notice: Use anyway you want, but if you use it, send me a link because I want to check it out!)"
+ },
+ {
+  "slug": "office-worker-sprites",
+  "category": "interiors-office",
+  "name": "Office worker sprites",
+  "author": "Solar Granulation",
+  "sourceUrl": "https://opengameart.org/content/office-worker-sprites",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0"
+  ],
+  "tileSize": "16x16",
+  "files": 8,
+  "bytes": 8400,
+  "images": 6,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/office-worker-sprites/",
+  "preview": "interiors-office/office-worker-sprites/ComputerSheet.png",
+  "previewSize": [
+   80,
+   160
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Office workers typing, printing and drinking; computers and water coolers.",
+  "attribution": "\"Office worker sprites\" by Solar Granulation, licensed under CC-BY 4.0. Source: https://opengameart.org/content/office-worker-sprites"
+ },
+ {
+  "slug": "office-house-hotel-gameboy",
+  "category": "interiors-office",
+  "name": "Office, House and Hotel Zelda-style Game boy",
+  "author": "GustavoPlima",
+  "sourceUrl": "https://opengameart.org/content/office-house-and-hotel-zelda-style-game-boy",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "16x16",
+  "files": 11,
+  "bytes": 40719,
+  "images": 9,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/office-house-hotel-gameboy/",
+  "preview": "interiors-office/office-house-hotel-gameboy/escritorio_e_servidor.png",
+  "previewSize": [
+   320,
+   180
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Game Boy style office, server room, house and hotel tiles.",
+  "attribution": "\"Office, House and Hotel Zelda-style Game boy\" by GustavoPlima, licensed under CC-BY 4.0. Source: https://opengameart.org/content/office-house-and-hotel-zelda-style-game-boy (author notice: Gustavo P Lima)"
+ },
+ {
+  "slug": "pixel-art-laboffice-tiles",
+  "category": "interiors-office",
+  "name": "Pixel Art Lab/Office Tiles",
+  "author": "The Leafy Lemur",
+  "sourceUrl": "https://opengameart.org/content/pixel-art-laboffice-tiles",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 10259,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/pixel-art-laboffice-tiles/",
+  "preview": "interiors-office/pixel-art-laboffice-tiles/bgtiles.png",
+  "previewSize": [
+   256,
+   256
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Lab/office floor and wall tiles.",
+  "attribution": "\"Pixel Art Lab/Office Tiles\" by The Leafy Lemur, licensed under CC-BY 3.0. Source: https://opengameart.org/content/pixel-art-laboffice-tiles"
+ },
+ {
+  "slug": "vintage-office-interiors",
+  "category": "interiors-office",
+  "name": "Vintage Office Interiors",
+  "author": "Croomfolk",
+  "sourceUrl": "https://opengameart.org/content/vintage-office-interiors",
+  "license": "OGA-BY 3.0",
+  "licenseUrl": "https://opengameart.org/content/oga-by-30-faq",
+  "licenses": [
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "16px scale (mixed object sizes)",
+  "files": 37,
+  "bytes": 725989,
+  "images": 34,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "interiors-office/vintage-office-interiors/",
+  "preview": "interiors-office/vintage-office-interiors/PROMO.png",
+  "previewSize": [
+   870,
+   984
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "1950s-60s office furniture in front view: cabinets, safe, desks, benches, coat hangers; clean and noisy styles.",
+  "attribution": "\"Vintage Office Interiors\" by Croomfolk, licensed under OGA-BY 3.0. Source: https://opengameart.org/content/vintage-office-interiors"
+ },
+ {
+  "slug": "lpc-revised-4-seasons-tiled",
+  "category": "nature",
+  "name": "[LPC Revised] Fully Configured 4-Seasons Tilesets for Tiled Map Editor",
+  "author": "JaidynReiman",
+  "sourceUrl": "https://opengameart.org/content/lpc-revised-fully-configured-4-seasons-tilesets-for-tiled-map-editor",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 12,
+  "bytes": 5795335,
+  "images": 5,
+  "tiledFiles": 5,
+  "audioFiles": 0,
+  "path": "nature/lpc-revised-4-seasons-tiled/",
+  "preview": "nature/lpc-revised-4-seasons-tiled/lpc-tileset-buildings.png",
+  "previewSize": [
+   2048,
+   2048
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "4-season LPC Revised terrain, ready-configured for Tiled (terrain sets).",
+  "attribution": "\"[LPC Revised] Fully Configured 4-Seasons Tilesets for Tiled Map Editor\" by JaidynReiman, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-revised-fully-configured-4-seasons-tilesets-for-tiled-map-editor (author notice: JaidynReiman for compiling the assets from LPC Revised and configuring the Tiled Map Editor tilesets for it. Also created a winter version of the bushes with a simple palette recolor to make the collision easier to convert between seasons. Original LPC Revised (https://github.com/ElizaWy/LPC) asset contributors include Eliza Wyatt (DeathsDarling), Lanea Zimmerman (Sharm), Stephen Challener (Redshrike), Johannes Sjölund (Wulax), BlueCarrot16, BenCreating, Durrani, YuriNikolai and Craftpix.net 2D Game Assets. https://github.com/ElizaWy/LPC/blob/main/Credits.txt)"
+ },
+ {
+  "slug": "lpc-beach-desert",
+  "category": "nature",
+  "name": "[LPC] Beach / Desert",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-beach-desert",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 96272,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-beach-desert/",
+  "preview": "nature/lpc-beach-desert/beach-desert.png",
+  "previewSize": [
+   1024,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Beach and desert tiles and props.",
+  "attribution": "\"[LPC] Beach / Desert\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-beach-desert (author notice: See CREDITS-beach-desert.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-conifers",
+  "category": "nature",
+  "name": "[LPC] Conifers",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-conifers",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 73593,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-conifers/",
+  "preview": "nature/lpc-conifers/conifers.png",
+  "previewSize": [
+   1024,
+   512
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Pine and fir trees.",
+  "attribution": "\"[LPC] Conifers\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-conifers (author notice: See CREDITS-conifers.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-farm",
+  "category": "nature",
+  "name": "[LPC] Farm",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-farm",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 165927,
+  "images": 5,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-farm/",
+  "preview": "nature/lpc-farm/barn.png",
+  "previewSize": [
+   1024,
+   1536
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Farm tiles: fields, fences, crops, barns.",
+  "attribution": "\"[LPC] Farm\" by bluecarrot16, licensed under CC-BY 4.0. Source: https://opengameart.org/content/lpc-farm (author notice: \"[LPC] Farm\" by bluecarrot16, Wolthera van Hövell tot Westerflier (TheraHedwig), and Ivan Voirol. License: CC-BY 4.0. http://opengameart.org/content/lpc-farm . Based on: \"Slates [32x32px orthogonal tileset by Ivan Voirol]\" by Ivan Voirol. License: CC-BY 4.0 https://opengameart.org/content/slates-32x32px-orthogonal-tileset-by-ivan-voirol . \"LPC compatible Ancient Greek Architecture\" by Wolthera van Hövell tot Westerflier (TheraHedwig). Licenses: CC-BY-4.0 / GPL-3.0 / OGA-BY-3.0. https://opengameart.org/content/lpc-compatible-ancient-greek-architecture)"
+ },
+ {
+  "slug": "lpc-flowers-plants-fungi-wood",
+  "category": "nature",
+  "name": "[LPC] Flowers / Plants / Fungi / Wood",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-flowers-plants-fungi-wood",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 4,
+  "bytes": 114820,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-flowers-plants-fungi-wood/",
+  "preview": "nature/lpc-flowers-plants-fungi-wood/plants.png",
+  "previewSize": [
+   512,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Flowers, bushes, mushrooms, logs.",
+  "attribution": "\"[LPC] Flowers / Plants / Fungi / Wood\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-flowers-plants-fungi-wood (author notice: See CREDITS-plants.txt. You MUST credit all contributors with the information in the credits file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-mountains",
+  "category": "nature",
+  "name": "[LPC] Mountains",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-mountains",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 1854844,
+  "images": 3,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-mountains/",
+  "preview": "nature/lpc-mountains/mountains-v6-snow-overlay.png",
+  "previewSize": [
+   2048,
+   2560
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Mountain and cliff tiles.",
+  "attribution": "\"[LPC] Mountains\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-mountains (author notice: See CREDITS-mountains.txt You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-terrains",
+  "category": "nature",
+  "name": "[LPC] Terrains",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-terrains",
+  "license": "CC-BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenses": [
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 10015217,
+  "images": 2,
+  "tiledFiles": 3,
+  "audioFiles": 0,
+  "path": "nature/lpc-terrains/",
+  "preview": "nature/lpc-terrains/terrain-v7.png",
+  "previewSize": [
+   1024,
+   2048
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Many LPC terrain transitions (grass, dirt, sand, water, snow).",
+  "attribution": "\"[LPC] Terrains\" by bluecarrot16, licensed under CC-BY-SA 4.0. Source: https://opengameart.org/content/lpc-terrains (author notice: \"[LPC] Terrains\" by bluecarrot16, Lanea Zimmerman (Sharm), Daniel Eddeland (Daneeklu), Richard Kettering (Jetrel), Zachariah Husiar (Zabin), Hyptosis, Casper Nilsson, Buko Studios, Nushio, ZaPaper, billknye, William Thompson, caeles, Redshrike, Bertram, and Rayane Félix (RayaneFLX). See CREDITS-terrain.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-trees",
+  "category": "nature",
+  "name": "[LPC] Trees",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-trees",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 899047,
+  "images": 5,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-trees/",
+  "preview": "nature/lpc-trees/trees-brown.png",
+  "previewSize": [
+   1024,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "LPC trees in many species and colours.",
+  "attribution": "\"[LPC] Trees\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-trees (author notice: See CREDITS-trees.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.)"
+ },
+ {
+  "slug": "lpc-base-assets",
+  "category": "nature",
+  "name": "Liberated Pixel Cup (LPC) Base Assets (sprites & map tiles)",
+  "author": "bart",
+  "sourceUrl": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 71,
+  "bytes": 596201,
+  "images": 68,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-base-assets/",
+  "preview": "nature/lpc-base-assets/tiles/castle_outside.png",
+  "previewSize": [
+   544,
+   352
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "The original LPC base assets: terrain, water, trees, house tiles, characters.",
+  "attribution": "\"Liberated Pixel Cup (LPC) Base Assets (sprites & map tiles)\" by bart, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles"
+ },
+ {
+  "slug": "lpc-tile-atlas",
+  "category": "nature",
+  "name": "LPC Tile Atlas",
+  "author": "adrix89",
+  "sourceUrl": "https://opengameart.org/content/lpc-tile-atlas",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 5,
+  "bytes": 556561,
+  "images": 2,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/lpc-tile-atlas/",
+  "preview": "nature/lpc-tile-atlas/base_out_atlas.png",
+  "previewSize": [
+   1024,
+   1024
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Combined LPC tile atlas (terrain, buildings, objects).",
+  "attribution": "\"LPC Tile Atlas\" by adrix89, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-tile-atlas"
+ },
+ {
+  "slug": "kenney-tiny-farm",
+  "category": "nature",
+  "name": "Tiny Farm",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/tiny-farm",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 138,
+  "bytes": 172473,
+  "images": 136,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/kenney-tiny-farm/",
+  "preview": "nature/kenney-tiny-farm/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Farm fields, crops, animals, fences.",
+  "attribution": "\"Tiny Farm\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/tiny-farm (credit not required)"
+ },
+ {
+  "slug": "trees-mega-pack",
+  "category": "nature",
+  "name": "Trees: Mega Pack CC-BY 3.0",
+  "author": "rrexky",
+  "sourceUrl": "https://opengameart.org/content/trees-mega-pack-cc-by-30-0",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 6,
+  "bytes": 7556195,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/trees-mega-pack/",
+  "preview": "nature/trees-mega-pack/height96_trees_mega_pack_cc_by_3_0.png",
+  "previewSize": [
+   1537,
+   1440
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Hundreds of trees at several heights (subset: 32, 48, 64 and 96 px).",
+  "attribution": "\"Trees: Mega Pack CC-BY 3.0\" by rrexky, licensed under CC-BY 3.0. Source: https://opengameart.org/content/trees-mega-pack-cc-by-30-0 (author notice: Check the description field)"
+ },
+ {
+  "slug": "whispers-of-avalon-grassland",
+  "category": "nature",
+  "name": "Whispers of Avalon: Grassland Tileset",
+  "author": "Leonard Pabin",
+  "sourceUrl": "https://opengameart.org/content/whispers-of-avalon-grassland-tileset",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "32x32",
+  "files": 7,
+  "bytes": 472579,
+  "images": 5,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "nature/whispers-of-avalon-grassland/",
+  "preview": "nature/whispers-of-avalon-grassland/ground_tiles.png",
+  "previewSize": [
+   672,
+   701
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Grassland ground, cliffs, waterfalls and objects.",
+  "attribution": "\"Whispers of Avalon: Grassland Tileset\" by Leonard Pabin, licensed under CC-BY 3.0. Source: https://opengameart.org/content/whispers-of-avalon-grassland-tileset"
+ },
+ {
+  "slug": "hyptosis-tiles-and-sprites",
+  "category": "rpg-all-in-one",
+  "name": "Lots of free 2d tiles and sprites by Hyptosis",
+  "author": "Zabin",
+  "sourceUrl": "https://opengameart.org/content/lots-of-free-2d-tiles-and-sprites-by-hyptosis",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 8,
+  "bytes": 1719815,
+  "images": 6,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "rpg-all-in-one/hyptosis-tiles-and-sprites/",
+  "preview": "rpg-all-in-one/hyptosis-tiles-and-sprites/hyptosis_sprites-and-tiles-for-you.png",
+  "previewSize": [
+   960,
+   960
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Huge mixed 32x32 batches: buildings, interiors, nature, objects.",
+  "attribution": "\"Lots of free 2d tiles and sprites by Hyptosis\" by Zabin, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lots-of-free-2d-tiles-and-sprites-by-hyptosis"
+ },
+ {
+  "slug": "ninja-adventure",
+  "category": "rpg-all-in-one",
+  "name": "Ninja Adventure - Asset Pack",
+  "author": "pixel-boy",
+  "sourceUrl": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 1687,
+  "bytes": 9368780,
+  "images": 1683,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "rpg-all-in-one/ninja-adventure/",
+  "preview": "rpg-all-in-one/ninja-adventure/preview-part-1.png",
+  "previewSize": [
+   641,
+   417
+  ],
+  "site": "itch.io",
+  "notes": "Huge cohesive 16x16 top-down pack: village, interiors, nature, dungeon tilesets, 50+ characters, monsters, items, FX. Music and sounds left out.",
+  "attribution": "\"Ninja Adventure - Asset Pack\" by pixel-boy, CC0 1.0. Source: https://pixel-boy.itch.io/ninja-adventure-asset-pack (credit not required)"
+ },
+ {
+  "slug": "tiny-16-basic",
+  "category": "rpg-all-in-one",
+  "name": "Tiny 16: Basic",
+  "author": "Sharm",
+  "sourceUrl": "https://opengameart.org/content/tiny-16-basic",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "OGA-BY 3.0"
+  ],
+  "tileSize": "16x16",
+  "files": 6,
+  "bytes": 28684,
+  "images": 4,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "rpg-all-in-one/tiny-16-basic/",
+  "preview": "rpg-all-in-one/tiny-16-basic/basictiles.png",
+  "previewSize": [
+   128,
+   240
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Classic small RPG set: town, interior, nature, characters.",
+  "attribution": "\"Tiny 16: Basic\" by Sharm, licensed under CC-BY 4.0. Source: https://opengameart.org/content/tiny-16-basic"
+ },
+ {
+  "slug": "zelda-like-tilesets-and-sprites",
+  "category": "rpg-all-in-one",
+  "name": "Zelda-like tilesets and sprites",
+  "author": "ArMM1998",
+  "sourceUrl": "https://opengameart.org/content/zelda-like-tilesets-and-sprites",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 10,
+  "bytes": 178599,
+  "images": 8,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "rpg-all-in-one/zelda-like-tilesets-and-sprites/",
+  "preview": "rpg-all-in-one/zelda-like-tilesets-and-sprites/Overworld.png",
+  "previewSize": [
+   640,
+   576
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Overworld, interior and cave tiles with characters and NPCs.",
+  "attribution": "\"Zelda-like tilesets and sprites\" by ArMM1998, licensed under CC0. Source: https://opengameart.org/content/zelda-like-tilesets-and-sprites"
+ },
+ {
+  "slug": "16x16-snowy-town-tiles",
+  "category": "seasonal",
+  "name": "16x16 Snowy Town Tiles",
+  "author": "Sharm",
+  "sourceUrl": "https://opengameart.org/content/16x16-snowy-town-tiles",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0",
+   "CC-BY 3.0",
+   "CC-BY-SA 4.0",
+   "CC-BY-SA 3.0",
+   "GPL 3.0",
+   "GPL 2.0"
+  ],
+  "tileSize": "16x16",
+  "files": 3,
+  "bytes": 4253,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/16x16-snowy-town-tiles/",
+  "preview": "seasonal/16x16-snowy-town-tiles/snowtiles.gif",
+  "previewSize": [
+   160,
+   48
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Snowy town tiles.",
+  "attribution": "\"16x16 Snowy Town Tiles\" by Sharm, licensed under CC-BY 4.0. Source: https://opengameart.org/content/16x16-snowy-town-tiles"
+ },
+ {
+  "slug": "lpc-revised-christmas-pack",
+  "category": "seasonal",
+  "name": "[LPC Revised] Christmas Pack!",
+  "author": "Death's Darling",
+  "sourceUrl": "https://opengameart.org/content/lpc-revised-christmas-pack",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 12,
+  "bytes": 41361,
+  "images": 9,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/lpc-revised-christmas-pack/",
+  "preview": "seasonal/lpc-revised-christmas-pack/Christmas Tree.gif",
+  "previewSize": [
+   192,
+   256
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Christmas trees, presents, lights, stockings, wreaths.",
+  "attribution": "\"[LPC Revised] Christmas Pack!\" by Death's Darling, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-revised-christmas-pack (author notice: Eliza Wyatt and Lanea Zimmerman (Sharm), DRM-waived. See Credits.txt for individual credits; fireplace & accessories from here: https://opengameart.org/content/lpc-fireplace)"
+ },
+ {
+  "slug": "lpc-santa",
+  "category": "seasonal",
+  "name": "[LPC] Santa",
+  "author": "bluecarrot16",
+  "sourceUrl": "https://opengameart.org/content/lpc-santa",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "64x64 (LPC character frames)",
+  "files": 368,
+  "bytes": 9785803,
+  "images": 365,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/lpc-santa/",
+  "preview": "seasonal/lpc-santa/_preview/Download10964.png",
+  "previewSize": [
+   832,
+   1344
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Santa character spritesheets for the LPC base.",
+  "attribution": "\"[LPC] Santa\" by bluecarrot16, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-santa (author notice: \"[LPC] Santa\" by bluecarrot16, Johannes Sjölund (wulax), Stephen Challener (Redshrike), Nila122, and Matthew Krohn (makrohn). Commissioned by Sander Franken (castelonia). License: CC-BY-SA 3.0 or GPL 3.0. https://opengameart.org/content/lpc-santa . See CREDITS-santa.txt.)"
+ },
+ {
+  "slug": "christmas-animated-fireplace",
+  "category": "seasonal",
+  "name": "christmas animated fireplace",
+  "author": "Tracy",
+  "sourceUrl": "https://opengameart.org/content/christmas-animated-fireplace",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 5363,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/christmas-animated-fireplace/",
+  "preview": "seasonal/christmas-animated-fireplace/christmas fire place.png",
+  "previewSize": [
+   253,
+   99
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Animated Christmas fireplace.",
+  "attribution": "\"christmas animated fireplace\" by Tracy, licensed under CC-BY 3.0. Source: https://opengameart.org/content/christmas-animated-fireplace"
+ },
+ {
+  "slug": "christmas-village-asset-pack",
+  "category": "seasonal",
+  "name": "Christmas Village Asset Pack",
+  "author": "HaywardMorihara",
+  "sourceUrl": "https://opengameart.org/content/christmas-village-asset-pack",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 36,
+  "bytes": 17427,
+  "images": 34,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/christmas-village-asset-pack/",
+  "preview": "seasonal/christmas-village-asset-pack/house1.png",
+  "previewSize": [
+   560,
+   64
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Christmas village: snow paths, houses, animated fireplace, decorations.",
+  "attribution": "\"Christmas Village Asset Pack\" by HaywardMorihara, licensed under CC0. Source: https://opengameart.org/content/christmas-village-asset-pack (author notice: Pixel art by https://murphysdad.itch.io/)"
+ },
+ {
+  "slug": "halloween-tileset-top-down",
+  "category": "seasonal",
+  "name": "Halloween pixel art tileset Top Down",
+  "author": "marceles",
+  "sourceUrl": "https://opengameart.org/content/halloween-pixel-art-tileset-top-down",
+  "license": "CC-BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenses": [
+   "CC-BY 4.0"
+  ],
+  "tileSize": "16x16 (also 32x32 and 48x48)",
+  "files": 21,
+  "bytes": 696667,
+  "images": 17,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/halloween-tileset-top-down/",
+  "preview": "seasonal/halloween-tileset-top-down/examples/400A.gif",
+  "previewSize": [
+   800,
+   800
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Halloween terrain, trees, Victorian house, fences, decorations.",
+  "attribution": "\"Halloween pixel art tileset Top Down\" by marceles, licensed under CC-BY 4.0. Source: https://opengameart.org/content/halloween-pixel-art-tileset-top-down"
+ },
+ {
+  "slug": "lpc-snowy-tree",
+  "category": "seasonal",
+  "name": "LPC Snowy Tree",
+  "author": "WolfMountainGames",
+  "sourceUrl": "https://opengameart.org/content/lpc-snowy-tree",
+  "license": "CC-BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenses": [
+   "CC-BY-SA 3.0",
+   "GPL 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 3,
+  "bytes": 6248,
+  "images": 1,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/lpc-snowy-tree/",
+  "preview": "seasonal/lpc-snowy-tree/LPCsnowTrees.png",
+  "previewSize": [
+   192,
+   128
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Snow-covered trees.",
+  "attribution": "\"LPC Snowy Tree\" by WolfMountainGames, licensed under CC-BY-SA 3.0. Source: https://opengameart.org/content/lpc-snowy-tree (author notice: Sharm made this art for the LPC I just changed the colors to snow)"
+ },
+ {
+  "slug": "lpc-winter-tiles",
+  "category": "seasonal",
+  "name": "LPC Winter Tiles",
+  "author": "Demetrius",
+  "sourceUrl": "https://opengameart.org/content/lpc-winter-tiles",
+  "license": "CC-BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenses": [
+   "CC-BY 3.0",
+   "OGA-BY 3.0",
+   "GPL 3.0",
+   "CC-BY-SA 3.0"
+  ],
+  "tileSize": "32x32",
+  "files": 5,
+  "bytes": 27170,
+  "images": 3,
+  "tiledFiles": 0,
+  "audioFiles": 0,
+  "path": "seasonal/lpc-winter-tiles/",
+  "preview": "seasonal/lpc-winter-tiles/TilesA2.png",
+  "previewSize": [
+   320,
+   192
+  ],
+  "site": "OpenGameArt.org",
+  "notes": "Snow terrain and winter tiles.",
+  "attribution": "\"LPC Winter Tiles\" by Demetrius, licensed under CC-BY 3.0. Source: https://opengameart.org/content/lpc-winter-tiles (author notice: LPC Winter Tiles by Demetrius (https://opengameart.org/content/lpc-winter-tiles). Based on LPC: Modified Base tiles by Lanea Zimmerman, special thanks to William Thompson (https://opengameart.org/content/lpc-modified-base-tiles).)"
+ },
+ {
+  "slug": "kenney-tiny-ski",
+  "category": "seasonal",
+  "name": "Tiny Ski",
+  "author": "Kenney (kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/tiny-ski",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenses": [
+   "CC0"
+  ],
+  "tileSize": "16x16",
+  "files": 140,
+  "bytes": 74888,
+  "images": 136,
+  "tiledFiles": 2,
+  "audioFiles": 0,
+  "path": "seasonal/kenney-tiny-ski/",
+  "preview": "seasonal/kenney-tiny-ski/Preview.png",
+  "previewSize": [
+   918,
+   515
+  ],
+  "site": "kenney.nl",
+  "notes": "Snow, ski slopes, winter trees and cabins.",
+  "attribution": "\"Tiny Ski\" by Kenney (www.kenney.nl), CC0 1.0. Source: https://kenney.nl/assets/tiny-ski (credit not required)"
+ }
+]

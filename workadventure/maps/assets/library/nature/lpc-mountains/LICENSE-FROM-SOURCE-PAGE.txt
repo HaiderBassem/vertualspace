@@ -1,0 +1,18 @@
+Pack: [LPC] Mountains
+Source page: https://opengameart.org/content/lpc-mountains
+Submitted by: bluecarrot16 (Monday, December 3, 2018 - 16:12)
+License(s) listed on the source page: CC-BY-SA 4.0 / CC-BY-SA 3.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+See CREDITS-mountains.txt You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+Many varieties of mountains and hills, in the style of the Liberated Pixel Cup (LPC). Includes grassy varieties for most styles, and includes a snowy overlay for the whole map (i.e. all varieties have a snowy variation). 
+
+Includes Tiled terrains for most styles and Tiled automapping files for many as well. Use the terrain tool to draw the cliff, then automap to draw the walls. I recommend you disable "Automap while drawing" and manually invoke automap periodically instead. 
+
+Note 1: There is one complementary style of mountains that is referenced in the Tiled files but not in the image---it's based on "The mana world: Forest Tileset" <https://opengameart.org/content/the-mana-worldforest-tileset>, which is only licensed GPL v2; despite several efforts, we have been unable to contact the original authors and secure their permission for a different license. Since that license is not compatible with this one, that edit is included in a separate submission. But I'm not stopping you from downloading that submission and then pasting it on top of this one to make single image... 
+
+Note 2: Preview images and tiled.zip contain content from my LPC Terrains submission. License and attribution requirements for that submission still apply.

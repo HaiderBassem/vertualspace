@@ -1,0 +1,15 @@
+Pack: modern city extension
+Source page: https://opengameart.org/content/modern-city-extension
+Submitted by: rubberduck (Tuesday, October 30, 2018 - 11:40)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+I made an extension for the roguelike modern city pack from Kenney It started making an outside part of my factory tileset for KeyserEX. (This is also the reason why it contains these sign tiles showing the name of the factory in his game)
+
+It includes more types of buildings (various factory / industrial type buildings in different colors, other regular buildings), more windows, also a darker variant and lit windows and some more floor tiles.
+
+As an extension the first preview uses tiles from the original tileset.

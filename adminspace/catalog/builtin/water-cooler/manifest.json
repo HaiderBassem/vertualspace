@@ -1,0 +1,61 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "water-cooler",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Water cooler",
+  "description": "A water fountain for corridors and break areas.",
+  "translations": {
+    "fr-FR": {
+      "name": "Fontaine à eau",
+      "description": "Une fontaine à eau pour couloirs et espaces de pause."
+    },
+    "de-DE": {
+      "name": "Wasserspender",
+      "description": "Ein Wasserspender für Flure und Pausenbereiche."
+    },
+    "es-ES": {
+      "name": "Fuente de agua",
+      "description": "Una fuente de agua para pasillos y zonas de descanso."
+    },
+    "ar-SA": {
+      "name": "مبرد مياه",
+      "description": "مبرد مياه للممرات ومناطق الاستراحة."
+    }
+  },
+  "category": "interactive",
+  "tags": [
+    "water",
+    "kitchen",
+    "break"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#6fb6e8",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

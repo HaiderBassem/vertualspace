@@ -1,0 +1,14 @@
+Pack: [LPC] Medieval Village Decorations
+Source page: https://opengameart.org/content/lpc-medieval-village-decorations
+Submitted by: bluecarrot16 (Sunday, November 4, 2018 - 18:34)
+License(s) listed on the source page: CC-BY-SA 4.0 / CC-BY-SA 3.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+"[LPC] Medieval Village Decorations" by bluecarrot16, Lanea Zimmerman (Sharm), Reemax (Tuomo Untinen), Xenodora, Johann C, Johannes Sjölund, Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), Clint Bellanger, Jetrel, Nemisys, Guido Bos, Curt, Bertram, and Daniel Eddeland (daneeklu). License: CC-BY-SA 3.0+. See CREDITS-decorations-medieval.txt. All information in this file must be included.
+
+Description from the page (excerpt):
+A collection of decorations for a medieval/pre-industrial town. Graveyard, statues, signage, lighting, banners, farming, market, square, military camp, fences. Includes Tiled .tsx files with some animations and terrains. Fences are coded as Wang Tiles. 
+
+Note: Preview images include elements from my LPC Thatched Roof Cottages and Terrain sets, as well as from upcoming containers and food sets.

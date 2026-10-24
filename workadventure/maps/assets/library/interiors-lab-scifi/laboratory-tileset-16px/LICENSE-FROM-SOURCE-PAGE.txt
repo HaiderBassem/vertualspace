@@ -1,0 +1,27 @@
+Pack: Laboratory tileset PixelArt 16px
+Source page: https://opengameart.org/content/laboratory-tileset-pixelart-16px
+Submitted by: marceles (Monday, June 12, 2023 - 18:33)
+License(s) listed on the source page: CC-BY 4.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Tileset for building a laboratory on pixel art. The size is 16px.
+
+This set includes 4 types of floors and doors, 3 types of walls and liquids, 3 fx sprite sheets, as well objects that you may expect to find in a modern laboratory. 
+
+There is an energy orb that has 2 types of fx and a pipe with 1 fire fx effect. Liquids do have a sprite sheet for movement. And the body floating on the green tube has animation as well!
+
+This tileset also includes numbers from 0 to 9, an elevator , some screens, stairs and more!
+
+The ZIP contains some examples of the animations, and how to put the doors on the walls. Also, the tileset comes in 3 sizes, 16px, 32px and 48px!
+
+It also contains 3 NPC's with 4 direction walk animations to populate the Lab!
+
+I hope these pixels in the form of tiles and assets provides you some help for your project!
+
+ 
+
+As seen in https://marceles.itch.io/land-of-pixels-laboratory-tileset-pixel-art

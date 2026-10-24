@@ -1,0 +1,63 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "presentation-screen",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Presentation screen",
+  "description": "A large display on a stand. Link it to a slide deck or a dashboard with the editor's properties.",
+  "translations": {
+    "fr-FR": {
+      "name": "Écran de présentation",
+      "description": "Un grand écran sur pied. Reliez-le à une présentation ou à un tableau de bord avec les propriétés de l’éditeur."
+    },
+    "de-DE": {
+      "name": "Präsentationsbildschirm",
+      "description": "Ein großer Bildschirm auf Ständer. Mit den Editor-Eigenschaften mit Folien oder einem Dashboard verknüpfen."
+    },
+    "es-ES": {
+      "name": "Pantalla de presentación",
+      "description": "Una gran pantalla con soporte. Enlázala a una presentación o a un panel con las propiedades del editor."
+    },
+    "ar-SA": {
+      "name": "شاشة عرض",
+      "description": "شاشة كبيرة على حامل. اربطها بعرض تقديمي أو لوحة متابعة عبر خصائص المحرر."
+    }
+  },
+  "category": "presentation",
+  "tags": [
+    "screen",
+    "presentation",
+    "display"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#26355e",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

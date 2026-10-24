@@ -1,0 +1,23 @@
+Pack: Cool School tileset
+Source page: https://opengameart.org/content/cool-school-tileset
+Submitted by: NettySvit (Sunday, March 10, 2024 - 07:20)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Cool School
+
+tileset 48x48 px
+
+RPG maker MV / MZ or others
+
+ 
+
+Licensed via CC0
+
+ 
+
+zip file contains graphics files for RPG maker MV

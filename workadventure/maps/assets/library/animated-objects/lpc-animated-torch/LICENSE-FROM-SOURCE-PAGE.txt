@@ -1,0 +1,17 @@
+Pack: [LPC] Animated Torch
+Source page: https://opengameart.org/content/lpc-animated-torch
+Submitted by: William.Thompsonj (Saturday, August 17, 2013 - 02:30)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0 / GPL 3.0 / GPL 2.0 / OGA-BY 3.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Animated torch. Inspired by a comment by Curt found here:
+
+http://opengameart.org/content/lpc-castle-lights-repack

@@ -1,0 +1,31 @@
+Pack: LPC Sci Fi Megapack
+Source page: https://opengameart.org/content/lpc-sci-fi-megapack
+Submitted by: Blue Moon Bear (Saturday, May 2, 2026 - 17:55)
+License(s) listed on the source page: CC-BY-SA 4.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+
+Copyright/attribution notice from the page:
+I can be credited as "Blue Moon Bear"
+==
+Sci-Fi Console / Screen - oparaskos - https://opengameart.org/content/sci-fi-console-screen ==
+Sci-Fi Object Set - Jannax - https://opengameart.org/content/sci-fi-object-set ==
+[LPC] FraMa sci-fi extensions - Baŝto - https://opengameart.org/content/lpc-frama-sci-fi-extensions ==
+LPC goes to space - Baŝto - https://opengameart.org/content/lpc-goes-to-space ==
+[LPC] Skorpio's SciFi Sprite Pack - Skorpio - https://opengameart.org/content/lpc-skorpios-scifi-sprite-pack ==
+[LPC Revised] Base Object Kit! - Lanea Zimmerman and BlueCarrot16. Adjustments and recolors by Eliza Wyatt. - https://opengameart.org/content/lpc-revised-base-object-kit ==
+[LPC] Wooden Furniture - bluecarrot16, Baŝto, Lanea Zimmerman (Sharm), William Thompson, Tuomo Untinen (Reemax), Janna/Lilius/Jannax. - https://opengameart.org/content/lpc-wooden-furniture
+
+Description from the page (excerpt):
+After much back and forth I finally mostly finished this, at least the parts I want to share with the class. Most of this is made for RPG Maker and Tiled so it'll be up to you to adapt it as you need. All 32x32, of course.
+
+This is basically a combination of every LPC sci-fi set I could find edited and added to by me. Some parts probably don't fit the LPC color palette so that's something to consider. There are 2 different Interior Sets that are kind of intended to be an Old and Newer Ship/ Station/Colony etc.
+
+I cut out basically everything from the original assets I didn't want or need so getting them is important if you want more.
+
+Notes:
+
+1: The animations that match to the Main Console bank are very specific, the 3 middle screens are Centered and match only with the middle animations, the Side screens are both against the Left and Right sides of their 32x32 tile so they only match with the animations directly below them. It's very easy to get them mixed up on the dark blue Console Bank since they kind of blend in.
+
+2: The Diagonal Teleporter Walls do not look right without the pillars, unless you want to finish the walls yourself.
+
+IMPORTANT: The Monitor Animations are not LPC. They're made by Absconditus.Artem and can be found here, https://absconditusartem.itch.io/monitors. For licensing reasons I had to remove my edited versions of the animations but it should be fairly easy to do it yourself, at least with the forward facing monitors. Diagonal and sideways animations are a pain.

@@ -1,0 +1,19 @@
+Pack: [LPC] Birds
+Source page: https://opengameart.org/content/lpc-birds
+Submitted by: bluecarrot16 (Sunday, November 4, 2018 - 17:47)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0 / CC-BY-SA 4.0 / CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0 / OGA-BY 3.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+"[LPC] Birds" by bluecarrot16, commissioned by castelonia. Please include a link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+A set of 15 birds, in the LPC style. Includes some generic ones and specific species (eagle, sparrow, robin, bluejay, cardinal). Includes flying and walking animations in 4 directions for each bird. I was inspired by https://opengameart.org/content/winter-birds by Refuzzle (CC0) and used his colors for the cardinal (the LPC palette was just not red enough).
+
+You may use this submission in a work containing DRM, provided you follow the attribution instructions.

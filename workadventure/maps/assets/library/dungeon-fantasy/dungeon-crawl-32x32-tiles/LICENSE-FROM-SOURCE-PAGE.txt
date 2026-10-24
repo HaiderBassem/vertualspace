@@ -1,0 +1,19 @@
+Pack: Dungeon Crawl 32x32 tiles
+Source page: https://opengameart.org/content/dungeon-crawl-32x32-tiles
+Submitted by: MedicineStorm (Monday, September 17, 2012 - 11:48)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+You can use these tilesets in your program freely. No attribution is required. As a courtesy, include a link to the OGA page: http://opengameart.org/content/dungeon-crawl-32x32-tiles, the crawl-tiles page: http://code.google.com/p/crawl-tiles/ or see the License Notice instructions on http://rltiles.sourceforge.net/
+
+Description from the page (excerpt):
+Here are the tiles used in the game Dungeon Crawl Stone Soup http://crawl.develz.org/wordpress/
+
+Package contains over 3000 tiles! This is a collaborative effort from many, many artists. The full list of artists can be found in the package crawl-tiles Oct-5-2010\utility\FilteredList.txt
+
+All images are 2D 32x32 pixel tiles in orthogonal (overhead) three-quarters  perspective. 
+
+Contains things like terrain, walls, decorative dungeon features, monsters, spell effects, items, GUI elements, player avatars, and more!
+
+EDIT: A new supplemental set of over 3000 additional tiles is now available! Check out https://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental

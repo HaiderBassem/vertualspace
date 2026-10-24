@@ -1,0 +1,53 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "tactile-paving",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Tactile paving",
+  "description": "Yellow warning studs, as found before stairs and crossings, to signal an accessible route.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bande podotactile",
+      "description": "Des plots jaunes d’éveil de vigilance, comme avant les escaliers, pour signaler un parcours accessible."
+    },
+    "de-DE": {
+      "name": "Taktiles Bodenleitsystem",
+      "description": "Gelbe Aufmerksamkeitsnoppen wie vor Treppen, um einen barrierefreien Weg zu kennzeichnen."
+    },
+    "es-ES": {
+      "name": "Pavimento podotáctil",
+      "description": "Tacos amarillos de advertencia, como antes de escaleras, para señalar un recorrido accesible."
+    },
+    "ar-SA": {
+      "name": "بلاط لمسي",
+      "description": "نتوءات تحذيرية صفراء كالتي قبل السلالم، للإشارة إلى مسار ميسّر."
+    }
+  },
+  "category": "wayfinding",
+  "tags": [
+    "accessibility",
+    "floor",
+    "tactile"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#e8b931",
+        "direction": "Down",
+        "image": "standard.png",
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

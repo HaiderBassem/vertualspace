@@ -1,0 +1,182 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "sofa",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Lounge sofa",
+  "description": "A two-seat sofa for break areas, facing the room or the wall.",
+  "translations": {
+    "fr-FR": {
+      "name": "Canapé lounge",
+      "description": "Un canapé deux places pour les espaces de pause, face à la pièce ou au mur."
+    },
+    "de-DE": {
+      "name": "Lounge-Sofa",
+      "description": "Ein Zweisitzer-Sofa für Pausenbereiche, zum Raum oder zur Wand gerichtet."
+    },
+    "es-ES": {
+      "name": "Sofá lounge",
+      "description": "Un sofá de dos plazas para zonas de descanso, hacia la sala o la pared."
+    },
+    "ar-SA": {
+      "name": "أريكة استراحة",
+      "description": "أريكة بمقعدين لمناطق الاستراحة، باتجاه الغرفة أو الجدار."
+    }
+  },
+  "category": "lounge",
+  "tags": [
+    "sofa",
+    "couch",
+    "lounge"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "blue-down",
+        "color": "#4060c8",
+        "direction": "Down",
+        "image": "blue-down.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "blue-up",
+        "color": "#4060c8",
+        "direction": "Up",
+        "image": "blue-up.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "green-down",
+        "color": "#3f8b69",
+        "direction": "Down",
+        "image": "green-down.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "green-up",
+        "color": "#3f8b69",
+        "direction": "Up",
+        "image": "green-up.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "terracotta-down",
+        "color": "#c5653f",
+        "direction": "Down",
+        "image": "terracotta-down.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "terracotta-up",
+        "color": "#c5653f",
+        "direction": "Up",
+        "image": "terracotta-up.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "slate-down",
+        "color": "#6e7889",
+        "direction": "Down",
+        "image": "slate-down.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "slate-up",
+        "color": "#6e7889",
+        "direction": "Up",
+        "image": "slate-up.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

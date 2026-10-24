@@ -1,0 +1,118 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "meeting-room",
+  "version": "1.0.0",
+  "kind": "room_template",
+  "name": "Meeting room",
+  "description": "A six-seat meeting room with a presentation screen. Carpet floor.",
+  "translations": {
+    "fr-FR": {
+      "name": "Salle de réunion",
+      "description": "Une salle de réunion de six places avec écran de présentation. Moquette."
+    },
+    "de-DE": {
+      "name": "Besprechungsraum",
+      "description": "Ein Besprechungsraum für sechs Personen mit Präsentationsbildschirm. Teppichboden."
+    },
+    "es-ES": {
+      "name": "Sala de reuniones",
+      "description": "Una sala de reuniones para seis con pantalla de presentación. Moqueta."
+    },
+    "ar-SA": {
+      "name": "غرفة اجتماعات",
+      "description": "غرفة اجتماعات لستة أشخاص مع شاشة عرض. أرضية مفروشة بالسجاد."
+    }
+  },
+  "category": "templates",
+  "tags": [
+    "meeting",
+    "conference",
+    "presentation"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "template": {
+    "map": "map.tmj",
+    "files": [
+      "office-tiles.png"
+    ],
+    "width": 12,
+    "height": 10,
+    "requires": [
+      "meeting-table",
+      "office-chair",
+      "plant-large",
+      "presentation-screen"
+    ],
+    "entities": [
+      {
+        "component": "presentation-screen",
+        "variant": "standard",
+        "x": 160,
+        "y": 32
+      },
+      {
+        "component": "meeting-table",
+        "variant": "walnut",
+        "x": 144,
+        "y": 128
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-down",
+        "x": 160,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 160,
+        "y": 204
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-down",
+        "x": 192,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 192,
+        "y": 204
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-down",
+        "x": 224,
+        "y": 120
+      },
+      {
+        "component": "office-chair",
+        "variant": "charcoal-up",
+        "x": 224,
+        "y": 204
+      },
+      {
+        "component": "plant-large",
+        "variant": "charcoal",
+        "x": 32,
+        "y": 64
+      },
+      {
+        "component": "plant-large",
+        "variant": "charcoal",
+        "x": 320,
+        "y": 64
+      }
+    ]
+  },
+  "compatibility": {
+    "wam": "2.1.0"
+  }
+}

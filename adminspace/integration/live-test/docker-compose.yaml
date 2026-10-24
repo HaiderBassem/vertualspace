@@ -1,0 +1,143 @@
+# Disposable WorkAdventure test stack for AdminSpace live integration tests.
+# Same official images and service layout as WorkAdventure's contrib/docker/docker-compose.prod.yaml,
+# reduced to HTTP on *.wa.localhost (no ACME), plus a read-only server for WorkAdventure's maps/ folder.
+# AdminSpace runs on the host, port 4100 (ADMIN_API_URL=http://host.docker.internal:4100).
+name: wa-test
+
+services:
+    reverse-proxy:
+        image: traefik:v3.6.1
+        command:
+            - --providers.docker
+            - --providers.docker.exposedbydefault=false
+            - --providers.docker.constraints=Label(`com.docker.compose.project`,`wa-test`)
+            - --entryPoints.web.address=:80
+        ports:
+            - "127.0.0.1:80:80"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        networks:
+            default:
+                aliases:
+                    - wa.localhost
+                    - maps.wa.localhost
+
+    play:
+        image: thecodingmachine/workadventure-play:${VERSION}
+        environment:
+            - SECRET_KEY
+            - API_URL=back:50051
+            - PUSHER_URL=http://wa.localhost/
+            - FRONT_URL=/
+            - ICON_URL=/icon
+            # Required by play (as in the official compose); the uploader service itself is not needed for these tests.
+            - UPLOADER_URL=/uploader
+            - INTERNAL_MAP_STORAGE_URL=http://map-storage:3000
+            - PUBLIC_MAP_STORAGE_URL=http://wa.localhost/map-storage
+            - START_ROOM_URL=/_/global/maps.wa.localhost/starter/map.json
+            - REDIS_HOST=redis
+            - ENABLE_MAP_EDITOR=true
+            - ENABLE_CHAT=true
+            - ENABLE_TUTORIAL=false
+            - ADMIN_API_URL
+            - ADMIN_API_TOKEN
+            - ADMIN_URL
+            - ADMIN_SOCKETS_TOKEN
+            - OPID_PROFILE_SCREEN_PROVIDER
+            - ROOM_API_PORT=50051
+            - ROOM_API_SECRET_KEY
+            - MAP_STORAGE_API_TOKEN
+            - STUN_SERVER=stun:stun.l.google.com:19302
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        labels:
+            traefik.enable: "true"
+            traefik.http.routers.play.rule: "Host(`wa.localhost`) && PathPrefix(`/`)"
+            traefik.http.routers.play.entryPoints: "web"
+            traefik.http.routers.play.service: play
+            traefik.http.services.play.loadbalancer.server.port: "3000"
+            traefik.http.routers.play-ws.rule: "Host(`wa.localhost`) && PathPrefix(`/ws/`)"
+            traefik.http.routers.play-ws.entryPoints: "web"
+            traefik.http.routers.play-ws.service: play-ws
+            traefik.http.services.play-ws.loadbalancer.server.port: "3001"
+        depends_on: [back, redis]
+
+    back:
+        image: thecodingmachine/workadventure-back:${VERSION}
+        environment:
+            - PLAY_URL=http://wa.localhost
+            - SECRET_KEY
+            - ENABLE_MAP_EDITOR=true
+            - ADMIN_API_URL
+            - ADMIN_API_TOKEN
+            - REDIS_HOST=redis
+            - MAP_STORAGE_URL=map-storage:50053
+            - INTERNAL_MAP_STORAGE_URL=http://map-storage:3000
+            - PUBLIC_MAP_STORAGE_URL=http://wa.localhost/map-storage
+            - STORE_VARIABLES_FOR_LOCAL_MAPS=true
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        labels:
+            traefik.enable: "true"
+            traefik.http.middlewares.strip-api-prefix.stripprefix.prefixes: "/api"
+            traefik.http.routers.back.rule: "Host(`wa.localhost`) && PathPrefix(`/api`)"
+            traefik.http.routers.back.middlewares: "strip-api-prefix@docker"
+            traefik.http.routers.back.entryPoints: "web"
+            traefik.http.services.back.loadbalancer.server.port: "8080"
+        depends_on: [redis]
+
+    map-storage:
+        image: thecodingmachine/workadventure-map-storage:${VERSION}
+        environment:
+            API_URL: back:50051
+            ENABLE_BEARER_AUTHENTICATION: "true"
+            AUTHENTICATION_TOKEN: "${MAP_STORAGE_API_TOKEN}"
+            SECRET_KEY: "${SECRET_KEY}"
+            PATH_PREFIX: "/map-storage"
+            MAP_STORAGE_API_TOKEN: "${MAP_STORAGE_API_TOKEN}"
+            PUSHER_URL: "http://wa.localhost/"
+        labels:
+            traefik.enable: "true"
+            traefik.http.middlewares.strip-map-storage-prefix.stripprefix.prefixes: "/map-storage"
+            traefik.http.routers.map-storage.middlewares: "strip-map-storage-prefix@docker"
+            traefik.http.routers.map-storage.rule: "Host(`wa.localhost`) && PathPrefix(`/map-storage`)"
+            traefik.http.routers.map-storage.entryPoints: "web"
+            traefik.http.services.map-storage.loadbalancer.server.port: "3000"
+
+    redis:
+        image: redis:6
+
+    # AdminSpace, from its production image (docker build -t adminspace:e2e ../..).
+    # WorkAdventure reaches it on the internal network (ADMIN_API_URL=http://adminspace:3000); people use
+    # http://localhost:4100. Database: adminspace_e2e in AdminSpace's development PostgreSQL (port 5433).
+    adminspace:
+        image: adminspace:e2e
+        environment:
+            DATABASE_URL: "postgres://adminspace:adminspace@host.docker.internal:5433/adminspace_e2e"
+            ORIGIN: "http://localhost:4100"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN}"
+            ADMIN_SOCKETS_TOKEN: "${ADMIN_SOCKETS_TOKEN}"
+            APP_SECRET: "${APP_SECRET}"
+            SETUP_TOKEN: "${SETUP_TOKEN}"
+            WORKADVENTURE_PLAY_URL: "http://wa.localhost"
+            WORKADVENTURE_PUSHER_INTERNAL_URL: "http://wa.localhost"
+            WORKADVENTURE_MAP_STORAGE_PUBLIC_URL: "http://wa.localhost/map-storage"
+            WORKADVENTURE_MAP_STORAGE_INTERNAL_URL: "http://map-storage:3000"
+            WORKADVENTURE_MAP_STORAGE_API_TOKEN: "${MAP_STORAGE_API_TOKEN}"
+            WORKADVENTURE_START_ROOM_URL: "/_/global/maps.wa.localhost/starter/map.json"
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        ports:
+            - "127.0.0.1:4100:3000"
+
+    # Serves WorkAdventure's maps/ folder read-only (test maps), with CORS like WorkAdventure's dev "maps" service.
+    maps:
+        image: nginx:1.27-alpine
+        volumes:
+            - ${WORKADVENTURE_REPO}/maps:/usr/share/nginx/html:ro
+            - ./maps-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+        labels:
+            traefik.enable: "true"
+            traefik.http.routers.maps.rule: "Host(`maps.wa.localhost`)"
+            traefik.http.routers.maps.entryPoints: "web"
+            traefik.http.services.maps.loadbalancer.server.port: "80"

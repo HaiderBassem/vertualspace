@@ -1,0 +1,141 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "reception-lobby",
+  "version": "1.0.0",
+  "kind": "room_template",
+  "name": "Reception lobby",
+  "description": "A welcoming entrance with a reception desk, a waiting area and accessible wayfinding from the door.",
+  "translations": {
+    "fr-FR": {
+      "name": "Hall d’accueil",
+      "description": "Une entrée accueillante avec banque d’accueil, espace d’attente et guidage accessible depuis la porte."
+    },
+    "de-DE": {
+      "name": "Empfangshalle",
+      "description": "Ein einladender Eingang mit Empfangstheke, Wartebereich und barrierefreier Wegführung ab der Tür."
+    },
+    "es-ES": {
+      "name": "Vestíbulo de recepción",
+      "description": "Una entrada acogedora con mostrador, zona de espera y señalización accesible desde la puerta."
+    },
+    "ar-SA": {
+      "name": "بهو الاستقبال",
+      "description": "مدخل مرحّب مع مكتب استقبال ومنطقة انتظار وإرشاد ميسّر من الباب."
+    }
+  },
+  "category": "templates",
+  "tags": [
+    "reception",
+    "lobby",
+    "accessibility"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "template": {
+    "map": "map.tmj",
+    "files": [
+      "office-tiles.png"
+    ],
+    "width": 16,
+    "height": 11,
+    "requires": [
+      "armchair",
+      "coffee-table",
+      "floor-arrow",
+      "plant-large",
+      "reception-desk",
+      "rug",
+      "signpost",
+      "sofa",
+      "tactile-paving"
+    ],
+    "entities": [
+      {
+        "component": "reception-desk",
+        "variant": "walnut",
+        "x": 208,
+        "y": 64
+      },
+      {
+        "component": "rug",
+        "variant": "sand",
+        "x": 48,
+        "y": 160
+      },
+      {
+        "component": "sofa",
+        "variant": "blue-down",
+        "x": 64,
+        "y": 128
+      },
+      {
+        "component": "coffee-table",
+        "variant": "oak",
+        "x": 64,
+        "y": 224
+      },
+      {
+        "component": "armchair",
+        "variant": "terracotta",
+        "x": 384,
+        "y": 160
+      },
+      {
+        "component": "armchair",
+        "variant": "terracotta",
+        "x": 416,
+        "y": 160
+      },
+      {
+        "component": "plant-large",
+        "variant": "terracotta",
+        "x": 448,
+        "y": 64
+      },
+      {
+        "component": "plant-large",
+        "variant": "terracotta",
+        "x": 32,
+        "y": 64
+      },
+      {
+        "component": "signpost",
+        "variant": "standard",
+        "x": 320,
+        "y": 224
+      },
+      {
+        "component": "tactile-paving",
+        "variant": "standard",
+        "x": 224,
+        "y": 288
+      },
+      {
+        "component": "tactile-paving",
+        "variant": "standard",
+        "x": 256,
+        "y": 288
+      },
+      {
+        "component": "floor-arrow",
+        "variant": "up",
+        "x": 224,
+        "y": 224
+      },
+      {
+        "component": "floor-arrow",
+        "variant": "up",
+        "x": 256,
+        "y": 224
+      }
+    ]
+  },
+  "compatibility": {
+    "wam": "2.1.0"
+  }
+}

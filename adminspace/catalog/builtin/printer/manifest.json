@@ -1,0 +1,57 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "printer",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Printer",
+  "description": "A multifunction printer for the copy corner.",
+  "translations": {
+    "fr-FR": {
+      "name": "Imprimante",
+      "description": "Une imprimante multifonction pour le coin reprographie."
+    },
+    "de-DE": {
+      "name": "Drucker",
+      "description": "Ein Multifunktionsdrucker für die Kopierecke."
+    },
+    "es-ES": {
+      "name": "Impresora",
+      "description": "Una impresora multifunción para la zona de copias."
+    },
+    "ar-SA": {
+      "name": "طابعة",
+      "description": "طابعة متعددة الوظائف لركن النسخ."
+    }
+  },
+  "category": "computers",
+  "tags": [
+    "printer",
+    "office",
+    "equipment"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#e7eaee",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

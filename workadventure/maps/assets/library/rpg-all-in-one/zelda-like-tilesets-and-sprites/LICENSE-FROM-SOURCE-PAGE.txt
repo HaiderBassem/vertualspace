@@ -1,0 +1,21 @@
+Pack: Zelda-like tilesets and sprites
+Source page: https://opengameart.org/content/zelda-like-tilesets-and-sprites
+Submitted by: ArMM1998 (Thursday, February 16, 2017 - 13:35)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+16x16 tilesets
+
+-Overworld tileset including castle, houses and some decoration
+
+-Cave tileset
+
+-Indoors tileset
+
+-Character with sword animation and character tamplet
+
+-Effects, objects and UI

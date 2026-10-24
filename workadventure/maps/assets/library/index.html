@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkAdventure Asset Library</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --surface-2: #efede8;
+  --text: #1d1c1a;
+  --muted: #6a675f;
+  --border: #dcd8cf;
+  --accent: #3657c9;
+  --accent-text: #ffffff;
+  --checker-a: #e9e6df;
+  --checker-b: #f7f5f1;
+  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.05);
+  --lic-cc0: #2f7d4a;
+  --lic-by: #2c62b8;
+  --lic-oga: #7a4fb5;
+  --lic-sa: #b5602c;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161614;
+    --surface: #201f1c;
+    --surface-2: #2a2925;
+    --text: #ecebe6;
+    --muted: #a19e95;
+    --border: #3a3832;
+    --accent: #7d97ff;
+    --accent-text: #10131f;
+    --checker-a: #2b2a26;
+    --checker-b: #33322d;
+    --shadow: 0 1px 2px rgba(0,0,0,.4);
+    --lic-cc0: #5cc07f;
+    --lic-by: #6ea2f2;
+    --lic-oga: #b48ef0;
+    --lic-sa: #ec9a62;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161614;
+  --surface: #201f1c;
+  --surface-2: #2a2925;
+  --text: #ecebe6;
+  --muted: #a19e95;
+  --border: #3a3832;
+  --accent: #7d97ff;
+  --accent-text: #10131f;
+  --checker-a: #2b2a26;
+  --checker-b: #33322d;
+  --shadow: 0 1px 2px rgba(0,0,0,.4);
+  --lic-cc0: #5cc07f;
+  --lic-by: #6ea2f2;
+  --lic-oga: #b48ef0;
+  --lic-sa: #ec9a62;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+header { padding: 28px 16px 8px; max-width: 1400px; margin: 0 auto; }
+h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: -.01em; }
+.sub { color: var(--muted); margin: 0; }
+.sub a { color: var(--accent); }
+.controls {
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.controls-inner { max-width: 1400px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+input[type=search], select {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px;
+}
+input[type=search] { flex: 1 1 260px; min-width: 0; }
+.chip {
+  font: inherit; font-size: 13px; cursor: pointer; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px;
+}
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.chip .n { opacity: .65; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-right: 2px; }
+main { max-width: 1400px; margin: 0 auto; padding: 16px; }
+.count { color: var(--muted); margin: 0 0 12px; font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+}
+.thumb {
+  height: 190px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background-color: var(--checker-b);
+  background-image:
+    linear-gradient(45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--checker-a) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--checker-a) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  cursor: zoom-in;
+}
+.thumb img { image-rendering: pixelated; image-rendering: crisp-edges; max-width: 100%; max-height: 100%; }
+.thumb.audio { cursor: default; font-size: 40px; color: var(--muted); }
+.body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.title { font-weight: 650; font-size: 15px; margin: 0; line-height: 1.3; }
+.author { color: var(--muted); font-size: 13px; margin: 0; }
+.notes { font-size: 13px; margin: 2px 0 0; color: var(--text); opacity: .9; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag { font-size: 12px; background: var(--surface-2); border-radius: 6px; padding: 2px 7px; color: var(--muted); }
+.lic { font-size: 12px; font-weight: 650; border-radius: 6px; padding: 2px 7px; color: #fff; }
+.lic.cc0 { background: var(--lic-cc0); }
+.lic.by { background: var(--lic-by); }
+.lic.oga { background: var(--lic-oga); }
+.lic.sa { background: var(--lic-sa); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lic { color: #111; } }
+:root[data-theme="dark"] .lic { color: #111; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; font-size: 13px; }
+.links a, .links button { color: var(--accent); text-decoration: none; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.links a:hover, .links button:hover { text-decoration: underline; }
+.empty { color: var(--muted); padding: 40px 0; text-align: center; }
+dialog {
+  border: 1px solid var(--border); border-radius: 12px; padding: 0; max-width: min(96vw, 1200px);
+  background: var(--surface); color: var(--text);
+}
+dialog::backdrop { background: rgba(0,0,0,.6); }
+.dlg-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.dlg-body { max-height: 80vh; overflow: auto; background-color: var(--checker-b); }
+.dlg-body img { image-rendering: pixelated; display: block; }
+.zoom { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+.toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.show { opacity: 1; }
+footer { max-width: 1400px; margin: 0 auto; padding: 8px 16px 40px; color: var(--muted); font-size: 13px; }
+footer a { color: var(--accent); }
+@media (max-width: 520px) {
+  header { padding-top: 18px; }
+  h1 { font-size: 22px; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>WorkAdventure Asset Library</h1>
+  <p class="sub" id="stats">Loading index.json&hellip;</p>
+</header>
+<div class="controls">
+  <div class="controls-inner">
+    <div class="row">
+      <input type="search" id="q" placeholder="Search packs, authors, notes (e.g. office, kitchen, snow, LPC)" aria-label="Search">
+      <select id="tile" aria-label="Tile size"><option value="">Any tile size</option></select>
+      <select id="sort" aria-label="Sort">
+        <option value="category">Sort: category</option>
+        <option value="name">Sort: name</option>
+        <option value="size">Sort: size (largest first)</option>
+        <option value="files">Sort: file count</option>
+      </select>
+    </div>
+    <div class="row" id="cats"><span class="label">Category</span></div>
+    <div class="row" id="lics"><span class="label">License</span></div>
+  </div>
+</div>
+<main>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No packs match these filters.</p>
+</main>
+<footer>
+  Every pack is CC0, CC-BY, CC-BY-SA or OGA-BY licensed. See <a href="CREDITS.md">CREDITS.md</a> for all attribution lines, and each pack's SOURCE.md for details.
+  Machine-readable list: <a href="index.json">index.json</a>. Packs left out and why: <a href="EXCLUDED.md">EXCLUDED.md</a>.
+</footer>
+<dialog id="dlg">
+  <div class="dlg-head">
+    <strong id="dlg-title"></strong>
+    <div class="zoom">
+      <label for="zoom">Zoom</label>
+      <select id="zoom"><option value="1">1x</option><option value="2" selected>2x</option><option value="3">3x</option><option value="4">4x</option></select>
+      <button class="chip" id="dlg-close" type="button">Close</button>
+    </div>
+  </div>
+  <div class="dlg-body"><img id="dlg-img" alt=""></div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  "use strict";
+  var CAT_TITLES = {
+    "interiors-office": "Office & school",
+    "interiors-home": "Home, cafe & building parts",
+    "interiors-lab-scifi": "Lab & sci-fi",
+    "exteriors-town": "Town & city",
+    "nature": "Nature & terrain",
+    "rpg-all-in-one": "All-in-one RPG",
+    "seasonal": "Seasonal",
+    "dungeon-fantasy": "Dungeon & fantasy",
+    "animated-objects": "Animated objects",
+    "characters": "Characters & animals",
+    "audio": "Audio"
+  };
+  var CAT_ORDER = Object.keys(CAT_TITLES);
+  var state = { q: "", cats: new Set(), lics: new Set(), tile: "", sort: "category" };
+  var data = [];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function licClass(l) {
+    if (l === "CC0") return "cc0";
+    if (l.indexOf("OGA") === 0) return "oga";
+    if (l.indexOf("SA") !== -1) return "sa";
+    return "by";
+  }
+  function fmtBytes(b) {
+    if (b > 1e6) return (b / 1e6).toFixed(1) + " MB";
+    return Math.max(1, Math.round(b / 1e3)) + " KB";
+  }
+  function enc(path) { return path.split("/").map(encodeURIComponent).join("/"); }
+  function tileKey(t) { var m = /^(\d+x\d+)/.exec(t || ""); return m ? m[1] : (t && t.indexOf("audio") !== -1 ? "audio" : "other"); }
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === "class") e.className = attrs[k]; else e.setAttribute(k, attrs[k]);
+    });
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function toast(msg) {
+    var t = $("toast"); t.textContent = msg; t.classList.add("show");
+    setTimeout(function () { t.classList.remove("show"); }, 1600);
+  }
+  function chip(container, value, label, n, set) {
+    var b = el("button", { "class": "chip", type: "button", "aria-pressed": "false" });
+    b.appendChild(document.createTextNode(label));
+    b.appendChild(el("span", { "class": "n" }, String(n)));
+    b.addEventListener("click", function () {
+      if (set.has(value)) set.delete(value); else set.add(value);
+      b.setAttribute("aria-pressed", set.has(value) ? "true" : "false");
+      render();
+    });
+    container.appendChild(b);
+  }
+  function matches(p) {
+    if (state.cats.size && !state.cats.has(p.category)) return false;
+    if (state.lics.size && !state.lics.has(p.license)) return false;
+    if (state.tile && tileKey(p.tileSize) !== state.tile) return false;
+    if (state.q) {
+      var hay = [p.name, p.author, p.notes, p.slug, p.category, p.license, p.tileSize, p.site].join(" ").toLowerCase();
+      var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < words.length; i++) if (hay.indexOf(words[i]) === -1) return false;
+    }
+    return true;
+  }
+  function sorted(list) {
+    var s = list.slice();
+    if (state.sort === "name") s.sort(function (a, b) { return a.name.localeCompare(b.name); });
+    else if (state.sort === "size") s.sort(function (a, b) { return b.bytes - a.bytes; });
+    else if (state.sort === "files") s.sort(function (a, b) { return b.files - a.files; });
+    else s.sort(function (a, b) {
+      return (CAT_ORDER.indexOf(a.category) - CAT_ORDER.indexOf(b.category)) || a.name.localeCompare(b.name);
+    });
+    return s;
+  }
+  function card(p) {
+    var c = el("article", { "class": "card" });
+    var th = el("div", { "class": "thumb" });
+    if (p.preview) {
+      var img = el("img", { src: enc(p.preview), alt: "Preview of " + p.name, loading: "lazy", decoding: "async" });
+      var w = p.previewSize && p.previewSize[0], h = p.previewSize && p.previewSize[1];
+      if (w && h) {
+        var scale = Math.min(4, Math.max(1, Math.floor(Math.min(240 / w, 180 / h))));
+        if (scale > 1) { img.style.width = (w * scale) + "px"; }
+      }
+      th.appendChild(img);
+      th.title = "Click to enlarge";
+      th.addEventListener("click", function () { openPreview(p); });
+    } else {
+      th.classList.add("audio");
+      th.appendChild(el("span", null, p.category === "audio" ? "♫" : "?"));
+    }
+    c.appendChild(th);
+    var body = el("div", { "class": "body" });
+    body.appendChild(el("h2", { "class": "title" }, p.name));
+    body.appendChild(el("p", { "class": "author" }, "by " + p.author + " · " + p.site));
+    if (p.notes) body.appendChild(el("p", { "class": "notes" }, p.notes));
+    var meta = el("div", { "class": "meta" });
+    var lic = el("a", { "class": "lic " + licClass(p.license), href: p.licenseUrl, target: "_blank", rel: "noopener", title: "All licenses offered: " + (p.licenses || [p.license]).join(" / ") }, p.license);
+    lic.style.textDecoration = "none";
+    meta.appendChild(lic);
+    meta.appendChild(el("span", { "class": "tag" }, CAT_TITLES[p.category] || p.category));
+    meta.appendChild(el("span", { "class": "tag" }, p.tileSize));
+    meta.appendChild(el("span", { "class": "tag" }, p.files + " files · " + fmtBytes(p.bytes)));
+    body.appendChild(meta);
+    var links = el("div", { "class": "links" });
+    links.appendChild(el("a", { href: p.sourceUrl, target: "_blank", rel: "noopener" }, "Source page"));
+    links.appendChild(el("a", { href: enc(p.path + "SOURCE.md") }, "SOURCE.md"));
+    var copy = el("button", { type: "button" }, "Copy attribution");
+    copy.addEventListener("click", function () {
+      var text = p.attribution;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { toast("Attribution copied"); }, function () { prompt("Copy this attribution:", text); });
+      } else { prompt("Copy this attribution:", text); }
+    });
+    links.appendChild(copy);
+    body.appendChild(links);
+    c.appendChild(body);
+    return c;
+  }
+  function openPreview(p) {
+    var d = $("dlg"), img = $("dlg-img");
+    $("dlg-title").textContent = p.name + " — " + p.preview.split("/").pop();
+    img.src = enc(p.preview);
+    img.alt = p.name;
+    var apply = function () {
+      var z = parseInt($("zoom").value, 10) || 1;
+      if (p.previewSize && p.previewSize[0]) img.style.width = (p.previewSize[0] * z) + "px";
+    };
+    $("zoom").onchange = apply;
+    apply();
+    if (d.showModal) d.showModal(); else window.open(enc(p.preview), "_blank");
+  }
+  function render() {
+    var list = sorted(data.filter(matches));
+    var grid = $("grid");
+    grid.textContent = "";
+    var frag = document.createDocumentFragment();
+    list.forEach(function (p) { frag.appendChild(card(p)); });
+    grid.appendChild(frag);
+    var bytes = list.reduce(function (s, p) { return s + p.bytes; }, 0);
+    $("count").textContent = list.length + " of " + data.length + " packs · " + fmtBytes(bytes);
+    $("empty").hidden = list.length !== 0;
+  }
+  function init(json) {
+    data = json;
+    var total = data.reduce(function (s, p) { return s + p.bytes; }, 0);
+    var files = data.reduce(function (s, p) { return s + p.files; }, 0);
+    var stats = $("stats");
+    stats.textContent = data.length + " packs, " + files.toLocaleString() + " files, " + fmtBytes(total) +
+      " of free top-down tilesets, objects, characters and sounds for WorkAdventure maps. ";
+    var a = el("a", { href: "CREDITS.md" }, "Credits");
+    stats.appendChild(a);
+    var catCounts = {}, licCounts = {}, tiles = {};
+    data.forEach(function (p) {
+      catCounts[p.category] = (catCounts[p.category] || 0) + 1;
+      licCounts[p.license] = (licCounts[p.license] || 0) + 1;
+      var k = tileKey(p.tileSize); tiles[k] = (tiles[k] || 0) + 1;
+    });
+    CAT_ORDER.concat(Object.keys(catCounts).filter(function (c) { return CAT_ORDER.indexOf(c) === -1; }))
+      .forEach(function (c) { if (catCounts[c]) chip($("cats"), c, CAT_TITLES[c] || c, catCounts[c], state.cats); });
+    ["CC0", "CC-BY 4.0", "CC-BY 3.0", "OGA-BY 3.0", "CC-BY-SA 4.0", "CC-BY-SA 3.0"].forEach(function (l) {
+      if (licCounts[l]) chip($("lics"), l, l, licCounts[l], state.lics);
+    });
+    Object.keys(tiles).sort(function (a, b) { return tiles[b] - tiles[a]; }).forEach(function (t) {
+      var o = el("option", { value: t }, t + " (" + tiles[t] + ")"); $("tile").appendChild(o);
+    });
+    try {
+      var saved = JSON.parse(localStorage.getItem("wa-lib-view") || "{}");
+      if (saved.sort) { state.sort = saved.sort; $("sort").value = saved.sort; }
+    } catch (e) { /* storage unavailable */ }
+    render();
+  }
+  $("q").addEventListener("input", function (e) { state.q = e.target.value.trim(); render(); });
+  $("tile").addEventListener("change", function (e) { state.tile = e.target.value; render(); });
+  $("sort").addEventListener("change", function (e) {
+    state.sort = e.target.value;
+    try { localStorage.setItem("wa-lib-view", JSON.stringify({ sort: state.sort })); } catch (err) { /* ignore */ }
+    render();
+  });
+  $("dlg-close").addEventListener("click", function () { $("dlg").close(); });
+  $("dlg").addEventListener("click", function (e) { if (e.target === $("dlg")) $("dlg").close(); });
+  fetch("index.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(init)
+    .catch(function (err) {
+      $("stats").textContent = "Could not load index.json (" + err.message + "). Open this page through a web server, e.g. http://maps.wa.localhost/assets/library/";
+    });
+})();
+</script>
+</body>
+</html>

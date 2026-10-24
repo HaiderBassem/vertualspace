@@ -1,0 +1,6 @@
+Pack: TopDown Interior Home Tileset
+Source page: https://btl-games.itch.io/topdown
+Author: BTL Games
+License: CC0 - https://creativecommons.org/publicdomain/zero/1.0/
+The itch.io page lists 'Asset license: Creative Commons Zero v1.0 Universal'.
+Downloaded through itch.io's normal free download (the 'No thanks, just take me to the downloads' option); nothing was paid and no login was used.

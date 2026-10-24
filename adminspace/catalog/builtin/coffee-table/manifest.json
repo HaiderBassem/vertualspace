@@ -1,0 +1,82 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "coffee-table",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Coffee table",
+  "description": "A low table to place between sofas and armchairs.",
+  "translations": {
+    "fr-FR": {
+      "name": "Table basse",
+      "description": "Une table basse à placer entre canapés et fauteuils."
+    },
+    "de-DE": {
+      "name": "Couchtisch",
+      "description": "Ein niedriger Tisch zwischen Sofas und Sesseln."
+    },
+    "es-ES": {
+      "name": "Mesa de centro",
+      "description": "Una mesa baja para colocar entre sofás y butacas."
+    },
+    "ar-SA": {
+      "name": "طاولة قهوة",
+      "description": "طاولة منخفضة توضع بين الأرائك والكراسي."
+    }
+  },
+  "category": "lounge",
+  "tags": [
+    "table",
+    "low",
+    "lounge"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -1,0 +1,38 @@
+Pack: [LPC] Terrains
+Source page: https://opengameart.org/content/lpc-terrains
+Submitted by: bluecarrot16 (Sunday, March 25, 2018 - 06:58)
+License(s) listed on the source page: CC-BY-SA 4.0 / CC-BY-SA 3.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+"[LPC] Terrains" by bluecarrot16, Lanea Zimmerman (Sharm), Daniel Eddeland (Daneeklu), Richard Kettering (Jetrel), Zachariah Husiar (Zabin), Hyptosis, Casper Nilsson, Buko Studios, Nushio, ZaPaper, billknye, William Thompson, caeles, Redshrike, Bertram, and Rayane Félix (RayaneFLX). See CREDITS-terrain.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+Update 2021-03-23: if you go with option #1 ("terrain-map" below), check out Taffer's revised version here, which reshapes the texture atlas to 4096x4096 : https://opengameart.org/content/lpc-terrains-repacked 
+
+A big set of ground (terrain) tiles in LPC style. There are two ways to use this set: 
+
+
+With the 'terrain-map' tileset, you can seamlessly tile a bunch of different terrains (sand, dirt, rock, stone, grass, water, snow, ice, etc.) in a single layer; using the Tiled "Terrain" tool, it's very easy to paint terrains onto one another. (Recommended)
+With the 'terrain' tileset, you have to use multiple layers to overlay different terrains, but you can put any combination of these terrains or other terrains together. 
+
+This is part of my series of LPC-styled outdoor tiles. See the other entries for deciduous trees, conifers, plants and flowers, stuff for your jungle, junk for your beach, cliffs (soon), rocks (soon), etc.
+
+There are a number of similar submissions already, but I had a few specific goals when putting this together:
+
+1) Create a cohesive set of tiles spanning as many environments/biomes as possible, without having TOO big a set
+
+2) Include tiles which could be readily assembled with the Tiled terraingenerator tool into a single tileset which could be used to paint tiles on one layer
+
+3) Choose a sensible set of tiles which are allowed to overlap, rather than creating every combination of tiles (for instance, I don't need to have grass, lava, and snow all intersecting on the same tile; on the other hand, it makes sense to have sand, dirt, grass, and water all overlap so that's possible). 
+
+ 
+
+There were a few really nice textures which weren't included in some of the other submissions and that I wanted to incorporate: 
+
+- ZaPaper's frozen lake had really nice frozen water texture with two different borders to the existing snow; the images had a really high color count though, so I trimmed them down and edited them to fit better with the rest of the set. Same for ZaPaper's "Animated Water and Waterfalls," which I've adapted to use as a shallow water texture (either for sand or dirt) 
+
+- I fell in love with Jetrel/Zabin's cobblestone paths (originally here), as well as the root-y dirt texture. 
+
+- There's a lumpier, grassier cobblestone texture in Zabin's newer ZRPG tiles which I have stupidly called "Mudstone" because it looks kind of like cobblestone, but also kind of like mud... maybe Zabin or Jetrel can tell me what it should actually be c

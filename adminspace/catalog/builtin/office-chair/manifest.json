@@ -1,0 +1,118 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "office-chair",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Office chair",
+  "description": "A swivel task chair in four directions, to face any desk or table.",
+  "translations": {
+    "fr-FR": {
+      "name": "Chaise de bureau",
+      "description": "Une chaise pivotante dans les quatre directions, pour faire face à n’importe quel bureau."
+    },
+    "de-DE": {
+      "name": "Bürostuhl",
+      "description": "Ein Drehstuhl in vier Richtungen, passend zu jedem Schreibtisch oder Tisch."
+    },
+    "es-ES": {
+      "name": "Silla de oficina",
+      "description": "Una silla giratoria en cuatro direcciones, para cualquier escritorio o mesa."
+    },
+    "ar-SA": {
+      "name": "كرسي مكتب",
+      "description": "كرسي دوّار بأربعة اتجاهات ليقابل أي مكتب أو طاولة."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "chair",
+    "seat",
+    "ergonomic"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "charcoal-down",
+        "color": "#3d4149",
+        "direction": "Down",
+        "image": "charcoal-down.png"
+      },
+      {
+        "key": "charcoal-up",
+        "color": "#3d4149",
+        "direction": "Up",
+        "image": "charcoal-up.png"
+      },
+      {
+        "key": "charcoal-left",
+        "color": "#3d4149",
+        "direction": "Left",
+        "image": "charcoal-left.png"
+      },
+      {
+        "key": "charcoal-right",
+        "color": "#3d4149",
+        "direction": "Right",
+        "image": "charcoal-right.png"
+      },
+      {
+        "key": "blue-down",
+        "color": "#4060c8",
+        "direction": "Down",
+        "image": "blue-down.png"
+      },
+      {
+        "key": "blue-up",
+        "color": "#4060c8",
+        "direction": "Up",
+        "image": "blue-up.png"
+      },
+      {
+        "key": "blue-left",
+        "color": "#4060c8",
+        "direction": "Left",
+        "image": "blue-left.png"
+      },
+      {
+        "key": "blue-right",
+        "color": "#4060c8",
+        "direction": "Right",
+        "image": "blue-right.png"
+      },
+      {
+        "key": "slate-down",
+        "color": "#6e7889",
+        "direction": "Down",
+        "image": "slate-down.png"
+      },
+      {
+        "key": "slate-up",
+        "color": "#6e7889",
+        "direction": "Up",
+        "image": "slate-up.png"
+      },
+      {
+        "key": "slate-left",
+        "color": "#6e7889",
+        "direction": "Left",
+        "image": "slate-left.png"
+      },
+      {
+        "key": "slate-right",
+        "color": "#6e7889",
+        "direction": "Right",
+        "image": "slate-right.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

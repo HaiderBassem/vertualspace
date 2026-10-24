@@ -1,0 +1,25 @@
+Pack: 30 CC0 SFX loops
+Source page: https://opengameart.org/content/30-cc0-sfx-loops
+Submitted by: rubberduck (Friday, July 6, 2018 - 10:04)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+I created 30 different SFX loops including:
+
+3x alarm
+3x ambient
+11x machine
+3x noise
+2x water pump
+1x rain
+1x rolling sound
+1x hand saw
+1x boiling water
+1x flowing water
+3x weird
+
+Note: most loops are much longer than in the preview - up to 8 seconds

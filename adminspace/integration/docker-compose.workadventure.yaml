@@ -1,0 +1,87 @@
+# Compose override running Adminspace next to WorkAdventure's development stack.
+#
+# From the WorkAdventure checkout (the project directory, so relative paths below are resolved from it):
+#
+#   docker compose -f docker-compose.yaml -f ../adminspace/integration/docker-compose.workadventure.yaml up -d
+#
+# Variables are read from WorkAdventure's .env. Add these lines to it:
+#
+#   ADMIN_API_TOKEN=<long random string>          # already exists in WorkAdventure's .env (default "123")
+#   ADMIN_SOCKETS_TOKEN=<long random string>      # openssl rand -hex 32
+#   ADMINSPACE_APP_SECRET=<32+ random characters> # openssl rand -hex 32
+#
+# Then open http://admin.workadventure.localhost/setup to create the first superadmin.
+# See integration/README.md and docs/INTEGRATION.md.
+
+services:
+    # WorkAdventure's reverse proxy resolves the *.workadventure.localhost names inside the network.
+    # admin.workadventure.localhost is added so that play can reach this admin through ADMIN_URL.
+    reverse-proxy:
+        networks:
+            default:
+                aliases:
+                    - "admin.workadventure.localhost"
+
+    play:
+        environment:
+            ADMIN_API_URL: "http://adminspace:3000"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN}"
+            # Public URL of the admin: profile page, back-office link, and a few server-side calls
+            # (chat ids, ICE servers) that WorkAdventure sends to ADMIN_URL instead of ADMIN_API_URL.
+            ADMIN_URL: "http://admin.workadventure.localhost"
+            ADMIN_SOCKETS_TOKEN: "${ADMIN_SOCKETS_TOKEN}"
+            OPID_PROFILE_SCREEN_PROVIDER: "http://admin.workadventure.localhost/profile"
+        depends_on:
+            - adminspace
+
+    back:
+        environment:
+            ADMIN_API_URL: "http://adminspace:3000"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN}"
+        depends_on:
+            - adminspace
+
+    adminspace:
+        build:
+            context: ../adminspace
+        environment:
+            DATABASE_URL: "postgres://adminspace:adminspace@adminspace-db:5432/adminspace"
+            ORIGIN: "http://admin.workadventure.localhost"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN}"
+            ADMIN_SOCKETS_TOKEN: "${ADMIN_SOCKETS_TOKEN}"
+            APP_SECRET: "${ADMINSPACE_APP_SECRET}"
+            DEFAULT_LOCALE: "en-US"
+            WORKADVENTURE_PLAY_URL: "http://play.workadventure.localhost"
+            # Resolved through the reverse proxy alias: it routes /ws/ to the pusher's websocket port.
+            WORKADVENTURE_PUSHER_INTERNAL_URL: "http://play.workadventure.localhost"
+            WORKADVENTURE_MAP_STORAGE_PUBLIC_URL: "http://map-storage.workadventure.localhost"
+            WORKADVENTURE_MAP_STORAGE_INTERNAL_URL: "http://map-storage.workadventure.localhost"
+            WORKADVENTURE_START_ROOM_URL: "${START_ROOM_URL:-}"
+        depends_on:
+            adminspace-db:
+                condition: service_healthy
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.adminspace.rule=Host(`admin.workadventure.localhost`)"
+            - "traefik.http.routers.adminspace.entryPoints=web"
+            - "traefik.http.routers.adminspace.service=adminspace"
+            - "traefik.http.services.adminspace.loadbalancer.server.port=3000"
+
+    adminspace-db:
+        image: postgres:17-alpine
+        environment:
+            POSTGRES_USER: adminspace
+            POSTGRES_PASSWORD: adminspace
+            POSTGRES_DB: adminspace
+            TZ: UTC
+            PGTZ: UTC
+        volumes:
+            - adminspace-db:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U adminspace"]
+            interval: 5s
+            timeout: 3s
+            retries: 10
+
+volumes:
+    adminspace-db:

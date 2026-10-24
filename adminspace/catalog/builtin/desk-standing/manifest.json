@@ -1,0 +1,97 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "desk-standing",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Standing desk",
+  "description": "A height-adjustable desk on a steel frame, for focused work standing up.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bureau assis-debout",
+      "description": "Un bureau réglable en hauteur sur piétement acier, pour travailler debout."
+    },
+    "de-DE": {
+      "name": "Steh-Sitz-Schreibtisch",
+      "description": "Ein höhenverstellbarer Schreibtisch mit Stahlgestell für konzentriertes Arbeiten im Stehen."
+    },
+    "es-ES": {
+      "name": "Escritorio elevable",
+      "description": "Un escritorio regulable en altura con estructura de acero, para trabajar de pie."
+    },
+    "ar-SA": {
+      "name": "مكتب للعمل وقوفًا",
+      "description": "مكتب قابل لتعديل الارتفاع بهيكل فولاذي، للعمل وقوفًا بتركيز."
+    }
+  },
+  "category": "desks",
+  "tags": [
+    "desk",
+    "standing",
+    "ergonomic"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "graphite",
+        "color": "#555b66",
+        "direction": "Down",
+        "image": "graphite.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

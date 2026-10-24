@@ -1,0 +1,19 @@
+Pack: [LPC] Victorian Buildings
+Source page: https://opengameart.org/content/lpc-victorian-buildings
+Submitted by: bluecarrot16 (Thursday, December 31, 2020 - 19:49)
+License(s) listed on the source page: CC-BY-SA 4.0 / CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"LPC Victorian Buildings," by bluecarrot16, Lanea Zimmerman (Sharm), Casper Nilsson, Lyndsay Takacs (cyanowl), and Redshrike. See CREDITS-victorian.txt for details.
+
+Description from the page (excerpt):
+Buildings, in various architectural styles of the mid-late 19th century; drawn in the style of the Liberated Pixel Cup.
+
+See preview images! This is an extremely large set, comprising >10,000 tiles. A companion set with town decorations can be found here. Please note the preview images also include assets from several other submissions; see [LPC] Victorian Town Decorations for details. 
+
+I have no training in architecture, so I make no claims that this represents real or accurate architecture from the Victorian period or from any specific part of the world. I was most heavily inspired by buildings in the eastern United States. Styles represented include Neoclassical, Beaux-Arts, Stick, Shingle, Italianate, Queen Anne, and Second Empire. Gothic influences are largely avoided (see my castles mega-pack for some of that).
+
+victorian-tenement.png includes brickwork and storefronts for large buildings in an urban area. victorian-mansion.png includes materials for larger, elaborate houses and mansions. victorian-accessories.png and victorian-windows-doors.png are meant to be used as supplements to both sets. Both sets also benefit from my earlier windows and doors submission, which will be updated shortly; those more "general-purpose" windows are not duplicated here. Likewise, some specific roof structures are included, but mostly you will want to use the LPC roofs found here. Finally, this set works well with the LPC colonial buildings, which is more influenced by the preceding Georgian period.

@@ -1,0 +1,11 @@
+Pack: indoor office appliances
+Source page: https://opengameart.org/content/indoor-office-appliances
+Submitted by: semtex99 (Sunday, September 27, 2020 - 14:04)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+a 32 x 32 tileset containing some indoor office / factory decorations

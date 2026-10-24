@@ -1,0 +1,15 @@
+Pack: Warped Top-Down Tech Lab 2
+Source page: https://opengameart.org/content/warped-top-down-tech-lab-2
+Submitted by: ansimuz (Friday, July 1, 2022 - 09:24)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+by Ansimuz (optional)
+
+Description from the page (excerpt):
+Another Pixel-Art Top-Down Tileset in the Style of Phantasy Star. 
+
+Made in beautiful Pixel-art this set has everything to create a top-down layout of a SciFi lab.
+
+Size of the Tiles are 32x32 pixels.

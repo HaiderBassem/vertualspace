@@ -1,0 +1,52 @@
+# Compose override for WorkAdventure's PRODUCTION stack (contrib/docker/docker-compose.prod.yaml of the
+# WorkAdventure repository): connects play and back to Adminspace over the private Docker network
+# "workadventure-admin" created for deploy/docker-compose.prod.yaml. See docs/DEPLOYMENT.md (Connecting
+# WorkAdventure).
+#
+#   cd <workadventure>/contrib/docker
+#   docker compose -f docker-compose.prod.yaml -f <adminspace>/deploy/workadventure.override.yaml up -d
+#
+# Add to WorkAdventure's .env (same values as deploy/.env.prod of Adminspace):
+#   ADMIN_API_TOKEN=...            identical to Adminspace's ADMIN_API_TOKEN
+#   ADMIN_SOCKETS_TOKEN=...        identical to Adminspace's ADMIN_SOCKETS_TOKEN
+#   ADMINSPACE_DOMAIN=admin.example.com
+#   WORKADVENTURE_ADMIN_NETWORK=workadventure-admin   (optional, this is the default)
+
+services:
+    play:
+        environment:
+            # Admin API calls of the pusher, over the private network.
+            ADMIN_API_URL: "http://adminspace:3000"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN:?ADMIN_API_TOKEN is required}"
+            # The pusher also calls three Admin API endpoints through ADMIN_URL instead of ADMIN_API_URL
+            # (/api/members/{id}/chatId, /api/ice-servers, /api/oauth/refreshtoken). Adminspace's public proxy
+            # refuses /api/*, so ADMIN_URL points at the private address too. Browsers receive ADMIN_URL but
+            # only use it for links Adminspace does not serve; the pages people open are set explicitly below.
+            ADMIN_URL: "http://adminspace:3000"
+            ADMIN_BO_URL: "https://${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required}"
+            OPID_PROFILE_SCREEN_PROVIDER: "https://${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required}/profile"
+            # Live list of connected people and immediate disconnection on bans (optional).
+            ADMIN_SOCKETS_TOKEN: "${ADMIN_SOCKETS_TOKEN:-}"
+        networks:
+            - default
+            - workadventure-admin
+
+    back:
+        environment:
+            ADMIN_API_URL: "http://adminspace:3000"
+            ADMIN_API_TOKEN: "${ADMIN_API_TOKEN:?ADMIN_API_TOKEN is required}"
+        networks:
+            - default
+            - workadventure-admin
+
+    # WorkAdventure's compose file passes ADMIN_API_URL to the uploader too. With it, the uploader asks the
+    # admin for /api/limit/fileSize, which Adminspace does not implement (chat uploads would fail): keep the
+    # uploader on its own limits (UPLOAD_MAX_FILESIZE, ENABLE_CHAT_UPLOAD).
+    uploader:
+        environment:
+            ADMIN_API_URL: ""
+
+networks:
+    workadventure-admin:
+        external: true
+        name: "${WORKADVENTURE_ADMIN_NETWORK:-workadventure-admin}"

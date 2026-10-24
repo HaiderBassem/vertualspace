@@ -1,0 +1,70 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "armchair",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Armchair",
+  "description": "A deep armchair for reading corners and receptions.",
+  "translations": {
+    "fr-FR": {
+      "name": "Fauteuil",
+      "description": "Un fauteuil profond pour les coins lecture et les accueils."
+    },
+    "de-DE": {
+      "name": "Sessel",
+      "description": "Ein tiefer Sessel für Leseecken und Empfangsbereiche."
+    },
+    "es-ES": {
+      "name": "Butaca",
+      "description": "Una butaca amplia para rincones de lectura y recepciones."
+    },
+    "ar-SA": {
+      "name": "كرسي بذراعين",
+      "description": "كرسي عميق بذراعين لزوايا القراءة والاستقبال."
+    }
+  },
+  "category": "lounge",
+  "tags": [
+    "armchair",
+    "seat",
+    "lounge"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "terracotta",
+        "color": "#c5653f",
+        "direction": "Down",
+        "image": "terracotta.png"
+      },
+      {
+        "key": "green",
+        "color": "#3f8b69",
+        "direction": "Down",
+        "image": "green.png"
+      },
+      {
+        "key": "blue",
+        "color": "#4060c8",
+        "direction": "Down",
+        "image": "blue.png"
+      },
+      {
+        "key": "charcoal",
+        "color": "#3d4149",
+        "direction": "Down",
+        "image": "charcoal.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

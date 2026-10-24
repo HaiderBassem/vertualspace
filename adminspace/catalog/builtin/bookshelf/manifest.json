@@ -1,0 +1,97 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "bookshelf",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Bookshelf",
+  "description": "A tall shelf filled with books, to set against a wall.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bibliothèque",
+      "description": "Une haute étagère garnie de livres, à placer contre un mur."
+    },
+    "de-DE": {
+      "name": "Bücherregal",
+      "description": "Ein hohes, mit Büchern gefülltes Regal für die Wand."
+    },
+    "es-ES": {
+      "name": "Estantería",
+      "description": "Una estantería alta llena de libros, para apoyar contra la pared."
+    },
+    "ar-SA": {
+      "name": "رف كتب",
+      "description": "رف طويل مليء بالكتب يوضع مقابل الجدار."
+    }
+  },
+  "category": "decoration",
+  "tags": [
+    "shelf",
+    "books",
+    "storage"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

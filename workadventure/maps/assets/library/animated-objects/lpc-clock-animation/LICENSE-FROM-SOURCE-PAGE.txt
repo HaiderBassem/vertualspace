@@ -1,0 +1,12 @@
+Pack: [LPC] Clock Animation
+Source page: https://opengameart.org/content/lpc-clock-animation
+Submitted by: William.Thompsonj (Friday, January 3, 2014 - 23:47)
+License(s) listed on the source page: CC-BY 3.0 / GPL 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+This is a small change from what Sharm originally made but it does make an animated clock out of the static clock she so kindly gave to the LPC world.

@@ -1,0 +1,24 @@
+Pack: LPC Tile Atlas
+Source page: https://opengameart.org/content/lpc-tile-atlas
+Submitted by: adrix89 (Monday, November 12, 2012 - 11:57)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+These assets are not mine,credit goes to all the assets from the LPC contest.
+
+LPC tileset atlas in 1024x 1024 so you can use it as a a hardware accelerated  texture on even older hardware.
+
+The base_out is just is base LPC assets that are "outside" crammed into a texture
+
+The terrain is base with LPC entries that are "terrain",farming and vegetation.
+
+The continuation is here
+
+A note on Johann C - Shoot'em up graphic kit entry, his tiles are not very detailed but there pretty good and with a bit more editing and detail would work wonderfully with the base.
+
+Also if by some chance I miss some authors in the licence please tell me.

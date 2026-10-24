@@ -1,0 +1,97 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "round-table",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Round table",
+  "description": "A pedestal table for quick huddles of three or four people.",
+  "translations": {
+    "fr-FR": {
+      "name": "Table ronde",
+      "description": "Une table sur pied central pour des points rapides à trois ou quatre."
+    },
+    "de-DE": {
+      "name": "Runder Tisch",
+      "description": "Ein Säulentisch für kurze Abstimmungen zu dritt oder viert."
+    },
+    "es-ES": {
+      "name": "Mesa redonda",
+      "description": "Una mesa de pie central para reuniones rápidas de tres o cuatro personas."
+    },
+    "ar-SA": {
+      "name": "طاولة مستديرة",
+      "description": "طاولة بقاعدة مركزية للاجتماعات السريعة لثلاثة أو أربعة أشخاص."
+    }
+  },
+  "category": "meeting",
+  "tags": [
+    "table",
+    "round",
+    "huddle"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "graphite",
+        "color": "#555b66",
+        "direction": "Down",
+        "image": "graphite.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

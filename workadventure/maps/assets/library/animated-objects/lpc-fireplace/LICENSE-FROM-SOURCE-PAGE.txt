@@ -1,0 +1,12 @@
+Pack: LPC Fireplace
+Source page: https://opengameart.org/content/lpc-fireplace
+Submitted by: Sharm (Saturday, November 24, 2012 - 18:09)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+A fireplace and animated fire for LPC homes.

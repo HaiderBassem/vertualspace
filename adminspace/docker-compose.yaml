@@ -1,0 +1,25 @@
+# Local development: PostgreSQL only. The admin itself runs with `npm run dev`.
+#   docker compose up -d db
+# To run the admin next to WorkAdventure's own docker compose, see integration/README.md.
+services:
+    db:
+        image: postgres:17-alpine
+        environment:
+            POSTGRES_USER: adminspace
+            POSTGRES_PASSWORD: adminspace
+            POSTGRES_DB: adminspace
+            # Store and exchange every timestamp in UTC.
+            TZ: UTC
+            PGTZ: UTC
+        ports:
+            - "5433:5432"
+        volumes:
+            - adminspace-db:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U adminspace"]
+            interval: 5s
+            timeout: 3s
+            retries: 10
+
+volumes:
+    adminspace-db:

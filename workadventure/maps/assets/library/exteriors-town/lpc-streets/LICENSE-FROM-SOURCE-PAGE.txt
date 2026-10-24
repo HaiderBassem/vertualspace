@@ -1,0 +1,25 @@
+Pack: [LPC] Streets
+Source page: https://opengameart.org/content/lpc-streets
+Submitted by: Baŝto (Thursday, July 19, 2018 - 11:56)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+Based on “[LPC] Skorpio's SciFi Sprite Pack” by Skorpio, which is dual licensed as CC-BY-SA 3.0 and GPL 3.0
+
+Description from the page (excerpt):
+I improved the streets of [LPC] Skorpio's SciFi Sprite Pack
+
+
+seperated streets and road markings
+shrunk street width from 7 tiles to 6
+added further road markings
+added street signs
+added white and orange version of road markings
+
+ 
+
+The preview also contains elements from the original pack and LPC base.
+
+Includes configurations for tiled's automapping to make drawing streets easier. Only the staight midlines in layer "road_markings" must be drawn. Asphalt, correct junctions and curves get added automatically.

@@ -1,0 +1,13 @@
+Pack: [LPC] Conifers
+Source page: https://opengameart.org/content/lpc-conifers
+Submitted by: bluecarrot16 (Wednesday, December 27, 2017 - 21:18)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+See CREDITS-conifers.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+This is the companion to the deciduous trees pack, containing coniferous (needled) trees. Since these are "evergreen" trees, I have included snow-covered versions as well. Part of my series of LPC-styled outdoor assets

@@ -1,0 +1,76 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "floor-lamp",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Floor lamp",
+  "description": "A fabric-shade floor lamp with a warm glow.",
+  "translations": {
+    "fr-FR": {
+      "name": "Lampadaire",
+      "description": "Un lampadaire à abat-jour en tissu à la lumière chaude."
+    },
+    "de-DE": {
+      "name": "Stehleuchte",
+      "description": "Eine Stehleuchte mit Stoffschirm und warmem Licht."
+    },
+    "es-ES": {
+      "name": "Lámpara de pie",
+      "description": "Una lámpara de pie con pantalla de tela y luz cálida."
+    },
+    "ar-SA": {
+      "name": "مصباح أرضي",
+      "description": "مصباح أرضي بغطاء قماشي وإضاءة دافئة."
+    }
+  },
+  "category": "lighting",
+  "tags": [
+    "lamp",
+    "light",
+    "lounge"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "black",
+        "color": "#2a2d33",
+        "direction": "Down",
+        "image": "black.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "brass",
+        "color": "#b8913f",
+        "direction": "Down",
+        "image": "brass.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

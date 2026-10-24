@@ -1,0 +1,38 @@
+Pack: [LPC] Santa
+Source page: https://opengameart.org/content/lpc-santa
+Submitted by: bluecarrot16 (Friday, December 17, 2021 - 22:53)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+"[LPC] Santa" by bluecarrot16, Johannes Sjölund (wulax), Stephen Challener (Redshrike), Nila122, and Matthew Krohn (makrohn). Commissioned by Sander Franken (castelonia). License: CC-BY-SA 3.0 or GPL 3.0. https://opengameart.org/content/lpc-santa . See CREDITS-santa.txt.
+
+Description from the page (excerpt):
+Ho ho ho! Santa Claus, Kris Kringle, Saint Nicholas, the Jolly Elf Himself is on his way into town! Christmas-themed clothing items including a fluffy Santa coat, boots, and festive hats, plus a big bushy beard---in the style of the Liberated Pixel Cup. Kindly commissioned by castelonia in the true spirit of Christmas.
+
+
+
+If you like my work, please consider supporting me on ko-fi! I am also open for commissions; send me a direct message!
+
+ 
+
+ 
+
+All items are fully animated, and all clothing items come in lots of colors (both Christmas-y and not). Works great with Nila122's elf ears and with various hairstyles. 
+
+All items are available for use via the Universal Spritesheet Generator (thanks castelonia)!
+
+Preview images include additional art by Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn (makrohn), Marcel van de Steeg (MadMarcel), Thane Brimhall (pennomi), David Conway Jr. (JaidynReiman), Manuel Riecke (MrBeast), bluecarrot16, Michael Whitlock (bigbeargames), Eliza Wyatt (ElizaWy), Lanea Zimmerman (Sharm), and Joe White. See links below for details.
+
+Links to view/edit the preview characters in the Universal spritesheet generator:
+
+Santa 1: http://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Gener...
+
+Santa 1: http://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Gener...
+
+Santa 2: http://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Gener...
+
+Elf 1: http://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Gener...
+
+Elf 2: http://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Gener...

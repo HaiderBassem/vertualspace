@@ -1,0 +1,32 @@
+Pack: [LPC Revised] The Office
+Source page: https://opengameart.org/content/lpc-revised-the-office
+Submitted by: Death's Darling (Wednesday, November 10, 2021 - 07:23)
+License(s) listed on the source page: CC-BY-SA 3.0 / OGA-BY 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+By Eliza Wyatt. Elements of the Ornate Desk and the Office Portraits use assets by Lanea Zimmerman (Sharm).
+
+Description from the page (excerpt):
+LPC assets for a modern office (and a few miscellaneous pieces, requested by my commissioner). Everything is made with the Liberated Palette.
+
+Contents:
+
+
+Rotatable large and small waste bins in blue, green, black, gray, and white
+Rotatable large and small card tables, in black, gray, and white
+Coffee mug
+Coffee maker & espresso shots
+Copy machine with an animated green copy light
+Ornate wood desk
+Rotatable laptops, on and off, in black annd white
+Tilable apartment-style mailboxes
+Office portraits
+Rotatable rotary phones
+Shopping cart (side only)
+Rotatable pedastal sink, with filling animation
+Widescreen tv, with an off screen, a technical difficulties screen, and animated static
+Rotatable water cooler
+
+All up to date assets for the LPC Revised project can be found on my Github page here: https://github.com/ElizaWy/LPC

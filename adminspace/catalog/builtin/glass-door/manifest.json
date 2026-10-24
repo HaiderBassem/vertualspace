@@ -1,0 +1,52 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "glass-door",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Glass door",
+  "description": "A double glass door. Combine it with an exit area in the editor to link rooms.",
+  "translations": {
+    "fr-FR": {
+      "name": "Porte vitrée",
+      "description": "Une porte vitrée double. Associez-la à une zone de sortie dans l’éditeur pour relier des salles."
+    },
+    "de-DE": {
+      "name": "Glastür",
+      "description": "Eine doppelte Glastür. Im Editor mit einem Ausgangsbereich kombinieren, um Räume zu verbinden."
+    },
+    "es-ES": {
+      "name": "Puerta de cristal",
+      "description": "Una puerta doble de cristal. Combínala con una zona de salida en el editor para conectar salas."
+    },
+    "ar-SA": {
+      "name": "باب زجاجي",
+      "description": "باب زجاجي مزدوج. ادمجه مع منطقة خروج في المحرر لربط الغرف."
+    }
+  },
+  "category": "navigation",
+  "tags": [
+    "door",
+    "glass",
+    "entrance"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#9fd0ee",
+        "direction": "Down",
+        "image": "standard.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

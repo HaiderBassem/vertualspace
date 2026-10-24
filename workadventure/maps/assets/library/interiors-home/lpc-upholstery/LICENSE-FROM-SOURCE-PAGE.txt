@@ -1,0 +1,16 @@
+Pack: [LPC] Upholstery
+Source page: https://opengameart.org/content/lpc-upholstery
+Submitted by: bluecarrot16 (Monday, February 25, 2019 - 22:35)
+License(s) listed on the source page: CC-BY 4.0 / CC-BY 3.0 / CC-BY-SA 4.0 / CC-BY-SA 3.0 / GPL 3.0 / OGA-BY 3.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+"[LPC] Upholstery" by bluecarrot16, Lanea Zimmerman (Sharm). Please link back to https://opengameart.org/content/lpc-upholstery and  https://opengameart.org/content/lpc-interior-castle-tiles .
+
+Description from the page (excerpt):
+Various wooden furniture with fabric. Technically not everything is upholstered (like the beds, or the lamps obviously :p), it's just grouped together to facilitate recolors (some examples in preview which do not have all the elements... can be used under the same license). More to come in the future... Sorry for the lack of proper preview.

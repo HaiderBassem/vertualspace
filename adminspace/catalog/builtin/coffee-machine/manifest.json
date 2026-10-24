@@ -1,0 +1,61 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "coffee-machine",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Coffee station",
+  "description": "A coffee machine on its cabinet, the natural meeting point. Add a “Meeting room” property in the editor for spontaneous chats.",
+  "translations": {
+    "fr-FR": {
+      "name": "Machine à café",
+      "description": "Une machine à café sur son meuble, point de rencontre naturel. Ajoutez une propriété « Salle de réunion » dans l’éditeur."
+    },
+    "de-DE": {
+      "name": "Kaffeestation",
+      "description": "Eine Kaffeemaschine auf ihrem Schrank, der natürliche Treffpunkt. Im Editor eine Eigenschaft „Besprechungsraum“ hinzufügen."
+    },
+    "es-ES": {
+      "name": "Estación de café",
+      "description": "Una cafetera sobre su mueble, el punto de encuentro natural. Añade una propiedad «Sala de reuniones» en el editor."
+    },
+    "ar-SA": {
+      "name": "ركن القهوة",
+      "description": "آلة قهوة على خزانتها، نقطة لقاء طبيعية. أضف خاصية «غرفة اجتماعات» في المحرر للأحاديث العفوية."
+    }
+  },
+  "category": "interactive",
+  "tags": [
+    "coffee",
+    "kitchen",
+    "break"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#2b3038",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

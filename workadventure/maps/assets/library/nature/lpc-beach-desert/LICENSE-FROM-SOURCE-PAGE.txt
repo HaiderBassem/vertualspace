@@ -1,0 +1,13 @@
+Pack: [LPC] Beach / Desert
+Source page: https://opengameart.org/content/lpc-beach-desert
+Submitted by: bluecarrot16 (Friday, December 29, 2017 - 00:31)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+See CREDITS-beach-desert.txt. You MUST credit all authors with the information in this file, and you must link back to this page on OpenGameArt.
+
+Description from the page (excerpt):
+Continuing my series of LPC-styled outdoor assets, here are some tiles to use with sandy places—beaches, deserts, etc. Includes shells, cacti and desert-y plants of various sizes, some knarled, dry-looking trees, bones, and various sandy formations.
+
+Actual sand is not included; preview uses sand from https://opengameart.org/content/lpc-sandrock-alt-colors and water from https://opengameart.org/content/lpc-animated-water-and-waterfalls (slightly modified). As usual, please let me know if I have attributed someone incorrectly.

@@ -1,0 +1,12 @@
+Pack: LPC Snowy Tree
+Source page: https://opengameart.org/content/lpc-snowy-tree
+Submitted by: WolfMountainGames (Wednesday, December 2, 2015 - 10:40)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright/attribution notice from the page:
+Sharm made this art for the LPC I just changed the colors to snow
+
+Description from the page (excerpt):
+Here is a Snow version of the LPC Coniferous Tree

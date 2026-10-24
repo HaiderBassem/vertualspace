@@ -1,0 +1,1 @@
+CREATE INDEX "rooms_wam_url_idx" ON "rooms" USING hash ("wam_url");

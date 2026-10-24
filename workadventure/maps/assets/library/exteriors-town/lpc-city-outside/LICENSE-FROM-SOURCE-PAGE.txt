@@ -1,0 +1,19 @@
+Pack: [LPC] City outside
+Source page: https://opengameart.org/content/lpc-city-outside
+Submitted by: Reemax (Sunday, February 15, 2015 - 06:28)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+see credits.txt
+
+Description from the page (excerpt):
+LPC stuff collected into to build city. Contains different walls and roofs. Featuring couple of statues, sun clocks, obelisk, well and market booth.
+
+Note that preview images contains tiles from these sets too:
+
+http://opengameart.org/content/lpc-signposts-graves-line-cloths-and-scar...
+
+http://opengameart.org/content/lpc-hanging-signs

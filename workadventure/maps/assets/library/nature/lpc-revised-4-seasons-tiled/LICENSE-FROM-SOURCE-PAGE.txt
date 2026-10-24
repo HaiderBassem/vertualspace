@@ -1,0 +1,50 @@
+Pack: [LPC Revised] Fully Configured 4-Seasons Tilesets for Tiled Map Editor
+Source page: https://opengameart.org/content/lpc-revised-fully-configured-4-seasons-tilesets-for-tiled-map-editor
+Submitted by: JaidynReiman (Sunday, April 14, 2024 - 10:54)
+License(s) listed on the source page: CC-BY 3.0 / OGA-BY 3.0
+  CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+  OGA-BY 3.0: https://opengameart.org/content/oga-by-30-faq
+
+Copyright/attribution notice from the page:
+JaidynReiman for compiling the assets from LPC Revised and configuring the Tiled Map Editor tilesets for it. Also created a winter version of the bushes with a simple palette recolor to make the collision easier to convert between seasons.
+
+Original LPC Revised (https://github.com/ElizaWy/LPC) asset contributors include Eliza Wyatt (DeathsDarling), Lanea Zimmerman (Sharm), Stephen Challener (Redshrike), Johannes Sjölund (Wulax), BlueCarrot16, BenCreating, Durrani, YuriNikolai and Craftpix.net 2D Game Assets.
+
+https://github.com/ElizaWy/LPC/blob/main/Credits.txt
+
+Description from the page (excerpt):
+This is partially inspired by some of the older adrix89's tile atlases:
+
+https://opengameart.org/content/lpc-tile-atlas
+
+https://opengameart.org/content/lpc-tile-atlas2
+
+ 
+
+I just wanted to use a bunch of assets that were all in the OGA-BY license and Death's Darling (ElizaWy's) assets were the most comprehensive set all in OGA-BY, but a lot of the tiles are in various locations and difficult to manage, so this is designed to contain them all in one place along with Terrain Sets where possible, but I also configured collision (which I don't know if it was a good idea or not, but I did it anyway).
+
+ 
+
+ElizaWy's original assets can be found here:
+
+https://github.com/ElizaWy/LPC
+
+ 
+
+By the time I started working on LPC stuff again, it seems like Eliza may have gone inactive. If so, in the future I may update LPC Revised assets with other OGA-BY assets from various locations where I can find them. However, I'm going to work on other things for a while first to see if she comes back (her last update was 5 months ago, which is a while, but its also enough time that she could just be busy with other things for a short while and still come back).
+
+I created a handful of tilesets, all in 2048x2048 (the tile atlas's were 1024x1024 so I thought doubling that would probably be fine, especially since its been over a decade since  1024x1024 was considered to be "hardware accelerated" safe). The only ones I have "finished" so far are the 4 seasons and the buildings.
+
+I included all "outdoors-y" assets into the 4-seasons tilesets that existed on LPC Revised and there's still plenty of room left to fit more things that are missing. I tried to reduce duplicated assets as much as possible where reasonable, while also keeping the 4-seasons design with the basic idea of being able to swap out the tileset completely to change the season.
+
+The tileset is fully animated as well; all assets that have animations are animated. Originally I had the ice tiles just "vanish" when swapping seasons, but finally I decided to fully configure them to degrade into animation equivalents of the same time in the other variants.
+
+I cut back on the tree size as well by reducing duplicate assets as much as possible. In theory, you probably only really need the base trunks and the tree overlays.
+
+ 
+
+I finally figured out how to make the fences with a Terrain Set as well, so they also look pretty nice now.
+
+ 
+
+I put buildings into a separate tileset (also included) because there wasn't enough room fo

@@ -1,0 +1,17 @@
+Pack: [LPC Revised] Base Object Kit!
+Source page: https://opengameart.org/content/lpc-revised-base-object-kit
+Submitted by: Death's Darling (Saturday, June 5, 2021 - 03:27)
+License(s) listed on the source page: CC-BY-SA 3.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+Copyright/attribution notice from the page:
+DRM-waived. Artists used in this pack: Eliza Wyatt, Lanea Zimmerman (Sharm), BlueCarrot16, Hyptosis. More detailed credits are listed in each subfolder!
+
+Description from the page (excerpt):
+LPC Revised: an entirely DRM-friendly graphics set made with an original consistent, 128-color palette. All graphics in this series have had their DRM-clause waived, meaning they can be released on platforms like iOS, something not possible with LPC's original CC-by-SA license.
+
+This package contains the new palette and objects: furniture, decor, storage, clutter, lighting. Plenty of original pieces have been added, including four-direction turnarounds and original paintings.
+
+In the future, I'll be releasing a structure base set, for walls, flooring and structural elements; a terrain and nature set, for tiling terrain and nature objects; and a set of new and revised LPC character animations. Everything will be uploaded here, at a central LPC repository: https://github.com/ElizaWy/LPC
+
+I'll also be taking suggestions and commissions through my Patreon account.

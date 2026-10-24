@@ -1,0 +1,29 @@
+// Vendored from WorkAdventure (libs/messages/src/JsonMessages/AdminApiData.ts) by scripts/sync-contract.ts.
+// Do not edit: run "npm run contract:sync" instead. License: see the WorkAdventure repository.
+import { z } from "zod";
+import { extendApi } from "@anatine/zod-openapi";
+
+export const isUserRoomToken = z.object({
+  messages: z.optional(z.array(z.unknown())),
+  alg: z.string(),
+  iss: z.string(),
+  aud: z.string(),
+  iat: z.number(),
+  uid: z.string(),
+  user: extendApi(z.string().nullable(), {
+    description: "The email of the current user.",
+    example: "example@workadventu.re",
+  }),
+  room: extendApi(z.string(), {
+    description: "The room URL of the current user.",
+    example: "/@/teamSlug/worldSlug/roomSlug",
+  }),
+  exp: z.number(),
+});
+
+export const isOauthRefreshToken = z.object({
+  message: z.string(),
+  token: z.string(),
+});
+
+export type OauthRefreshToken = z.infer<typeof isOauthRefreshToken>;

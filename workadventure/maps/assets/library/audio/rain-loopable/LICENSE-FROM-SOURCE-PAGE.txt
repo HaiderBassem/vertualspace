@@ -1,0 +1,19 @@
+Pack: Rain (loopable)
+Source page: https://opengameart.org/content/rain-loopable
+Submitted by: Ylmir (Monday, March 28, 2016 - 08:56)
+License(s) listed on the source page: CC0
+  CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+Four loopable rain SFX, with a length varying between 25 and 45 seconds. Recorded about two hours ago with a single mono mic at my window, then I processed it a bit, trying to make it sound stereo. It was more an experiment, but it can probably be useful anyway ;)
+
+ 
+
+Available in two formats, the samples are the same :
+
+- MP3, 192 kbps, constant bitrate
+
+- OGG, 160 kbps

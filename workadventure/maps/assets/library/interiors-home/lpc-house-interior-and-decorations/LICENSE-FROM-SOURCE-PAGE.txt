@@ -1,0 +1,17 @@
+Pack: [LPC] House interior and decorations
+Source page: https://opengameart.org/content/lpc-house-interior-and-decorations
+Submitted by: Reemax (Wednesday, December 17, 2014 - 05:59)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+See credits.txt
+
+Description from the page (excerpt):
+Collections of house interior and decorations. Scaled down cabinets to to fit 32x64 pixels. Bed scaled to 32x96. Cabinets top and down parts can be changed between freely. Same with kitchen equipment. Metal stove and kitchen stove both have animated fire.
+
+These are based on LPC but quite heavily modified.
+
+Preview image containsd walls from http://opengameart.org/content/lpc-guido-bos-entries-cut-up and wooden floor from LPC base tiles.

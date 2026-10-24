@@ -1,0 +1,91 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "plant-large",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Large plant",
+  "description": "A leafy floor plant in a ceramic pot, to soften corners and corridors.",
+  "translations": {
+    "fr-FR": {
+      "name": "Grande plante",
+      "description": "Une plante d’intérieur feuillue en pot céramique, pour adoucir angles et couloirs."
+    },
+    "de-DE": {
+      "name": "Große Pflanze",
+      "description": "Eine üppige Zimmerpflanze im Keramiktopf für Ecken und Flure."
+    },
+    "es-ES": {
+      "name": "Planta grande",
+      "description": "Una planta frondosa en maceta de cerámica para esquinas y pasillos."
+    },
+    "ar-SA": {
+      "name": "نبتة كبيرة",
+      "description": "نبتة كثيفة الأوراق في أصيص خزفي لتلطيف الزوايا والممرات."
+    }
+  },
+  "category": "plants",
+  "tags": [
+    "plant",
+    "green",
+    "decoration"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "terracotta",
+        "color": "#c46b41",
+        "direction": "Down",
+        "image": "terracotta.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#e9ebee",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "charcoal",
+        "color": "#40444c",
+        "direction": "Down",
+        "image": "charcoal.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

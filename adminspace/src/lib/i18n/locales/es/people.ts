@@ -1,0 +1,160 @@
+import type { PluralMessage } from "../../index";
+import type { Messages } from "../en";
+
+const p = (forms: PluralMessage): PluralMessage => forms;
+
+/** Miembros de un mundo y sus etiquetas. */
+export const people: Messages["people"] = {
+    membersTitle: "Miembros",
+    tagsTitle: "Etiquetas",
+    members: {
+        description:
+            "Todas las personas conocidas en este mundo. Los miembros los ha añadido un administrador; los invitados son personas que entraron sin haber sido añadidas (los visitantes anónimos se identifican con un UUID aleatorio y las personas con sesión iniciada, con su correo electrónico).",
+        searchLabel: "Buscar por nombre, correo electrónico o identificador",
+        kindFilter: "Tipo",
+        tagFilter: "Etiqueta",
+        anyTag: "Cualquier etiqueta",
+        departmentFilter: "Departamento",
+        anyDepartment: "Todos los departamentos",
+        kinds: { member: "Miembro", guest: "Invitado" },
+        columns: {
+            person: "Persona",
+            kind: "Tipo",
+            tags: "Etiquetas",
+            visits: "Visitas",
+            lastSeen: "Última visita",
+            jobTitle: "Puesto",
+            department: "Departamento",
+        },
+        count: p({ zero: "Nadie", one: "{count} persona", other: "{count} personas" }),
+        empty: "Todavía no ha entrado nadie en este mundo.",
+        anonymous: "Anónimo",
+        add: "Añadir un miembro",
+        addIntro:
+            "Los miembros se identifican por la dirección de correo electrónico con la que inician sesión en WorkAdventure. En un mundo reservado a los miembros, solo ellos pueden entrar.",
+        added: "Miembro añadido.",
+        alreadyMember: "Esta persona ya es miembro del mundo.",
+        promoted: "Este invitado ahora es miembro.",
+        emailTaken: "Otra persona de este mundo ya utiliza esta dirección de correo electrónico.",
+        tagsHelp: "Separadas por comas, por ejemplo admin, editor. Las etiquetas que no existen se crean.",
+        importTitle: "Importar miembros",
+        importIntro:
+            "Archivo CSV (UTF-8, RFC 4180) con una fila de encabezado y las columnas email, name y tags. Separe varias etiquetas con «;» o «|». Como máximo 5000 filas.",
+        importProfileIntro:
+            "Columnas opcionales del perfil profesional: job_title, department, manager_email y work_location. Una columna ausente del archivo deja el campo como está; una celda vacía lo borra.",
+        importFile: "Archivo CSV",
+        importSubmit: "Importar",
+        importResult: "{created} creados, {updated} actualizados, {skipped} omitidos.",
+        importLineError: "Línea {line}: {error}",
+        importErrors: {
+            duplicateEmail: "esta dirección de correo ya aparece en una línea anterior",
+            invalidTag: "un nombre de etiqueta no es válido (de 1 a 64 caracteres, sin comas)",
+            reservedTag:
+                "las etiquetas que dan derechos en WorkAdventure solo pueden asignarlas las personas autorizadas a gestionar etiquetas",
+            unknownTag: "etiqueta desconocida (solo las personas autorizadas a gestionar etiquetas pueden crearlas)",
+            invalidEmail: "dirección de correo electrónico no válida",
+            missingEmail: "falta la dirección de correo electrónico",
+            missingHeader: "la fila de encabezado debe contener una columna «email»",
+            tooManyRows: "demasiadas filas",
+            emptyFile: "el archivo está vacío",
+            fileTooLarge: "el archivo ocupa más de 1 MB",
+            managerNotFound: "el responsable no es miembro de la organización (columnas del perfil no aplicadas)",
+            managerIsSelf: "una persona no puede ser su propio responsable (columnas del perfil no aplicadas)",
+            managerCycle:
+                "el responsable depende, directa o indirectamente, de esta persona (columnas del perfil no aplicadas)",
+            invalidManagerEmail: "dirección de correo del responsable no válida",
+        },
+        export: "Exportar",
+        exportCsv: "CSV (hoja de cálculo)",
+        exportJson: "JSON",
+        previousPage: "Página anterior",
+        nextPage: "Página siguiente",
+    },
+    member: {
+        erasedActiveBansKept: p({
+            one: "Se ha conservado {count} bloqueo activo para que siga aplicándose.",
+            other: "Se han conservado {count} bloqueos activos para que sigan aplicándose.",
+        }),
+        title: "Miembro",
+        identifier: "Identificador de WorkAdventure",
+        identifierHelp:
+            "Correo electrónico para las personas que inician sesión mediante OpenID Connect y UUID aleatorio para los visitantes anónimos.",
+        visitCardUrl: "URL de la tarjeta de visita",
+        chatId: "Identificador de chat (Matrix)",
+        locale: "Idioma",
+        visits: "Visitas",
+        firstSeen: "Conocido desde",
+        lastSeen: "Última visita",
+        kind: "Tipo",
+        saved: "Miembro actualizado.",
+        bans: "Bloqueos",
+        noBans: "Nunca ha sido bloqueado.",
+        reports: "Reportes sobre esta persona",
+        noReports: "Ningún reporte.",
+        ban: "Bloquear en el mundo",
+        banned: "Bloqueado.",
+        bannedAndKicked: "Bloqueado y desconectado de WorkAdventure.",
+        exportData: "Exportar los datos personales",
+        exportHelp:
+            "Todo lo que este panel guarda sobre la persona, en JSON (derecho de acceso, artículo 15 del RGPD).",
+        erase: "Suprimir",
+        eraseTitle: "¿Suprimir a esta persona?",
+        eraseDescription:
+            "Elimina al miembro, sus etiquetas y su Woka guardado (derecho de supresión, artículo 17 del RGPD). Los bloqueos y los reportes se conservan porque protegen a otras personas. Si la persona vuelve a entrar, aparecerá como un nuevo invitado.",
+        erased: "Se ha suprimido a la persona.",
+        profile: {
+            title: "Perfil profesional",
+            intro: "Común a todos los mundos de la organización.",
+            jobTitle: "Puesto",
+            department: "Departamento",
+            manager: "Responsable",
+            managerHelp: "Dirección de correo de otro miembro de la organización. Déjelo vacío si no hay ninguno.",
+            workLocation: "Lugar de trabajo",
+            workLocationHelp: "Por ejemplo, Oficina de París o Teletrabajo.",
+            save: "Guardar el perfil",
+            saved: "Perfil actualizado.",
+            noEmail: "Solo las personas con dirección de correo tienen un perfil profesional.",
+            reportsTo: "Depende de",
+            directReports: "Colaboradores directos",
+            noManager: "Sin responsable",
+            noDirectReports: "Nadie depende de esta persona.",
+            notSet: "Sin indicar",
+            errors: {
+                managerNotFound: "Este responsable no es miembro de la organización.",
+                managerIsSelf: "Una persona no puede ser su propio responsable.",
+                managerCycle:
+                    "Este responsable depende, directa o indirectamente, de esta persona: el cambio crearía un bucle.",
+            },
+        },
+    },
+    tags: {
+        description:
+            "Las etiquetas otorgan derechos en WorkAdventure: «admin» permite bloquear a otras personas y usar el editor de mapas, «editor» permite usar el editor de mapas, y las salas o zonas de los mapas se pueden restringir a determinadas etiquetas.",
+        empty: "Todavía no hay ninguna etiqueta.",
+        add: "Añadir una etiqueta",
+        nameHelp: "Hasta 64 caracteres, sin comas.",
+        descriptionLabel: "Descripción",
+        colorLabel: "Color",
+        colorHelp: "Solo se utiliza en Adminspace, para distinguir las etiquetas.",
+        members: p({ zero: "Ningún miembro", one: "{count} miembro", other: "{count} miembros" }),
+        created: "Etiqueta creada.",
+        saved: "Etiqueta actualizada.",
+        nameTaken: "Ya existe una etiqueta con este nombre.",
+        invalidName: "Utilice entre 1 y 64 caracteres, sin comas.",
+        deleteTitle: "¿Eliminar la etiqueta {name}?",
+        deleteDescription: "Se quita de todos los miembros. Las salas que la exigen la siguen exigiendo.",
+        builtIn: "Utilizada por WorkAdventure",
+        columns: {
+            tag: "Etiqueta",
+            description: "Descripción",
+            members: "Miembros",
+        },
+    },
+    tagErrors: {
+        invalidTag: "Un nombre de etiqueta no es válido: use de 1 a 64 caracteres, sin comas.",
+        reservedTag:
+            "Solo las personas autorizadas a gestionar etiquetas pueden asignar o quitar las etiquetas que dan derechos en WorkAdventure, como admin o editor.",
+        unknownTag:
+            "Esta etiqueta todavía no existe. Solo las personas autorizadas a gestionar etiquetas pueden crearla.",
+    },
+};

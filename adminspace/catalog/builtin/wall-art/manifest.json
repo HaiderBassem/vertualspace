@@ -1,0 +1,64 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "wall-art",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Framed print",
+  "description": "An abstract framed print for walls and partitions.",
+  "translations": {
+    "fr-FR": {
+      "name": "Affiche encadrée",
+      "description": "Une affiche abstraite encadrée pour murs et cloisons."
+    },
+    "de-DE": {
+      "name": "Gerahmter Druck",
+      "description": "Ein abstrakter gerahmter Druck für Wände und Trennwände."
+    },
+    "es-ES": {
+      "name": "Lámina enmarcada",
+      "description": "Una lámina abstracta enmarcada para paredes y mamparas."
+    },
+    "ar-SA": {
+      "name": "لوحة مؤطرة",
+      "description": "لوحة تجريدية مؤطرة للجدران والفواصل."
+    }
+  },
+  "category": "decoration",
+  "tags": [
+    "art",
+    "frame",
+    "wall"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "coral",
+        "color": "#e0765a",
+        "direction": "Down",
+        "image": "coral.png"
+      },
+      {
+        "key": "ocean",
+        "color": "#3f7fd0",
+        "direction": "Down",
+        "image": "ocean.png"
+      },
+      {
+        "key": "sun",
+        "color": "#e0b44b",
+        "direction": "Down",
+        "image": "sun.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

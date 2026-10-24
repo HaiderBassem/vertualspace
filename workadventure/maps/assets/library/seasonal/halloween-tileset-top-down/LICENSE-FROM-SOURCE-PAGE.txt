@@ -1,0 +1,21 @@
+Pack: Halloween pixel art tileset Top Down
+Source page: https://opengameart.org/content/halloween-pixel-art-tileset-top-down
+Submitted by: marceles (Monday, June 26, 2023 - 08:26)
+License(s) listed on the source page: CC-BY 4.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+Copyright/attribution notice from the page:
+(none given)
+
+Description from the page (excerpt):
+This Land of pixels Halloween Tileset includes different types of terrains, three kind of trees, a victorian looking like house, some fences and a gate, some halloween decorations and an animated water tile. 
+
+This pack can work perfectly with the other tileset of Land of pixels that is 16px. The ZIP contains some examples.
+
+Also, the tileset comes in 3 sizes, 16px, 32px and 48px! Color palette included! 
+
+I hope these pixels in the form of tiles and assets provides you some help for your project! 
+
+As seen in https://marceles.itch.io/land-of-pixels-halloween-tileset. 
+
+Disclaimer: this may not be the best spooky trees, i know, but i will eventually make some better trees, i promise!

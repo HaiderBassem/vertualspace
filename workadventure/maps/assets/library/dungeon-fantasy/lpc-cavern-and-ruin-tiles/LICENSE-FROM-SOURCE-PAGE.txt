@@ -1,0 +1,13 @@
+Pack: [LPC] Cavern and ruin tiles
+Source page: https://opengameart.org/content/lpc-cavern-and-ruin-tiles
+Submitted by: Reemax (Saturday, January 31, 2015 - 21:47)
+License(s) listed on the source page: CC-BY-SA 3.0 / GPL 3.0 / GPL 2.0
+  CC-BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+  GPL 3.0: https://www.gnu.org/licenses/gpl-3.0.html
+  GPL 2.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+Copyright/attribution notice from the page:
+see credits.txt
+
+Description from the page (excerpt):
+LPC stuff collected to caverns and ruins. Contains new and modificated tiles. Water and lava tiles are animated. Contains two thrones, magical circles, stone arcs, big stone sign, statues, big crystals, mine cart tracks and coffin.

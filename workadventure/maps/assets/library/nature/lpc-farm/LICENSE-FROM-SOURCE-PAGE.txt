@@ -1,0 +1,43 @@
+Pack: [LPC] Farm
+Source page: https://opengameart.org/content/lpc-farm
+Submitted by: bluecarrot16 (Monday, August 15, 2022 - 10:25)
+License(s) listed on the source page: CC-BY 4.0
+  CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+Copyright/attribution notice from the page:
+"[LPC] Farm" by bluecarrot16, Wolthera van Hövell tot Westerflier (TheraHedwig), and Ivan Voirol. License: CC-BY 4.0. http://opengameart.org/content/lpc-farm .
+Based on: "Slates [32x32px orthogonal tileset by Ivan Voirol]" by Ivan Voirol. License: CC-BY 4.0
+https://opengameart.org/content/slates-32x32px-orthogonal-tileset-by-ivan-voirol . "LPC compatible Ancient Greek Architecture" by Wolthera van Hövell tot Westerflier (TheraHedwig). Licenses: CC-BY-4.0 / GPL-3.0 / OGA-BY-3.0. https://opengameart.org/content/lpc-compatible-ancient-greek-architecture
+
+Description from the page (excerpt):
+Build a farm, in the style of the LPC! Kindly commissioned by Rupil. 
+
+There are several excellent LPC asset packs to do with farming, but this pack should help you build a more complete farm. Contents: 
+
+
+Modular barn, in two colors: red and brown
+Towers/silos
+Granary
+Modular chicken coop and nesting boxes
+Apiary/beehives
+Sheds/stables
+Two new fences
+Farm crafting machines---butter churner, cheese press, mayonnaise maker
+Animated windmill blades and water wheels
+
+Because the LPC assets span a range of time periods and technology levels, these assets are meant to be flexible; most buildings come in two styles: a more primitive style with thatched roofs and wattlework---appropriate for medieval or pre-modern settings, and a more modern style (but still targeting an early industrial period---think the Victorian era). 
+
+Animated windmill and water wheels were adapted from Ivan Voirol's excellent Slates set . I have drawn thatched roofs in the past, but I liked TheraHedwig's thatched roofs better and so based this set of their roofs. 
+
+Ivan Voirol's Slates set is only available under CC-BY 4.0; however, I am willing to license the rest of this set (e.g. barn.png) under OGA-BY 3.0+ or GPL 3.0+.
+
+ 
+
+Preview image also includes assets from the following submissions, which would go well with these assets:
+
+
+"[LPC] Terrains" by bluecarrot16, Lanea Zimmerman (Sharm), Daniel Eddeland (Daneeklu), Richard Kettering (Jetrel), Zachariah Husiar (Zabin), Hyptosis, Casper Nilsson, Buko Studios, Nushio, ZaPaper, billknye, William Thompson, caeles, Redshrike, Bertram, and Rayane Félix (RayaneFLX). 
+"[LPC] Containers" by bluecarrot16, Lanea Zimmerman (Sharm), William Thompson, Tuomo Untinen (Reemax), Evert, Buch, Blarumyrran, n2liquid, Jetrel, Guido Bos, Hyptosis, Bonsaiheldin, NaRNeRZz, PriorBlue, Jerom, 7Soul, and Wolthera van Hövell tot Westerflier (TheraHedwig). https://opengameart.org/content/lpc-containers
+"[LPC] Horses" by bluecarrot16 https://opengameart.org/content/lpc-horses
+"[LPC] Medieval Village Decorations" by bluecarrot16, Lanea Zimmerman (Sharm), Reemax (Tuomo Untinen), Xenodora, Johann C, Johannes Sjölund, Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), Clint Bellanger, Jetrel, Nemisys, Guido Bos, Curt, Bertram, and Daniel Eddeland (daneeklu). License: CC-BY-SA 3.0+.
+"LPC style farm animals" by Daniel Eddeland (daneeklu). https://opengameart.org/content/lpc-styl

@@ -1,0 +1,75 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "floor-arrow",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Floor arrow",
+  "description": "A high-contrast floor marking that guides people along a route, in four directions.",
+  "translations": {
+    "fr-FR": {
+      "name": "Flèche au sol",
+      "description": "Un marquage au sol contrasté qui guide le long d’un parcours, dans quatre directions."
+    },
+    "de-DE": {
+      "name": "Bodenpfeil",
+      "description": "Eine kontrastreiche Bodenmarkierung, die entlang eines Weges führt, in vier Richtungen."
+    },
+    "es-ES": {
+      "name": "Flecha de suelo",
+      "description": "Una señal de suelo de alto contraste que guía por un recorrido, en cuatro direcciones."
+    },
+    "ar-SA": {
+      "name": "سهم أرضي",
+      "description": "علامة أرضية عالية التباين ترشد الأشخاص على المسار بأربعة اتجاهات."
+    }
+  },
+  "category": "wayfinding",
+  "tags": [
+    "arrow",
+    "floor",
+    "wayfinding",
+    "accessibility"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "down",
+        "color": "#2b47c2",
+        "direction": "Down",
+        "image": "down.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "up",
+        "color": "#2b47c2",
+        "direction": "Up",
+        "image": "up.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "left",
+        "color": "#2b47c2",
+        "direction": "Left",
+        "image": "left.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "right",
+        "color": "#2b47c2",
+        "direction": "Right",
+        "image": "right.png",
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "vending-machine",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Vending machine",
+  "description": "A snack and drinks machine for the cafeteria.",
+  "translations": {
+    "fr-FR": {
+      "name": "Distributeur",
+      "description": "Un distributeur de boissons et d’en-cas pour la cafétéria."
+    },
+    "de-DE": {
+      "name": "Verkaufsautomat",
+      "description": "Ein Automat für Snacks und Getränke in der Cafeteria."
+    },
+    "es-ES": {
+      "name": "Máquina expendedora",
+      "description": "Una máquina de bebidas y aperitivos para la cafetería."
+    },
+    "ar-SA": {
+      "name": "آلة بيع",
+      "description": "آلة للوجبات الخفيفة والمشروبات في الكافتيريا."
+    }
+  },
+  "category": "interactive",
+  "tags": [
+    "snacks",
+    "kitchen",
+    "break"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#2f4fb5",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}
