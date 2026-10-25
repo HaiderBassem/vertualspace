@@ -29,6 +29,7 @@ import {
     deskHolderIds,
     getDeskProperty,
     hasADesk,
+    isDeskClaimableBy,
     isDeskHolder,
     type PersonalAreaPropertyData,
     GameMap,
@@ -143,6 +144,7 @@ import LoudEnvironmentToast from "../../Components/Toasts/LoudEnvironmentToast.s
 import TextToast from "../../Components/Toasts/TextToast.svelte";
 import { LL, locale } from "../../../i18n/i18n-svelte";
 import { toastStore } from "../../Stores/ToastStoreSingleton";
+import DeskClaimedToast from "../../Components/Toasts/DeskClaimedToast.svelte";
 import { myCustomStatusStore } from "../../Stores/CustomStatusStore";
 import type { CustomStatus } from "../../Utils/CustomStatus";
 import { CUSTOM_STATUS_VARIABLE, parseCustomStatus } from "../../Utils/CustomStatus";
@@ -270,6 +272,7 @@ import {
     requestSitAtDeskOnArrival,
 } from "../../Utils/MyDesk";
 import { calendarMeetingStore } from "../../Stores/PresenceStores";
+import { startDecoratingMyDesk } from "./MapEditor/DeskDecoration";
 import { deskAt, describeDesk, presenceAt } from "./MapEditor/DeskCard";
 import { offerDeskToNewcomer } from "./MapEditor/DeskWelcome";
 import { SeatController } from "./Seats/SeatController";
@@ -2517,7 +2520,10 @@ export class GameScene extends DirtyScene {
                         this.CurrentPlayer.teleportTo(state.x, state.y, toPlayerDirection(state.direction)),
                     setPose: (pose) => this.CurrentPlayer.setSeatPose(pose),
                     showPrompt: (prompt) => this.showSeatPrompt(prompt),
-                    onSeatChanged: (state) => mySeatStore.set(state),
+                    onSeatChanged: (state) => {
+                        mySeatStore.set(state);
+                        this.claimDeskOfSeat(state?.deskAreaId);
+                    },
                     refused: (reason, seat) => this.explainSeatRefusal(reason, seat),
                     now: () => Date.now(),
                 });
@@ -4607,6 +4613,14 @@ ${escapedMessage}
                 const entity = entities.get(id);
                 return entity ? { width: entity.displayWidth, height: entity.displayHeight } : undefined;
             },
+            // Furniture of the admin back office has an identifier that does not say what it is: its collection does.
+            (prefabId) => {
+                for (const entity of entities.values()) {
+                    const prefab = entity.getPrefab();
+                    if (prefab.id === prefabId) return { name: prefab.name, direction: prefab.direction };
+                }
+                return undefined;
+            },
         );
         this.seatsCache = { at: now, seats };
         return seats;
@@ -4620,6 +4634,29 @@ ${escapedMessage}
             }
         }
         return undefined;
+    }
+
+    /**
+     * Sitting at a free desk claims it in the player's name, until they give it up. A desk they already hold stays
+     * theirs (nothing changes); sitting at another free one moves their claim there, as choosing a desk does.
+     */
+    private claimDeskOfSeat(deskAreaId: string | undefined): void {
+        const uuid = localUserStore.getLocalUser()?.uuid;
+        const manager = this.mapEditorModeManager;
+        if (deskAreaId === undefined || uuid === undefined || !localUserStore.isLogged() || !manager) {
+            return;
+        }
+        const areaData = this.gameMapFrontWrapper.areasManager?.getAreaById(deskAreaId)?.areaData;
+        const desk = areaData ? getDeskProperty(areaData) : undefined;
+        if (!areaData || !desk || !isDeskClaimableBy(desk, this.connection?.getAllTags() ?? [], uuid)) {
+            return;
+        }
+        manager.claimPersonalArea(this.CurrentPlayer.playerName, areaData);
+        toastStore.addToast(DeskClaimedToast, {
+            onDecorate: () => {
+                startDecoratingMyDesk(this).catch((error) => console.error("Error while decorating the desk", error));
+            },
+        });
     }
 
     /** Sits the player on a seat of the map (walking there first if needed). Resolves with whether they sit. */

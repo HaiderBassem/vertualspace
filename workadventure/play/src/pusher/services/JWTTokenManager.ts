@@ -4,6 +4,8 @@ import { ADMIN_SOCKETS_TOKEN, SECRET_KEY } from "../enums/EnvironmentVariable";
 
 export const AuthTokenData = z.object({
     identifier: z.string(), //will be a email if logged in or an uuid if anonymous
+    /** Signed by the self-hosted back office after checking its session and world permissions. */
+    backofficeSession: z.boolean().optional(),
     accessToken: z.string().optional(),
     encryptedRefreshToken: z.string().optional(),
     username: z.string().optional(),
@@ -70,6 +72,23 @@ export class JWTTokenManager {
         encryptedRefreshToken?: string,
     ): Promise<string> {
         return new SignJWT({ identifier, accessToken, username, locale, tags, matrixUserId, encryptedRefreshToken })
+            .setExpirationTime("30d")
+            .setProtectedHeader({ alg: "HS256" })
+            .sign(secret);
+    }
+
+    /**
+     * Renews the token of a person signed in through the back office: same identity, a fresh 30 days. A person who keeps
+     * coming back therefore signs in once; the back office still decides at every entry whether they may be in the world.
+     */
+    public async renewBackofficeToken(data: AuthTokenData): Promise<string> {
+        return new SignJWT({
+            identifier: data.identifier,
+            backofficeSession: true,
+            username: data.username,
+            locale: data.locale,
+        })
+            .setIssuedAt()
             .setExpirationTime("30d")
             .setProtectedHeader({ alg: "HS256" })
             .sign(secret);

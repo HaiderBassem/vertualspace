@@ -3,7 +3,7 @@ import { randomUUID } from "crypto";
 import * as Sentry from "@sentry/node";
 import { Metadata } from "@grpc/grpc-js";
 import type { WAMFileFormat, AreaData, AreaDataProperty, SeatedState } from "@workadventure/map-editor";
-import { GameMapProperties, SEAT_PLAYER_VARIABLE } from "@workadventure/map-editor";
+import { GameMapProperties, parsePrefabId, SEAT_PLAYER_VARIABLE } from "@workadventure/map-editor";
 import { LocalUrlError } from "@workadventure/map-editor/src/LocalUrlError";
 import { mapFetcher } from "@workadventure/map-editor/src/MapFetcher";
 import type {
@@ -83,6 +83,7 @@ import { MaxUsersInAreaManager } from "./AreaPropertyEvents/MaxUsersInAreaManage
 import type { SocialRateLimitPolicy } from "./SocialRateLimiter";
 import { SocialRateLimiter } from "./SocialRateLimiter";
 import { SeatManager } from "./SeatManager";
+import { SeatPrefabCatalog } from "./SeatPrefabCatalog";
 import { diffWam } from "./Services/WamDiff";
 
 export type ConnectCallback = (user: User, group: Group) => void;
@@ -128,8 +129,10 @@ export class GameRoom implements BrothersFinder {
     private meetingInvitationRequestLogBySender = new Map<string, { at: Date; receiverUserUuid: string }[]>();
     private readonly knockRateLimiter = new SocialRateLimiter(KNOCK_RATE_LIMIT_POLICY);
     // Who sits where: the room alone decides, and tells everyone with the public player variable SEAT_PLAYER_VARIABLE.
+    private readonly seatPrefabs = new SeatPrefabCatalog();
     private readonly seatManager = new SeatManager<User>({
         getWam: () => this.getWam(),
+        describePrefab: this.seatPrefabs.describe,
         publishSeat: (user, state) => this.publishSeat(user, state),
     });
 
@@ -1720,6 +1723,19 @@ export class GameRoom implements BrothersFinder {
             return isTooHigh;
         }
         return false;
+    }
+
+    /**
+     * Makes sure the room knows what its furniture is before it judges a request to sit: the furniture of the admin back
+     * office is named by its collection, which is read here (and read again when some furniture is not known).
+     */
+    public async prepareSeats(): Promise<void> {
+        const wam = this.getWam();
+        if (!wam) return;
+        const unknown = Object.values(wam.entities)
+            .map((entity) => entity.prefabRef.id)
+            .filter((id) => parsePrefabId(id) === undefined && this.seatPrefabs.describe(id) === undefined);
+        await this.seatPrefabs.refresh(wam, unknown);
     }
 
     /** Sits the user on a seat of the map, or stands them up when the seat id is empty. See SeatManager. */

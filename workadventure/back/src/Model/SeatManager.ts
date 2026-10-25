@@ -1,4 +1,4 @@
-import type { Seat, SeatedState, SitDenialReason, WAMFileFormat } from "@workadventure/map-editor";
+import type { PrefabDescriber, Seat, SeatedState, SitDenialReason, WAMFileFormat } from "@workadventure/map-editor";
 import { evaluateSit, getDeskProperty, listSeats, SEAT_LEAVE_DISTANCE } from "@workadventure/map-editor";
 import type { SitAnswer } from "@workadventure/messages";
 import { SitAnswer_Status } from "@workadventure/messages";
@@ -13,6 +13,8 @@ export interface Sitter {
 /** What the seat manager needs from the room it keeps the seats of. */
 export interface SeatRoom<U extends Sitter> {
     getWam(): WAMFileFormat | undefined;
+    /** What the collections of the map say of a piece of furniture whose id does not say it. */
+    describePrefab?: PrefabDescriber;
     /** Tells everyone in the room (the player included) that the player now sits there, or stands (null). */
     publishSeat(user: U, state: SeatedState | null): void;
 }
@@ -52,7 +54,11 @@ export class SeatManager<U extends Sitter> {
         }
 
         const wam = this.room.getWam();
-        const seat = wam ? listSeats(wam.areas, Object.entries(wam.entities)).find((s) => s.id === seatId) : undefined;
+        const seat = wam
+            ? listSeats(wam.areas, Object.entries(wam.entities), undefined, this.room.describePrefab).find(
+                  (s) => s.id === seatId,
+              )
+            : undefined;
         let occupant = this.occupants.get(seatId);
         // Someone whose time at this seat is over (the desk was booked for someone else from now on) gives it up.
         if (occupant !== undefined && occupant !== user && !this.mayStillSit(occupant, seat, wam)) {
@@ -129,7 +135,9 @@ export class SeatManager<U extends Sitter> {
      */
     public onMapChanged(): void {
         const wam = this.room.getWam();
-        const seats = wam ? listSeats(wam.areas, Object.entries(wam.entities)) : [];
+        const seats = wam
+            ? listSeats(wam.areas, Object.entries(wam.entities), undefined, this.room.describePrefab)
+            : [];
         for (const [user, state] of [...this.seated]) {
             const seat = seats.find((candidate) => candidate.id === state.seatId);
             const verdict = evaluateSit({

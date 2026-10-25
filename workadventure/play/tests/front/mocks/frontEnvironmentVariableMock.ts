@@ -22,6 +22,7 @@ export const POSTHOG_API_KEY = "test-api-key";
 export const POSTHOG_URL = "https://test.com";
 export const DISABLE_ANONYMOUS = false;
 export const ENABLE_OPENID = false;
+export const ENABLE_BACKOFFICE_LOGIN = false;
 export const OPID_PROFILE_SCREEN_PROVIDER: string | undefined = undefined;
 export const ENABLE_CHAT_UPLOAD = true;
 export const FALLBACK_LOCALE = "en-US";

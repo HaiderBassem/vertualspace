@@ -73,6 +73,10 @@ export class JWTTokenManagerMock {
         });
     }
 
+    public renewBackofficeToken(_data: { identifier: string }): Promise<string> {
+        return Promise.resolve("");
+    }
+
     public async createAuthToken(
         identifier: string,
         _accessToken?: string,

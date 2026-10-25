@@ -22,6 +22,8 @@ export interface FrontConfigurationInterface {
     POSTHOG_URL: string | undefined;
     DISABLE_ANONYMOUS: boolean;
     ENABLE_OPENID: boolean;
+    /** People sign in through the self-hosted back office instead of an OpenID provider. */
+    ENABLE_BACKOFFICE_LOGIN: boolean;
     OPID_PROFILE_SCREEN_PROVIDER: string | undefined;
     ENABLE_CHAT_UPLOAD: boolean;
     FALLBACK_LOCALE: string | undefined;

@@ -10,7 +10,15 @@ import Debug from "debug";
 import type { AuthTokenData } from "../services/JWTTokenManager";
 import { jwtTokenManager } from "../services/JWTTokenManager";
 import { openIDClient } from "../services/OpenIDClient";
-import { DISABLE_ANONYMOUS, FRONT_URL, MATRIX_PUBLIC_URI, PUSHER_URL } from "../enums/EnvironmentVariable";
+import {
+    ADMIN_BO_URL,
+    BACKOFFICE_LOGIN,
+    DISABLE_ANONYMOUS,
+    FRONT_URL,
+    MATRIX_PUBLIC_URI,
+    OPID_CLIENT_ID,
+    PUSHER_URL,
+} from "../enums/EnvironmentVariable";
 import { adminService } from "../services/AdminService";
 import { validateQuery } from "../services/QueryValidator";
 import { VerifyDomainService } from "../services/verifyDomain/VerifyDomainService";
@@ -124,6 +132,14 @@ export class AuthenticateController extends BaseHttpController {
                 return;
             }
 
+            if (BACKOFFICE_LOGIN && !OPID_CLIENT_ID) {
+                // Signing in happens in the back office, once: it posts a signed token back to the room.
+                const enterUrl = new URL("/play/enter", ADMIN_BO_URL);
+                enterUrl.searchParams.set("playUri", query.playUri);
+                res.redirect(enterUrl.toString());
+                return;
+            }
+
             const loginUri = await openIDClient.authorizationUrl(
                 res,
                 query.playUri,
@@ -222,6 +238,7 @@ export class AuthenticateController extends BaseHttpController {
                     req.header("accept-language"),
                     tags,
                     chatID,
+                    authTokenData.backofficeSession,
                 );
 
                 if (resUserData.status === "error") {
@@ -233,7 +250,9 @@ export class AuthenticateController extends BaseHttpController {
                     //if not nonce and code, anonymous user connected
                     //get data with identifier and return token
                     res.json({
-                        authToken: token,
+                        authToken: authTokenData.backofficeSession
+                            ? await jwtTokenManager.renewBackofficeToken(authTokenData)
+                            : token,
                         username,
                         locale,
                         // TODO: replace ... with each property
@@ -584,6 +603,13 @@ export class AuthenticateController extends BaseHttpController {
             }
 
             const authTokenData: AuthTokenData = await jwtTokenManager.verifyJWTToken(query.token, false);
+            if (authTokenData.backofficeSession === true && BACKOFFICE_LOGIN) {
+                // The back office ends its own session, then asks for a new sign-in for this room.
+                const logoutUrl = new URL("/play/logout", ADMIN_BO_URL);
+                logoutUrl.searchParams.set("playUri", query.playUri);
+                res.redirect(logoutUrl.toString());
+                return;
+            }
             if (authTokenData.accessToken == undefined) {
                 throw Error("Cannot log out, no access token found.");
             }

@@ -85,6 +85,8 @@ export type NoiseSuppressionEngine = "deepfilternet" | "dtln";
 const JwtAuthToken = z
     .object({
         accessToken: z.string().optional().nullable(),
+        /** Signed in through the self-hosted back office (see AdminSpace's /play/enter). */
+        backofficeSession: z.boolean().optional().nullable(),
     })
     .partial();
 
@@ -410,7 +412,22 @@ class LocalUserStore {
     }
 
     isLogged(): boolean {
-        return this.jwt?.accessToken !== undefined && this.jwt?.accessToken !== null;
+        return (
+            (this.jwt?.accessToken !== undefined && this.jwt?.accessToken !== null) ||
+            this.jwt?.backofficeSession === true
+        );
+    }
+
+    /** Whether a token stands for a signed-in person (OpenID or back office), as opposed to an anonymous visitor. */
+    isLoggedToken(token: string): boolean {
+        try {
+            const parsed = JwtAuthToken.parse(LocalUserStore.parseJwt(token));
+            return (
+                (parsed.accessToken !== undefined && parsed.accessToken !== null) || parsed.backofficeSession === true
+            );
+        } catch {
+            return false;
+        }
     }
 
     private static parseJwt(token: string) {

@@ -351,6 +351,7 @@ class AdminApi implements AdminInterface {
         locale?: string,
         tags?: string[],
         chatID?: string,
+        backofficeSession?: boolean,
     ): Promise<FetchMemberDataByUuidResponse> {
         try {
             /**
@@ -415,7 +416,7 @@ class AdminApi implements AdminInterface {
                     characterTextureIds,
                     companionTextureId,
                     accessToken,
-                    isLogged: accessToken ? "1" : "0", // deprecated, use accessToken instead,
+                    isLogged: accessToken || backofficeSession ? "1" : "0",
                     chatID,
                 },
                 headers: { Authorization: `${ADMIN_API_TOKEN}`, "Accept-Language": locale ?? "en" },
@@ -690,6 +691,15 @@ class AdminApi implements AdminInterface {
         if (z.object({ status: z.literal("error") }).safeParse(response.data).success) {
             throw new Error(`The admin refused to ban the user: ${JSON.stringify(response.data)}`);
         }
+    }
+
+    async renameRoom(roomUrl: string, userIdentifier: string, name: string): Promise<void> {
+        // The admin checks that the person may manage the rooms of the world; a refusal is a 403 and throws here.
+        await axios.post(
+            ADMIN_API_URL + "/api/room/rename",
+            { roomUrl, userIdentifier, name },
+            { headers: { Authorization: `${ADMIN_API_TOKEN}` } },
+        );
     }
 
     public getCapabilities(): Promise<Capabilities> {

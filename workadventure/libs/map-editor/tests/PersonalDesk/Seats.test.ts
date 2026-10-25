@@ -61,7 +61,19 @@ describe("prefab identifiers", () => {
 
 describe("furniture to sit on", () => {
     it("is recognised from its name", () => {
-        for (const name of ["Basic Chair", "Armchair", "Couch", "Pouf", "Office chairs", "Bar stool", "Sofa"]) {
+        for (const name of [
+            "Basic Chair",
+            "Armchair",
+            "Couch",
+            "Pouf",
+            "Office chairs",
+            "Bar stool",
+            "Sofa",
+            "Beanbag",
+            "Garden bench",
+            "Hammock",
+            "Sun lounger",
+        ]) {
             expect(isSeatFurnitureName(name), name).toBe(true);
         }
         for (const name of ["Basic Wood Table", "Plant", "Chairman portrait", "Computer Screen", "Seating plan"]) {
@@ -79,6 +91,29 @@ describe("furniture to sit on", () => {
         expect(
             seatOfEntity("e2", entity("basic furniture:Couch:grey:Down", 0, 0), { width: 64, height: 64 }),
         ).toMatchObject({ x: 32, y: 32, direction: "Down" });
+    });
+
+    it("is found in its collection when its identifier does not say what it is", () => {
+        const id = "adminspace:3f2c8a1e-0000-4000-8000-000000000001:charcoal-up";
+        expect(parsePrefabId(id)).toBeUndefined();
+        expect(seatOfEntity("e4", entity(id, 64, 32))).toBeUndefined();
+        const describe = (prefabId: string) =>
+            prefabId === id ? { name: "Office chair", direction: "Up" as const } : undefined;
+        expect(seatOfEntity("e4", entity(id, 64, 32), { width: 32, height: 32 }, describe)).toEqual({
+            id: "entity:e4",
+            x: 80,
+            y: 48,
+            direction: "Up",
+        });
+        // A table of the same collection is still not a seat, and an unknown id is not either.
+        const table = "adminspace:3f2c8a1e-0000-4000-8000-000000000002:oak";
+        expect(
+            seatOfEntity("t", entity(table, 0, 0), undefined, () => ({ name: "Meeting table", direction: "Down" })),
+        ).toBeUndefined();
+        expect(seatOfEntity("u", entity("adminspace:x:y", 0, 0), undefined, () => undefined)).toBeUndefined();
+        expect(listSeats([], [["e4", entity(id, 0, 0)]], undefined, describe).map((seat) => seat.id)).toEqual([
+            "entity:e4",
+        ]);
     });
 
     it("faces down when its identifier says no direction", () => {

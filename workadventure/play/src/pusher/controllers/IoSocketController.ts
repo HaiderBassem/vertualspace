@@ -325,7 +325,7 @@ export class IoSocketController {
                     }
 
                     const userIdentifier = tokenData ? tokenData.identifier : "";
-                    const isLogged = !!tokenData?.accessToken;
+                    const isLogged = !!tokenData?.accessToken || tokenData?.backofficeSession === true;
 
                     let memberTags: string[] = [];
                     let memberVisitCardUrl: string | null = null;
@@ -368,6 +368,7 @@ export class IoSocketController {
                                 locale,
                                 memberTagsFromToken,
                                 chatID,
+                                tokenData?.backofficeSession,
                             );
 
                             if (userData.status === "ok" && !userData.isCharacterTexturesValid) {

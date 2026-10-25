@@ -65,7 +65,7 @@ On your server, install the latest Docker version, along docker-compose.
 ### 2. Copy deployment files 
 
 Copy the [`.env.prod.template`](.env.prod.template) file on your server, and rename it to `.env`.
-Copy the [`docker-compose.prod.yaml`](docker-compose.prod.yaml) file on your server, and rename it to `docker-compose.yaml`.
+Copy the [`docker-compose.prod.yaml`](docker-compose.prod.yaml) and [`maps-nginx.conf`](maps-nginx.conf) files on your server, and rename the compose file to `docker-compose.yaml`. Keep the WorkAdventure `maps/` directory at `../../maps` relative to that compose file; the `maps` service mounts it read-only so its Tiled maps are available to every world.
 
 ### 3. Configure your environment
 
@@ -76,6 +76,7 @@ For your environment to start, you will need to at least configure:
 - **VERSION**: the version of WorkAdventure to install. See below for more information.
 - **SECRET_KEY**: a random key used to generate JWT secrets
 - **DOMAIN**: your domain name (without any "https://" prefix)
+- The bundled maps are served under `https://<DOMAIN>/maps/`. For a room using a committed Tiled map, use a URL such as `https://<DOMAIN>/maps/starter/map.json`; the default start room points to that starter map.
 - **MAP_STORAGE_AUTHENTICATION_USER**: the username for the map-storage container 
 - **MAP_STORAGE_AUTHENTICATION_PASSWORD**: the password for the map-storage container
 

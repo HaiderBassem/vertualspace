@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it, vi } from "vitest";
 import type { Application, Request, Response } from "express";
+import { SignJWT } from "jose";
 
 vi.mock("../../src/pusher/enums/EnvironmentVariable", async () => ({
     ...(await import("./mocks/pusherEnvironmentVariableMock")),
@@ -17,7 +18,38 @@ const { AuthenticateController } = await import("../../src/pusher/controllers/Au
 const { jwtTokenManager } = await import("../../src/pusher/services/JWTTokenManager");
 
 describe("/me", () => {
+    it("recognizes a signed back-office identity without asking an OpenID provider", async () => {
+        vi.clearAllMocks();
+        const routes = new Map<string, (req: Request, res: Response) => Promise<void>>();
+        const app = {
+            get: (path: string, handler: never) => routes.set(path, handler),
+            post: vi.fn(),
+            options: vi.fn(),
+        };
+        new AuthenticateController(app as unknown as Application);
+        const token = await new SignJWT({ identifier: "owner@example.com", backofficeSession: true })
+            .setProtectedHeader({ alg: "HS256" })
+            .setExpirationTime("1h")
+            .sign(new TextEncoder().encode("test-secret-key"));
+        fetchMemberDataByUuid.mockResolvedValue({ status: "ok" });
+        const json = vi.fn();
+        await routes.get("/me")?.(
+            { query: { token, playUri: "http://play.test/@/acme/office/main" }, header: () => undefined } as never,
+            { json, status: vi.fn(), send: vi.fn() } as never,
+        );
+        expect(checkTokenAuthWithRefresh).not.toHaveBeenCalled();
+        expect(fetchMemberDataByUuid.mock.calls[0]?.[9]).toBe(true);
+        expect((await jwtTokenManager.verifyJWTToken(token)).backofficeSession).toBe(true);
+        // The browser gets a renewed token for the same person, so that coming back never asks to sign in again.
+        const renewed = json.mock.calls[0]?.[0].authToken as string;
+        expect(renewed).not.toBe(token);
+        expect(await jwtTokenManager.verifyJWTToken(renewed)).toMatchObject({
+            identifier: "owner@example.com",
+            backofficeSession: true,
+        });
+    });
     it("renews the access token before asking the admin, and drops the tags the provider no longer grants", async () => {
+        vi.clearAllMocks();
         const routes = new Map<string, (req: Request, res: Response) => Promise<void>>();
         const app = {
             get: (path: string, handler: never) => routes.set(path, handler),

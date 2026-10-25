@@ -31,6 +31,7 @@ export const INTERNAL_MAP_STORAGE_URL: string | undefined = undefined;
 export const REDIS_HOST: string | undefined = undefined;
 export const REDIS_PORT = 6379;
 export const REDIS_PASSWORD: string | undefined = undefined;
+export const BACKOFFICE_LOGIN = false;
 export const OPID_CLIENT_ID = "";
 export const OPID_CLIENT_SECRET = "";
 export const OPID_CLIENT_ISSUER = "";
@@ -136,6 +137,7 @@ export const FRONT_ENVIRONMENT_VARIABLES: FrontConfigurationInterface = {
     POSTHOG_URL: undefined,
     DISABLE_ANONYMOUS,
     ENABLE_OPENID: false,
+    ENABLE_BACKOFFICE_LOGIN: false,
     OPID_PROFILE_SCREEN_PROVIDER: undefined,
     OPID_WOKA_NAME_POLICY,
     ENABLE_CHAT_UPLOAD,

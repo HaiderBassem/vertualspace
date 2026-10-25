@@ -32,6 +32,7 @@ export interface AdminInterface {
         locale?: string,
         tags?: string[],
         chatID?: string,
+        backofficeSession?: boolean,
     ): Promise<FetchMemberDataByUuidResponse>;
 
     /**
@@ -79,6 +80,11 @@ export interface AdminInterface {
         tags?: string[],
         bypassTagFilter?: boolean,
     ): Promise<ShortMapDescriptionList>;
+
+    /**
+     * Renames a room of a world, for an administrator of that world. The admin checks the permission again.
+     */
+    renameRoom(roomUrl: string, userIdentifier: string, name: string): Promise<void>;
 
     /**
      * @param accessToken

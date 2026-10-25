@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isAxiosError } from "axios";
 import type { Request, Response } from "express";
 import Debug from "debug";
 import { adminService } from "../services/AdminService";
@@ -15,6 +16,7 @@ export class UserController extends BaseHttpController {
         this.saveName();
         this.saveTextures();
         this.saveCompanionTexture();
+        this.renameRoom();
     }
 
     /**
@@ -234,5 +236,52 @@ export class UserController extends BaseHttpController {
                 return;
             },
         );
+    }
+
+    /**
+     * @openapi
+     * /room/rename:
+     *   post:
+     *     description: Renames a room of the world, for an administrator of the world (checked by the admin).
+     *     responses:
+     *       204:
+     *         description: Renamed
+     *       403:
+     *         description: The person may not rename rooms
+     */
+    private renameRoom(): void {
+        this.app.options("/room/rename", (req: Request, res: Response) => {
+            res.status(200).send("");
+            return;
+        });
+
+        this.app.post("/room/rename", [authenticated], async (req: Request, res: ResponseWithUserIdentifier) => {
+            debug(`UserController => [${req.method}] ${req.originalUrl} — IP: ${req.ip} — Time: ${Date.now()}`);
+            const body = validatePostQuery(
+                req,
+                res,
+                z.object({
+                    roomUrl: z.string(),
+                    name: z.string().trim().min(1).max(200),
+                }),
+            );
+            if (body === undefined) {
+                return;
+            }
+            // Only a person signed in through the back office has an account whose rights can be checked.
+            if (!res.userIdentifier || !res.isBackoffice) {
+                res.status(403).send("Not allowed");
+                return;
+            }
+            try {
+                await adminService.renameRoom(body.roomUrl, res.userIdentifier, body.name);
+            } catch (err) {
+                const status = isAxiosError(err) ? err.response?.status : undefined;
+                res.status(status === 403 || status === 404 ? status : 500).send("Could not rename the room");
+                return;
+            }
+            res.status(204).send("");
+            return;
+        });
     }
 }

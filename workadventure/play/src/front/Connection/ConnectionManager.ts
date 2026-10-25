@@ -12,7 +12,7 @@ import { userIsConnected, warningBannerStore } from "../Stores/MenuStore";
 import { loginSceneVisibleIframeStore } from "../Stores/LoginSceneStore";
 import { _ServiceWorker } from "../Network/ServiceWorker";
 import { GameConnexionTypes, urlManager } from "../Url/UrlManager";
-import { ENABLE_OPENID } from "../Enum/EnvironmentVariable";
+import { ENABLE_BACKOFFICE_LOGIN, ENABLE_OPENID } from "../Enum/EnvironmentVariable";
 import { limitMapStore } from "../Stores/GameStore";
 import { showLimitRoomModalStore } from "../Stores/ModalStore";
 import { gameManager } from "../Phaser/Game/GameManager";
@@ -87,7 +87,7 @@ class ConnectionManager {
      */
     public loadOpenIDScreen(manuallyTriggered: boolean, providerId?: string, providerScopes?: string[]): URL | null {
         localUserStore.setAuthToken(null);
-        if (!ENABLE_OPENID || !this._currentRoom) {
+        if (!(ENABLE_OPENID || ENABLE_BACKOFFICE_LOGIN) || !this._currentRoom) {
             analyticsClient.trackAdminEvent("auth.logged_token");
             loginSceneVisibleIframeStore.set(false);
             return null;
@@ -138,7 +138,7 @@ class ConnectionManager {
         //userIsConnected.set(false);
 
         // check if we are in a room
-        if (!ENABLE_OPENID || !this._currentRoom) {
+        if (!(ENABLE_OPENID || ENABLE_BACKOFFICE_LOGIN) || !this._currentRoom) {
             window.location.assign("/login");
             return;
         }
@@ -281,6 +281,11 @@ class ConnectionManager {
                 } else {
                     return this.signInRequired(this._currentRoom, "firstVisit");
                 }
+            } else if (this._currentRoom.authenticationMandatory && !localUserStore.isLoggedToken(this.authToken)) {
+                // The browser still holds the token of an anonymous visit, from before this room asked for a sign-in.
+                localUserStore.setAuthToken(null);
+                this.authToken = null;
+                return this.signInRequired(this._currentRoom, "firstVisit");
             } else {
                 try {
                     const response = await this.checkAuthUserConnexion(this.authToken, matrixLoginToken);
@@ -671,6 +676,22 @@ class ConnectionManager {
         } else {
             return false;
         }
+    }
+
+    /** Renames a room of the world. The pusher forwards it to the admin, which checks the person may do it. */
+    async renameRoom(roomUrl: string, name: string): Promise<void> {
+        if (this.authToken === undefined || this.authToken === null) {
+            throw new Error("Not signed in");
+        }
+        await axiosToPusher.post(
+            "room/rename",
+            { roomUrl, name },
+            {
+                headers: {
+                    Authorization: this.authToken,
+                },
+            },
+        );
     }
 
     async saveTextures(textures: string[]): Promise<boolean> {

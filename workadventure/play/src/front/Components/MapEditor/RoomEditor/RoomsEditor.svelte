@@ -9,6 +9,7 @@
     import { scriptUtils } from "../../../Api/ScriptUtils";
     import { roomCreationStatusStore } from "../../../Stores/RoomCreationStore";
     import { IconAlertTriangle, IconCheck, IconDoorIn, IconPlus } from "@wa-icons";
+    import { connectionManager } from "../../../Connection/ConnectionManager";
 
     const scene = gameManager.getCurrentGameScene();
     const currentRoomPath = new URL(scene.roomUrl, window.location.href).pathname;
@@ -48,6 +49,27 @@
     async function loadRooms(): Promise<void> {
         const list = (await scene.connection?.queryRoomsFromSameWorld()) ?? [];
         rooms = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    let renaming = $state<{ roomUrl: string; name: string } | undefined>(undefined);
+    let renameFailed = $state(false);
+
+    async function saveRename(event: SubmitEvent): Promise<void> {
+        event.preventDefault();
+        const current = renaming;
+        const trimmed = current?.name.trim() ?? "";
+        if (current === undefined || trimmed === "") {
+            return;
+        }
+        try {
+            await connectionManager.renameRoom(current.roomUrl, trimmed);
+            renaming = undefined;
+            renameFailed = false;
+            await loadRooms();
+        } catch (e) {
+            console.error("Could not rename the room", e);
+            renameFailed = true;
+        }
     }
 
     function createRoom(event: SubmitEvent): void {
@@ -97,18 +119,59 @@
             <ul class="m-0 flex list-none flex-col gap-1 p-0" data-testid="roomsList">
                 {#each rooms as room (room.roomUrl)}
                     <li class="flex items-center justify-between gap-2 rounded-lg bg-white/10 px-3 py-2">
-                        <span class="truncate">{room.name}</span>
-                        {#if isCurrentRoom(room)}
-                            <span class="shrink-0 text-xs text-white/60">{$LL.mapEditor.roomEditor.currentRoom()}</span>
+                        {#if renaming?.roomUrl === room.roomUrl}
+                            <form class="flex w-full items-center gap-2" onsubmit={saveRename}>
+                                <input
+                                    class="min-w-0 flex-1 rounded-md bg-white/10 px-2 py-1 text-white"
+                                    type="text"
+                                    maxlength="200"
+                                    aria-label={$LL.mapEditor.roomEditor.renameRoomLabel()}
+                                    data-testid="renameRoomInput"
+                                    bind:value={renaming.name}
+                                />
+                                <button type="submit" class="rounded-md bg-white/20 px-2 py-1 text-sm">
+                                    {$LL.mapEditor.roomEditor.renameRoomSave()}
+                                </button>
+                                <button
+                                    type="button"
+                                    class="rounded-md bg-white/10 px-2 py-1 text-sm"
+                                    onclick={() => {
+                                        renaming = undefined;
+                                        renameFailed = false;
+                                    }}
+                                >
+                                    {$LL.mapEditor.roomEditor.renameRoomCancel()}
+                                </button>
+                            </form>
+                            {#if renameFailed}
+                                <p class="m-0 text-sm text-red-300" role="alert">
+                                    {$LL.mapEditor.roomEditor.renameRoomFailed()}
+                                </p>
+                            {/if}
                         {:else}
+                            <span class="truncate">{room.name}</span>
                             <button
                                 type="button"
-                                class="flex shrink-0 items-center gap-1 rounded-md bg-white/10 px-2 py-1 text-sm hover:bg-white/20"
-                                onclick={() => scriptUtils.goToPage(room.roomUrl)}
+                                class="shrink-0 rounded-md bg-white/10 px-2 py-1 text-sm hover:bg-white/20"
+                                data-testid="renameRoomButton"
+                                onclick={() => (renaming = { roomUrl: room.roomUrl, name: room.name })}
                             >
-                                <IconDoorIn font-size="16" />
-                                {$LL.mapEditor.roomEditor.goToRoom()}
+                                {$LL.mapEditor.roomEditor.renameRoom()}
                             </button>
+                            {#if isCurrentRoom(room)}
+                                <span class="shrink-0 text-xs text-white/60"
+                                    >{$LL.mapEditor.roomEditor.currentRoom()}</span
+                                >
+                            {:else}
+                                <button
+                                    type="button"
+                                    class="flex shrink-0 items-center gap-1 rounded-md bg-white/10 px-2 py-1 text-sm hover:bg-white/20"
+                                    onclick={() => scriptUtils.goToPage(room.roomUrl)}
+                                >
+                                    <IconDoorIn font-size="16" />
+                                    {$LL.mapEditor.roomEditor.goToRoom()}
+                                </button>
+                            {/if}
                         {/if}
                     </li>
                 {/each}

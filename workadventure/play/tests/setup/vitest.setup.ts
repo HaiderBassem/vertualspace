@@ -53,6 +53,7 @@ if (typeof window !== "undefined" && window.env === undefined) {
         POSTHOG_URL: undefined,
         DISABLE_ANONYMOUS: false,
         ENABLE_OPENID: false,
+        ENABLE_BACKOFFICE_LOGIN: false,
         OPID_PROFILE_SCREEN_PROVIDER: undefined,
         ENABLE_CHAT_UPLOAD: false,
         FALLBACK_LOCALE: "en",

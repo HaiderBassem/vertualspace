@@ -364,6 +364,10 @@ class LocalAdmin implements AdminInterface {
         return Promise.reject(new Error("No admin backoffice set!"));
     }
 
+    renameRoom(roomUrl: string, userIdentifier: string, name: string): Promise<void> {
+        return Promise.reject(new Error("No admin backoffice set!"));
+    }
+
     async getUrlRoomsFromSameWorld(roomUrl: string, locale?: string): Promise<ShortMapDescriptionList> {
         const url = new URL(roomUrl);
         const match = /\/~\/(.+)/.exec(url.pathname);

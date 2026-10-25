@@ -734,6 +734,7 @@ export class SocketManager {
                     break;
                 }
                 case "sitQuery": {
+                    await gameRoom.prepareSeats();
                     answerMessage.answer = {
                         $case: "sitAnswer",
                         sitAnswer: gameRoom.sit(user, queryMessage.query.sitQuery.seatId),

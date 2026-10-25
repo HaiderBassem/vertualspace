@@ -244,6 +244,11 @@ export const EnvironmentVariables = z.object({
     ),
     OPENID_TAGS_CLAIM: z.string().optional().describe("JWT claim containing user tags/roles"),
 
+    BACKOFFICE_LOGIN: BoolAsString.optional()
+        .transform((val) => toBool(val, false))
+        .describe(
+            "If true, people who must sign in are sent to the self-hosted back office (ADMIN_BO_URL), which hands back a signed token. Defaults to false",
+        ),
     DISABLE_ANONYMOUS: BoolAsString.optional()
         .transform((val) => toBool(val, false))
         .describe("If true, anonymous users cannot access the platform. Defaults to false"),

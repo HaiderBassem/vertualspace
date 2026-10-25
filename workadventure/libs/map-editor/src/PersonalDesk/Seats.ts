@@ -56,7 +56,8 @@ export const SEAT_REACH = 96;
 export const SEAT_LEAVE_DISTANCE = 48;
 
 /** Words that, in the name of a piece of furniture, say it is something to sit on. */
-const SEAT_WORDS = /\b(chair|armchair|stool|bench|couch|sofa|pouf|seat|beanbag|bean bag|chaise|ottoman)s?\b/i;
+const SEAT_WORDS =
+    /\b(chair|armchair|stool|bench|couch|sofa|pouf|seat|beanbag|bean bag|chaise|ottoman|hammock|swing|lounger|recliner|deckchair|settee|loveseat)s?\b/i;
 
 /** Whether a piece of furniture is something to sit on, from its name. */
 export function isSeatFurnitureName(name: string): boolean {
@@ -86,6 +87,18 @@ export function parsePrefabId(prefabId: string): PrefabIdParts | undefined {
     return { collectionName, name, color, direction: direction.success ? direction.data : undefined };
 }
 
+/** What a collection says of a piece of furniture: its name, and the way it faces. */
+export interface PrefabDescription {
+    name: string;
+    direction?: SeatDirection | undefined;
+}
+
+/**
+ * Looks a piece of furniture up in the collections of the map, for identifiers that do not carry its name (the ones the
+ * admin back office makes, "adminspace:<component>:<variant>"). Undefined when the collection does not know it.
+ */
+export type PrefabDescriber = (prefabId: string) => PrefabDescription | undefined;
+
 export interface EntitySize {
     width: number;
     height: number;
@@ -99,8 +112,11 @@ export function seatOfEntity(
     entityId: string,
     entity: Pick<WAMEntityData, "x" | "y" | "prefabRef">,
     size: EntitySize = DEFAULT_SEAT_ENTITY_SIZE,
+    describe?: PrefabDescriber,
 ): Seat | undefined {
-    const prefab = parsePrefabId(entity.prefabRef.id);
+    // The identifier says what the furniture is when it is "<collection>:<name>:<color>:<direction>"; otherwise the
+    // collection does.
+    const prefab: PrefabDescription | undefined = parsePrefabId(entity.prefabRef.id) ?? describe?.(entity.prefabRef.id);
     if (!prefab || !isSeatFurnitureName(prefab.name)) return undefined;
     return {
         id: `entity:${entityId}`,
@@ -129,15 +145,17 @@ export function deskContaining<T extends AreaLike>(
  * to that desk, so the rules of the desk (whose it is, who it is kept for) apply to whoever wants to sit there.
  *
  * @param sizeOf The size of the picture of an object, when known (the browser knows it; the servers do not).
+ * @param describe What the collections say of a piece of furniture whose identifier does not say it.
  */
 export function listSeats(
     areas: readonly AreaLike[],
     entities: Iterable<[string, Pick<WAMEntityData, "x" | "y" | "prefabRef">]>,
     sizeOf?: (entityId: string) => EntitySize | undefined,
+    describe?: PrefabDescriber,
 ): Seat[] {
     const seats: Seat[] = [];
     for (const [entityId, entity] of entities) {
-        const seat = seatOfEntity(entityId, entity, sizeOf?.(entityId) ?? DEFAULT_SEAT_ENTITY_SIZE);
+        const seat = seatOfEntity(entityId, entity, sizeOf?.(entityId) ?? DEFAULT_SEAT_ENTITY_SIZE, describe);
         if (!seat) continue;
         const desk = deskContaining(areas, seat);
         seats.push(desk ? { ...seat, deskAreaId: desk.id } : seat);

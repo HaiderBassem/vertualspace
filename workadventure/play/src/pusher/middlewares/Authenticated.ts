@@ -5,6 +5,8 @@ import { jwtTokenManager } from "../services/JWTTokenManager";
 export type ResponseWithUserIdentifier = Response & {
     userIdentifier?: string;
     isLogged?: boolean;
+    /** The token was signed by the self-hosted back office after checking its session. */
+    isBackoffice?: boolean;
 };
 
 export async function authenticated(req: Request, res: ResponseWithUserIdentifier, next: NextFunction): Promise<void> {
@@ -18,7 +20,8 @@ export async function authenticated(req: Request, res: ResponseWithUserIdentifie
         const jwtData = await jwtTokenManager.verifyJWTToken(token);
         // Let's set the "uuid" param
         res.userIdentifier = jwtData.identifier;
-        res.isLogged = !!jwtData.accessToken;
+        res.isLogged = !!jwtData.accessToken || jwtData.backofficeSession === true;
+        res.isBackoffice = jwtData.backofficeSession === true;
     } catch (e) {
         Sentry.captureException(`Connection refused for token: ${token} ${e}`);
         console.error("Connection refused for token: " + token, e);

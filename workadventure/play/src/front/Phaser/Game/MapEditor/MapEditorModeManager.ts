@@ -670,8 +670,12 @@ export class MapEditorModeManager {
         return this.scene;
     }
 
-    public claimPersonalArea(userName: string) {
-        const areaDataToClaim = get(mapEditorAskToClaimPersonalAreaStore);
+    /**
+     * Claims a desk for this player. Without `areaData` it is the desk the claim dialog asked about; sitting at a free
+     * desk passes its area, so that the seat itself is the claim. A desk the player already holds is given back first.
+     */
+    public claimPersonalArea(userName: string, areaData?: AreaData) {
+        const areaDataToClaim = areaData ?? get(mapEditorAskToClaimPersonalAreaStore);
         const userUUID = localUserStore.getLocalUser()?.uuid;
         if (areaDataToClaim === undefined) {
             console.error("No area to claim");
