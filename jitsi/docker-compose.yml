@@ -1,0 +1,82 @@
+# Jitsi Meet for WorkAdventure: video meetings opened from "Jitsi" areas of the maps.
+#
+#   cp .env.example .env     # fill in the secrets (see README.md), then:
+#   docker compose up -d
+#
+# Four containers (web, prosody, jicofo, jvb) from the official docker-jitsi-meet images (the "stable" ones, whose init
+# needs a writable filesystem: no read_only here). The web container is published
+# through the Traefik of the server (HTTPS certificate included); the video bridge publishes its media port itself.
+# Nobody can open a room without a token signed by WorkAdventure (JWT authentication, no guests).
+services:
+    web:
+        image: jitsi/web:${JITSI_IMAGE_VERSION:-stable}
+        restart: unless-stopped
+        env_file: .env
+        volumes:
+            - ${CONFIG}/web:/config
+            - ${CONFIG}/storage/web:/storage
+        labels:
+            traefik.enable: "true"
+            traefik.docker.network: "${EDGE_NETWORK:-erp_default}"
+            traefik.http.routers.jitsi-ssl.rule: "Host(`${JITSI_DOMAIN}`)"
+            traefik.http.routers.jitsi-ssl.entryPoints: "websecure"
+            traefik.http.routers.jitsi-ssl.tls: "true"
+            traefik.http.routers.jitsi-ssl.tls.certresolver: "main-resolver"
+            traefik.http.routers.jitsi-ssl.service: "jitsi"
+            traefik.http.services.jitsi.loadbalancer.server.port: "80"
+        depends_on:
+            - prosody
+        networks:
+            - meet.jitsi
+            - edge
+
+    prosody:
+        image: jitsi/prosody:${JITSI_IMAGE_VERSION:-stable}
+        restart: unless-stopped
+        env_file: .env
+        expose:
+            - "5222"
+            - "5269"
+            - "5347"
+            - "5280"
+        volumes:
+            - ${CONFIG}/prosody/config:/config
+            - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom
+            - ${CONFIG}/storage/prosody:/var/lib/prosody
+        networks:
+            meet.jitsi:
+                aliases:
+                    - xmpp.meet.jitsi
+
+    jicofo:
+        image: jitsi/jicofo:${JITSI_IMAGE_VERSION:-stable}
+        restart: unless-stopped
+        env_file: .env
+        volumes:
+            - ${CONFIG}/jicofo:/config
+        depends_on:
+            - prosody
+        networks:
+            - meet.jitsi
+
+    jvb:
+        image: jitsi/jvb:${JITSI_IMAGE_VERSION:-stable}
+        restart: unless-stopped
+        env_file: .env
+        ports:
+            # Media: UDP, with a TCP fallback for networks that block UDP. Both must be open in the firewall.
+            - "${JVB_PORT:-10000}:${JVB_PORT:-10000}/udp"
+            - "${JVB_TCP_PORT:-4443}:${JVB_TCP_PORT:-4443}/tcp"
+        volumes:
+            - ${CONFIG}/jvb:/config
+        depends_on:
+            - prosody
+        networks:
+            - meet.jitsi
+
+networks:
+    meet.jitsi:
+    # The network of the server's Traefik, to publish the web container.
+    edge:
+        external: true
+        name: ${EDGE_NETWORK:-erp_default}
