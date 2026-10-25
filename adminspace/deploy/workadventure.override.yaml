@@ -11,6 +11,7 @@
 #   ADMIN_SOCKETS_TOKEN=...        identical to Adminspace's ADMIN_SOCKETS_TOKEN
 #   ADMINSPACE_DOMAIN=admin.example.com
 #   WORKADVENTURE_ADMIN_NETWORK=workadventure-admin   (optional, this is the default)
+#   MAP_STORAGE_AUTHENTICATION_TOKEN=...  identical to Adminspace's WORKADVENTURE_MAP_STORAGE_API_TOKEN
 
 services:
     play:
@@ -24,6 +25,10 @@ services:
             # only use it for links Adminspace does not serve; the pages people open are set explicitly below.
             ADMIN_URL: "http://adminspace:3000"
             ADMIN_BO_URL: "https://${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required}"
+            # Nobody enters without an account: people who are not signed in are sent to Adminspace (/play/enter), which
+            # signs them in once and hands back a token WorkAdventure keeps and renews. SECRET_KEY of WorkAdventure must
+            # equal WORKADVENTURE_PLAYER_TOKEN_SECRET of Adminspace.
+            BACKOFFICE_LOGIN: "true"
             OPID_PROFILE_SCREEN_PROVIDER: "https://${ADMINSPACE_DOMAIN:?ADMINSPACE_DOMAIN is required}/profile"
             # Live list of connected people and immediate disconnection on bans (optional).
             ADMIN_SOCKETS_TOKEN: "${ADMIN_SOCKETS_TOKEN:-}"
@@ -45,6 +50,18 @@ services:
     uploader:
         environment:
             ADMIN_API_URL: ""
+
+    map-storage:
+        environment:
+            # AdminSpace provisions, lists, and resizes maps using bearer authentication.
+            AUTHENTICATION_STRATEGY: ""
+            ENABLE_BEARER_AUTHENTICATION: "true"
+            ENABLE_BASIC_AUTHENTICATION: "false"
+            ENABLE_DIGEST_AUTHENTICATION: "false"
+            AUTHENTICATION_TOKEN: "${MAP_STORAGE_AUTHENTICATION_TOKEN:?Set MAP_STORAGE_AUTHENTICATION_TOKEN to Adminspace's WORKADVENTURE_MAP_STORAGE_API_TOKEN}"
+        networks:
+            - default
+            - workadventure-admin
 
 networks:
     workadventure-admin:

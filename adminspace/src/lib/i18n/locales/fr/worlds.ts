@@ -34,9 +34,13 @@ export const worlds: Messages["worlds"] = {
     create: {
         title: "Nouveau monde",
         intro: "Un monde est un ensemble de salles qui partagent membres, étiquettes, paramètres et modération.",
+        template: "Modèle de carte",
+        customMap: "Utiliser une URL de carte",
+        templateHint:
+            "WA Village est sélectionné par défaut. Chaque monde dispose de sa propre carte modifiable. Vous pouvez choisir un autre modèle et ajouter ou modifier des salles plus tard.",
         firstRoom: "Première salle",
         firstRoomIntro:
-            "Facultatif : vous pourrez ajouter des salles plus tard. La première salle devient la salle par défaut du monde.",
+            "WA Village est sélectionné par défaut. Chaque monde dispose de sa propre carte modifiable. Vous pouvez choisir un autre modèle et ajouter ou modifier des salles plus tard.",
         roomName: "Nom de la salle",
         roomSlug: "Identifiant d'URL de la salle",
         mapKind: "Type de carte",
@@ -49,6 +53,7 @@ export const worlds: Messages["worlds"] = {
         submit: "Créer le monde",
     },
     overview: {
+        editMap: "Modifier la carte",
         address: "Adresse du monde",
         addressHint: "Partagez cette adresse : WorkAdventure ouvre la salle par défaut du monde.",
         addressMissing:

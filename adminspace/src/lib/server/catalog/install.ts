@@ -11,7 +11,7 @@
 import { and, eq, inArray, isNull, like, ne, sql } from "drizzle-orm";
 import { db, schema } from "../db/client";
 import { config } from "../config";
-import { componentIdOfPrefab, prefabId, type ComponentManifest } from "../../catalog/manifest";
+import { componentIdOfPrefab, prefabId, isHostedTemplateMap, type ComponentManifest } from "../../catalog/manifest";
 import { enqueueJob } from "../services/jobs";
 import { checkRateLimit } from "../security/rateLimit";
 import { assetPath, assetsOf, latestPublishedVersions } from "./store";
@@ -423,6 +423,7 @@ export type TemplateResult =
     | { result: "created"; roomId: string; roomSlug: string }
     | { result: "notFound" }
     | { result: "notTemplate" }
+    | { result: "sizeUnsupported" }
     | { result: "dependencyMissing"; keys: string[] }
     | { result: "slugTaken" }
     | { result: "originMissing" }
@@ -440,6 +441,8 @@ export async function createRoomFromTemplate(input: {
     name: string;
     slug: string;
     actorId: string | null;
+    /** Keep a new world, its first room and the provisioning job in the same transaction. */
+    transaction?: Transaction;
     /** Size the room gets right after the upload (map-storage resize, fill "extend"); absent: the template's. */
     size?: { width: number; height: number } | undefined;
     /** Exits to other rooms of the world, added after the size (the "Create office" wizard). */
@@ -452,6 +455,9 @@ export async function createRoomFromTemplate(input: {
     if (!worldCollectionUrl(world.id)) return { result: "originMissing" };
     if (!(await mapStoragePublicUrl(""))) return { result: "mapStorageMissing" };
     const manifest = usable.version.manifest as ComponentManifest;
+    if (manifest.template && isHostedTemplateMap(manifest.template.map) && input.size) {
+        return { result: "sizeUnsupported" };
+    }
     const requires = manifest.template?.requires ?? [];
     // Required furniture: the organization's own component of that key first, else the platform's.
     const candidates = requires.length
@@ -477,7 +483,7 @@ export async function createRoomFromTemplate(input: {
     const versions = await latestPublishedVersions([...byKey.values()].map((c) => c.id));
 
     try {
-        return await db().transaction(async (tx): Promise<TemplateResult> => {
+        const provision = async (tx: Transaction): Promise<TemplateResult> => {
             const [room] = await tx
                 .insert(schema.rooms)
                 .values({
@@ -522,7 +528,8 @@ export async function createRoomFromTemplate(input: {
                 createdBy: input.actorId,
             });
             return { result: "created", roomId: room.id, roomSlug: room.slug };
-        });
+        };
+        return await (input.transaction ? provision(input.transaction) : db().transaction(provision));
     } catch (error) {
         if ((error as { code?: string }).code === "23505") return { result: "slugTaken" };
         throw error;

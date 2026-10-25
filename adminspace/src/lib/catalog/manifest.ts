@@ -18,6 +18,14 @@ export const MANIFEST_SCHEMA = "adminspace.component/1";
 
 /** Verified formats of WorkAdventure at commit b579166 (see docs/ENTERPRISE_ARCHITECTURE.md). */
 export const WORKADVENTURE_FORMATS = { entityCollection: "1.0", wam: "2.1.0" } as const;
+export const DEFAULT_WORLD_TEMPLATE = "wa-village";
+export const VILLAGE_MAP_URL = "https://workadventure.github.io/wa-village/wa-headquarters.tmj";
+export const VILLAGE_PREVIEW_URL = "https://workadventure.github.io/wa-village/wa-headquarters.png";
+
+/** Only this verified, public base map may be referenced rather than packaged. */
+export function isHostedTemplateMap(value: string): boolean {
+    return value === VILLAGE_MAP_URL;
+}
 
 export const CATEGORIES = [
     "desks",
@@ -26,6 +34,7 @@ export const CATEGORIES = [
     "lounge",
     "reception",
     "plants",
+    "nature",
     "decoration",
     "lighting",
     "presentation",
@@ -88,35 +97,78 @@ export const EntityVariant = z.object({
 });
 export type EntityVariant = z.infer<typeof EntityVariant>;
 
-export const TemplateSection = z.object({
-    /** The Tiled map (orthogonal, 32 px tiles) and every file it references (tilesets). */
-    map: AssetPath,
-    files: z.array(AssetPath).max(32),
-    /** Map size in tiles. */
-    width: z.number().int().min(4).max(200),
-    height: z.number().int().min(4).max(200),
-    /** Entity components the template places; installed in the world with it. */
-    requires: z.array(ComponentKey).max(50),
-    /** Furniture placed in the room: prefab of a required component, position in pixels. */
-    entities: z
-        .array(
-            z.object({
-                component: ComponentKey,
-                variant: z.string().max(40),
-                x: z
-                    .number()
-                    .int()
-                    .min(0)
-                    .max(200 * TILE_SIZE),
-                y: z
-                    .number()
-                    .int()
-                    .min(0)
-                    .max(200 * TILE_SIZE),
-            }),
-        )
-        .max(500),
-});
+export const TemplateSection = z
+    .object({
+        /** The Tiled map (orthogonal, 32 px tiles) and every file it references (tilesets). */
+        map: z.union([AssetPath, z.literal(VILLAGE_MAP_URL)]),
+        files: z.array(AssetPath).max(32),
+        /** Map size in tiles. */
+        width: z.number().int().min(4).max(200),
+        height: z.number().int().min(4).max(200),
+        /** Entity components the template places; installed in the world with it. */
+        requires: z.array(ComponentKey).max(50),
+        /** Furniture placed in the room: prefab of a required component, position in pixels. */
+        entities: z
+            .array(
+                z.object({
+                    component: ComponentKey,
+                    variant: z.string().max(40),
+                    x: z
+                        .number()
+                        .int()
+                        .min(0)
+                        .max(200 * TILE_SIZE),
+                    y: z
+                        .number()
+                        .int()
+                        .min(0)
+                        .max(200 * TILE_SIZE),
+                }),
+            )
+            .max(500),
+        /** Conference zones provisioned as native LiveKit areas, with a unique meeting per room. */
+        meetings: z
+            .array(
+                z.object({
+                    name: z.string().trim().min(1).max(100),
+                    x: z
+                        .number()
+                        .int()
+                        .min(0)
+                        .max(200 * TILE_SIZE),
+                    y: z
+                        .number()
+                        .int()
+                        .min(0)
+                        .max(200 * TILE_SIZE),
+                    width: z
+                        .number()
+                        .int()
+                        .positive()
+                        .max(200 * TILE_SIZE),
+                    height: z
+                        .number()
+                        .int()
+                        .positive()
+                        .max(200 * TILE_SIZE),
+                }),
+            )
+            .max(50)
+            .optional(),
+    })
+    .superRefine((template, ctx) => {
+        for (const [index, meeting] of (template.meetings ?? []).entries()) {
+            if (
+                meeting.x + meeting.width > template.width * TILE_SIZE ||
+                meeting.y + meeting.height > template.height * TILE_SIZE
+            )
+                ctx.addIssue({
+                    code: "custom",
+                    path: ["meetings", index],
+                    message: "Meeting area must fit inside the map",
+                });
+        }
+    });
 export type TemplateSection = z.infer<typeof TemplateSection>;
 
 export const ComponentManifest = z
@@ -147,7 +199,7 @@ export const ComponentManifest = z
             author: z.string().trim().min(1).max(200),
             url: HttpUrl.optional(),
         }),
-        preview: ImagePath,
+        preview: z.union([ImagePath, z.literal(VILLAGE_PREVIEW_URL)]),
         entity: z.object({ variants: z.array(EntityVariant).min(1).max(16) }).optional(),
         template: TemplateSection.optional(),
         /** Formats this component was validated against. */
@@ -197,10 +249,10 @@ export function componentIdOfPrefab(prefab: string): string | undefined {
 
 /** Every file a manifest references (to check that a package is complete). */
 export function referencedFiles(manifest: ComponentManifest): string[] {
-    const files = new Set<string>([manifest.preview]);
+    const files = new Set<string>(manifest.preview === VILLAGE_PREVIEW_URL ? [] : [manifest.preview]);
     for (const variant of manifest.entity?.variants ?? []) files.add(variant.image);
     if (manifest.template) {
-        files.add(manifest.template.map);
+        if (!isHostedTemplateMap(manifest.template.map)) files.add(manifest.template.map);
         for (const file of manifest.template.files) files.add(file);
     }
     return [...files];

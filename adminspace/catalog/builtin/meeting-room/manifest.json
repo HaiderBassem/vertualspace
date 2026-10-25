@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "meeting-room",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "kind": "room_template",
   "name": "Meeting room",
   "description": "A six-seat meeting room with a presentation screen. Carpet floor.",
@@ -109,6 +109,15 @@
         "variant": "charcoal",
         "x": 320,
         "y": 64
+      }
+    ],
+    "meetings": [
+      {
+        "name": "Meeting room",
+        "x": 32,
+        "y": 32,
+        "width": 320,
+        "height": 224
       }
     ]
   },

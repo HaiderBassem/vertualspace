@@ -23,7 +23,10 @@
     let roomName = $state(seed?.roomName ?? "");
     let roomSlug = $state(seed?.roomSlug ?? "");
     let roomSlugEdited = $state(Boolean(seed?.roomSlug));
-    let accessPolicy = $state(seed?.accessPolicy ?? "public");
+    let accessPolicy = $state(seed?.accessPolicy ?? "members");
+    let mapMode = $state(seed?.mapMode ?? (seed?.mapUrl ? "custom" : "template"));
+    let templateId = $state(untrack(() => seed?.templateId ?? data.defaultTemplateId ?? ""));
+    const selectedTemplate = $derived(data.templates.find((t) => t.id === templateId));
 
     $effect(() => {
         if (!slugEdited) slug = suggestSlug(name);
@@ -112,37 +115,76 @@
     <fieldset class="card space-y-5">
         <legend class="px-1 text-base font-bold">{w.create.firstRoom}</legend>
         <p class="muted text-sm">{w.create.firstRoomIntro}</p>
-        <Field label={w.create.roomName} name="roomName" error={errors?.roomName}>
-            {#snippet children(a)}
-                <input class="input" {...a} name="roomName" maxlength="200" bind:value={roomName} />
-            {/snippet}
-        </Field>
-        <Field label={w.create.roomSlug} name="roomSlug" error={errors?.roomSlug}>
-            {#snippet children(a)}
-                <input
-                    class="input font-mono"
-                    {...a}
-                    name="roomSlug"
-                    dir="ltr"
-                    maxlength="128"
-                    bind:value={roomSlug}
-                    oninput={() => (roomSlugEdited = true)}
-                />
-            {/snippet}
-        </Field>
-        <Field label={w.create.mapKind} name="mapKind" error={errors?.mapKind}>
-            {#snippet children(a)}
-                <select class="select" {...a} name="mapKind" value={form?.values?.mapKind ?? "wam"}>
-                    <option value="wam">{w.create.mapKinds.wam}</option>
-                    <option value="tmj">{w.create.mapKinds.tmj}</option>
-                </select>
-            {/snippet}
-        </Field>
-        <Field label={w.create.mapUrl} name="mapUrl" error={errors?.mapUrl} hint={w.create.mapUrlHint}>
-            {#snippet children(a)}
-                <input class="input" type="url" dir="ltr" {...a} name="mapUrl" value={form?.values?.mapUrl ?? ""} />
-            {/snippet}
-        </Field>
+        <div class="flex flex-wrap gap-4">
+            <label class="flex items-center gap-2">
+                <input type="radio" name="mapMode" value="template" bind:group={mapMode} />
+                {w.create.template}
+            </label>
+            <label class="flex items-center gap-2">
+                <input type="radio" name="mapMode" value="custom" bind:group={mapMode} />
+                {w.create.customMap}
+            </label>
+        </div>
+        {#if mapMode === "template"}
+            <Field
+                label={w.create.template}
+                name="templateId"
+                required
+                error={errors?.templateId}
+                hint={w.create.templateHint}
+            >
+                {#snippet children(a)}
+                    <select class="select" {...a} name="templateId" bind:value={templateId}>
+                        {#each data.templates as template (template.id)}
+                            <option value={template.id}>{template.name}</option>
+                        {/each}
+                    </select>
+                {/snippet}
+            </Field>
+            {#if selectedTemplate}
+                {#if selectedTemplate.previewUrl}
+                    <img
+                        src={selectedTemplate.previewUrl}
+                        alt={selectedTemplate.name}
+                        class="max-h-64 w-full rounded-lg border border-[var(--border)] object-contain"
+                        loading="lazy"
+                    />
+                {/if}
+                {#if selectedTemplate.description}<p class="muted text-sm">{selectedTemplate.description}</p>{/if}
+            {/if}
+        {:else}
+            <Field label={w.create.roomName} name="roomName" error={errors?.roomName}>
+                {#snippet children(a)}
+                    <input class="input" {...a} name="roomName" maxlength="200" bind:value={roomName} />
+                {/snippet}
+            </Field>
+            <Field label={w.create.roomSlug} name="roomSlug" error={errors?.roomSlug}>
+                {#snippet children(a)}
+                    <input
+                        class="input font-mono"
+                        {...a}
+                        name="roomSlug"
+                        dir="ltr"
+                        maxlength="128"
+                        bind:value={roomSlug}
+                        oninput={() => (roomSlugEdited = true)}
+                    />
+                {/snippet}
+            </Field>
+            <Field label={w.create.mapKind} name="mapKind" error={errors?.mapKind}>
+                {#snippet children(a)}
+                    <select class="select" {...a} name="mapKind" value={form?.values?.mapKind ?? "wam"}>
+                        <option value="wam">{w.create.mapKinds.wam}</option>
+                        <option value="tmj">{w.create.mapKinds.tmj}</option>
+                    </select>
+                {/snippet}
+            </Field>
+            <Field label={w.create.mapUrl} name="mapUrl" error={errors?.mapUrl} hint={w.create.mapUrlHint}>
+                {#snippet children(a)}
+                    <input class="input" type="url" dir="ltr" {...a} name="mapUrl" value={form?.values?.mapUrl ?? ""} />
+                {/snippet}
+            </Field>
+        {/if}
     </fieldset>
 
     <div class="flex gap-2">

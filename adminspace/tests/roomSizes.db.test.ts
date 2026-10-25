@@ -467,7 +467,9 @@ describe("Create an office", () => {
 
         type Area = { name: string; properties: { type: string; url: string }[] };
         const exits = (slug: string) =>
-            (fake.json(path(slug)) as { areas: Area[] }).areas.map((a) => a.properties[0]!.url);
+            (fake.json(path(slug)) as { areas: Area[] }).areas
+                .filter((a) => a.properties[0]?.type === "exit")
+                .map((a) => a.properties[0]!.url);
         const base = `/@/${organization.slug}/acme-hq`;
         expect(exits("reception").sort()).toEqual(
             ["open-office", "meeting-room-1", "meeting-room-2", "lounge"].map((s) => `${base}/${s}`).sort(),

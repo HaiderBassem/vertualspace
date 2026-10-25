@@ -1,0 +1,72 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "hedge",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Hedge",
+  "description": "A trimmed hedge section, two tiles wide. Chain them to fence a garden or separate areas.",
+  "translations": {
+    "fr-FR": {
+      "name": "Haie",
+      "description": "Un tronçon de haie taillée, large de deux cases. Enchaînez-les pour clore un jardin ou séparer des espaces."
+    },
+    "de-DE": {
+      "name": "Hecke",
+      "description": "Ein beschnittenes Heckenstück, zwei Felder breit. Aneinandergereiht umzäunt es Gärten oder trennt Bereiche."
+    },
+    "es-ES": {
+      "name": "Seto",
+      "description": "Un tramo de seto recortado, de dos casillas. Encadénalos para cercar un jardín o separar zonas."
+    },
+    "ar-SA": {
+      "name": "سياج نباتي",
+      "description": "قطعة سياج مشذّبة بعرض مربعين. صفّها لتسوير حديقة أو فصل المساحات."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "hedge",
+    "fence",
+    "garden",
+    "outdoor",
+    "wall"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "green",
+        "color": "#3a8a4f",
+        "direction": "Down",
+        "image": "green.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "flowering",
+        "color": "#e58fb0",
+        "direction": "Down",
+        "image": "flowering.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -288,16 +288,38 @@ WorkAdventure version). The import is idempotent: run it again after a WorkAdven
 ### 5b. Publish the built-in component pack
 
 The office furniture and room templates of `catalog/builtin` (original artwork, see `catalog/builtin/README.md`)
-are published for every organization by an explicit command; nothing is published at start-up:
+are published for every organization automatically at startup, after migrations. Set
+`SKIP_CATALOG_IMPORT=true` when managing the catalog separately. To import manually:
 
 ```sh
 docker compose ... exec -T adminspace node build/cli/catalog-import.js
 # created        desk-classic … / unchanged …
-# catalog: 32 imported or up to date, 0 refused
+# catalog: 33 imported or up to date, 0 refused
 ```
 
-Each package is validated first (same rules as uploads). The command is idempotent: run it after every
-AdminSpace upgrade.
+Each package is validated first (same rules as uploads). The import is idempotent: unchanged versions
+and organization-owned components are preserved.
+
+When using `deploy/workadventure.override.yaml`, set `MAP_STORAGE_AUTHENTICATION_TOKEN` in WorkAdventure's
+environment to the same value as AdminSpace's `WORKADVENTURE_MAP_STORAGE_API_TOKEN`. The override enables
+bearer authentication for map uploads, listing, and resizing. Missing or mismatched credentials prevent
+office provisioning.
+
+New worlds start with **WA Village** selected. The template selector also offers the original office,
+meeting-room, reception, and lounge templates. Every template creates an independent WAM on your
+map-storage; edits to furniture, meeting zones, and interactions stay in that world. Village's base
+scenery and preview load from their original public host and keep their original dimensions. They are
+not copied into the catalog. The Village auditorium and meeting rooms use your LiveKit server.
+
+To enable the **Edit map** button on each world's overview, set `WORKADVENTURE_PLAYER_TOKEN_SECRET` to
+WorkAdventure's `SECRET_KEY` in AdminSpace's environment. Deploy the matching WorkAdventure pusher update
+that recognizes signed `backofficeSession` tokens. The button checks room-management permission and
+POSTs a one-hour player identity to WorkAdventure, without putting tokens in links. A new world's creator
+receives its `editor` tag; permissions in other worlds are unchanged. This also supports access policies
+requiring signed-in players, without requiring a separate OpenID provider for this launch.
+
+For an existing world, use **Components → Room templates** to create another template room, then make
+it the default in **Rooms**. Existing rooms and edits are preserved.
 
 Players' browsers load the components from AdminSpace itself: `ORIGIN`/`wa/worlds/{id}/collection.json` and
 `ORIGIN`/`wa/assets/…` must be reachable from the Internet (the production proxy serves them; they need no

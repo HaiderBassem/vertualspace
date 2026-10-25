@@ -223,3 +223,23 @@ export async function isWorldPerson(
     const row = rows[0];
     return row !== undefined && (roleHas(row.role, "world.read") || row.workspaceRole !== null);
 }
+
+/** The name an account goes by, to greet a person who has not chosen a name in the office yet. */
+export async function accountDisplayName(email: string): Promise<string | undefined> {
+    const rows = await db()
+        .select({ name: schema.accounts.name })
+        .from(schema.accounts)
+        .where(and(sql`lower(${schema.accounts.email}) = lower(${email})`, eq(schema.accounts.status, "active")))
+        .limit(1);
+    return rows[0]?.name?.trim() || undefined;
+}
+
+/** Whether an active account of this installation has this email: who may enter rooms that belong to no world. */
+export async function hasActiveAccount(email: string): Promise<boolean> {
+    const rows = await db()
+        .select({ id: schema.accounts.id })
+        .from(schema.accounts)
+        .where(and(sql`lower(${schema.accounts.email}) = lower(${email})`, eq(schema.accounts.status, "active")))
+        .limit(1);
+    return rows.length > 0;
+}

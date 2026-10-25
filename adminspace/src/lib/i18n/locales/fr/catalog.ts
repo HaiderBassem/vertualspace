@@ -30,6 +30,7 @@ export const catalog: Messages["catalog"] = {
         lounge: "Salon",
         reception: "Accueil",
         plants: "Plantes",
+        nature: "Nature",
         decoration: "Décoration",
         lighting: "Éclairage",
         presentation: "Présentation",
@@ -93,6 +94,8 @@ export const catalog: Messages["catalog"] = {
         notInstalled: "Ce composant n’est pas installé dans ce monde.",
     },
     template: {
+        sizeUnsupported:
+            "Ce modèle conserve les dimensions de son décor original. Le mobilier, les zones de réunion et les interactions restent modifiables.",
         title: "Créer une salle à partir de ce modèle",
         intro: "Une nouvelle salle est ajoutée au monde ; sa carte est envoyée vers map-storage, dans un dossier dédié. Les salles existantes ne sont jamais modifiées.",
         world: "Monde",

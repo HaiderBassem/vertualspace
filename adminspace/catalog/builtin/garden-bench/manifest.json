@@ -1,0 +1,119 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "garden-bench",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Garden bench",
+  "description": "A slatted wooden bench for gardens and terraces, facing four ways.",
+  "translations": {
+    "fr-FR": {
+      "name": "Banc de jardin",
+      "description": "Un banc à lattes en bois pour jardins et terrasses, orienté dans les quatre directions."
+    },
+    "de-DE": {
+      "name": "Gartenbank",
+      "description": "Eine Holzlattenbank für Gärten und Terrassen, in vier Richtungen."
+    },
+    "es-ES": {
+      "name": "Banco de jardín",
+      "description": "Un banco de listones de madera para jardines y terrazas, en cuatro orientaciones."
+    },
+    "ar-SA": {
+      "name": "مقعد حديقة",
+      "description": "مقعد خشبي بألواح للحدائق والشرفات بأربعة اتجاهات."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "bench",
+    "seat",
+    "garden",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak-down",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak-down.png"
+      },
+      {
+        "key": "oak-up",
+        "color": "#d6a46b",
+        "direction": "Up",
+        "image": "oak-up.png"
+      },
+      {
+        "key": "oak-left",
+        "color": "#d6a46b",
+        "direction": "Left",
+        "image": "oak-left.png"
+      },
+      {
+        "key": "oak-right",
+        "color": "#d6a46b",
+        "direction": "Right",
+        "image": "oak-right.png"
+      },
+      {
+        "key": "walnut-down",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut-down.png"
+      },
+      {
+        "key": "walnut-up",
+        "color": "#96613f",
+        "direction": "Up",
+        "image": "walnut-up.png"
+      },
+      {
+        "key": "walnut-left",
+        "color": "#96613f",
+        "direction": "Left",
+        "image": "walnut-left.png"
+      },
+      {
+        "key": "walnut-right",
+        "color": "#96613f",
+        "direction": "Right",
+        "image": "walnut-right.png"
+      },
+      {
+        "key": "white-down",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white-down.png"
+      },
+      {
+        "key": "white-up",
+        "color": "#f2f3f5",
+        "direction": "Up",
+        "image": "white-up.png"
+      },
+      {
+        "key": "white-left",
+        "color": "#f2f3f5",
+        "direction": "Left",
+        "image": "white-left.png"
+      },
+      {
+        "key": "white-right",
+        "color": "#f2f3f5",
+        "direction": "Right",
+        "image": "white-right.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

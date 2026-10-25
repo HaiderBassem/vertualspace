@@ -17,9 +17,11 @@ RUN ADMIN_API_TOKEN=$BUILD_ONLY_SECRET APP_SECRET=$BUILD_ONLY_SECRET npx svelte-
     #   node build/cli/migrate.js | create-superadmin.js --email .. --name .. | retention.js
     #   node build/cli/seed.js --from <dir with woka.json and companions.json>
     #   node build/cli/catalog-import.js (built-in office components, from /app/catalog/builtin)
-    && for script in migrate create-superadmin retention seed catalog-import; do \
+    #   node build/cli/catalog-install.js --org <slug> [--world <slug>] [--category nature] | --all
+    && for script in migrate create-superadmin retention seed catalog-import catalog-install; do \
         npx esbuild "scripts/$script.ts" --bundle --platform=node --format=esm --target=node22 \
-            --packages=external --outfile="build/cli/$script.js" || exit 1; \
+            --packages=external --alias:@sveltejs/kit=./scripts/shims/sveltejs-kit.ts \
+            --outfile="build/cli/$script.js" || exit 1; \
     done \
     && npm prune --omit=dev --no-audit --no-fund
 

@@ -279,7 +279,7 @@ export const worlds = pgTable(
         slug: varchar("slug", { length: 64 }).notNull(),
         name: varchar("name", { length: 200 }).notNull(),
         description: text("description"),
-        accessPolicy: worldAccessPolicy("access_policy").notNull().default("public"),
+        accessPolicy: worldAccessPolicy("access_policy").notNull().default("members"),
         /** 0 means unlimited. */
         maxUsers: integer("max_users").notNull().default(0),
         expiresAt: timestamp("expires_at", { withTimezone: true }),

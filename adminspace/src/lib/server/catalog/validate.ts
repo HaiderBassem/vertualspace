@@ -15,6 +15,7 @@
 import { createHash } from "node:crypto";
 import {
     ComponentManifest,
+    isHostedTemplateMap,
     referencedFiles,
     TILE_SIZE,
     type ComponentManifest as Manifest,
@@ -107,6 +108,8 @@ function allLayers(layers: unknown, depth = 0): TiledLayer[] | undefined {
 
 function validateMap(manifest: Manifest, files: Map<string, Buffer>, issues: Issue[]): void {
     const template = manifest.template!;
+    // The allowlisted hosted scenery stays on its original host; only its editable WAM is provisioned.
+    if (isHostedTemplateMap(template.map)) return;
     const bytes = files.get(template.map);
     if (!bytes) return; // reported as fileMissing
     if (bytes.length > LIMITS.mapBytes) issues.push({ code: "packageTooLarge", path: template.map });

@@ -1,0 +1,263 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "garden-terrace",
+  "version": "1.0.0",
+  "kind": "room_template",
+  "name": "Garden terrace",
+  "description": "An open-air room: a fountain at the end of the path, a pond, trees, a picnic table, benches, a hammock and a beanbag circle, with a video meeting zone at the picnic table and one among the beanbags.",
+  "translations": {
+    "fr-FR": {
+      "name": "Jardin-terrasse",
+      "description": "Une pièce à ciel ouvert : fontaine au bout de l’allée, bassin, arbres, table de pique-nique, bancs, hamac et cercle de poufs, avec une zone de visioconférence à la table de pique-nique et une parmi les poufs."
+    },
+    "de-DE": {
+      "name": "Gartenterrasse",
+      "description": "Ein Raum unter freiem Himmel: Brunnen am Ende des Weges, Teich, Bäume, Picknicktisch, Bänke, Hängematte und Sitzsack-Kreis, mit Videobesprechungszone am Picknicktisch und eine bei den Sitzsäcken."
+    },
+    "es-ES": {
+      "name": "Jardín-terraza",
+      "description": "Una sala al aire libre: fuente al final del camino, estanque, árboles, mesa de picnic, bancos, hamaca y círculo de pufs, con una zona de videoreunión en la mesa de picnic y otra entre los pufs."
+    },
+    "ar-SA": {
+      "name": "حديقة شرفة",
+      "description": "غرفة في الهواء الطلق: نافورة في نهاية الممر وبركة وأشجار وطاولة نزهة ومقاعد وأرجوحة ودائرة من الوسائد، مع منطقة اجتماع مرئي عند الطاولة وأخرى بين الوسائد."
+    }
+  },
+  "category": "templates",
+  "tags": [
+    "garden",
+    "nature",
+    "outdoor",
+    "lounge",
+    "meeting"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "template": {
+    "map": "map.tmj",
+    "files": [
+      "garden-tiles.png"
+    ],
+    "width": 22,
+    "height": 14,
+    "requires": [
+      "beanbag",
+      "bush",
+      "flower-bed",
+      "fountain",
+      "garden-bench",
+      "garden-lantern",
+      "hammock",
+      "log-bench",
+      "oak-tree",
+      "picnic-table",
+      "pine-tree",
+      "planter-box",
+      "pond",
+      "rattan-chair",
+      "rock-cluster",
+      "stepping-stones",
+      "stump-stool"
+    ],
+    "entities": [
+      {
+        "component": "fountain",
+        "variant": "stone",
+        "x": 320,
+        "y": 96
+      },
+      {
+        "component": "flower-bed",
+        "variant": "tulips",
+        "x": 224,
+        "y": 32
+      },
+      {
+        "component": "flower-bed",
+        "variant": "daisies",
+        "x": 416,
+        "y": 32
+      },
+      {
+        "component": "flower-bed",
+        "variant": "lavender",
+        "x": 224,
+        "y": 160
+      },
+      {
+        "component": "flower-bed",
+        "variant": "lavender",
+        "x": 416,
+        "y": 160
+      },
+      {
+        "component": "oak-tree",
+        "variant": "summer",
+        "x": 64,
+        "y": 32
+      },
+      {
+        "component": "pine-tree",
+        "variant": "green",
+        "x": 160,
+        "y": 32
+      },
+      {
+        "component": "pine-tree",
+        "variant": "green",
+        "x": 480,
+        "y": 32
+      },
+      {
+        "component": "oak-tree",
+        "variant": "blossom",
+        "x": 576,
+        "y": 32
+      },
+      {
+        "component": "pond",
+        "variant": "lilies",
+        "x": 64,
+        "y": 128
+      },
+      {
+        "component": "rock-cluster",
+        "variant": "mossy",
+        "x": 160,
+        "y": 192
+      },
+      {
+        "component": "picnic-table",
+        "variant": "oak",
+        "x": 544,
+        "y": 128
+      },
+      {
+        "component": "planter-box",
+        "variant": "herbs",
+        "x": 608,
+        "y": 192
+      },
+      {
+        "component": "hammock",
+        "variant": "blue",
+        "x": 64,
+        "y": 320
+      },
+      {
+        "component": "garden-bench",
+        "variant": "oak-down",
+        "x": 192,
+        "y": 320
+      },
+      {
+        "component": "garden-bench",
+        "variant": "oak-up",
+        "x": 192,
+        "y": 384
+      },
+      {
+        "component": "log-bench",
+        "variant": "oak",
+        "x": 480,
+        "y": 320
+      },
+      {
+        "component": "beanbag",
+        "variant": "terracotta",
+        "x": 416,
+        "y": 352
+      },
+      {
+        "component": "beanbag",
+        "variant": "blue",
+        "x": 576,
+        "y": 352
+      },
+      {
+        "component": "beanbag",
+        "variant": "mustard",
+        "x": 448,
+        "y": 384
+      },
+      {
+        "component": "beanbag",
+        "variant": "green",
+        "x": 544,
+        "y": 384
+      },
+      {
+        "component": "stepping-stones",
+        "variant": "sand",
+        "x": 480,
+        "y": 352
+      },
+      {
+        "component": "stepping-stones",
+        "variant": "sand",
+        "x": 512,
+        "y": 384
+      },
+      {
+        "component": "stump-stool",
+        "variant": "birch",
+        "x": 512,
+        "y": 352
+      },
+      {
+        "component": "rattan-chair",
+        "variant": "natural-left",
+        "x": 608,
+        "y": 320
+      },
+      {
+        "component": "garden-lantern",
+        "variant": "black",
+        "x": 288,
+        "y": 320
+      },
+      {
+        "component": "garden-lantern",
+        "variant": "black",
+        "x": 384,
+        "y": 320
+      },
+      {
+        "component": "bush",
+        "variant": "flowering",
+        "x": 256,
+        "y": 384
+      },
+      {
+        "component": "bush",
+        "variant": "flowering",
+        "x": 384,
+        "y": 384
+      }
+    ],
+    "meetings": [
+      {
+        "name": "Picnic table",
+        "x": 512,
+        "y": 96,
+        "width": 160,
+        "height": 128
+      },
+      {
+        "name": "Beanbag circle",
+        "x": 384,
+        "y": 312,
+        "width": 256,
+        "height": 128
+      }
+    ]
+  },
+  "compatibility": {
+    "wam": "2.1.0"
+  }
+}

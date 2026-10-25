@@ -113,6 +113,11 @@ describe("buildMapDetails", () => {
         expect(details.expireOn).toBe("2027-03-04T05:06:07.000Z");
     });
 
+    it("lets the account name fill the name once, then the chosen name wins", () => {
+        expect(build().opidWokaNamePolicy).toBe("allow_override_opid");
+        expect(build({ woka: { namePolicy: "force_opid" } }).opidWokaNamePolicy).toBe("force_opid");
+    });
+
     it("sends third-party settings only when configured", () => {
         expect(build().thirdParty).toBeNull();
         expect(build({ thirdParty: { jitsiUrl: "meet.example.com" } }).thirdParty?.jitsi?.url).toBe("meet.example.com");

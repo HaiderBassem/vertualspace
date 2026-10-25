@@ -1,0 +1,72 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "planter-box",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Raised planter",
+  "description": "A wooden raised bed growing herbs or vegetables: a rooftop-garden classic.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bac potager",
+      "description": "Un bac potager en bois avec aromates ou légumes : un classique des jardins sur les toits."
+    },
+    "de-DE": {
+      "name": "Hochbeet",
+      "description": "Ein Holzhochbeet mit Kräutern oder Gemüse – ein Klassiker für Dachgärten."
+    },
+    "es-ES": {
+      "name": "Jardinera elevada",
+      "description": "Una jardinera de madera con hierbas o verduras: un clásico de los huertos urbanos."
+    },
+    "ar-SA": {
+      "name": "حوض زراعة مرتفع",
+      "description": "حوض زراعة خشبي مرتفع بالأعشاب أو الخضروات، من أساسيات حدائق الأسطح."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "planter",
+    "herbs",
+    "vegetables",
+    "garden",
+    "urban"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "herbs",
+        "color": "#4aa05a",
+        "direction": "Down",
+        "image": "herbs.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "vegetables",
+        "color": "#d94a4a",
+        "direction": "Down",
+        "image": "vegetables.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

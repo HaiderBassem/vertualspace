@@ -1,0 +1,61 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "stepping-stones",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Stepping stones",
+  "description": "Flat stones for a garden path. Walk over them, they sit on the ground.",
+  "translations": {
+    "fr-FR": {
+      "name": "Pas japonais",
+      "description": "Des pierres plates pour un chemin de jardin. On marche dessus, elles sont au sol."
+    },
+    "de-DE": {
+      "name": "Trittsteine",
+      "description": "Flache Steine für einen Gartenweg. Man geht darüber, sie liegen am Boden."
+    },
+    "es-ES": {
+      "name": "Piedras de paso",
+      "description": "Piedras planas para un sendero de jardín. Se pisan, están en el suelo."
+    },
+    "ar-SA": {
+      "name": "حجارة عبور",
+      "description": "حجارة مسطحة لممر في الحديقة. يمكن المشي عليها فهي على الأرض."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "path",
+    "stones",
+    "garden",
+    "floor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "gray",
+        "color": "#9aa0a3",
+        "direction": "Down",
+        "image": "gray.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "sand",
+        "color": "#c9b583",
+        "direction": "Down",
+        "image": "sand.png",
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

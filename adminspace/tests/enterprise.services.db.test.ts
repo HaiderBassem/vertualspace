@@ -7,7 +7,7 @@
  */
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { and, eq, like } from "drizzle-orm";
+import { and, eq, isNull, like } from "drizzle-orm";
 import { closeDb, db, schema } from "../src/lib/server/db/client";
 import { randomToken, sha256Hex } from "../src/lib/server/crypto";
 import { organizationAccess } from "../src/lib/server/auth/rbac";
@@ -40,6 +40,7 @@ import { importCatalogDirectory, readPackage } from "../src/lib/server/catalog/b
 import { validatePackage } from "../src/lib/server/catalog/validate";
 import { publishedAsset, searchCatalog, setFavorite, storeComponentVersion } from "../src/lib/server/catalog/store";
 import {
+    buildWorldCollection,
     installComponent,
     mapOfAnotherOrganization,
     roomStatuses,
@@ -47,6 +48,7 @@ import {
     wamWritableBy,
 } from "../src/lib/server/catalog/install";
 import { organizationDirectory, wamTarget } from "../src/lib/server/catalog/mapStorage";
+import { bulkInstallSucceeded, installPlatformComponents } from "../src/lib/server/catalog/bulkInstall";
 import { enqueueJob, runDueJobs } from "../src/lib/server/services/jobs";
 import { checkRateLimit } from "../src/lib/server/security/rateLimit";
 import "../src/lib/server/services/jobHandlers";
@@ -571,5 +573,56 @@ describe("rate limits", () => {
         const key = `${PREFIX}:weighted`;
         expect((await checkRateLimit(key, 6, 3600, new Date(), 5)).allowed).toBe(true);
         expect((await checkRateLimit(key, 6, 3600, new Date(), 2)).allowed).toBe(false);
+    });
+});
+
+describe("installing the platform's furniture in worlds", () => {
+    it("installs a category in one world, again without change, and lists it in the world's collection", async () => {
+        const [world] = await db()
+            .insert(schema.worlds)
+            .values({ organizationId: organization.id, workspaceId: mainWorkspace, slug: "garden", name: "Garden" })
+            .returning();
+        await db()
+            .insert(schema.rooms)
+            .values({
+                worldId: world!.id,
+                slug: "lawn",
+                name: "Lawn",
+                mapKind: "wam",
+                wamUrl: `${MAP_STORAGE}/svc/garden.wam`,
+            });
+        const platformSeating = await db()
+            .select({ key: schema.components.key })
+            .from(schema.components)
+            .where(
+                and(
+                    isNull(schema.components.organizationId),
+                    eq(schema.components.kind, "entity"),
+                    eq(schema.components.category, "seating"),
+                ),
+            );
+        expect(platformSeating.map((c) => c.key)).toEqual(
+            expect.arrayContaining(["beanbag", "garden-bench", "hammock"]),
+        );
+
+        const scope = { organizationSlug: organization.slug, worldSlug: "garden", category: "seating" };
+        const first = await installPlatformComponents(scope);
+        expect(first.worlds).toEqual([{ organizationSlug: organization.slug, worldSlug: "garden" }]);
+        expect(first.results).toEqual({ installed: platformSeating.length });
+        expect(bulkInstallSucceeded(first)).toBe(true);
+        expect((await installPlatformComponents(scope)).results).toEqual({ unchanged: platformSeating.length });
+
+        // Nothing is installed in worlds the scope does not name.
+        const none = await installPlatformComponents({ ...scope, worldSlug: "elsewhere" });
+        expect(none.worlds).toEqual([]);
+        expect(bulkInstallSucceeded(none)).toBe(false);
+        await expect(installPlatformComponents({})).rejects.toThrow();
+
+        // The collection a world serves to WorkAdventure names its furniture, which is how seats are recognised.
+        const collection = await buildWorldCollection(world!.id);
+        const names = new Set(collection?.collection.map((prefab) => prefab.name));
+        for (const name of ["Beanbag", "Garden bench", "Tree stump stool", "Log bench", "Rattan chair", "Hammock"]) {
+            expect(names.has(name), name).toBe(true);
+        }
     });
 });

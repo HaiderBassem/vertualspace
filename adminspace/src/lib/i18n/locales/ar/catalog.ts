@@ -30,6 +30,7 @@ export const catalog: Messages["catalog"] = {
         lounge: "صالة الجلوس",
         reception: "الاستقبال",
         plants: "النباتات",
+        nature: "الطبيعة",
         decoration: "الديكور",
         lighting: "الإضاءة",
         presentation: "العروض التقديمية",
@@ -111,6 +112,8 @@ export const catalog: Messages["catalog"] = {
         notInstalled: "هذا المكوّن غير مثبّت في ذلك العالم.",
     },
     template: {
+        sizeUnsupported:
+            "يحتفظ هذا القالب بأبعاد المشهد الأصلي. يظل الأثاث ومناطق الاجتماعات والتفاعلات قابلة للتعديل.",
         title: "إنشاء غرفة من هذا القالب",
         intro: "تُضاف غرفة جديدة إلى العالم، وتُرفع خريطتها إلى map-storage في مجلد خاص بها. لا تُغيَّر الغرف الموجودة أبدًا.",
         world: "العالم",

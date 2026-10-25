@@ -1,0 +1,77 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "beanbag",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Beanbag",
+  "description": "A slouchy beanbag you can sit on anywhere: break corners, gardens, reading nooks.",
+  "translations": {
+    "fr-FR": {
+      "name": "Pouf poire",
+      "description": "Un pouf poire moelleux sur lequel s’asseoir partout : coins pause, jardins, coins lecture."
+    },
+    "de-DE": {
+      "name": "Sitzsack",
+      "description": "Ein gemütlicher Sitzsack für jede Ecke: Pausenbereiche, Gärten, Leseecken."
+    },
+    "es-ES": {
+      "name": "Puf pera",
+      "description": "Un puf pera mullido para sentarse en cualquier sitio: zonas de descanso, jardines, rincones de lectura."
+    },
+    "ar-SA": {
+      "name": "وسادة حبيبات",
+      "description": "وسادة حبيبات مريحة يمكن الجلوس عليها في أي مكان: ركن الاستراحة والحدائق وزوايا القراءة."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "beanbag",
+    "seat",
+    "lounge",
+    "relax"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "terracotta",
+        "color": "#c5653f",
+        "direction": "Down",
+        "image": "terracotta.png"
+      },
+      {
+        "key": "blue",
+        "color": "#4060c8",
+        "direction": "Down",
+        "image": "blue.png"
+      },
+      {
+        "key": "green",
+        "color": "#3f8b69",
+        "direction": "Down",
+        "image": "green.png"
+      },
+      {
+        "key": "mustard",
+        "color": "#d9a63a",
+        "direction": "Down",
+        "image": "mustard.png"
+      },
+      {
+        "key": "plum",
+        "color": "#7a4f8f",
+        "direction": "Down",
+        "image": "plum.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

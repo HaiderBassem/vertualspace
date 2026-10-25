@@ -1,0 +1,69 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "grass-patch",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Grass patch",
+  "description": "A tile of lawn to lay over any floor: plain meadow, clover or wildflowers.",
+  "translations": {
+    "fr-FR": {
+      "name": "Carré de pelouse",
+      "description": "Une case de pelouse à poser sur n’importe quel sol : prairie, trèfle ou fleurs sauvages."
+    },
+    "de-DE": {
+      "name": "Rasenstück",
+      "description": "Ein Rasenfeld zum Auslegen auf jedem Boden: Wiese, Klee oder Wildblumen."
+    },
+    "es-ES": {
+      "name": "Parche de césped",
+      "description": "Una casilla de césped para cubrir cualquier suelo: prado, trébol o flores silvestres."
+    },
+    "ar-SA": {
+      "name": "رقعة عشب",
+      "description": "مربع عشب يوضع فوق أي أرضية: مرج أو برسيم أو أزهار برية."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "grass",
+    "lawn",
+    "garden",
+    "floor",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "meadow",
+        "color": "#5aa24a",
+        "direction": "Down",
+        "image": "meadow.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "clover",
+        "color": "#5aa24a",
+        "direction": "Down",
+        "image": "clover.png",
+        "depthOffset": -32
+      },
+      {
+        "key": "wildflowers",
+        "color": "#5aa24a",
+        "direction": "Down",
+        "image": "wildflowers.png",
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

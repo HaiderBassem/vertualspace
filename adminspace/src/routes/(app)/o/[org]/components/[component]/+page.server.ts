@@ -18,6 +18,7 @@ import {
 import { listOrganizationWorlds, worldState } from "$lib/server/services/worlds";
 import { ROOM_SLUG_PATTERN } from "$lib/server/workadventure/playUri";
 import { MAX_ROOM_TILES, MIN_ROOM_TILES, ROOM_SIZE_PRESET_KEYS, presetSize } from "$lib/rooms/size";
+import { isHostedTemplateMap } from "$lib/catalog/manifest";
 
 /** A world of the organization, with the permission checked in its workspace (404 / 403 otherwise). */
 async function worldFor(access: OrganizationAccess, worldId: string, permission: Permission) {
@@ -71,6 +72,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
                       width: manifest.template.width,
                       height: manifest.template.height,
                       requires: manifest.template.requires,
+                      hostedBase: isHostedTemplateMap(manifest.template.map),
                   }
                 : null,
         },

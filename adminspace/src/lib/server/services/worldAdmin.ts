@@ -4,6 +4,9 @@ import { db, schema } from "../db/client";
 import { readWorldSettings, WorldSettings } from "../../settings/worldSettings";
 import { isUniqueViolation } from "../db/errors";
 import type { World } from "./worlds";
+import { createRoomFromTemplate } from "../catalog/install";
+
+export class WorldTemplateError extends Error {}
 
 export type AccessPolicy = (typeof schema.worldAccessPolicy.enumValues)[number];
 export type MapKind = (typeof schema.mapKind.enumValues)[number];
@@ -20,6 +23,8 @@ export interface CreateWorldInput {
     description: string | null;
     accessPolicy: AccessPolicy;
     firstRoom?: { name: string; slug: string; mapKind: MapKind; url: string } | undefined;
+    firstRoomTemplate?: { componentId: string; name: string; actorId: string } | undefined;
+    creator?: { email: string; name: string } | undefined;
 }
 
 export async function createWorld(input: CreateWorldInput): Promise<World | "slugTaken"> {
@@ -38,6 +43,8 @@ export async function createWorld(input: CreateWorldInput): Promise<World | "slu
                 })
                 .returning();
             if (!world) throw new Error("World creation returned no row");
+            if (input.firstRoom && input.firstRoomTemplate)
+                throw new WorldTemplateError("Choose a template or a custom map");
             if (input.firstRoom) {
                 const room = input.firstRoom;
                 await tx.insert(schema.rooms).values({
@@ -49,6 +56,37 @@ export async function createWorld(input: CreateWorldInput): Promise<World | "slu
                     wamUrl: room.mapKind === "wam" ? room.url : null,
                     mapUrl: room.mapKind === "tmj" ? room.url : null,
                 });
+            }
+            if (input.firstRoomTemplate) {
+                const room = await createRoomFromTemplate({
+                    world,
+                    componentId: input.firstRoomTemplate.componentId,
+                    name: input.firstRoomTemplate.name,
+                    slug: "main",
+                    actorId: input.firstRoomTemplate.actorId,
+                    transaction: tx,
+                });
+                if (room.result !== "created") throw new WorldTemplateError(room.result);
+                await tx.update(schema.rooms).set({ isDefault: true }).where(eq(schema.rooms.id, room.roomId));
+            }
+            if (input.creator) {
+                const email = input.creator.email.trim().toLowerCase();
+                const [member] = await tx
+                    .insert(schema.members)
+                    .values({
+                        worldId: world.id,
+                        uuid: email,
+                        email,
+                        name: input.creator.name,
+                        kind: "member",
+                    })
+                    .returning({ id: schema.members.id });
+                const [tag] = await tx
+                    .insert(schema.tags)
+                    .values({ worldId: world.id, name: "editor" })
+                    .returning({ id: schema.tags.id });
+                if (!member || !tag) throw new Error("Creator editor membership returned no row");
+                await tx.insert(schema.memberTags).values({ memberId: member.id, tagId: tag.id });
             }
             return world;
         });

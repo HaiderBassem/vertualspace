@@ -7,7 +7,7 @@ import { readWorldSettings, type WorldSettings } from "../../../settings/worldSe
 import { json } from "../../http/problem";
 import { getInstanceSettings } from "../../services/instance";
 import { findMember, looksLikeEmail, memberTagNames, recordVisit, worldTagNames } from "../../services/members";
-import { isWorldPerson } from "../../services/directory";
+import { accountDisplayName, hasActiveAccount, isWorldPerson } from "../../services/directory";
 import { findActiveBan } from "../../services/moderation";
 import { verifiedHosts } from "../../services/domains";
 import { fetchRoomOccupancy } from "../../services/pusher";
@@ -69,7 +69,7 @@ export async function getMap({ url, locale }: ApiContext): Promise<Response> {
                 group: "default",
                 editable: true,
                 canReport: false,
-                authenticationMandatory: false,
+                authenticationMandatory: true,
                 contactPage: null,
                 showPoweredBy: true,
             });
@@ -79,7 +79,7 @@ export async function getMap({ url, locale }: ApiContext): Promise<Response> {
                 mapUrl: parsed.mapUrl,
                 group: null,
                 canReport: false,
-                authenticationMandatory: false,
+                authenticationMandatory: true,
                 contactPage: null,
                 showPoweredBy: true,
             });
@@ -220,10 +220,14 @@ export async function getRoomAccess({ url, locale }: ApiContext): Promise<Respon
 
     const resolved = await resolvePlayUri(playUri);
 
-    // Rooms outside of any world (/~/ map-storage, /_/ global maps): open, as without an admin.
+    // Rooms outside of any world (/~/ map-storage, /_/ global maps): for the people who have an account here, signed in.
     if (resolved.kind === "other") {
         if (resolved.parsed.kind === "invalid" || resolved.parsed.kind === "root") {
             return json(errorData("invalidUrl", locale));
+        }
+        if (!isLogged) return json(redirectData("/login"));
+        if (!looksLikeEmail(userIdentifier) || !(await hasActiveAccount(userIdentifier))) {
+            return json(unauthorizedData("membersOnly", locale));
         }
         const instance = await getInstanceSettings();
         const editors = (instance.globalMapEditors ?? []).map((e) => e.toLowerCase());
@@ -319,7 +323,11 @@ export async function getRoomAccess({ url, locale }: ApiContext): Promise<Respon
     const body: FetchMemberDataByUuidSuccessResponse = {
         status: "ok",
         email: member?.email ?? (isLogged ? userIdentifier : null),
-        username: member?.name ?? null,
+        // The name chosen in the office is kept; until one is chosen, the account's name, so nobody types it again.
+        username:
+            member?.name ||
+            (isLogged && looksLikeEmail(userIdentifier) ? await accountDisplayName(userIdentifier) : undefined) ||
+            null,
         userUuid: member?.uuid ?? userIdentifier,
         tags,
         visitCardUrl: httpUrlOrUndefined(member?.visitCardUrl) ?? null,

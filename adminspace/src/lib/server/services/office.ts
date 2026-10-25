@@ -71,7 +71,7 @@ async function createOfficeWorld(input: { organizationId: string; workspaceId: s
             name: input.name,
             slug,
             description: null,
-            accessPolicy: "public",
+            accessPolicy: "members",
         });
         if (world !== "slugTaken") return world;
     }

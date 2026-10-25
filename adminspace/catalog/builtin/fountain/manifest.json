@@ -1,0 +1,89 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "fountain",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Fountain",
+  "description": "A two-tier stone fountain, the centrepiece of a plaza or garden.",
+  "translations": {
+    "fr-FR": {
+      "name": "Fontaine",
+      "description": "Une fontaine en pierre à deux vasques, le centre d’une place ou d’un jardin."
+    },
+    "de-DE": {
+      "name": "Brunnen",
+      "description": "Ein zweistufiger Steinbrunnen, Mittelpunkt von Platz oder Garten."
+    },
+    "es-ES": {
+      "name": "Fuente",
+      "description": "Una fuente de piedra de dos niveles, el centro de una plaza o jardín."
+    },
+    "ar-SA": {
+      "name": "نافورة",
+      "description": "نافورة حجرية بطبقتين تتوسط ساحة أو حديقة."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "fountain",
+    "water",
+    "garden",
+    "plaza"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "stone",
+        "color": "#9aa0a3",
+        "direction": "Down",
+        "image": "stone.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "sandstone",
+        "color": "#cbb384",
+        "direction": "Down",
+        "image": "sandstone.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

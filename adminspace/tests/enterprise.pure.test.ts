@@ -183,15 +183,16 @@ describe("component manifests", () => {
     it("refuses maps with group layers nested too deep instead of crashing", () => {
         const { manifest, files } = readPackage(path.resolve("catalog/builtin/meeting-room"));
         const map = JSON.parse(files.get("map.tmj")!.toString("utf8"));
-        let group: Record<string, unknown> = { type: "group", name: "g", layers: [] };
-        const root = group;
+        // Construct JSON iteratively: JSON.stringify itself overflows on this fixture in Node 22.
+        let nested = '{"type":"group","name":"g","layers":[';
         for (let depth = 0; depth < 5000; depth++) {
-            const child = { type: "group", name: `g${depth}`, layers: [] };
-            (group.layers as unknown[]).push(child);
-            group = child;
+            nested += `{"type":"group","name":"g${depth}","layers":[`;
         }
-        map.layers.push(root);
-        files.set("map.tmj", Buffer.from(JSON.stringify(map)));
+        nested += "]}".repeat(5001);
+        const originalLayers = JSON.stringify(map.layers);
+        map.layers = [];
+        const json = JSON.stringify(map).replace('"layers":[]', `"layers":[${originalLayers.slice(1, -1)},${nested}]`);
+        files.set("map.tmj", Buffer.from(json));
         expect(validatePackage(manifest, files).issues.map((i) => i.code)).toContain("mapInvalid");
     });
 

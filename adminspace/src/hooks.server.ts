@@ -37,6 +37,7 @@ const PUBLIC_PATHS = [
     /^\/login$/,
     /^\/setup$/,
     /^\/profile$/,
+    /^\/play\/logout$/,
     /^\/locale$/,
     /^\/register(\/verify)?$/,
     /^\/invite$/,

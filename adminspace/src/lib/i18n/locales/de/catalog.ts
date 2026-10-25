@@ -30,6 +30,7 @@ export const catalog: Messages["catalog"] = {
         lounge: "Loungebereich",
         reception: "Empfang",
         plants: "Pflanzen",
+        nature: "Natur",
         decoration: "Dekoration",
         lighting: "Beleuchtung",
         presentation: "Präsentation",
@@ -94,6 +95,8 @@ export const catalog: Messages["catalog"] = {
         notInstalled: "Diese Komponente ist in dieser Welt nicht installiert.",
     },
     template: {
+        sizeUnsupported:
+            "Diese Vorlage behält die Abmessungen der ursprünglichen Kulisse. Möbel, Besprechungsbereiche und Interaktionen bleiben bearbeitbar.",
         title: "Raum aus dieser Vorlage erstellen",
         intro: "Der Welt wird ein neuer Raum hinzugefügt; seine Karte wird in einen eigenen Ordner im Map-Storage hochgeladen. Bestehende Räume werden nie verändert.",
         world: "Welt",

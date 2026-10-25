@@ -243,3 +243,89 @@ describe("catalog, people and rooms", () => {
         expect((await findMember(worldId, ADMIN_UUID))?.name).toBe("Ada L.");
     });
 });
+
+describe("rooms outside of any world", () => {
+    const GLOBAL = `${ORIGIN}/_/global/maps.test/office.tmj`;
+    const EMAIL = `contract-${Date.now()}@example.com`;
+    let accountId = "";
+
+    beforeAll(async () => {
+        const [account] = await db()
+            .insert(schema.accounts)
+            .values({ email: EMAIL, name: "Contract Person", passwordHash: "not-a-real-hash" })
+            .returning();
+        accountId = account!.id;
+    });
+    afterAll(async () => {
+        await db().delete(schema.accounts).where(eq(schema.accounts.id, accountId));
+    });
+
+    it("asks visitors who are not signed in to sign in", async () => {
+        const map = (await getJson(`/api/map?playUri=${enc(GLOBAL)}`)) as { authenticationMandatory?: boolean };
+        expect(map.authenticationMandatory).toBe(true);
+        const data = ErrorApiData.parse(
+            await getJson(`/api/room/access?playUri=${enc(GLOBAL)}&userIdentifier=${GUEST_UUID}`),
+        );
+        expect(data).toMatchObject({ status: "error", type: "redirect" });
+    });
+
+    it("refuses a signed-in identity that has no account here, and lets in one that has", async () => {
+        const stranger = ErrorApiData.parse(
+            await getJson(`/api/room/access?playUri=${enc(GLOBAL)}&userIdentifier=nobody@example.com&isLogged=1`),
+        );
+        expect(stranger).toMatchObject({ status: "error", type: "unauthorized" });
+        const person = FetchMemberDataByUuidSuccessResponse.parse(
+            await getJson(`/api/room/access?playUri=${enc(GLOBAL)}&userIdentifier=${EMAIL}&isLogged=1`),
+        );
+        expect(person.email).toBe(EMAIL);
+    });
+});
+
+describe("POST /api/room/rename", () => {
+    const OWNER = `owner-${Date.now()}@example.com`;
+    const EMPLOYEE = `employee-${Date.now()}@example.com`;
+    const accounts: string[] = [];
+
+    beforeAll(async () => {
+        for (const [email, role] of [
+            [OWNER, "owner"],
+            [EMPLOYEE, "employee"],
+        ] as const) {
+            const [account] = await db()
+                .insert(schema.accounts)
+                .values({ email, name: email, passwordHash: "not-a-real-hash" })
+                .returning();
+            accounts.push(account!.id);
+            await db()
+                .insert(schema.organizationMemberships)
+                .values({ organizationId, accountId: account!.id, role, status: "active" });
+        }
+    });
+    afterAll(async () => {
+        for (const id of accounts) await db().delete(schema.accounts).where(eq(schema.accounts.id, id));
+    });
+
+    const rename = (userIdentifier: string, name: string) =>
+        call("/api/room/rename", {
+            method: "POST",
+            body: JSON.stringify({ roomUrl: `${ORIGIN}/@/${ORG}/${WORLD}/vip`, userIdentifier, name }),
+        });
+
+    it("renames the room for someone who manages rooms, and refuses everybody else", async () => {
+        expect((await rename(EMPLOYEE, "Nope")).status).toBe(403);
+        expect((await rename("stranger@example.com", "Nope")).status).toBe(403);
+        expect((await rename(OWNER, "   ")).status).toBe(400);
+        const done = await rename(OWNER, "  Board room ");
+        expect(done.status).toBe(200);
+        expect(await done.json()).toEqual({ status: "ok", name: "Board room" });
+        const rooms = ShortMapDescriptionList.parse(
+            await getJson(`/api/room/sameWorld?roomUrl=${enc(ROOM_URL)}&bypassTagFilter=true`),
+        );
+        expect(rooms.map((r) => r.name).sort()).toEqual(["Board room", "Lobby"]);
+    });
+
+    it("needs the Admin API token", async () => {
+        const response = await call("/api/room/rename", { method: "POST", body: "{}", token: false });
+        expect(response.status).toBe(403);
+    });
+});

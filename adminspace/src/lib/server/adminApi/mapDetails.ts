@@ -45,7 +45,8 @@ export function buildMapDetails({ organization, world, room, settings }: MapDeta
         expireOn: world.expiresAt?.toISOString(),
         contactPage: legal.contactPage ?? null,
         reportIssuesUrl: legal.reportIssuesUrl ?? null,
-        opidWokaNamePolicy: woka.namePolicy ?? null,
+        // The account name fills the name once; after that the name the person chose in the office wins.
+        opidWokaNamePolicy: woka.namePolicy ?? "allow_override_opid",
         loadingLogo: branding.loadingLogo ?? null,
         loginSceneLogo: branding.loginSceneLogo ?? null,
         errorSceneLogo: branding.errorSceneLogo ?? null,

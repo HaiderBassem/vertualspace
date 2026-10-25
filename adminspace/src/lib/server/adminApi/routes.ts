@@ -34,6 +34,7 @@ import {
 import { getMap, getRoomAccess, getRoomTags, getSameWorldRooms } from "./handlers/rooms";
 import { getCalendarEvents, getPresenceActivity } from "./handlers/integrations";
 import { postPresenceReport } from "./handlers/presence";
+import { postRenameRoom } from "./handlers/roomRename";
 
 export const ADMIN_API_ROUTES: ApiRoute[] = [
     // Called without the admin token by WorkAdventure.
@@ -47,6 +48,7 @@ export const ADMIN_API_ROUTES: ApiRoute[] = [
     { method: "GET", path: "/api/room/access", auth: "adminToken", handler: getRoomAccess },
     { method: "GET", path: "/api/room/sameWorld", auth: "adminToken", handler: getSameWorldRooms },
     { method: "GET", path: "/api/room/tags", auth: "adminToken", handler: getRoomTags },
+    { method: "POST", path: "/api/room/rename", auth: "adminToken", handler: postRenameRoom },
 
     // Avatars.
     { method: "GET", path: "/api/woka/list", auth: "adminToken", handler: getWokaList },

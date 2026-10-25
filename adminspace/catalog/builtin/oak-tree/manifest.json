@@ -1,0 +1,110 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "oak-tree",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Oak tree",
+  "description": "A broad shade tree in summer green, autumn gold or spring blossom. Walk behind the leaves, not through the trunk.",
+  "translations": {
+    "fr-FR": {
+      "name": "Chêne",
+      "description": "Un grand arbre d’ombrage en vert d’été, or d’automne ou fleurs de printemps. On passe derrière le feuillage, pas à travers le tronc."
+    },
+    "de-DE": {
+      "name": "Eiche",
+      "description": "Ein breiter Schattenbaum in Sommergrün, Herbstgold oder Frühlingsblüte. Man geht hinter dem Laub, nicht durch den Stamm."
+    },
+    "es-ES": {
+      "name": "Roble",
+      "description": "Un árbol de sombra en verde de verano, oro de otoño o flor de primavera. Se camina tras el follaje, no por el tronco."
+    },
+    "ar-SA": {
+      "name": "شجرة بلوط",
+      "description": "شجرة ظليلة بخضرة الصيف أو ذهب الخريف أو أزهار الربيع. يمكن المشي خلف الأوراق لا عبر الجذع."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "tree",
+    "oak",
+    "garden",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "summer",
+        "color": "#3a8a4f",
+        "direction": "Down",
+        "image": "summer.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "autumn",
+        "color": "#d1722b",
+        "direction": "Down",
+        "image": "autumn.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "blossom",
+        "color": "#e58fb0",
+        "direction": "Down",
+        "image": "blossom.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

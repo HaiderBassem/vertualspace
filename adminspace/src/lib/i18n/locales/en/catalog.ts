@@ -29,6 +29,7 @@ export const catalog = {
         lounge: "Lounge",
         reception: "Reception",
         plants: "Plants",
+        nature: "Nature",
         decoration: "Decoration",
         lighting: "Lighting",
         presentation: "Presentation",
@@ -90,6 +91,8 @@ export const catalog = {
         notInstalled: "This component is not installed in that world.",
     },
     template: {
+        sizeUnsupported:
+            "This template uses its original scenery dimensions. Furniture, meeting areas and interactions remain editable.",
         title: "Create a room from this template",
         intro: "A new room is added to the world; its map is uploaded to map-storage in a folder of its own. Existing rooms are never changed.",
         world: "World",

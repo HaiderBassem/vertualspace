@@ -5,6 +5,7 @@ import { db, schema } from "$lib/server/db/client";
 import { countOpenReports } from "$lib/server/services/moderation";
 import { listAuditEntries } from "$lib/server/services/organizations";
 import { worldOccupancy } from "$lib/server/services/pusher";
+import { config } from "$lib/server/config";
 
 async function countMembers(worldId: string, kind: "member" | "guest"): Promise<number> {
     const rows = await db()
@@ -36,6 +37,9 @@ export const load: PageServerLoad = async ({ locals, params }) => {
     ]);
 
     return {
+        editorLaunchAvailable:
+            Boolean(config().WORKADVENTURE_PLAYER_TOKEN_SECRET) &&
+            access.can("room.manage", { workspaceId: world.workspaceId }),
         stats: { rooms: roomRows[0]?.value ?? 0, members, guests, openReports },
         live: {
             reachable: live.reachable,

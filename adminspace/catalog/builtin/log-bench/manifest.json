@@ -1,0 +1,60 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "log-bench",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Log bench",
+  "description": "A long log with a flat seat, for campfire circles and woodland corners.",
+  "translations": {
+    "fr-FR": {
+      "name": "Banc en rondin",
+      "description": "Un long rondin à assise plane, pour les cercles autour du feu et les coins de sous-bois."
+    },
+    "de-DE": {
+      "name": "Baumstammbank",
+      "description": "Ein langer Baumstamm mit flacher Sitzfläche für Lagerfeuerrunden und Waldecken."
+    },
+    "es-ES": {
+      "name": "Banco de tronco",
+      "description": "Un tronco largo con asiento plano, para corros de fogata y rincones de bosque."
+    },
+    "ar-SA": {
+      "name": "مقعد جذع",
+      "description": "جذع طويل بمقعد مسطح لحلقات نار المخيم وزوايا الغابة."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "bench",
+    "seat",
+    "log",
+    "nature",
+    "campfire"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d9aa6c",
+        "direction": "Down",
+        "image": "oak.png"
+      },
+      {
+        "key": "birch",
+        "color": "#efe3c4",
+        "direction": "Down",
+        "image": "birch.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

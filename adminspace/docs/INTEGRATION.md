@@ -105,8 +105,8 @@ match the ones players already have.
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `/@/{organization}/{world}/{room}` | Room of a world managed here: map, settings, access rules, tags, bans                                                                                   |
 | `/@/{organization}/{world}`        | Redirect to the default room of the world                                                                                                               |
-| `/~/{path}.wam`                    | Map-storage map outside of any world: open to everyone, as without an admin. Map edition only for the people listed in _Map editors outside of worlds_. |
-| `/_/{instance}/{host}/{path}`      | Tiled map hosted elsewhere: open to everyone, as without an admin                                                                                       |
+| `/~/{path}.wam`                    | Map-storage map outside of any world: open to signed-in people who have an account here. Map edition only for the people listed in _Map editors outside of worlds_. |
+| `/_/{instance}/{host}/{path}`      | Tiled map hosted elsewhere: open to signed-in people who have an account here                                                                           |
 | `/`                                | Redirect to the start room                                                                                                                              |
 
 ## 5b. Office components in WorkAdventure
@@ -220,3 +220,21 @@ machine, Traefik routes it to the pusher.
 | No list of connected people                                                                   | `ADMIN_SOCKETS_TOKEN` missing or different on one side; restart play after setting it.                                                                                                                                  |
 | ICE servers or LiveKit settings ignored                                                       | Restart play and back: capabilities are read at startup.                                                                                                                                                                |
 | OpenID login loops back with a domain error                                                   | The login redirect domain is neither the play URL's domain nor a verified domain of an organization (`/api/domain/verify`).                                                                                             |
+
+## 9. Signing in once (`BACKOFFICE_LOGIN`)
+
+With `BACKOFFICE_LOGIN=true` on `play` (and `ADMIN_BO_URL` set to the public address of Adminspace), nobody enters a room
+without an account:
+
+- A visitor with no token is shown WorkAdventure's sign-in page; its button goes to the pusher's `/login-screen`, which
+  redirects to Adminspace `/play/enter?playUri=…`. Adminspace asks for its own sign-in (with the second factor when
+  enabled), checks the room belongs to this installation's WorkAdventure and that the person belongs to the world, then
+  posts a signed token (`backofficeSession`, 30 days) to the room. The token never appears in a URL.
+- The browser keeps that token. At each visit `/me` answers with a fresh 30-day token, so a person who comes back at
+  least once a month signs in once. Every entry still asks Adminspace (`/api/room/access`), so removing someone from
+  the world, disabling their account or banning them takes effect at their next entry.
+- New worlds are created with the access policy _Members only_, existing public worlds were moved to it by migration
+  `0007`, and rooms outside of any world require an account too.
+- The name is kept: until the person picks one in the office, their account name is used; the name they choose is saved
+  (`/api/save-name`) and wins from then on.
+- _Sign out_ in WorkAdventure's profile menu ends the Adminspace session too (`/play/logout`).

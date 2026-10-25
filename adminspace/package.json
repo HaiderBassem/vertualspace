@@ -24,6 +24,7 @@
         "db:seed": "tsx --env-file-if-exists=.env scripts/seed.ts",
         "catalog:generate": "tsx scripts/catalog/generate.ts",
         "catalog:import": "tsx --env-file-if-exists=.env scripts/catalog-import.ts",
+        "catalog:install": "tsx --env-file-if-exists=.env scripts/catalog-install.ts",
         "db:studio": "drizzle-kit studio",
         "superadmin:create": "tsx --env-file-if-exists=.env scripts/create-superadmin.ts",
         "retention:run": "tsx --env-file-if-exists=.env scripts/retention.ts",

@@ -1,0 +1,62 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "bamboo",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Bamboo",
+  "description": "Three bamboo stalks in a dark pot, a calm vertical accent.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bambou",
+      "description": "Trois tiges de bambou dans un pot sombre, un accent vertical apaisant."
+    },
+    "de-DE": {
+      "name": "Bambus",
+      "description": "Drei Bambushalme im dunklen Topf, ein ruhiger vertikaler Akzent."
+    },
+    "es-ES": {
+      "name": "Bambú",
+      "description": "Tres cañas de bambú en una maceta oscura, un acento vertical sereno."
+    },
+    "ar-SA": {
+      "name": "خيزران",
+      "description": "ثلاث سيقان خيزران في أصيص داكن، لمسة عمودية هادئة."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "bamboo",
+    "plant",
+    "zen",
+    "indoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "standard",
+        "color": "#79b24f",
+        "direction": "Down",
+        "image": "standard.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

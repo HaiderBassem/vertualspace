@@ -16,6 +16,7 @@ import {
     componentIdOfPrefab,
     prefabId,
     WORKADVENTURE_FORMATS,
+    isHostedTemplateMap,
     type ComponentManifest,
     type RoomSyncProblem,
 } from "../../catalog/manifest";
@@ -39,6 +40,7 @@ import {
     wamTarget,
 } from "../catalog/mapStorage";
 import { assetsOf, versionFiles } from "../catalog/store";
+import { templateMeetingAreas } from "../catalog/meetings";
 import { logJson } from "../security/requestLog";
 import { PermanentJobError, registerJobHandler, type Job } from "./jobs";
 import { resizeRoom } from "./roomSize";
@@ -238,7 +240,8 @@ registerJobHandler(
         if (!template) throw syncFailure("templateMissing", "the component is not a room template", true);
         const files = await versionFiles(version.id);
 
-        const mapName = path.posix.basename(template.map);
+        const hosted = isHostedTemplateMap(template.map);
+        const mapName = hosted ? "map.tmj" : path.posix.basename(template.map);
         const wamName = mapName.replace(/\.tmj$/, ".wam");
         const entities: Record<string, unknown> = {};
         for (const [index, placed] of template.entities.entries()) {
@@ -255,9 +258,9 @@ registerJobHandler(
         }
         const wam = {
             version: WORKADVENTURE_FORMATS.wam,
-            mapUrl: `./${mapName}`,
+            mapUrl: hosted ? template.map : `./${mapName}`,
             entities,
-            areas: [],
+            areas: templateMeetingAreas(payload.roomId, template.meetings),
             entityCollections: [{ url, type: "file" }],
             metadata: {
                 name: row.room.name,
@@ -273,7 +276,7 @@ registerJobHandler(
         // Uploaded once: a retry after a later step (size, doors) finds the room's map already there.
         if (row.room.wamUrl !== wamUrl) {
             const entries = [
-                ...[template.map, ...template.files].map((file) => {
+                ...(hosted ? [] : [template.map, ...template.files]).map((file) => {
                     const stored = files.get(file);
                     if (!stored) throw syncFailure("templateMissing", `file ${file} of the template is missing`, true);
                     return { name: file, data: stored.data };

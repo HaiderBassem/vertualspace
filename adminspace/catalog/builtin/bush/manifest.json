@@ -1,0 +1,80 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "bush",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Bush",
+  "description": "A round shrub, plain, flowering or with red berries.",
+  "translations": {
+    "fr-FR": {
+      "name": "Buisson",
+      "description": "Un arbuste rond, simple, fleuri ou garni de baies rouges."
+    },
+    "de-DE": {
+      "name": "Strauch",
+      "description": "Ein runder Strauch, schlicht, blühend oder mit roten Beeren."
+    },
+    "es-ES": {
+      "name": "Arbusto",
+      "description": "Un arbusto redondo, liso, florido o con bayas rojas."
+    },
+    "ar-SA": {
+      "name": "شجيرة",
+      "description": "شجيرة مستديرة، عادية أو مزهرة أو بثمار حمراء."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "bush",
+    "shrub",
+    "garden",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "green",
+        "color": "#3a8a4f",
+        "direction": "Down",
+        "image": "green.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "key": "flowering",
+        "color": "#e58fb0",
+        "direction": "Down",
+        "image": "flowering.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "key": "berries",
+        "color": "#c94f4f",
+        "direction": "Down",
+        "image": "berries.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

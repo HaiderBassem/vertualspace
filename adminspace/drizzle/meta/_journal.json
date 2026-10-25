@@ -50,6 +50,13 @@
       "when": 1792826921272,
       "tag": "0006_presence_and_profiles",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792900000000,
+      "tag": "0007_members_only_worlds",
+      "breakpoints": true
     }
   ]
 }

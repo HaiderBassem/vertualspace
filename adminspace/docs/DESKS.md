@@ -26,6 +26,25 @@ There is **no second desk database**: the WAM file is the only place a desk exis
 map-storage can never disagree. AdminSpace stores nothing about desks (`src/lib/desks/model.ts` reads and patches them,
 `src/lib/server/services/desks.ts` is the service, `src/routes/(app)/o/[org]/desks` the page).
 
+### Sitting at a desk claims it
+
+A person who sits at a seat of a free personal desk they may claim (claim mode `dynamic`, in service, open to their tags,
+not reserved for somebody else) becomes its owner at that moment, under their name, and keeps it after standing up or
+leaving, until they free it (the same claim a walk into the desk offers). Sitting at another free desk moves their claim
+there: the first one is freed. Hot desks, shared desks, desks taken by someone else and desks only an administrator
+assigns are never claimed by sitting.
+
+### Which furniture can be sat on
+
+WorkAdventure offers a seat on any piece of furniture whose **name** says it is one: chair, armchair, stool, bench, couch,
+sofa, pouf, seat, beanbag, chaise, ottoman, hammock, swing, lounger, recliner, deckchair, settee, loveseat
+(`libs/map-editor/src/PersonalDesk/Seats.ts`). Furniture of WorkAdventure's own collections says its name in its
+identifier. The furniture of AdminSpace has an identifier that does not (`adminspace:<component>:<variant>`), so the
+name comes from the world's entity collection (`/wa/worlds/<id>/collection.json`, the name of the component): the browser
+reads it from the collection it loaded, and the room server (back) reads the collections listed in the map file
+(`back/src/Model/SeatPrefabCatalog.ts`: read like maps are, refusing local addresses, kept five minutes). Name a component
+for what it is ("Beanbag", "Garden bench") and it can be sat on in every world where it is installed.
+
 ### Kinds of desks
 
 - **Personal desk** (`assigned`): belongs to one person, who claims a free one (when `dynamic`) or is given one.

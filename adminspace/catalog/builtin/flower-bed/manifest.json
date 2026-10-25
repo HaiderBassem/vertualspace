@@ -1,0 +1,83 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "flower-bed",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Flower bed",
+  "description": "A stone-edged bed of tulips, daisies or lavender.",
+  "translations": {
+    "fr-FR": {
+      "name": "Parterre de fleurs",
+      "description": "Un parterre bordé de pierres, avec tulipes, marguerites ou lavande."
+    },
+    "de-DE": {
+      "name": "Blumenbeet",
+      "description": "Ein steingefasstes Beet mit Tulpen, Gänseblümchen oder Lavendel."
+    },
+    "es-ES": {
+      "name": "Parterre de flores",
+      "description": "Un parterre bordeado de piedra con tulipanes, margaritas o lavanda."
+    },
+    "ar-SA": {
+      "name": "حوض زهور",
+      "description": "حوض محاط بالحجارة بالتوليب أو الأقحوان أو اللافندر."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "flowers",
+    "garden",
+    "outdoor",
+    "bed"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "tulips",
+        "color": "#d94a4a",
+        "direction": "Down",
+        "image": "tulips.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "daisies",
+        "color": "#fbfcfd",
+        "direction": "Down",
+        "image": "daisies.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "lavender",
+        "color": "#8b6bd0",
+        "direction": "Down",
+        "image": "lavender.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "rock-cluster",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Rock cluster",
+  "description": "Three boulders: grey, mossy or sandy.",
+  "translations": {
+    "fr-FR": {
+      "name": "Groupe de rochers",
+      "description": "Trois rochers : gris, moussus ou sableux."
+    },
+    "de-DE": {
+      "name": "Felsengruppe",
+      "description": "Drei Felsbrocken: grau, bemoost oder sandig."
+    },
+    "es-ES": {
+      "name": "Grupo de rocas",
+      "description": "Tres rocas: grises, musgosas o arenosas."
+    },
+    "ar-SA": {
+      "name": "مجموعة صخور",
+      "description": "ثلاث صخور: رمادية أو مغطاة بالطحلب أو رملية."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "rock",
+    "stone",
+    "boulder",
+    "garden"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "gray",
+        "color": "#9aa0a3",
+        "direction": "Down",
+        "image": "gray.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "mossy",
+        "color": "#9aa0a3",
+        "direction": "Down",
+        "image": "mossy.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "key": "sand",
+        "color": "#c9b583",
+        "direction": "Down",
+        "image": "sand.png",
+        "collisionGrid": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

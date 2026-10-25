@@ -1,0 +1,89 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "pine-tree",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Pine tree",
+  "description": "A tiered evergreen, plain or snow-dusted.",
+  "translations": {
+    "fr-FR": {
+      "name": "Pin",
+      "description": "Un conifère étagé, nu ou saupoudré de neige."
+    },
+    "de-DE": {
+      "name": "Kiefer",
+      "description": "Ein gestufter Nadelbaum, schlicht oder mit Schnee bestäubt."
+    },
+    "es-ES": {
+      "name": "Pino",
+      "description": "Un conífero en niveles, liso o con una capa de nieve."
+    },
+    "ar-SA": {
+      "name": "شجرة صنوبر",
+      "description": "شجرة دائمة الخضرة متدرجة، عادية أو مغطاة بالثلج."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "tree",
+    "pine",
+    "evergreen",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "green",
+        "color": "#2c6a46",
+        "direction": "Down",
+        "image": "green.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "snow",
+        "color": "#f4f8fb",
+        "direction": "Down",
+        "image": "snow.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

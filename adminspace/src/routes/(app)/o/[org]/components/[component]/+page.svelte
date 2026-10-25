@@ -92,17 +92,19 @@
     {:else if templateError}
         <p class="notice notice-danger mb-4" role="alert">
             <Icon name="alert" />
-            {templateError === "dependencyMissing"
-                ? i18n.t(c.template.dependencyMissing, { keys: form?.keys?.join(", ") ?? "" })
-                : templateError === "slugTaken"
-                  ? c.template.slugTaken
-                  : templateError === "mapStorageMissing"
-                    ? c.template.mapStorageMissing
-                    : templateError === "originMissing"
-                      ? c.install.originMissing
-                      : templateError === "validation"
-                        ? i18n.m.common.errors.validation
-                        : c.install.notFound}
+            {templateError === "sizeUnsupported"
+                ? c.template.sizeUnsupported
+                : templateError === "dependencyMissing"
+                  ? i18n.t(c.template.dependencyMissing, { keys: form?.keys?.join(", ") ?? "" })
+                  : templateError === "slugTaken"
+                    ? c.template.slugTaken
+                    : templateError === "mapStorageMissing"
+                      ? c.template.mapStorageMissing
+                      : templateError === "originMissing"
+                        ? c.install.originMissing
+                        : templateError === "validation"
+                          ? i18n.m.common.errors.validation
+                          : c.install.notFound}
         </p>
     {/if}
 </div>
@@ -343,15 +345,19 @@
                             oninput={() => (roomSlugEdited = true)}
                         />
                     </div>
-                    <SizeChoice
-                        legend={i18n.m.office.template.size}
-                        bind:choice={sizeChoice}
-                        bind:width={sizeWidth}
-                        bind:height={sizeHeight}
-                        {templateSize}
-                        idPrefix="template-size"
-                        compact
-                    />
+                    {#if component.template?.hostedBase}
+                        <input type="hidden" name="sizeChoice" value="template" />
+                    {:else}
+                        <SizeChoice
+                            legend={i18n.m.office.template.size}
+                            bind:choice={sizeChoice}
+                            bind:width={sizeWidth}
+                            bind:height={sizeHeight}
+                            {templateSize}
+                            idPrefix="template-size"
+                            compact
+                        />
+                    {/if}
                     <button class="btn btn-primary w-full" type="submit">{c.template.submit}</button>
                 {/if}
             </form>

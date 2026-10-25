@@ -148,6 +148,8 @@ export interface TemplateDefinition {
     tags: string[];
     layout: Layout;
     entities: TemplateSection["entities"];
+    /** Video meeting zones, provisioned as native areas (the meeting room's are set where the manifests are built). */
+    meetings?: TemplateSection["meetings"];
 }
 
 const L = (en: string, fr: string, de: string, es: string, ar: string): Localized => ({ en, fr, de, es, ar });
@@ -279,10 +281,14 @@ export function templateMap(template: TemplateDefinition): object {
 }
 
 /** A small top-down preview of a template: its floor plan with furniture footprints. */
-export function templatePreview(template: TemplateDefinition, tileset: Canvas, sprites: Map<string, Canvas>): Canvas {
+export function templatePreview(
+    template: TemplateDefinition,
+    tileset: Canvas,
+    sprites: Map<string, Canvas>,
+    map: { layers: { data?: number[] }[] } = tiled(template.layout) as { layers: { data?: number[] }[] },
+): Canvas {
     const { width, height } = template.layout;
     const full = new Canvas(width * 32, height * 32);
-    const map = tiled(template.layout) as { layers: { data?: number[] }[] };
     for (const layer of map.layers.slice(0, 2)) {
         layer.data?.forEach((gid, index) => {
             if (gid === 0) return;

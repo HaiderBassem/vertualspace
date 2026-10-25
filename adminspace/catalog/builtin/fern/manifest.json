@@ -1,0 +1,80 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "fern",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Fern",
+  "description": "A feathery fern in a pot, soft for desks and corners.",
+  "translations": {
+    "fr-FR": {
+      "name": "Fougère",
+      "description": "Une fougère plumeuse en pot, douce pour bureaux et coins."
+    },
+    "de-DE": {
+      "name": "Farn",
+      "description": "Ein gefiederter Farn im Topf, weich für Schreibtische und Ecken."
+    },
+    "es-ES": {
+      "name": "Helecho",
+      "description": "Un helecho plumoso en maceta, suave para escritorios y rincones."
+    },
+    "ar-SA": {
+      "name": "سرخس",
+      "description": "سرخس ريشي في أصيص يلطّف المكاتب والزوايا."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "fern",
+    "plant",
+    "green",
+    "indoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "terracotta",
+        "color": "#c46b41",
+        "direction": "Down",
+        "image": "terracotta.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "key": "white",
+        "color": "#e9ebee",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "key": "charcoal",
+        "color": "#40444c",
+        "direction": "Down",
+        "image": "charcoal.png",
+        "collisionGrid": [
+          [
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

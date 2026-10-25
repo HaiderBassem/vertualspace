@@ -1,0 +1,120 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "rattan-chair",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Rattan chair",
+  "description": "A round-backed wicker chair with a cushion, in four directions.",
+  "translations": {
+    "fr-FR": {
+      "name": "Fauteuil en rotin",
+      "description": "Un fauteuil en osier à dossier arrondi avec coussin, dans les quatre directions."
+    },
+    "de-DE": {
+      "name": "Rattanstuhl",
+      "description": "Ein Korbstuhl mit runder Lehne und Kissen, in vier Richtungen."
+    },
+    "es-ES": {
+      "name": "Silla de ratán",
+      "description": "Una silla de mimbre con respaldo redondo y cojín, en cuatro direcciones."
+    },
+    "ar-SA": {
+      "name": "كرسي روطان",
+      "description": "كرسي من الخوص بظهر مستدير ووسادة، بأربعة اتجاهات."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "chair",
+    "seat",
+    "rattan",
+    "wicker",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "natural-down",
+        "color": "#c89b5e",
+        "direction": "Down",
+        "image": "natural-down.png"
+      },
+      {
+        "key": "natural-up",
+        "color": "#c89b5e",
+        "direction": "Up",
+        "image": "natural-up.png"
+      },
+      {
+        "key": "natural-left",
+        "color": "#c89b5e",
+        "direction": "Left",
+        "image": "natural-left.png"
+      },
+      {
+        "key": "natural-right",
+        "color": "#c89b5e",
+        "direction": "Right",
+        "image": "natural-right.png"
+      },
+      {
+        "key": "dark-down",
+        "color": "#8a5e3b",
+        "direction": "Down",
+        "image": "dark-down.png"
+      },
+      {
+        "key": "dark-up",
+        "color": "#8a5e3b",
+        "direction": "Up",
+        "image": "dark-up.png"
+      },
+      {
+        "key": "dark-left",
+        "color": "#8a5e3b",
+        "direction": "Left",
+        "image": "dark-left.png"
+      },
+      {
+        "key": "dark-right",
+        "color": "#8a5e3b",
+        "direction": "Right",
+        "image": "dark-right.png"
+      },
+      {
+        "key": "white-down",
+        "color": "#efe9dc",
+        "direction": "Down",
+        "image": "white-down.png"
+      },
+      {
+        "key": "white-up",
+        "color": "#efe9dc",
+        "direction": "Up",
+        "image": "white-up.png"
+      },
+      {
+        "key": "white-left",
+        "color": "#efe9dc",
+        "direction": "Left",
+        "image": "white-left.png"
+      },
+      {
+        "key": "white-right",
+        "color": "#efe9dc",
+        "direction": "Right",
+        "image": "white-right.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

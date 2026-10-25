@@ -1,0 +1,78 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "garden-lantern",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Garden lantern",
+  "description": "A lantern on a post that spreads a warm glow along paths.",
+  "translations": {
+    "fr-FR": {
+      "name": "Lanterne de jardin",
+      "description": "Une lanterne sur poteau qui diffuse une lueur chaude le long des allées."
+    },
+    "de-DE": {
+      "name": "Gartenlaterne",
+      "description": "Eine Laterne auf einem Pfosten, die Wege in warmes Licht taucht."
+    },
+    "es-ES": {
+      "name": "Farol de jardín",
+      "description": "Un farol sobre un poste que da una luz cálida a los senderos."
+    },
+    "ar-SA": {
+      "name": "فانوس حديقة",
+      "description": "فانوس على عمود ينشر وهجًا دافئًا على الممرات."
+    }
+  },
+  "category": "lighting",
+  "tags": [
+    "lantern",
+    "lamp",
+    "light",
+    "garden",
+    "outdoor"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "black",
+        "color": "#2a2d33",
+        "direction": "Down",
+        "image": "black.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "copper",
+        "color": "#b8693a",
+        "direction": "Down",
+        "image": "copper.png",
+        "collisionGrid": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "hammock",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Hammock",
+  "description": "A striped hammock strung between two posts, for the laziest meeting spot.",
+  "translations": {
+    "fr-FR": {
+      "name": "Hamac",
+      "description": "Un hamac rayé tendu entre deux poteaux, pour le coin de réunion le plus paresseux."
+    },
+    "de-DE": {
+      "name": "Hängematte",
+      "description": "Eine gestreifte Hängematte zwischen zwei Pfosten – der gemütlichste Treffpunkt."
+    },
+    "es-ES": {
+      "name": "Hamaca",
+      "description": "Una hamaca de rayas entre dos postes, para el rincón de reunión más relajado."
+    },
+    "ar-SA": {
+      "name": "أرجوحة شبكية",
+      "description": "أرجوحة مخططة معلّقة بين عمودين لأكثر أماكن اللقاء استرخاءً."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "hammock",
+    "seat",
+    "relax",
+    "garden"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "blue",
+        "color": "#4060c8",
+        "direction": "Down",
+        "image": "blue.png",
+        "collisionGrid": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "depthOffset": -64
+      },
+      {
+        "key": "coral",
+        "color": "#e0705a",
+        "direction": "Down",
+        "image": "coral.png",
+        "collisionGrid": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "depthOffset": -64
+      },
+      {
+        "key": "green",
+        "color": "#3f8b69",
+        "direction": "Down",
+        "image": "green.png",
+        "collisionGrid": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "depthOffset": -64
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

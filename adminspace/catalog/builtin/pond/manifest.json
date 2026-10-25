@@ -1,0 +1,86 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "pond",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Pond",
+  "description": "A stone-rimmed pond with lily pads or koi. It cannot be walked through.",
+  "translations": {
+    "fr-FR": {
+      "name": "Bassin",
+      "description": "Un bassin bordé de pierres avec nénuphars ou carpes koï. On ne le traverse pas."
+    },
+    "de-DE": {
+      "name": "Teich",
+      "description": "Ein Teich mit Steinrand und Seerosen oder Koi. Er ist nicht begehbar."
+    },
+    "es-ES": {
+      "name": "Estanque",
+      "description": "Un estanque con borde de piedra, con nenúfares o carpas koi. No se puede cruzar."
+    },
+    "ar-SA": {
+      "name": "بركة",
+      "description": "بركة بحافة حجرية مع أوراق النيلوفر أو أسماك الكوي. لا يمكن عبورها."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "pond",
+    "water",
+    "garden",
+    "lilies",
+    "koi"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "lilies",
+        "color": "#4aa3d6",
+        "direction": "Down",
+        "image": "lilies.png",
+        "collisionGrid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -64
+      },
+      {
+        "key": "koi",
+        "color": "#4aa3d6",
+        "direction": "Down",
+        "image": "koi.png",
+        "collisionGrid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -64
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

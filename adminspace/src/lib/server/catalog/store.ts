@@ -8,7 +8,13 @@
 import { createHash } from "node:crypto";
 import { and, asc, count, desc, eq, ilike, inArray, isNotNull, isNull, ne, or, sql, type SQL } from "drizzle-orm";
 import { db, schema } from "../db/client";
-import { compareVersions, prefabId, type Category, type ComponentManifest } from "../../catalog/manifest";
+import {
+    compareVersions,
+    prefabId,
+    VILLAGE_PREVIEW_URL,
+    type Category,
+    type ComponentManifest,
+} from "../../catalog/manifest";
 import type { Locale } from "../../i18n";
 import type { ValidationResult } from "./validate";
 
@@ -352,7 +358,12 @@ export async function searchCatalog(
                 status: component.status,
                 version: version?.version ?? null,
                 versionId: version?.id ?? null,
-                previewUrl: preview && version ? assetPath(version.id, preview.sha256, preview.contentType) : null,
+                previewUrl:
+                    manifest?.preview === VILLAGE_PREVIEW_URL
+                        ? VILLAGE_PREVIEW_URL
+                        : preview && version
+                          ? assetPath(version.id, preview.sha256, preview.contentType)
+                          : null,
                 variantCount: manifest?.entity?.variants.length ?? 0,
                 favorite,
                 installedWorlds,
@@ -430,7 +441,7 @@ export async function getComponentDetail(
             version: v.version,
             publishedAt: v.publishedAt?.toISOString() ?? null,
         })),
-        previewUrl: url(manifest.preview),
+        previewUrl: manifest.preview === VILLAGE_PREVIEW_URL ? VILLAGE_PREVIEW_URL : url(manifest.preview),
         variants: (manifest.entity?.variants ?? []).map((variant) => {
             const file = files.get(variant.image);
             return {

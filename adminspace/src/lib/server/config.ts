@@ -97,6 +97,8 @@ const EnvSchema = z.object({
     JOB_WORKER: booleanFlag("true"),
     /** Initial instance settings, applied when the instance_settings row does not exist yet. */
     WORKADVENTURE_PLAY_URL: z.string().url().optional(),
+    /** Same as WorkAdventure SECRET_KEY, for authenticated editor launches from the back office. */
+    WORKADVENTURE_PLAYER_TOKEN_SECRET: z.string().min(32).optional(),
     WORKADVENTURE_PUSHER_INTERNAL_URL: z.string().url().optional(),
     WORKADVENTURE_MAP_STORAGE_PUBLIC_URL: z.string().url().optional(),
     WORKADVENTURE_MAP_STORAGE_INTERNAL_URL: z.string().url().optional(),

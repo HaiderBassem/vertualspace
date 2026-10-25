@@ -1,0 +1,59 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "stump-stool",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Tree stump stool",
+  "description": "A cut tree stump used as a stool: oak or birch.",
+  "translations": {
+    "fr-FR": {
+      "name": "Tabouret souche",
+      "description": "Une souche d’arbre coupée utilisée comme tabouret : chêne ou bouleau."
+    },
+    "de-DE": {
+      "name": "Baumstumpfhocker",
+      "description": "Ein gefällter Baumstumpf als Hocker: Eiche oder Birke."
+    },
+    "es-ES": {
+      "name": "Taburete de tocón",
+      "description": "Un tocón de árbol cortado usado como taburete: roble o abedul."
+    },
+    "ar-SA": {
+      "name": "مقعد جذع شجرة",
+      "description": "جذع شجرة مقطوع يُستخدم كمقعد: من البلوط أو البتولا."
+    }
+  },
+  "category": "seating",
+  "tags": [
+    "stool",
+    "seat",
+    "log",
+    "nature"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d9aa6c",
+        "direction": "Down",
+        "image": "oak.png"
+      },
+      {
+        "key": "birch",
+        "color": "#efe3c4",
+        "direction": "Down",
+        "image": "birch.png"
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}

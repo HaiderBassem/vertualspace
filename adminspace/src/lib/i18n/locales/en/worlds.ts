@@ -33,8 +33,13 @@ export const worlds = {
     create: {
         title: "New world",
         intro: "A world is a set of rooms sharing members, tags, settings and moderation.",
+        template: "Map template",
+        customMap: "Use a map URL",
+        templateHint:
+            "WA Village is selected by default. Each world gets its own editable map. You can choose another template and add or change rooms later.",
         firstRoom: "First room",
-        firstRoomIntro: "Optional: you can add rooms later. The first room becomes the default room of the world.",
+        firstRoomIntro:
+            "WA Village is selected by default. Each world gets its own editable map. You can choose another template and add or change rooms later.",
         roomName: "Room name",
         roomSlug: "Room URL identifier",
         mapKind: "Map type",
@@ -47,6 +52,7 @@ export const worlds = {
         submit: "Create the world",
     },
     overview: {
+        editMap: "Edit map",
         address: "World address",
         addressHint: "Share this address: WorkAdventure opens the default room of the world.",
         addressMissing: "Set WorkAdventure's play URL in Platform › Instance settings to see world addresses.",

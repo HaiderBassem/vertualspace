@@ -48,6 +48,14 @@
         {#if data.worldUrl}
             <CopyText value={data.worldUrl} />
             <p class="hint">{o.addressHint}</p>
+            {#if data.editorLaunchAvailable}
+                <a
+                    class="btn btn-primary"
+                    href={resolve(`/o/${data.organization.slug}/w/${data.world.slug}/edit`)}
+                    target="_blank"
+                    rel="noopener">{o.editMap}</a
+                >
+            {/if}
         {:else}
             <p class="muted text-sm">{o.addressMissing}</p>
         {/if}

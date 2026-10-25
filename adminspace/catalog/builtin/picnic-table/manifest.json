@@ -1,0 +1,99 @@
+{
+  "schema": "adminspace.component/1",
+  "key": "picnic-table",
+  "version": "1.0.0",
+  "kind": "entity",
+  "name": "Picnic table",
+  "description": "A wooden table with two attached benches for lunch outdoors or a walking meeting.",
+  "translations": {
+    "fr-FR": {
+      "name": "Table de pique-nique",
+      "description": "Une table en bois avec deux bancs attachés, pour déjeuner dehors ou tenir une réunion au grand air."
+    },
+    "de-DE": {
+      "name": "Picknicktisch",
+      "description": "Ein Holztisch mit zwei festen Bänken für das Mittagessen im Freien oder ein Gespräch an der frischen Luft."
+    },
+    "es-ES": {
+      "name": "Mesa de picnic",
+      "description": "Una mesa de madera con dos bancos fijos, para comer al aire libre o reunirse fuera."
+    },
+    "ar-SA": {
+      "name": "طاولة نزهة",
+      "description": "طاولة خشبية بمقعدين ملتصقين للغداء في الهواء الطلق أو لقاء خارجي."
+    }
+  },
+  "category": "nature",
+  "tags": [
+    "table",
+    "picnic",
+    "garden",
+    "outdoor",
+    "meeting"
+  ],
+  "license": "LicenseRef-AdminSpace",
+  "attribution": "Original artwork created for AdminSpace by its contributors.",
+  "provenance": {
+    "source": "original",
+    "author": "AdminSpace contributors"
+  },
+  "preview": "preview.png",
+  "entity": {
+    "variants": [
+      {
+        "key": "oak",
+        "color": "#d6a46b",
+        "direction": "Down",
+        "image": "oak.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "walnut",
+        "color": "#96613f",
+        "direction": "Down",
+        "image": "walnut.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      },
+      {
+        "key": "white",
+        "color": "#f2f3f5",
+        "direction": "Down",
+        "image": "white.png",
+        "collisionGrid": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "depthOffset": -32
+      }
+    ]
+  },
+  "compatibility": {
+    "entityCollection": "1.0"
+  }
+}
