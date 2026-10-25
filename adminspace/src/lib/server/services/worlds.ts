@@ -176,3 +176,52 @@ export function listOrganizationWorlds(organizationId: string, includeArchived =
         orderBy: asc(schema.worlds.name),
     });
 }
+
+// ---------------------------------------------------------------------------------------------
+// Where the site's address leads
+// ---------------------------------------------------------------------------------------------
+
+export interface EntryWorld {
+    organizationSlug: string;
+    worldSlug: string;
+}
+
+/** The worlds people can land in: not archived, not expired, of an organization that is not suspended. */
+export async function openWorlds(): Promise<EntryWorld[]> {
+    const rows = await db()
+        .select({ organization: schema.organizations, world: schema.worlds })
+        .from(schema.worlds)
+        .innerJoin(schema.organizations, eq(schema.organizations.id, schema.worlds.organizationId))
+        .where(eq(schema.organizations.status, "active"));
+    return rows
+        .filter((row) => worldState(row.world) === "open")
+        .map((row) => ({ organizationSlug: row.organization.slug, worldSlug: row.world.slug }));
+}
+
+/** The address of the only world there is (and so the one to land in when nothing else says), if there is exactly one. */
+export function soleWorldPath(worlds: readonly EntryWorld[]): string | undefined {
+    const [only, ...others] = worlds;
+    return only && others.length === 0 ? `/@/${only.organizationSlug}/${only.worldSlug}` : undefined;
+}
+
+/**
+ * Where the address of the site (no room in it) leads: the start room of the instance when it still exists, otherwise
+ * the only world there is, so that deleting the world the homepage pointed at does not leave the site without an
+ * entrance. Undefined when there is no start room and more than one world (or none): a person must choose.
+ */
+export async function entryPathOf(
+    startRoomUrl: string | undefined,
+    listWorlds: () => Promise<EntryWorld[]> = openWorlds,
+): Promise<string | undefined> {
+    if (startRoomUrl) {
+        const resolved = await resolvePlayUri(startRoomUrl);
+        if (resolved.kind === "other") {
+            if (resolved.parsed.kind === "mapStorage" || resolved.parsed.kind === "global") return startRoomUrl;
+        } else if (resolved.kind === "room" || resolved.kind === "worldWithoutRoom") {
+            if (worldState(resolved.context.world) === "open" && resolved.context.organization.status === "active") {
+                return startRoomUrl;
+            }
+        }
+    }
+    return soleWorldPath(await listWorlds());
+}

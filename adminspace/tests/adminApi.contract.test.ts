@@ -27,6 +27,7 @@ import { dispatchAdminApi } from "../src/lib/server/adminApi/routes";
 import { config } from "../src/lib/server/config";
 import { closeDb, db, schema } from "../src/lib/server/db/client";
 import { findMember, setMemberTags } from "../src/lib/server/services/members";
+import { entryPathOf, soleWorldPath } from "../src/lib/server/services/worlds";
 
 const ORIGIN = "http://play.test";
 const ORG = `contract-test-${Date.now()}`;
@@ -327,5 +328,37 @@ describe("POST /api/room/rename", () => {
     it("needs the Admin API token", async () => {
         const response = await call("/api/room/rename", { method: "POST", body: "{}", token: false });
         expect(response.status).toBe(403);
+    });
+});
+
+describe("where the address of the site leads", () => {
+    const only = [{ organizationSlug: "acme", worldSlug: "office" }];
+    const two = [...only, { organizationSlug: "acme", worldSlug: "lab" }];
+
+    it("takes the only world when there is exactly one", () => {
+        expect(soleWorldPath(only)).toBe("/@/acme/office");
+        expect(soleWorldPath(two)).toBeUndefined();
+        expect(soleWorldPath([])).toBeUndefined();
+    });
+
+    it("keeps the start room of the instance while it exists", async () => {
+        const world = `/@/${ORG}/${WORLD}`;
+        expect(await entryPathOf(world, async () => only)).toBe(world);
+        expect(await entryPathOf(`${world}/lobby`, async () => only)).toBe(`${world}/lobby`);
+        // Rooms outside of any world are always there.
+        expect(await entryPathOf("/_/global/maps.test/office.tmj", async () => only)).toBe(
+            "/_/global/maps.test/office.tmj",
+        );
+    });
+
+    it("falls back to the only world when the start room is gone or was never set", async () => {
+        // The world it pointed at was deleted: the site still has an entrance.
+        expect(await entryPathOf(`/@/${ORG}/deleted-world`, async () => only)).toBe("/@/acme/office");
+        expect(await entryPathOf(`/@/${ORG}/${WORLD}/deleted-room`, async () => only)).toBe("/@/acme/office");
+        expect(await entryPathOf(undefined, async () => only)).toBe("/@/acme/office");
+        expect(await entryPathOf("not an address", async () => only)).toBe("/@/acme/office");
+        // With several worlds nobody can tell which one: no entrance rather than a guess.
+        expect(await entryPathOf(`/@/${ORG}/deleted-world`, async () => two)).toBeUndefined();
+        expect(await entryPathOf(undefined, async () => [])).toBeUndefined();
     });
 });

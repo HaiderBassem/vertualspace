@@ -14,6 +14,7 @@ import { fetchRoomOccupancy } from "../../services/pusher";
 import { httpUrlOrUndefined, isHttpUrl } from "../../http/forms";
 import { resolveCompanionTexture, resolveWokaTextures } from "../../services/textures";
 import {
+    entryPathOf,
     findEntryRoom,
     listRooms,
     resolvePlayUri,
@@ -56,8 +57,9 @@ export async function getMap({ url, locale }: ApiContext): Promise<Response> {
         const instance = await getInstanceSettings();
         if (parsed.kind === "root") {
             const base = parsed.origin || instance.playUrl;
-            if (!instance.startRoomUrl || !base) return json(errorData("invalidUrl", locale));
-            return json({ redirectUrl: new URL(instance.startRoomUrl, base).toString() });
+            const entry = await entryPathOf(instance.startRoomUrl);
+            if (!entry || !base) return json(errorData("invalidUrl", locale));
+            return json({ redirectUrl: new URL(entry, base).toString() });
         }
         if (parsed.kind === "mapStorage") {
             if (path.extname(parsed.path) === ".tmj") {
