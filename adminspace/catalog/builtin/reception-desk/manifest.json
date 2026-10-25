@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "reception-desk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Reception desk",
   "description": "A three-tile counter with a raised ledge, for the entrance of your office.",
@@ -43,6 +43,7 @@
         "color": "#f2f3f5",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
         "collisionGrid": [
           [
             0,
@@ -62,6 +63,7 @@
         "color": "#d6a46b",
         "direction": "Down",
         "image": "oak.png",
+        "model": "oak.model.json",
         "collisionGrid": [
           [
             0,
@@ -81,6 +83,7 @@
         "color": "#96613f",
         "direction": "Down",
         "image": "walnut.png",
+        "model": "walnut.model.json",
         "collisionGrid": [
           [
             0,

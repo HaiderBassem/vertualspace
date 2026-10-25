@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "garden-lantern",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Garden lantern",
   "description": "A lantern on a post that spreads a warm glow along paths.",
@@ -45,6 +45,7 @@
         "color": "#2a2d33",
         "direction": "Down",
         "image": "black.png",
+        "model": "black.model.json",
         "collisionGrid": [
           [
             0
@@ -60,6 +61,7 @@
         "color": "#b8693a",
         "direction": "Down",
         "image": "copper.png",
+        "model": "copper.model.json",
         "collisionGrid": [
           [
             0

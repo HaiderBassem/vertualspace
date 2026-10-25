@@ -162,6 +162,8 @@ export const catalog: Messages["catalog"] = {
         imageTooLarge: "Bildabmessungen zu groß: {path}.",
         notCellMultiple: "Eine Entity mit Kollision muss aus ganzen Zellen von 32 px bestehen ({path}).",
         collisionGridShape: "Das Kollisionsraster passt nicht zur Bildgröße ({path}).",
+        modelInvalid: "Das 3D-Modell ist ungültig ({path}).",
+        modelSize: "Das 3D-Modell und das Bild haben nicht dieselbe Größe ({path}).",
         packageTooLarge: "Das Paket ist zu groß ({path}).",
         mapInvalid: "Die Karte ist keine gültige Tiled-JSON-Karte ({path}).",
         mapOrientation: "Die Karte muss orthogonal sein ({path}).",

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "rattan-chair",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Rattan chair",
   "description": "A round-backed wicker chair with a cushion, in four directions.",
@@ -44,73 +44,169 @@
         "key": "natural-down",
         "color": "#c89b5e",
         "direction": "Down",
-        "image": "natural-down.png"
+        "image": "natural-down.png",
+        "model": "natural-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.2,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "natural-up",
         "color": "#c89b5e",
         "direction": "Up",
-        "image": "natural-up.png"
+        "image": "natural-up.png",
+        "model": "natural-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 14.2,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "natural-left",
         "color": "#c89b5e",
         "direction": "Left",
-        "image": "natural-left.png"
+        "image": "natural-left.png",
+        "model": "natural-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "natural-right",
         "color": "#c89b5e",
         "direction": "Right",
-        "image": "natural-right.png"
+        "image": "natural-right.png",
+        "model": "natural-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "dark-down",
         "color": "#8a5e3b",
         "direction": "Down",
-        "image": "dark-down.png"
+        "image": "dark-down.png",
+        "model": "dark-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.2,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "dark-up",
         "color": "#8a5e3b",
         "direction": "Up",
-        "image": "dark-up.png"
+        "image": "dark-up.png",
+        "model": "dark-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 14.2,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "dark-left",
         "color": "#8a5e3b",
         "direction": "Left",
-        "image": "dark-left.png"
+        "image": "dark-left.png",
+        "model": "dark-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "dark-right",
         "color": "#8a5e3b",
         "direction": "Right",
-        "image": "dark-right.png"
+        "image": "dark-right.png",
+        "model": "dark-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "white-down",
         "color": "#efe9dc",
         "direction": "Down",
-        "image": "white-down.png"
+        "image": "white-down.png",
+        "model": "white-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.2,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "white-up",
         "color": "#efe9dc",
         "direction": "Up",
-        "image": "white-up.png"
+        "image": "white-up.png",
+        "model": "white-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 14.2,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "white-left",
         "color": "#efe9dc",
         "direction": "Left",
-        "image": "white-left.png"
+        "image": "white-left.png",
+        "model": "white-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "white-right",
         "color": "#efe9dc",
         "direction": "Right",
-        "image": "white-right.png"
+        "image": "white-right.png",
+        "model": "white-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       }
     ]
   },

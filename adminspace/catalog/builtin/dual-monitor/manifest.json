@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "dual-monitor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Dual monitor",
   "description": "Two monitors to set on a desk.",
@@ -42,7 +42,8 @@
         "key": "standard",
         "color": "#3d5fc4",
         "direction": "Down",
-        "image": "standard.png"
+        "image": "standard.png",
+        "model": "standard.model.json"
       }
     ]
   },

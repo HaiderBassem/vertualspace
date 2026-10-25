@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "plant-small",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Small plant",
   "description": "A compact plant for shelves, desks and window sills.",
@@ -42,19 +42,22 @@
         "key": "terracotta",
         "color": "#c46b41",
         "direction": "Down",
-        "image": "terracotta.png"
+        "image": "terracotta.png",
+        "model": "terracotta.model.json"
       },
       {
         "key": "white",
         "color": "#e9ebee",
         "direction": "Down",
-        "image": "white.png"
+        "image": "white.png",
+        "model": "white.model.json"
       },
       {
         "key": "charcoal",
         "color": "#40444c",
         "direction": "Down",
-        "image": "charcoal.png"
+        "image": "charcoal.png",
+        "model": "charcoal.model.json"
       }
     ]
   },

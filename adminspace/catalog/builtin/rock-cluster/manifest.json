@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "rock-cluster",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Rock cluster",
   "description": "Three boulders: grey, mossy or sandy.",
@@ -44,6 +44,7 @@
         "color": "#9aa0a3",
         "direction": "Down",
         "image": "gray.png",
+        "model": "gray.model.json",
         "collisionGrid": [
           [
             1,
@@ -56,6 +57,7 @@
         "color": "#9aa0a3",
         "direction": "Down",
         "image": "mossy.png",
+        "model": "mossy.model.json",
         "collisionGrid": [
           [
             1,
@@ -68,6 +70,7 @@
         "color": "#c9b583",
         "direction": "Down",
         "image": "sand.png",
+        "model": "sand.model.json",
         "collisionGrid": [
           [
             1,

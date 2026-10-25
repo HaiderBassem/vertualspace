@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "hedge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Hedge",
   "description": "A trimmed hedge section, two tiles wide. Chain them to fence a garden or separate areas.",
@@ -45,6 +45,7 @@
         "color": "#3a8a4f",
         "direction": "Down",
         "image": "green.png",
+        "model": "green.model.json",
         "collisionGrid": [
           [
             1,
@@ -57,6 +58,7 @@
         "color": "#e58fb0",
         "direction": "Down",
         "image": "flowering.png",
+        "model": "flowering.model.json",
         "collisionGrid": [
           [
             1,

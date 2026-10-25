@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "wall-art",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Framed print",
   "description": "An abstract framed print for walls and partitions.",
@@ -42,19 +42,22 @@
         "key": "coral",
         "color": "#e0765a",
         "direction": "Down",
-        "image": "coral.png"
+        "image": "coral.png",
+        "model": "coral.model.json"
       },
       {
         "key": "ocean",
         "color": "#3f7fd0",
         "direction": "Down",
-        "image": "ocean.png"
+        "image": "ocean.png",
+        "model": "ocean.model.json"
       },
       {
         "key": "sun",
         "color": "#e0b44b",
         "direction": "Down",
-        "image": "sun.png"
+        "image": "sun.png",
+        "model": "sun.model.json"
       }
     ]
   },

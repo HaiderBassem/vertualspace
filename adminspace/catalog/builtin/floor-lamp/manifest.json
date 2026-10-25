@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "floor-lamp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Floor lamp",
   "description": "A fabric-shade floor lamp with a warm glow.",
@@ -43,6 +43,7 @@
         "color": "#2a2d33",
         "direction": "Down",
         "image": "black.png",
+        "model": "black.model.json",
         "collisionGrid": [
           [
             0
@@ -58,6 +59,7 @@
         "color": "#b8913f",
         "direction": "Down",
         "image": "brass.png",
+        "model": "brass.model.json",
         "collisionGrid": [
           [
             0

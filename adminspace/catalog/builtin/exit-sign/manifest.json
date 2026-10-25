@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "exit-sign",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Exit sign",
   "description": "A green exit sign with a running figure and an arrow.",
@@ -42,13 +42,15 @@
         "key": "right",
         "color": "#1f9d55",
         "direction": "Right",
-        "image": "right.png"
+        "image": "right.png",
+        "model": "right.model.json"
       },
       {
         "key": "left",
         "color": "#1f9d55",
         "direction": "Left",
-        "image": "left.png"
+        "image": "left.png",
+        "model": "left.model.json"
       }
     ]
   },

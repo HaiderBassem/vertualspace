@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "glass-door",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Glass door",
   "description": "A double glass door. Combine it with an exit area in the editor to link rooms.",
@@ -42,7 +42,8 @@
         "key": "standard",
         "color": "#9fd0ee",
         "direction": "Down",
-        "image": "standard.png"
+        "image": "standard.png",
+        "model": "standard.model.json"
       }
     ]
   },

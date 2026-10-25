@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "fern",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Fern",
   "description": "A feathery fern in a pot, soft for desks and corners.",
@@ -44,6 +44,7 @@
         "color": "#c46b41",
         "direction": "Down",
         "image": "terracotta.png",
+        "model": "terracotta.model.json",
         "collisionGrid": [
           [
             1
@@ -55,6 +56,7 @@
         "color": "#e9ebee",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
         "collisionGrid": [
           [
             1
@@ -66,6 +68,7 @@
         "color": "#40444c",
         "direction": "Down",
         "image": "charcoal.png",
+        "model": "charcoal.model.json",
         "collisionGrid": [
           [
             1

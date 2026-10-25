@@ -15,7 +15,7 @@ import { saveInstanceSettings } from "../src/lib/server/services/instance";
 import { enqueueJob, runDueJobs } from "../src/lib/server/services/jobs";
 import { currentRoomSize, resizeRoom } from "../src/lib/server/services/roomSize";
 import { applyBulkResize, bulkResults, previewBulkResize } from "../src/lib/server/services/bulkResize";
-import { createOffice } from "../src/lib/server/services/office";
+import { createOffice, furnishWorld } from "../src/lib/server/services/office";
 import { readInstanceSettings } from "../src/lib/settings/instanceSettings";
 import { planOffice } from "../src/lib/rooms/office";
 import "../src/lib/server/services/jobHandlers";
@@ -530,6 +530,138 @@ describe("Create an office", () => {
                 .update(schema.components)
                 .set({ status: "published" })
                 .where(and(eq(schema.components.key, "open-office"), sql`${schema.components.organizationId} is null`));
+        }
+    });
+});
+
+describe("Furnishing a world that already exists", () => {
+    let village: typeof schema.worlds.$inferSelect;
+    let mainRoomId = "";
+
+    beforeAll(async () => {
+        const [created] = await db()
+            .insert(schema.worlds)
+            .values({
+                organizationId: organization.id,
+                workspaceId: workspaceA,
+                slug: `village-${SUFFIX}`,
+                name: "Village",
+                accessPolicy: "members",
+            })
+            .returning();
+        village = created!;
+        const main = await db()
+            .insert(schema.rooms)
+            .values({
+                worldId: village.id,
+                slug: "main",
+                name: "Village",
+                mapKind: "wam",
+                wamUrl: putMap("rooms/village-main", 20, 14),
+                isDefault: true,
+                syncState: "ready",
+            })
+            .returning();
+        mainRoomId = main[0]!.id;
+    });
+
+    const furnish = (garden = true, makeDefault = true) =>
+        furnishWorld({
+            world: village,
+            organization: { id: organization.id, slug: organization.slug },
+            layout: "hybrid",
+            size: "small",
+            garden,
+            makeDefault,
+            actorId: accountId,
+            roomName: (room) => (room.number ? `${room.kind} ${room.number}` : room.kind),
+        });
+
+    it("adds the rooms and a garden, linked by doors, and makes the reception the room people land in", async () => {
+        const outcome = await furnish();
+        if (outcome.result !== "furnished") throw new Error(outcome.result);
+        expect(outcome.rooms.map((r) => r.slug)).toEqual([
+            "reception",
+            "open-office",
+            "meeting-room-1",
+            "meeting-room-2",
+            "lounge",
+            "garden",
+        ]);
+        expect(outcome.skipped).toEqual([]);
+        expect(outcome.defaultRoom).toBe("reception");
+        await drainJobs();
+
+        const rooms = await db().query.rooms.findMany({ where: eq(schema.rooms.worldId, village.id) });
+        expect(rooms.every((r) => r.syncState === "ready")).toBe(true);
+        expect(rooms.filter((r) => r.isDefault).map((r) => r.slug)).toEqual(["reception"]);
+        // The room the world had is untouched.
+        expect(rooms.find((r) => r.id === mainRoomId)).toMatchObject({
+            slug: "main",
+            name: "Village",
+            wamUrl: expect.any(String),
+        });
+
+        type Area = { name: string; properties: { type: string; url?: string }[] };
+        const areas = (slug: string) => {
+            const room = rooms.find((r) => r.slug === slug)!;
+            return (fake.json(`${templateDirectory(village, room.id)}/map.wam`) as { areas: Area[] }).areas;
+        };
+        const exits = (slug: string) =>
+            areas(slug)
+                .filter((a) => a.properties[0]?.type === "exit")
+                .map((a) => a.properties[0]!.url!);
+        const base = `/@/${organization.slug}/${village.slug}`;
+        // The reception leads to each new room (not to the village, which has no way back), each of them back to it.
+        expect(exits("reception").sort()).toEqual(
+            ["open-office", "meeting-room-1", "meeting-room-2", "lounge", "garden"].map((s) => `${base}/${s}`).sort(),
+        );
+        for (const slug of ["open-office", "meeting-room-1", "meeting-room-2", "lounge", "garden"]) {
+            expect(exits(slug)).toEqual([`${base}/reception`]);
+        }
+        // The garden has its two video meeting zones, and its furniture is installed in the world.
+        expect(areas("garden").filter((a) => a.properties[0]?.type === "livekitRoomProperty")).toHaveLength(2);
+        const installed = await db()
+            .select({ key: schema.components.key })
+            .from(schema.componentInstallations)
+            .innerJoin(schema.components, eq(schema.components.id, schema.componentInstallations.componentId))
+            .where(eq(schema.componentInstallations.worldId, village.id));
+        expect(installed.map((i) => i.key)).toEqual(
+            expect.arrayContaining(["beanbag", "garden-bench", "fountain", "pond", "picnic-table"]),
+        );
+    });
+
+    it("does not make anything twice, and refuses when the garden template is not there", async () => {
+        const again = await furnish();
+        if (again.result !== "furnished") throw new Error(again.result);
+        expect(again.rooms).toEqual([]);
+        expect(again.skipped).toEqual([
+            "reception",
+            "open-office",
+            "meeting-room-1",
+            "meeting-room-2",
+            "lounge",
+            "garden",
+        ]);
+        expect(again.defaultRoom).toBeUndefined();
+        await drainJobs();
+
+        await db()
+            .update(schema.components)
+            .set({ status: "deprecated" })
+            .where(and(eq(schema.components.key, "garden-terrace"), sql`${schema.components.organizationId} is null`));
+        try {
+            expect(await furnish()).toEqual({ result: "gardenMissing" });
+            // Without a garden, it is not needed.
+            const without = await furnish(false);
+            expect(without.result).toBe("furnished");
+        } finally {
+            await db()
+                .update(schema.components)
+                .set({ status: "published" })
+                .where(
+                    and(eq(schema.components.key, "garden-terrace"), sql`${schema.components.organizationId} is null`),
+                );
         }
     });
 });

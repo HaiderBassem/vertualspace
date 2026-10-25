@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "stump-stool",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Tree stump stool",
   "description": "A cut tree stump used as a stool: oak or birch.",
@@ -43,13 +43,29 @@
         "key": "oak",
         "color": "#d9aa6c",
         "direction": "Down",
-        "image": "oak.png"
+        "image": "oak.png",
+        "model": "oak.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 11.3,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "birch",
         "color": "#efe3c4",
         "direction": "Down",
-        "image": "birch.png"
+        "image": "birch.png",
+        "model": "birch.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 11.3,
+            "direction": "Down"
+          }
+        ]
       }
     ]
   },

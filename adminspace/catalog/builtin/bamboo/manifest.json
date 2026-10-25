@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "bamboo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Bamboo",
   "description": "Three bamboo stalks in a dark pot, a calm vertical accent.",
@@ -44,6 +44,7 @@
         "color": "#79b24f",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0

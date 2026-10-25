@@ -176,6 +176,8 @@ export const catalog: Messages["catalog"] = {
         imageTooLarge: "أبعاد الصورة كبيرة جدًا: {path}.",
         notCellMultiple: "يجب أن تكون أبعاد الكيان القابل للتصادم مضاعفات كاملة لخلايا بحجم 32 بكسل ({path}).",
         collisionGridShape: "لا تتطابق شبكة التصادم مع حجم الصورة ({path}).",
+        modelInvalid: "النموذج ثلاثي الأبعاد غير صالح ({path}).",
+        modelSize: "النموذج ثلاثي الأبعاد والصورة ليسا بالحجم نفسه ({path}).",
         packageTooLarge: "الحزمة كبيرة جدًا ({path}).",
         mapInvalid: "الخريطة ليست خريطة Tiled JSON صالحة ({path}).",
         mapOrientation: "يجب أن يكون اتجاه الخريطة متعامدًا ({path}).",

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "rug",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Area rug",
   "description": "A bordered rug that stays under people's feet, to mark a lounge or meeting area.",
@@ -43,6 +43,7 @@
         "color": "#4458a8",
         "direction": "Down",
         "image": "indigo.png",
+        "model": "indigo.model.json",
         "depthOffset": -64
       },
       {
@@ -50,6 +51,7 @@
         "color": "#c9a878",
         "direction": "Down",
         "image": "sand.png",
+        "model": "sand.model.json",
         "depthOffset": -64
       },
       {
@@ -57,6 +59,7 @@
         "color": "#7f9f86",
         "direction": "Down",
         "image": "sage.png",
+        "model": "sage.model.json",
         "depthOffset": -64
       },
       {
@@ -64,6 +67,7 @@
         "color": "#b9694a",
         "direction": "Down",
         "image": "clay.png",
+        "model": "clay.model.json",
         "depthOffset": -64
       }
     ]

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "coffee-machine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Coffee station",
   "description": "A coffee machine on its cabinet, the natural meeting point. Add a “Meeting room” property in the editor for spontaneous chats.",
@@ -43,6 +43,7 @@
         "color": "#2b3038",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0

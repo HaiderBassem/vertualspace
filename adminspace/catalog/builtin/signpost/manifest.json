@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "signpost",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Direction signpost",
   "description": "A two-panel signpost. Give it a name in the editor so people can find it in the map search.",
@@ -43,6 +43,7 @@
         "color": "#2b47c2",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0

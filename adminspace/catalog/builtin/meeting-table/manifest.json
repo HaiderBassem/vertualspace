@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "meeting-table",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Meeting table",
   "description": "A six-seat conference table with a cable tray. Surround it with office chairs.",
@@ -43,6 +43,7 @@
         "color": "#96613f",
         "direction": "Down",
         "image": "walnut.png",
+        "model": "walnut.model.json",
         "collisionGrid": [
           [
             0,
@@ -62,6 +63,7 @@
         "color": "#d6a46b",
         "direction": "Down",
         "image": "oak.png",
+        "model": "oak.model.json",
         "collisionGrid": [
           [
             0,
@@ -81,6 +83,7 @@
         "color": "#f2f3f5",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
         "collisionGrid": [
           [
             0,

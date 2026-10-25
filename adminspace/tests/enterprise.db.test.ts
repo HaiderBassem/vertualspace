@@ -45,8 +45,9 @@ import "../src/lib/server/services/jobHandlers";
 
 /**
  * Copy of WorkAdventure's `EntityRawPrefab` and `EntityCollectionRaw` (libs/map-editor/src/types.ts, lines
- * 293-332 at commit b57916667f0f): what play/src/front/Phaser/Game/MapEditor/EntitiesCollectionsManager.ts
- * fetches and spreads into prefabs. Strict here, so that an unexpected field is noticed too.
+ * 293-332 at commit b57916667f0f, plus `modelPath` and `seats`, which the 3D models of AdminSpace add):
+ * what play/src/front/Phaser/Game/MapEditor/EntitiesCollectionsManager.ts fetches and spreads into prefabs.
+ * Strict here, so that an unexpected field is noticed too.
  */
 const WorkAdventureEntityRawPrefab = z
     .object({
@@ -58,6 +59,10 @@ const WorkAdventureEntityRawPrefab = z
         color: z.string(),
         collisionGrid: z.array(z.array(z.number())).optional(),
         depthOffset: z.number().optional(),
+        modelPath: z.string().optional(),
+        seats: z
+            .array(z.object({ x: z.number(), y: z.number(), direction: z.enum(["Left", "Up", "Down", "Right"]) }))
+            .optional(),
         ownerId: z.string().optional(),
     })
     .strict();
@@ -490,6 +495,11 @@ describe("components reach map-storage, survive an outage and are reconciled", (
         expect(collection?.collection[0]?.imagePath).toMatch(
             /^https?:\/\/.+\/wa\/assets\/[0-9a-f-]{36}\/[0-9a-f]{64}\.png$/,
         );
+        // The model the game draws the desk from is published with it (a desk is not something to sit on).
+        const oakDesk = `adminspace:${(await desk()).id}:oak`;
+        const prefab = collection?.collection.find((p) => p.id === oakDesk);
+        expect(prefab?.modelPath).toMatch(/^https?:\/\/.+\/wa\/assets\/[0-9a-f-]{36}\/[0-9a-f]{64}\.json$/);
+        expect(prefab?.seats).toBeUndefined();
     });
 
     it("surfaces an outage, retries, and repairs without duplicating the collection", async () => {

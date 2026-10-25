@@ -13,6 +13,7 @@
  * "adminspace.component/2" can be read alongside this one.
  */
 import { z } from "zod";
+import { ModelSeat } from "./model3d/types";
 
 export const MANIFEST_SCHEMA = "adminspace.component/1";
 
@@ -81,6 +82,13 @@ export const EntityVariant = z.object({
     color: z.string().regex(/^#[0-9a-f]{6}$/i),
     direction: z.enum(DIRECTIONS),
     image: ImagePath,
+    /**
+     * The 3D model the picture is drawn from (adminspace.model/1, see model3d/types.ts). The game draws it itself when it
+     * can, and shows the picture otherwise.
+     */
+    model: AssetPath.refine((path) => /\.model\.json$/.test(path), "a model file (.model.json)").optional(),
+    /** Places to sit on the piece of furniture (pixels from the top-left corner of its picture), when it has more than one. */
+    seats: z.array(ModelSeat).max(8).optional(),
     /** One row per 32 px of height, one cell per 32 px of width; 1 = blocks movement. */
     collisionGrid: z
         .array(
@@ -250,7 +258,10 @@ export function componentIdOfPrefab(prefab: string): string | undefined {
 /** Every file a manifest references (to check that a package is complete). */
 export function referencedFiles(manifest: ComponentManifest): string[] {
     const files = new Set<string>(manifest.preview === VILLAGE_PREVIEW_URL ? [] : [manifest.preview]);
-    for (const variant of manifest.entity?.variants ?? []) files.add(variant.image);
+    for (const variant of manifest.entity?.variants ?? []) {
+        files.add(variant.image);
+        if (variant.model) files.add(variant.model);
+    }
     if (manifest.template) {
         if (!isHostedTemplateMap(manifest.template.map)) files.add(manifest.template.map);
         for (const file of manifest.template.files) files.add(file);

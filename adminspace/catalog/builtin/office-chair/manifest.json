@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "office-chair",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Office chair",
   "description": "A swivel task chair in four directions, to face any desk or table.",
@@ -42,73 +42,169 @@
         "key": "charcoal-down",
         "color": "#3d4149",
         "direction": "Down",
-        "image": "charcoal-down.png"
+        "image": "charcoal-down.png",
+        "model": "charcoal-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "charcoal-up",
         "color": "#3d4149",
         "direction": "Up",
-        "image": "charcoal-up.png"
+        "image": "charcoal-up.png",
+        "model": "charcoal-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 13.7,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "charcoal-left",
         "color": "#3d4149",
         "direction": "Left",
-        "image": "charcoal-left.png"
+        "image": "charcoal-left.png",
+        "model": "charcoal-left.model.json",
+        "seats": [
+          {
+            "x": 14,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "charcoal-right",
         "color": "#3d4149",
         "direction": "Right",
-        "image": "charcoal-right.png"
+        "image": "charcoal-right.png",
+        "model": "charcoal-right.model.json",
+        "seats": [
+          {
+            "x": 18,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "blue-down",
         "color": "#4060c8",
         "direction": "Down",
-        "image": "blue-down.png"
+        "image": "blue-down.png",
+        "model": "blue-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "blue-up",
         "color": "#4060c8",
         "direction": "Up",
-        "image": "blue-up.png"
+        "image": "blue-up.png",
+        "model": "blue-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 13.7,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "blue-left",
         "color": "#4060c8",
         "direction": "Left",
-        "image": "blue-left.png"
+        "image": "blue-left.png",
+        "model": "blue-left.model.json",
+        "seats": [
+          {
+            "x": 14,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "blue-right",
         "color": "#4060c8",
         "direction": "Right",
-        "image": "blue-right.png"
+        "image": "blue-right.png",
+        "model": "blue-right.model.json",
+        "seats": [
+          {
+            "x": 18,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "slate-down",
         "color": "#6e7889",
         "direction": "Down",
-        "image": "slate-down.png"
+        "image": "slate-down.png",
+        "model": "slate-down.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "slate-up",
         "color": "#6e7889",
         "direction": "Up",
-        "image": "slate-up.png"
+        "image": "slate-up.png",
+        "model": "slate-up.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 13.7,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "slate-left",
         "color": "#6e7889",
         "direction": "Left",
-        "image": "slate-left.png"
+        "image": "slate-left.png",
+        "model": "slate-left.model.json",
+        "seats": [
+          {
+            "x": 14,
+            "y": 15.7,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "slate-right",
         "color": "#6e7889",
         "direction": "Right",
-        "image": "slate-right.png"
+        "image": "slate-right.png",
+        "model": "slate-right.model.json",
+        "seats": [
+          {
+            "x": 18,
+            "y": 15.7,
+            "direction": "Right"
+          }
+        ]
       }
     ]
   },

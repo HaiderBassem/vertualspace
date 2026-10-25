@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "vending-machine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Vending machine",
   "description": "A snack and drinks machine for the cafeteria.",
@@ -43,6 +43,7 @@
         "color": "#2f4fb5",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0

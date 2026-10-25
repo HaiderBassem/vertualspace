@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "flower-bed",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Flower bed",
   "description": "A stone-edged bed of tulips, daisies or lavender.",
@@ -44,6 +44,7 @@
         "color": "#d94a4a",
         "direction": "Down",
         "image": "tulips.png",
+        "model": "tulips.model.json",
         "collisionGrid": [
           [
             1,
@@ -56,6 +57,7 @@
         "color": "#fbfcfd",
         "direction": "Down",
         "image": "daisies.png",
+        "model": "daisies.model.json",
         "collisionGrid": [
           [
             1,
@@ -68,6 +70,7 @@
         "color": "#8b6bd0",
         "direction": "Down",
         "image": "lavender.png",
+        "model": "lavender.model.json",
         "collisionGrid": [
           [
             1,

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "plant-large",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Large plant",
   "description": "A leafy floor plant in a ceramic pot, to soften corners and corridors.",
@@ -43,6 +43,7 @@
         "color": "#c46b41",
         "direction": "Down",
         "image": "terracotta.png",
+        "model": "terracotta.model.json",
         "collisionGrid": [
           [
             0
@@ -58,6 +59,7 @@
         "color": "#e9ebee",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
         "collisionGrid": [
           [
             0
@@ -73,6 +75,7 @@
         "color": "#40444c",
         "direction": "Down",
         "image": "charcoal.png",
+        "model": "charcoal.model.json",
         "collisionGrid": [
           [
             0

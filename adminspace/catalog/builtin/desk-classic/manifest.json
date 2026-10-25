@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "desk-classic",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Classic desk",
   "description": "A two-person-wide desk with a drawer pedestal. Pairs with the office chair and the dual monitor.",
@@ -43,6 +43,7 @@
         "color": "#d6a46b",
         "direction": "Down",
         "image": "oak.png",
+        "model": "oak.model.json",
         "collisionGrid": [
           [
             0,
@@ -60,6 +61,7 @@
         "color": "#96613f",
         "direction": "Down",
         "image": "walnut.png",
+        "model": "walnut.model.json",
         "collisionGrid": [
           [
             0,
@@ -77,6 +79,7 @@
         "color": "#f2f3f5",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
         "collisionGrid": [
           [
             0,
@@ -94,6 +97,7 @@
         "color": "#555b66",
         "direction": "Down",
         "image": "graphite.png",
+        "model": "graphite.model.json",
         "collisionGrid": [
           [
             0,

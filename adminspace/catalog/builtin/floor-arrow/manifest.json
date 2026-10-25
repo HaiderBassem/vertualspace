@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "floor-arrow",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Floor arrow",
   "description": "A high-contrast floor marking that guides people along a route, in four directions.",
@@ -44,6 +44,7 @@
         "color": "#2b47c2",
         "direction": "Down",
         "image": "down.png",
+        "model": "down.model.json",
         "depthOffset": -32
       },
       {
@@ -51,6 +52,7 @@
         "color": "#2b47c2",
         "direction": "Up",
         "image": "up.png",
+        "model": "up.model.json",
         "depthOffset": -32
       },
       {
@@ -58,6 +60,7 @@
         "color": "#2b47c2",
         "direction": "Left",
         "image": "left.png",
+        "model": "left.model.json",
         "depthOffset": -32
       },
       {
@@ -65,6 +68,7 @@
         "color": "#2b47c2",
         "direction": "Right",
         "image": "right.png",
+        "model": "right.model.json",
         "depthOffset": -32
       }
     ]

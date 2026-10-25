@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "stepping-stones",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Stepping stones",
   "description": "Flat stones for a garden path. Walk over them, they sit on the ground.",
@@ -44,6 +44,7 @@
         "color": "#9aa0a3",
         "direction": "Down",
         "image": "gray.png",
+        "model": "gray.model.json",
         "depthOffset": -32
       },
       {
@@ -51,6 +52,7 @@
         "color": "#c9b583",
         "direction": "Down",
         "image": "sand.png",
+        "model": "sand.model.json",
         "depthOffset": -32
       }
     ]

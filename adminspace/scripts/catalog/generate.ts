@@ -11,6 +11,9 @@ import path from "node:path";
 import { Canvas } from "./canvas";
 import { ENTITIES as OFFICE_ENTITIES, type Localized } from "./furniture";
 import { NATURE_ENTITIES } from "./nature";
+import { modelOf } from "./models";
+import { renderModel } from "../../src/lib/catalog/model3d/render";
+import type { Model3D } from "../../src/lib/catalog/model3d/types";
 import { drawTileset, templateMap, templatePreview, TEMPLATES, TILESET_FILE } from "./templates";
 import { drawGardenTileset, GARDEN_TEMPLATES, GARDEN_TILESET_FILE, gardenMap } from "./garden";
 import { MANIFEST_SCHEMA, WORKADVENTURE_FORMATS, type ComponentManifest } from "../../src/lib/catalog/manifest";
@@ -18,7 +21,8 @@ import { HOSTED_TEMPLATES } from "./hostedTemplates";
 
 const ENTITIES = [...OFFICE_ENTITIES, ...NATURE_ENTITIES];
 const OUT = path.resolve(import.meta.dirname, "../../catalog/builtin");
-const VERSION = "1.0.0";
+// 1.1.0: every piece of furniture has a 3D model, and its picture is drawn from it.
+const VERSION = "1.1.0";
 const LICENSE = "LicenseRef-AdminSpace";
 const ATTRIBUTION = "Original artwork created for AdminSpace by its contributors.";
 
@@ -60,8 +64,20 @@ const index: string[] = [];
 for (const entity of ENTITIES) {
     const files: Record<string, Buffer | string> = {};
     const images: Canvas[] = [];
+    const models = new Map<string, Model3D>();
     for (const variant of entity.variants) {
-        const image = variant.draw();
+        // The picture is drawn from the 3D model, which is published beside it; furniture without a model keeps its drawing.
+        const model = modelOf(entity.key, { key: variant.key, color: variant.color, direction: variant.direction });
+        let image: Canvas;
+        if (model) {
+            const rendered = renderModel(model);
+            image = new Canvas(rendered.width, rendered.height);
+            image.data.set(rendered.data);
+            models.set(variant.key, model);
+            files[`${variant.key}.model.json`] = `${JSON.stringify(model)}\n`;
+        } else {
+            image = variant.draw();
+        }
         images.push(image);
         sprites.set(`${entity.key}/${variant.key}`, image);
         files[`${variant.key}.png`] = image.png();
@@ -87,6 +103,8 @@ for (const entity of ENTITIES) {
                 color: v.color.slice(0, 7),
                 direction: v.direction,
                 image: `${v.key}.png`,
+                ...(models.has(v.key) ? { model: `${v.key}.model.json` } : {}),
+                ...(models.get(v.key)?.seats ? { seats: models.get(v.key)!.seats } : {}),
                 ...(v.collisionGrid ? { collisionGrid: v.collisionGrid } : {}),
                 ...(v.depthOffset !== undefined ? { depthOffset: v.depthOffset } : {}),
             })),
@@ -119,7 +137,7 @@ for (const { template, tileset, tilesetFile, map } of TEMPLATE_BUILDS) {
     const manifest: ComponentManifest = {
         schema: MANIFEST_SCHEMA,
         key: template.key,
-        version: template.key === "meeting-room" ? "1.0.1" : VERSION,
+        version: VERSION,
         kind: "room_template",
         name: template.name.en,
         description: template.description.en,

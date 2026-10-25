@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "whiteboard",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Whiteboard",
   "description": "A mobile whiteboard. In the editor, give it an “Open website” property to link your online whiteboard.",
@@ -43,6 +43,7 @@
         "color": "#fbfcfd",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0,

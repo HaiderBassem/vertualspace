@@ -156,6 +156,8 @@ export const catalog = {
         imageTooLarge: "Image dimensions too large: {path}.",
         notCellMultiple: "A collidable entity must measure whole 32 px cells ({path}).",
         collisionGridShape: "The collision grid does not match the image size ({path}).",
+        modelInvalid: "The 3D model is not valid ({path}).",
+        modelSize: "The 3D model and the picture are not the same size ({path}).",
         packageTooLarge: "The package is too large ({path}).",
         mapInvalid: "The map is not a valid Tiled JSON map ({path}).",
         mapOrientation: "The map must be orthogonal ({path}).",

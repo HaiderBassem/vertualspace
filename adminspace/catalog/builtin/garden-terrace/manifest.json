@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "garden-terrace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "room_template",
   "name": "Garden terrace",
   "description": "An open-air room: a fountain at the end of the path, a pond, trees, a picnic table, benches, a hammock and a beanbag circle, with a video meeting zone at the picnic table and one among the beanbags.",

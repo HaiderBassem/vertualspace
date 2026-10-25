@@ -134,3 +134,117 @@ export async function createOffice(input: {
     }
     return { result: "created", world, rooms };
 }
+
+// ---------------------------------------------------------------------------------------------
+// Furnishing a world that already exists
+// ---------------------------------------------------------------------------------------------
+
+export type FurnishProblem = OfficeProblem | "gardenMissing";
+
+export type FurnishResult =
+    | {
+          result: "furnished";
+          /** The rooms made now. */
+          rooms: { id: string; slug: string; name: string; template: string }[];
+          /** Rooms of the plan the world already had: left as they are. */
+          skipped: string[];
+          /** The room people now land in, when it was changed. */
+          defaultRoom: string | undefined;
+      }
+    | { result: FurnishProblem };
+
+/** A room to add: a planned room of the office, or the garden. */
+interface RoomToAdd {
+    kind: PlannedRoom["kind"] | "garden";
+    number: number | undefined;
+    slug: string;
+    template: string;
+    size: PlannedRoom["size"];
+    isDefault: boolean;
+}
+
+export const GARDEN_TEMPLATE = "garden-terrace";
+
+/**
+ * Adds the rooms of an office (and a garden) to a world that already exists, from the built-in room templates: the
+ * "Create an office" wizard, for a world that is there. The main room gets a door to each new room and each new room a
+ * door back to it. A room of the plan the world already has (same address) is left as it is. The main room becomes
+ * the room people land in when `makeDefault` is set and it was made now.
+ */
+export async function furnishWorld(input: {
+    world: World;
+    organization: { id: string; slug: string };
+    layout: OfficeLayout;
+    size: RoomSizePresetKey;
+    garden: boolean;
+    makeDefault: boolean;
+    actorId: string | null;
+    roomName: (room: { kind: RoomToAdd["kind"]; number: number | undefined }) => string;
+}): Promise<FurnishResult> {
+    const problem = await officeProblem(input.organization.id);
+    if (problem) return { result: problem };
+    const plan: RoomToAdd[] = planOffice(input.layout, input.size);
+    if (input.garden) {
+        plan.push({
+            kind: "garden",
+            number: undefined,
+            slug: "garden",
+            template: GARDEN_TEMPLATE,
+            size: undefined,
+            isDefault: false,
+        });
+    }
+    const templates = await templatesByKey(
+        input.organization.id,
+        plan.map((r) => r.template),
+    );
+    if (input.garden && !templates.has(GARDEN_TEMPLATE)) return { result: "gardenMissing" };
+    if (!plan.every((r) => templates.has(r.template))) return { result: "templatesMissing" };
+
+    const existing = new Set(
+        (
+            await db()
+                .select({ slug: schema.rooms.slug })
+                .from(schema.rooms)
+                .where(eq(schema.rooms.worldId, input.world.id))
+        ).map((row) => row.slug),
+    );
+    const named = plan.map((r) => ({ ...r, name: input.roomName(r) }));
+    const url = (slug: string) => `/@/${input.organization.slug}/${input.world.slug}/${slug}`;
+    const main = named.find((r) => r.isDefault) ?? named[0]!;
+    const toCreate = named.filter((r) => !existing.has(r.slug));
+    const rooms: { id: string; slug: string; name: string; template: string }[] = [];
+    let defaultRoom: string | undefined;
+    for (const planned of toCreate) {
+        const doors =
+            planned === main
+                ? {
+                      placement: "walls" as const,
+                      targets: toCreate.filter((r) => r !== main).map((r) => ({ name: r.name, url: url(r.slug) })),
+                  }
+                : { placement: "entrance" as const, targets: [{ name: main.name, url: url(main.slug) }] };
+        const created = await createRoomFromTemplate({
+            world: input.world,
+            componentId: templates.get(planned.template)!,
+            name: planned.name,
+            slug: planned.slug,
+            actorId: input.actorId,
+            size: planned.size,
+            doors,
+        });
+        if (created.result !== "created") {
+            throw new Error(`Room ${planned.slug} was not created: ${created.result}`);
+        }
+        rooms.push({ id: created.roomId, slug: created.roomSlug, name: planned.name, template: planned.template });
+        if (planned === main && input.makeDefault) {
+            await setDefaultRoom(input.world.id, created.roomId);
+            defaultRoom = planned.slug;
+        }
+    }
+    return {
+        result: "furnished",
+        rooms,
+        skipped: named.filter((r) => existing.has(r.slug)).map((r) => r.slug),
+        defaultRoom,
+    };
+}

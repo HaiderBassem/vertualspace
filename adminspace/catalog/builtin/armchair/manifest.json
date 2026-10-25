@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "armchair",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Armchair",
   "description": "A deep armchair for reading corners and receptions.",
@@ -42,25 +42,57 @@
         "key": "terracotta",
         "color": "#c5653f",
         "direction": "Down",
-        "image": "terracotta.png"
+        "image": "terracotta.png",
+        "model": "terracotta.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "green",
         "color": "#3f8b69",
         "direction": "Down",
-        "image": "green.png"
+        "image": "green.png",
+        "model": "green.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "blue",
         "color": "#4060c8",
         "direction": "Down",
-        "image": "blue.png"
+        "image": "blue.png",
+        "model": "blue.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "charcoal",
         "color": "#3d4149",
         "direction": "Down",
-        "image": "charcoal.png"
+        "image": "charcoal.png",
+        "model": "charcoal.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 17.7,
+            "direction": "Down"
+          }
+        ]
       }
     ]
   },

@@ -1,0 +1,1 @@
+{"schema":"adminspace.model/1","width":64,"height":32,"depth":22,"parts":[{"shape":"ellipsoid","at":[14,5,14],"r":[12,5,8.5],"color":"#c9b583"},{"shape":"ellipsoid","at":[34,7.5,13],"r":[14,7,9.5],"color":"#ccb98a"},{"shape":"ellipsoid","at":[52,4.5,14],"r":[8.5,4.5,7],"color":"#bdaa7b"},{"shape":"ellipsoid","at":[30,10,10],"r":[7,3,4],"color":"#e6d6ae"}]}

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "grass-patch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Grass patch",
   "description": "A tile of lawn to lay over any floor: plain meadow, clover or wildflowers.",
@@ -45,6 +45,7 @@
         "color": "#5aa24a",
         "direction": "Down",
         "image": "meadow.png",
+        "model": "meadow.model.json",
         "depthOffset": -32
       },
       {
@@ -52,6 +53,7 @@
         "color": "#5aa24a",
         "direction": "Down",
         "image": "clover.png",
+        "model": "clover.model.json",
         "depthOffset": -32
       },
       {
@@ -59,6 +61,7 @@
         "color": "#5aa24a",
         "direction": "Down",
         "image": "wildflowers.png",
+        "model": "wildflowers.model.json",
         "depthOffset": -32
       }
     ]

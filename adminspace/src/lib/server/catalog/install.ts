@@ -367,6 +367,10 @@ export interface EntityCollectionFile {
         color: string;
         collisionGrid?: number[][];
         depthOffset?: number;
+        /** The 3D model the game draws the furniture from (the picture stays for what cannot draw it). */
+        modelPath?: string;
+        /** Places to sit (pixels from the top-left corner of the picture). */
+        seats?: { x: number; y: number; direction: string }[];
     }[];
 }
 
@@ -400,6 +404,7 @@ export async function buildWorldCollection(worldId: string): Promise<EntityColle
         for (const variant of manifest.entity?.variants ?? []) {
             const file = files.get(version.id)?.get(variant.image);
             if (!file) continue;
+            const model = variant.model ? files.get(version.id)?.get(variant.model) : undefined;
             collection.push({
                 id: prefabId(componentId, variant.key),
                 name: manifest.name,
@@ -409,6 +414,8 @@ export async function buildWorldCollection(worldId: string): Promise<EntityColle
                 color: variant.color,
                 ...(variant.collisionGrid ? { collisionGrid: variant.collisionGrid } : {}),
                 ...(variant.depthOffset !== undefined ? { depthOffset: variant.depthOffset } : {}),
+                ...(model ? { modelPath: `${origin}${assetPath(version.id, model.sha256, model.contentType)}` } : {}),
+                ...(variant.seats && variant.seats.length > 0 ? { seats: variant.seats } : {}),
             });
         }
     }

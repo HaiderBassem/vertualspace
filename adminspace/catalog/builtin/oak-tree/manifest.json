@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "oak-tree",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Oak tree",
   "description": "A broad shade tree in summer green, autumn gold or spring blossom. Walk behind the leaves, not through the trunk.",
@@ -44,6 +44,7 @@
         "color": "#3a8a4f",
         "direction": "Down",
         "image": "summer.png",
+        "model": "summer.model.json",
         "collisionGrid": [
           [
             0,
@@ -65,6 +66,7 @@
         "color": "#d1722b",
         "direction": "Down",
         "image": "autumn.png",
+        "model": "autumn.model.json",
         "collisionGrid": [
           [
             0,
@@ -86,6 +88,7 @@
         "color": "#e58fb0",
         "direction": "Down",
         "image": "blossom.png",
+        "model": "blossom.model.json",
         "collisionGrid": [
           [
             0,

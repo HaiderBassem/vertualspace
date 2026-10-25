@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "presentation-screen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Presentation screen",
   "description": "A large display on a stand. Link it to a slide deck or a dashboard with the editor's properties.",
@@ -43,6 +43,7 @@
         "color": "#26355e",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             0,

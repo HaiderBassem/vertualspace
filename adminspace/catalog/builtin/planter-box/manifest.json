@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "planter-box",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Raised planter",
   "description": "A wooden raised bed growing herbs or vegetables: a rooftop-garden classic.",
@@ -45,6 +45,7 @@
         "color": "#4aa05a",
         "direction": "Down",
         "image": "herbs.png",
+        "model": "herbs.model.json",
         "collisionGrid": [
           [
             1,
@@ -57,6 +58,7 @@
         "color": "#d94a4a",
         "direction": "Down",
         "image": "vegetables.png",
+        "model": "vegetables.model.json",
         "collisionGrid": [
           [
             1,

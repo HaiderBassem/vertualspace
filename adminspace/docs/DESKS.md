@@ -45,6 +45,10 @@ reads it from the collection it loaded, and the room server (back) reads the col
 (`back/src/Model/SeatPrefabCatalog.ts`: read like maps are, refusing local addresses, kept five minutes). Name a component
 for what it is ("Beanbag", "Garden bench") and it can be sat on in every world where it is installed.
 
+Furniture with a 3D model can also say where people sit (`seats` of its prefab, see [MODELS_3D.md](MODELS_3D.md)): then
+those are its seats, whatever its name: a sofa has two, a bench two, a picnic table four. The first keeps the identifier
+`entity:<id>`, the others are `entity:<id>:1`, `entity:<id>:2`…
+
 ### Kinds of desks
 
 - **Personal desk** (`assigned`): belongs to one person, who claims a free one (when `dynamic`) or is given one.

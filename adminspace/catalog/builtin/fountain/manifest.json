@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "fountain",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Fountain",
   "description": "A two-tier stone fountain, the centrepiece of a plaza or garden.",
@@ -44,6 +44,7 @@
         "color": "#9aa0a3",
         "direction": "Down",
         "image": "stone.png",
+        "model": "stone.model.json",
         "collisionGrid": [
           [
             0,
@@ -65,6 +66,7 @@
         "color": "#cbb384",
         "direction": "Down",
         "image": "sandstone.png",
+        "model": "sandstone.model.json",
         "collisionGrid": [
           [
             0,

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "reception-lobby",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "room_template",
   "name": "Reception lobby",
   "description": "A welcoming entrance with a reception desk, a waiting area and accessible wayfinding from the door.",

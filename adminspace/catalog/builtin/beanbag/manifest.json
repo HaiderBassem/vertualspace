@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "beanbag",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Beanbag",
   "description": "A slouchy beanbag you can sit on anywhere: break corners, gardens, reading nooks.",
@@ -43,31 +43,71 @@
         "key": "terracotta",
         "color": "#c5653f",
         "direction": "Down",
-        "image": "terracotta.png"
+        "image": "terracotta.png",
+        "model": "terracotta.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 15.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "blue",
         "color": "#4060c8",
         "direction": "Down",
-        "image": "blue.png"
+        "image": "blue.png",
+        "model": "blue.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 15.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "green",
         "color": "#3f8b69",
         "direction": "Down",
-        "image": "green.png"
+        "image": "green.png",
+        "model": "green.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 15.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "mustard",
         "color": "#d9a63a",
         "direction": "Down",
-        "image": "mustard.png"
+        "image": "mustard.png",
+        "model": "mustard.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 15.7,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "plum",
         "color": "#7a4f8f",
         "direction": "Down",
-        "image": "plum.png"
+        "image": "plum.png",
+        "model": "plum.model.json",
+        "seats": [
+          {
+            "x": 16,
+            "y": 15.7,
+            "direction": "Down"
+          }
+        ]
       }
     ]
   },

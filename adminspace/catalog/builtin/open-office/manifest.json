@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "open-office",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "room_template",
   "name": "Open office",
   "description": "Eight workstations in two rows, a meeting corner with a whiteboard, and a coffee point. Wood floor, windows on the north wall.",

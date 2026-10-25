@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "picnic-table",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Picnic table",
   "description": "A wooden table with two attached benches for lunch outdoors or a walking meeting.",
@@ -45,6 +45,29 @@
         "color": "#d6a46b",
         "direction": "Down",
         "image": "oak.png",
+        "model": "oak.model.json",
+        "seats": [
+          {
+            "x": 20,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 44,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 20,
+            "y": 48.8,
+            "direction": "Up"
+          },
+          {
+            "x": 44,
+            "y": 48.8,
+            "direction": "Up"
+          }
+        ],
         "collisionGrid": [
           [
             0,
@@ -62,6 +85,29 @@
         "color": "#96613f",
         "direction": "Down",
         "image": "walnut.png",
+        "model": "walnut.model.json",
+        "seats": [
+          {
+            "x": 20,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 44,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 20,
+            "y": 48.8,
+            "direction": "Up"
+          },
+          {
+            "x": 44,
+            "y": 48.8,
+            "direction": "Up"
+          }
+        ],
         "collisionGrid": [
           [
             0,
@@ -79,6 +125,29 @@
         "color": "#f2f3f5",
         "direction": "Down",
         "image": "white.png",
+        "model": "white.model.json",
+        "seats": [
+          {
+            "x": 20,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 44,
+            "y": 9.8,
+            "direction": "Down"
+          },
+          {
+            "x": 20,
+            "y": 48.8,
+            "direction": "Up"
+          },
+          {
+            "x": 44,
+            "y": 48.8,
+            "direction": "Up"
+          }
+        ],
         "collisionGrid": [
           [
             0,

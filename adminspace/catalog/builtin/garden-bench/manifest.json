@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "garden-bench",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Garden bench",
   "description": "A slatted wooden bench for gardens and terraces, facing four ways.",
@@ -43,73 +43,199 @@
         "key": "oak-down",
         "color": "#d6a46b",
         "direction": "Down",
-        "image": "oak-down.png"
+        "image": "oak-down.png",
+        "model": "oak-down.model.json",
+        "seats": [
+          {
+            "x": 19.2,
+            "y": 17.4,
+            "direction": "Down"
+          },
+          {
+            "x": 44.8,
+            "y": 17.4,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "oak-up",
         "color": "#d6a46b",
         "direction": "Up",
-        "image": "oak-up.png"
+        "image": "oak-up.png",
+        "model": "oak-up.model.json",
+        "seats": [
+          {
+            "x": 44.8,
+            "y": 14.4,
+            "direction": "Up"
+          },
+          {
+            "x": 19.2,
+            "y": 14.3,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "oak-left",
         "color": "#d6a46b",
         "direction": "Left",
-        "image": "oak-left.png"
+        "image": "oak-left.png",
+        "model": "oak-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 40.9,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "oak-right",
         "color": "#d6a46b",
         "direction": "Right",
-        "image": "oak-right.png"
+        "image": "oak-right.png",
+        "model": "oak-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 40.9,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "walnut-down",
         "color": "#96613f",
         "direction": "Down",
-        "image": "walnut-down.png"
+        "image": "walnut-down.png",
+        "model": "walnut-down.model.json",
+        "seats": [
+          {
+            "x": 19.2,
+            "y": 17.4,
+            "direction": "Down"
+          },
+          {
+            "x": 44.8,
+            "y": 17.4,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "walnut-up",
         "color": "#96613f",
         "direction": "Up",
-        "image": "walnut-up.png"
+        "image": "walnut-up.png",
+        "model": "walnut-up.model.json",
+        "seats": [
+          {
+            "x": 44.8,
+            "y": 14.4,
+            "direction": "Up"
+          },
+          {
+            "x": 19.2,
+            "y": 14.3,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "walnut-left",
         "color": "#96613f",
         "direction": "Left",
-        "image": "walnut-left.png"
+        "image": "walnut-left.png",
+        "model": "walnut-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 40.9,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "walnut-right",
         "color": "#96613f",
         "direction": "Right",
-        "image": "walnut-right.png"
+        "image": "walnut-right.png",
+        "model": "walnut-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 40.9,
+            "direction": "Right"
+          }
+        ]
       },
       {
         "key": "white-down",
         "color": "#f2f3f5",
         "direction": "Down",
-        "image": "white-down.png"
+        "image": "white-down.png",
+        "model": "white-down.model.json",
+        "seats": [
+          {
+            "x": 19.2,
+            "y": 17.4,
+            "direction": "Down"
+          },
+          {
+            "x": 44.8,
+            "y": 17.4,
+            "direction": "Down"
+          }
+        ]
       },
       {
         "key": "white-up",
         "color": "#f2f3f5",
         "direction": "Up",
-        "image": "white-up.png"
+        "image": "white-up.png",
+        "model": "white-up.model.json",
+        "seats": [
+          {
+            "x": 44.8,
+            "y": 14.4,
+            "direction": "Up"
+          },
+          {
+            "x": 19.2,
+            "y": 14.3,
+            "direction": "Up"
+          }
+        ]
       },
       {
         "key": "white-left",
         "color": "#f2f3f5",
         "direction": "Left",
-        "image": "white-left.png"
+        "image": "white-left.png",
+        "model": "white-left.model.json",
+        "seats": [
+          {
+            "x": 14.5,
+            "y": 40.9,
+            "direction": "Left"
+          }
+        ]
       },
       {
         "key": "white-right",
         "color": "#f2f3f5",
         "direction": "Right",
-        "image": "white-right.png"
+        "image": "white-right.png",
+        "model": "white-right.model.json",
+        "seats": [
+          {
+            "x": 17.5,
+            "y": 40.9,
+            "direction": "Right"
+          }
+        ]
       }
     ]
   },

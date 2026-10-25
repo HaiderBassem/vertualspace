@@ -21,9 +21,11 @@ import {
     type ComponentManifest as Manifest,
 } from "../../catalog/manifest";
 import { inspectImage, type ImageInfo } from "./images";
+import { Model3D } from "../../catalog/model3d/types";
 
 export const LIMITS = {
     imageBytes: 2 * 1024 * 1024,
+    modelBytes: 512 * 1024,
     entityPixels: 2048,
     tilesetPixels: 4096,
     mapBytes: 5 * 1024 * 1024,
@@ -39,6 +41,8 @@ export type IssueCode =
     | "imageTooLarge"
     | "notCellMultiple"
     | "collisionGridShape"
+    | "modelInvalid"
+    | "modelSize"
     | "packageTooLarge"
     | "mapInvalid"
     | "mapOrientation"
@@ -210,6 +214,29 @@ export function validatePackage(rawManifest: unknown, files: Map<string, Buffer>
         const columns = image.width / TILE_SIZE;
         if (variant.collisionGrid.length !== rows || variant.collisionGrid.some((row) => row.length !== columns)) {
             issues.push({ code: "collisionGridShape", path: here });
+        }
+    }
+
+    for (const [index, variant] of (manifest.entity?.variants ?? []).entries()) {
+        if (!variant.model) continue;
+        const here = `entity.variants.${index}.model`;
+        const bytes = files.get(variant.model);
+        if (!bytes) continue;
+        let model: ReturnType<typeof Model3D.safeParse> | undefined;
+        try {
+            model =
+                bytes.length > LIMITS.modelBytes ? undefined : Model3D.safeParse(JSON.parse(bytes.toString("utf8")));
+        } catch {
+            model = undefined;
+        }
+        if (!model?.success) {
+            issues.push({ code: "modelInvalid", path: here });
+            continue;
+        }
+        // The model draws the picture: they must be the same size, or the game would show one at the wrong scale.
+        const image = images.get(variant.image);
+        if (image && (image.width !== model.data.width || image.height !== model.data.height)) {
+            issues.push({ code: "modelSize", path: here });
         }
     }
 

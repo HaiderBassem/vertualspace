@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "tactile-paving",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Tactile paving",
   "description": "Yellow warning studs, as found before stairs and crossings, to signal an accessible route.",
@@ -43,6 +43,7 @@
         "color": "#e8b931",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "depthOffset": -32
       }
     ]

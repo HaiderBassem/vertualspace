@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "pond",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Pond",
   "description": "A stone-rimmed pond with lily pads or koi. It cannot be walked through.",
@@ -45,6 +45,7 @@
         "color": "#4aa3d6",
         "direction": "Down",
         "image": "lilies.png",
+        "model": "lilies.model.json",
         "collisionGrid": [
           [
             1,
@@ -64,6 +65,7 @@
         "color": "#4aa3d6",
         "direction": "Down",
         "image": "koi.png",
+        "model": "koi.model.json",
         "collisionGrid": [
           [
             1,

@@ -1,7 +1,7 @@
 {
   "schema": "adminspace.component/1",
   "key": "printer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "entity",
   "name": "Printer",
   "description": "A multifunction printer for the copy corner.",
@@ -43,6 +43,7 @@
         "color": "#e7eaee",
         "direction": "Down",
         "image": "standard.png",
+        "model": "standard.model.json",
         "collisionGrid": [
           [
             1
