@@ -4617,7 +4617,8 @@ ${escapedMessage}
             (prefabId) => {
                 for (const entity of entities.values()) {
                     const prefab = entity.getPrefab();
-                    if (prefab.id === prefabId) return { name: prefab.name, direction: prefab.direction };
+                    if (prefab.id === prefabId)
+                        return { name: prefab.name, direction: prefab.direction, seats: prefab.seats };
                 }
                 return undefined;
             },

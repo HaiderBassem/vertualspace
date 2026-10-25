@@ -8,6 +8,7 @@ import {
     parsePrefabId,
     parseSeatedState,
     seatOfEntity,
+    seatsOfEntity,
     seatsOfDesk,
 } from "../../src/PersonalDesk/Seats";
 import { evaluateDeskSeating, evaluateSit } from "../../src/PersonalDesk/SitPolicy";
@@ -114,6 +115,66 @@ describe("furniture to sit on", () => {
         expect(listSeats([], [["e4", entity(id, 0, 0)]], undefined, describe).map((seat) => seat.id)).toEqual([
             "entity:e4",
         ]);
+    });
+
+    it("offers every place to sit that the model of the furniture draws, whatever its name", () => {
+        const sofa = "adminspace:3f2c8a1e-0000-4000-8000-0000000000aa:blue-down";
+        const picnic = "adminspace:3f2c8a1e-0000-4000-8000-0000000000bb:oak";
+        const describe = (id: string) =>
+            id === sofa
+                ? {
+                      name: "Lounge sofa",
+                      direction: "Down" as const,
+                      seats: [
+                          { x: 19, y: 42, direction: "Down" as const },
+                          { x: 45, y: 42, direction: "Down" as const },
+                      ],
+                  }
+                : id === picnic
+                  ? {
+                        name: "Picnic table",
+                        direction: "Down" as const,
+                        seats: [
+                            { x: 20, y: 10, direction: "Down" as const },
+                            { x: 20, y: 49, direction: "Up" as const },
+                        ],
+                    }
+                  : undefined;
+        expect(seatsOfEntity("s", entity(sofa, 100, 200), undefined, describe)).toEqual([
+            { id: "entity:s", x: 119, y: 242, direction: "Down" },
+            { id: "entity:s:1", x: 145, y: 242, direction: "Down" },
+        ]);
+        // A picnic table is not named like a seat: its model says where people sit.
+        expect(isSeatFurnitureName("Picnic table")).toBe(false);
+        expect(seatsOfEntity("p", entity(picnic, 0, 0), undefined, describe).map((seat) => seat.direction)).toEqual([
+            "Down",
+            "Up",
+        ]);
+        // Without model seats, the name still decides, and a table is nothing.
+        expect(seatsOfEntity("c", entity("basic furniture:Basic Chair:blue:Up", 0, 0))).toHaveLength(1);
+        expect(seatsOfEntity("t", entity("basic furniture:Basic Wood Table:orange:Down", 0, 0))).toEqual([]);
+        // They are all listed, and each belongs to the desk it stands in.
+        const desk = {
+            id: "d",
+            name: "Desk",
+            visible: true,
+            x: 90,
+            y: 190,
+            width: 100,
+            height: 100,
+            properties: [
+                {
+                    id: "p",
+                    type: "personalAreaPropertyData" as const,
+                    accessClaimMode: "dynamic" as const,
+                    allowedTags: [],
+                    ownerId: null,
+                },
+            ],
+        } as AreaData;
+        const seats = listSeats([desk], [["s", entity(sofa, 100, 200)]], undefined, describe);
+        expect(seats.map((seat) => seat.id)).toEqual(["entity:s", "entity:s:1"]);
+        expect(seats.every((seat) => seat.deskAreaId === "d")).toBe(true);
     });
 
     it("faces down when its identifier says no direction", () => {

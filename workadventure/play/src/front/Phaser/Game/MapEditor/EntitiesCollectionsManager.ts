@@ -91,6 +91,8 @@ export class EntitiesCollectionsManager {
                                 depthOffset: entity.depthOffset ?? 0,
                                 tags: [...entity.tags, ...collection.tags],
                                 imagePath: new URL(entity.imagePath, url).toString(),
+                                ...(entity.modelPath ? { modelPath: new URL(entity.modelPath, url).toString() } : {}),
+                                ...(entity.seats ? { seats: entity.seats } : {}),
                                 direction: entity.direction,
                                 color: entity.color,
                                 collisionGrid: entity.collisionGrid,

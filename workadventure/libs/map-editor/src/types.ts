@@ -341,6 +341,13 @@ export const EntityRawPrefab = z.object({
     color: z.string(),
     collisionGrid: CollisionGrid.optional(),
     depthOffset: z.number().optional(),
+    // The 3D model (see Model3D/) the game draws this furniture from. Without it, or when it cannot be drawn, the
+    // game shows the image.
+    modelPath: z.string().optional(),
+    // Places to sit on this furniture, in pixels from the top-left corner of its image, when its model has them.
+    seats: z
+        .array(z.object({ x: z.number(), y: z.number(), direction: z.enum(["Left", "Up", "Down", "Right"]) }))
+        .optional(),
     // UUID of the user who uploaded this custom entity. Stamped by map-storage from the
     // authenticated user UUID, never from the client. Undefined on the built-in ("Default")
     // collections and on custom entities uploaded before this field existed: those can only be

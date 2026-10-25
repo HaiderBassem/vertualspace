@@ -16,6 +16,16 @@ const collection = {
     collection: [
         { id: "adminspace:c1:charcoal-up", name: "Office chair", direction: "Up", imagePath: "x.png" },
         { id: "adminspace:t1:oak", name: "Meeting table", direction: "Down" },
+        {
+            id: "adminspace:s1:blue-down",
+            name: "Lounge sofa",
+            direction: "Down",
+            seats: [
+                { x: 19, y: 42, direction: "Down" },
+                { x: 45, y: 42, direction: "Down" },
+            ],
+        },
+        { id: "adminspace:s2:bad", name: "Sofa", seats: [{ x: "left", y: 1, direction: "Down" }] },
         { id: "bad", name: 12 },
     ],
 };
@@ -29,6 +39,18 @@ describe("SeatPrefabCatalog", () => {
         expect(catalog.describe("adminspace:c1:charcoal-up")).toEqual({ name: "Office chair", direction: "Up" });
         expect(catalog.describe("adminspace:t1:oak")?.name).toBe("Meeting table");
         expect(catalog.describe("bad")).toBeUndefined();
+    });
+
+    it("learns the places to sit that the model of a piece of furniture draws, and ignores a malformed list", async () => {
+        const catalog = new SeatPrefabCatalog(() => 0, vi.fn().mockResolvedValue(collection));
+        await catalog.refresh(wam(["https://a.test/collection.json"]));
+        expect(catalog.describe("adminspace:s1:blue-down")?.seats).toEqual([
+            { x: 19, y: 42, direction: "Down" },
+            { x: 45, y: 42, direction: "Down" },
+        ]);
+        expect(catalog.describe("adminspace:s2:bad")).toMatchObject({ name: "Sofa" });
+        expect(catalog.describe("adminspace:s2:bad")?.seats).toBeUndefined();
+        expect(catalog.describe("adminspace:c1:charcoal-up")?.seats).toBeUndefined();
     });
 
     it("reads a collection once per five minutes, and again at once when some furniture is unknown", async () => {

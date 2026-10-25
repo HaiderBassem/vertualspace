@@ -109,7 +109,7 @@ export class EntityEditorTool extends EntityRelatedEditorTool {
                     return;
                 }
 
-                TexturesHelper.loadEntityImage(this.scene, entityPrefab.imagePath, entityPrefab.imagePath)
+                TexturesHelper.loadEntityTexture(this.scene, entityPrefab, entityPrefab.imagePath)
                     .then(() => {
                         this.entitiesManager
                             .getEntities()

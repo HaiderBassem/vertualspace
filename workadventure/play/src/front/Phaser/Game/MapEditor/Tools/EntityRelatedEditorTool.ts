@@ -127,7 +127,7 @@ export abstract class EntityRelatedEditorTool extends MapEditorTool {
                     this.entityPrefabPreview?.destroy();
                     this.entityPrefabPreview = undefined;
                 } else {
-                    TexturesHelper.loadEntityImage(this.scene, entityPrefab.imagePath, entityPrefab.imagePath)
+                    TexturesHelper.loadEntityTexture(this.scene, entityPrefab, entityPrefab.imagePath)
                         .then(() => {
                             if (this.entityPrefabPreview) {
                                 this.entityPrefabPreview.setTexture(entityPrefab.imagePath);

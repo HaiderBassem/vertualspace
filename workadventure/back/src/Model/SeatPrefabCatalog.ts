@@ -9,7 +9,17 @@ const COLLECTION_TTL_MS = 5 * 60 * 1000;
 const MISS_RETRY_MS = 30 * 1000;
 
 const CollectionFile = z.object({ collection: z.array(z.unknown()) });
-const CollectionPrefab = z.object({ id: z.string(), name: z.string(), direction: SeatDirection.optional() });
+const CollectionPrefab = z.object({
+    id: z.string(),
+    name: z.string(),
+    direction: SeatDirection.optional(),
+    // The places to sit that the 3D model of the furniture has; a malformed list only costs the furniture its seats.
+    seats: z
+        .array(z.object({ x: z.number(), y: z.number(), direction: SeatDirection }))
+        .max(8)
+        .optional()
+        .catch(undefined),
+});
 
 /**
  * What the collections of a map say of its furniture (name, direction), for the ids that do not carry them: the admin
@@ -65,7 +75,11 @@ export class SeatPrefabCatalog {
                     // One malformed entry only costs that entry.
                     const prefab = CollectionPrefab.safeParse(entry);
                     if (prefab.success) {
-                        this.prefabs.set(prefab.data.id, { name: prefab.data.name, direction: prefab.data.direction });
+                        this.prefabs.set(prefab.data.id, {
+                            name: prefab.data.name,
+                            direction: prefab.data.direction,
+                            seats: prefab.data.seats,
+                        });
                     }
                 }
                 this.loadedAt.set(url, this.now());

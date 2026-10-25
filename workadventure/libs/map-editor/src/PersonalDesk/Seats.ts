@@ -87,10 +87,15 @@ export function parsePrefabId(prefabId: string): PrefabIdParts | undefined {
     return { collectionName, name, color, direction: direction.success ? direction.data : undefined };
 }
 
-/** What a collection says of a piece of furniture: its name, and the way it faces. */
+/** What a collection says of a piece of furniture: its name, the way it faces, and where people can sit on it. */
 export interface PrefabDescription {
     name: string;
     direction?: SeatDirection | undefined;
+    /**
+     * The places to sit that the 3D model of the furniture has (a sofa, a bench, a picnic table have several), in pixels
+     * from the top-left corner of its image. When there are some, they are the seats of the furniture whatever its name.
+     */
+    seats?: readonly { x: number; y: number; direction: SeatDirection }[] | undefined;
 }
 
 /**
@@ -126,6 +131,29 @@ export function seatOfEntity(
     };
 }
 
+/**
+ * The seats a piece of furniture offers: the ones its model draws when it has some (the first keeps the id
+ * "entity:<id>", the others are "entity:<id>:<number>"), otherwise the one its name says.
+ */
+export function seatsOfEntity(
+    entityId: string,
+    entity: Pick<WAMEntityData, "x" | "y" | "prefabRef">,
+    size: EntitySize = DEFAULT_SEAT_ENTITY_SIZE,
+    describe?: PrefabDescriber,
+): Seat[] {
+    const modelled = describe?.(entity.prefabRef.id)?.seats;
+    if (modelled && modelled.length > 0) {
+        return modelled.map((seat, index) => ({
+            id: index === 0 ? `entity:${entityId}` : `entity:${entityId}:${index}`,
+            x: entity.x + seat.x,
+            y: entity.y + seat.y,
+            direction: seat.direction,
+        }));
+    }
+    const seat = seatOfEntity(entityId, entity, size, describe);
+    return seat ? [seat] : [];
+}
+
 type AreaLike = Pick<AreaData, "id" | "x" | "y" | "width" | "height" | "properties">;
 
 function contains(area: Pick<AreaData, "x" | "y" | "width" | "height">, point: { x: number; y: number }): boolean {
@@ -155,10 +183,10 @@ export function listSeats(
 ): Seat[] {
     const seats: Seat[] = [];
     for (const [entityId, entity] of entities) {
-        const seat = seatOfEntity(entityId, entity, sizeOf?.(entityId) ?? DEFAULT_SEAT_ENTITY_SIZE, describe);
-        if (!seat) continue;
-        const desk = deskContaining(areas, seat);
-        seats.push(desk ? { ...seat, deskAreaId: desk.id } : seat);
+        for (const seat of seatsOfEntity(entityId, entity, sizeOf?.(entityId) ?? DEFAULT_SEAT_ENTITY_SIZE, describe)) {
+            const desk = deskContaining(areas, seat);
+            seats.push(desk ? { ...seat, deskAreaId: desk.id } : seat);
+        }
     }
     for (const area of areas) {
         const desk = getDeskProperty(area);

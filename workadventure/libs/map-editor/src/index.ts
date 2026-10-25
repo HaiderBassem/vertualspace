@@ -33,3 +33,4 @@ export * from "./PersonalDesk/DeskEligibility";
 export * from "./PersonalDesk/NearestDesk";
 export * from "./PersonalDesk/Seats";
 export * from "./PersonalDesk/SitPolicy";
+export * from "./Model3D";
