@@ -1,3 +1,5 @@
 wa/*
 .env.prod
 .env
+bitwize.override.yaml
+bitwize-livekit.yaml

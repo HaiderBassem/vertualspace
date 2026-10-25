@@ -1,0 +1,123 @@
+# Example of bitwize.override.yaml (compose override of the production stack: Traefik labels, local images, coturn). Copy it
+# to bitwize.override.yaml and fill in the placeholders: bitwize.override.yaml is ignored by git because it holds the TURN
+# secret and the address of the server.
+services:
+  maps:
+    networks:
+      - default
+      - edge
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.maps-ssl.tls.certresolver: main-resolver
+  play:
+    image: vs/play:local
+    deploy:
+      replicas: 4
+    networks:
+      - default
+      - edge
+      - workadventure-admin
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.play-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.play-ws-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.room-api.tls.certresolver: main-resolver
+      traefik.http.routers.room-api.rule: "Host(`gather.bitwize.org`) && HeadersRegexp(`Content-Type`, `^application/grpc`)"
+      traefik.http.routers.room-api.entryPoints: websecure
+      traefik.http.routers.room-api.priority: "100"
+      traefik.http.routers.play.entryPoints: web
+      traefik.http.routers.play-ssl.entryPoints: websecure
+      traefik.http.routers.play-ws.entryPoints: web
+      traefik.http.routers.play-ws-ssl.entryPoints: websecure
+  back:
+    image: vs/back:local
+    networks:
+      - default
+      - edge
+      - workadventure-admin
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.back-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.back.entryPoints: web
+      traefik.http.routers.back-ssl.entryPoints: websecure
+  uploader:
+    image: vs/uploader:local
+    networks:
+      - default
+      - edge
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.uploader-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.uploader.entryPoints: web
+      traefik.http.routers.uploader-ssl.entryPoints: websecure
+  icon:
+    networks:
+      - default
+      - edge
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.icon-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.icon.entryPoints: web
+      traefik.http.routers.icon-ssl.entryPoints: websecure
+      traefik.http.routers.lettericons.entryPoints: web
+      traefik.http.routers.lettericons-ssl.entryPoints: websecure
+      traefik.http.routers.lettericons-ssl.tls.certresolver: main-resolver
+  map-storage:
+    image: vs/map-storage:local
+    networks:
+      - default
+      - edge
+    labels:
+      traefik.docker.network: erp_default
+      traefik.http.routers.map-storage-ssl.tls.certresolver: main-resolver
+      traefik.http.routers.map-storage.entryPoints: web
+      traefik.http.routers.map-storage-ssl.entryPoints: websecure
+  livekit:
+    image: livekit/livekit-server:v1.13.7
+    command: ["--config", "/etc/livekit/config.yaml"]
+    restart: unless-stopped
+    ports:
+      - "7881:7881/tcp"
+      - "7882-7894:7882-7894/udp"
+    volumes:
+      - ./bitwize-livekit.yaml:/etc/livekit/config.yaml:ro
+    networks:
+      - default
+      - edge
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: erp_default
+      traefik.http.routers.livekit.rule: Host(`livekit.gather.bitwize.org`)
+      traefik.http.routers.livekit.entrypoints: websecure
+      traefik.http.routers.livekit.tls: "true"
+      traefik.http.routers.livekit.tls.certresolver: main-resolver
+      traefik.http.services.livekit.loadbalancer.server.port: "7880"
+  coturn:
+    image: coturn/coturn:4.6.2
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - turnserver
+      - --log-file=stdout
+      - --no-cli
+      - --fingerprint
+      - --use-auth-secret
+      - --static-auth-secret=<TURN_STATIC_AUTH_SECRET>
+      - --realm=gather.bitwize.org
+      - --listening-port=3478
+      - --external-ip=<SERVER_PUBLIC_IP>
+      - --min-port=49160
+      - --max-port=59160
+      - --no-tls
+      - --no-dtls
+      - --no-multicast-peers
+      - --denied-peer-ip=10.0.0.0-10.255.255.255
+      - --denied-peer-ip=172.16.0.0-172.31.255.255
+      - --denied-peer-ip=192.168.0.0-192.168.255.255
+networks:
+  edge:
+    external: true
+    name: erp_default
+  workadventure-admin:
+    external: true
+    name: workadventure-admin

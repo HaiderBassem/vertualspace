@@ -1,0 +1,31 @@
+# Example of bitwize-livekit.yaml (LiveKit server of the production stack). Copy it to bitwize-livekit.yaml and put
+# the real secrets in: bitwize-livekit.yaml is ignored by git because it holds them. The key and secret are the
+# LIVEKIT_API_KEY / LIVEKIT_API_SECRET of .env.prod; the TURN secret is TURN_STATIC_AUTH_SECRET.
+port: 7880
+rtc:
+  tcp_port: 7881
+  udp_port: 7882-7894
+  use_external_ip: true
+  advertise_internal_ip: true
+  external_ip_only: false
+  interfaces:
+    includes: [eth0]
+  turn_servers:
+    - host: livekit.gather.bitwize.org
+      port: 3478
+      protocol: udp
+      secret: "<TURN_STATIC_AUTH_SECRET>"
+      ttl: 14400
+    - host: livekit.gather.bitwize.org
+      port: 3478
+      protocol: tcp
+      secret: "<TURN_STATIC_AUTH_SECRET>"
+      ttl: 14400
+redis:
+  address: redis:6379
+  db: 1
+keys:
+  <LIVEKIT_API_KEY>: <LIVEKIT_API_SECRET>
+logging:
+  json: true
+  level: info
